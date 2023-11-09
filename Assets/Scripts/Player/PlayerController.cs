@@ -9,7 +9,6 @@ namespace Player {
 		private void Awake() {
 			InitUnit();
 			_inputHandler = new InputHandler(Camera.main);
-			Cursor.visible = false;
 			Application.targetFrameRate = 75;
 		}
 
