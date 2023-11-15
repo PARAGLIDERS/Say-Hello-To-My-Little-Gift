@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Misc.Root {
 	public class Bootstrap : MonoBehaviour {
@@ -14,7 +15,7 @@ namespace Misc.Root {
 
 			INSTANCE = this;
 			DontDestroyOnLoad(gameObject);
-			
+
 			Core.Init(transform, _resources);
 		}
 

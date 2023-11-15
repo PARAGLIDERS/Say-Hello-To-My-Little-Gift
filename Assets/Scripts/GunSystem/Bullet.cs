@@ -1,4 +1,5 @@
 ﻿using DamageSystem;
+using Misc.Root;
 using PoolSystem;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ namespace GunSystem {
 				rb.AddForce(transform.forward * _damage, ForceMode.Impulse);
 			}
 				
-			PoolController.Spawn(PoolType.BulletExplosion, transform.position, transform.rotation);
+			Core.PoolController.Spawn(PoolType.BulletExplosion, transform.position, transform.rotation);
 			Deactivate();
 		}
 
@@ -49,7 +50,7 @@ namespace GunSystem {
 				return;
 			}
 			
-			PoolController.Spawn(PoolType.BulletExplosion, transform.position, transform.rotation);
+			Core.PoolController.Spawn(PoolType.BulletExplosion, transform.position, transform.rotation);
 			Deactivate();
 		}
 	}

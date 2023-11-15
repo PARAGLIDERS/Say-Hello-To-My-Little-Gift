@@ -11905,11 +11905,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c20e59c8e7a3642c2adf474568ce6af4, type: 3}
---- !u!4 &1517615206 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-  m_PrefabInstance: {fileID: 7357705588165904181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1524426652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3445501708309228924, guid: a65deeea4cdf33345b3b0093af620375, type: 3}
@@ -13681,7 +13676,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1517615206}
   - {fileID: 1524426652}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -14484,7 +14478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3445501708309228924, guid: a65deeea4cdf33345b3b0093af620375, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3445501708309228924, guid: a65deeea4cdf33345b3b0093af620375, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14792,63 +14786,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6445763824379527433, guid: d89a9984a4fbe4a15b0aeca3cc8b4104, type: 3}
   m_PrefabInstance: {fileID: 7341852728776310900}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7357705588165904181
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1979391148}
-    m_Modifications:
-    - target: {fileID: 7357705587267600208, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_Name
-      value: PoolController
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357705587267600211, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 020df1b54b8d05a4eb176552e6371ea5, type: 3}
 --- !u!4 &8232004646524772545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4119818876827050218, guid: 563f121064960a24f88939baa117471a, type: 3}

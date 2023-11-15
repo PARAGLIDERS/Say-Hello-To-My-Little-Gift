@@ -1,25 +1,32 @@
-﻿using Player;
+﻿using System;
+using Player;
+using PoolSystem;
 using Units;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Enemies {
-	public class Enemy : UnitNavmesh {
+	public class Enemy : PoolObject {
+		[SerializeField] private NavMeshAgent _agent;
+		[SerializeField] private Transform _bodyTransform;
 		[SerializeField] private MeshFilter _modelMeshFilter;
 		[SerializeField] private MeshRenderer _modelMeshRenderer;
-		[SerializeField] private EnemyModelConfig[] _enemyModelConfigs;
+		private UnitConfig _config;
+		private UnitAnimation _animation;
 		
-		public void OnEnable() {
-			EnemyModelConfig config = _enemyModelConfigs[Random.Range(0, _enemyModelConfigs.Length)];
-			
-			_modelMeshFilter.mesh = config.Model;
-			_modelMeshRenderer.transform.localPosition = config.Offset;
-			
-			Init(config);
+		public void Init(UnitConfig config) {
+			_config = config;
+			_animation = new UnitAnimation(_config.AnimationConfig, _bodyTransform);
+			_agent.speed = config.MotionConfig.Speed;
+			_agent.acceleration = 1f / (config.MotionConfig.Drag > 0f ? config.MotionConfig.Drag : 0.001f);
+			//_modelMeshFilter.mesh = config.Model;
+			//_modelMeshRenderer.transform.localPosition = config.Offset;
 		}
-
-		protected override void Update() {
-			base.Update();
-			Move(PlayerController.POSITION);
+		
+		private void Update() {
+			_agent.SetDestination(PlayerController.POSITION);
+			_animation.Trigger();
+			_animation.Update();
 		}
 	}
 }

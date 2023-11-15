@@ -1,4 +1,5 @@
-﻿using PoolSystem;
+﻿using Misc.Root;
+using PoolSystem;
 using UnityEngine;
 
 namespace DamageSystem {
@@ -23,7 +24,7 @@ namespace DamageSystem {
 
 			if (_currentHealth <= 0) {
 				_currentHealth = 0;
-				PoolController.Spawn(PoolType.Blood, transform.position, damagerRotation);
+				Core.PoolController.Spawn(PoolType.Blood, transform.position, damagerRotation);
 				_poolObject.Deactivate();
 			}
 		}

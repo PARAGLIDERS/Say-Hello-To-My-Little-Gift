@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemies {
-	public class SpawnerGrid : MonoBehaviour {
+namespace EnemySpawning {
+	public class EnemySpawnerGrid : MonoBehaviour {
 		[SerializeField] private float _cellSize = 5f;
 		[SerializeField] private Vector2 _gridSize = new(10, 10);
 		[SerializeField] private Vector2 _gridInnerSize = new(5, 5);

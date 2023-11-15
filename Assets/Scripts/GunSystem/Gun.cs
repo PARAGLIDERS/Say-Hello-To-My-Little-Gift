@@ -1,5 +1,6 @@
 ﻿using CameraControl;
 using GunSystem.GunComponents;
+using Misc.Root;
 using PoolSystem;
 using SfxSystem;
 using UnityEngine;
@@ -28,13 +29,13 @@ namespace GunSystem {
 				Shot.Execute();
 				SfxPlayer.Play(SfxType.Shot);
 				CameraShaker.Shake();
-				PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
+				Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
 			}
 		}
 	
 		private void SpawnBullet() {
 			Quaternion bulletRotation = GetBulletRotation();
-			PoolController.Spawn(PoolType.Bullet, _muzzle.position, bulletRotation);
+			Core.PoolController.Spawn(PoolType.Bullet, _muzzle.position, bulletRotation);
 		}
 
 		private Quaternion GetBulletRotation() {

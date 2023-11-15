@@ -1,18 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace PoolSystem {
-	[CreateAssetMenu(menuName = "Pool")]
-	public class Pool : ScriptableObject {
+	[Serializable]
+	public class Pool {
 		public PoolType Type => _type;
+		[HideInInspector] public string Name;
 		
 		[SerializeField] private PoolType _type;
 		[SerializeField] private PoolObject _poolObject;
-		[SerializeField] private int _initSize = 25;
+		[SerializeField] private int _initSize = 1000;
 
-		private List<PoolObject> _objects = new ();
+		private Queue<PoolObject> _objects = new ();
+
 		private Transform _root;
-
+		
 		public void Init(Transform root) {
 			_root = root;
 			_objects.Clear();
@@ -23,28 +27,30 @@ namespace PoolSystem {
 		}
 
 		public bool TryGetObject(out PoolObject poolObject) {
-			poolObject = _objects.Count == 0 ? CreateObject() : _objects[^1];
-			if (poolObject == null) return false;
-			_objects.Remove(poolObject);
-			return true;
+			poolObject = _objects.Dequeue();
+			_objects.Enqueue(poolObject);
+			
+			return poolObject != null;
 		}
 		
 		private PoolObject CreateObject() {
 			if (_poolObject == null) {
-				Debug.LogError($"Pool {name} has nothing to spawn!");
+				Debug.LogError($"pool object from pool of type {_type} is null");
 				return null;
 			}
 			
-			PoolObject poolObject = Instantiate(_poolObject, _root);
-			poolObject.Init(OnObjectDeactivate);
-			_objects.Add(poolObject);
+			PoolObject poolObject = Object.Instantiate(_poolObject, _root);
+			poolObject.Init();
+			_objects.Enqueue(poolObject);
 			return poolObject;
 		}
 
-		private void OnObjectDeactivate(PoolObject poolObject) {
-			_objects.Add(poolObject);
+		public void DeactivateAll() {
+			foreach (PoolObject poolObject in _objects) {
+				poolObject.Deactivate();
+			}
 		}
-
+		
 		public void Dispose() {
 			_objects.Clear();
 			_root = null;

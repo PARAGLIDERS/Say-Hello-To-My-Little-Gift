@@ -1,5 +1,6 @@
 ﻿using Misc.GameStateMachine;
 using Misc.LevelControl;
+using PoolSystem;
 using Ui;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Misc.Root {
 		public static UiController UiController { get; private set; }
 		public static StateController StateController { get; private set; }
 		public static LevelController LevelController { get; private set; }
+		public static PoolController PoolController { get; private set; }
 		
 		public static void Init(Transform parent, Resources resources) {
 			Resources = resources;
@@ -16,6 +18,7 @@ namespace Misc.Root {
 			StateController = new StateController();
 			UiController = new UiController(parent);
 			LevelController = new LevelController();
+			PoolController = new PoolController();
 			
 			StateController.SetState(StateType.Boot);
 		}
