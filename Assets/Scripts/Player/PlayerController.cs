@@ -9,7 +9,6 @@ namespace Player {
 		private void Awake() {
 			InitUnit();
 			_inputHandler = new InputHandler(Camera.main);
-			Application.targetFrameRate = 75;
 		}
 
 		protected override void Update() {

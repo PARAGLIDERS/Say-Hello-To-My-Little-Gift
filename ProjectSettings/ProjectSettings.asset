@@ -14,8 +14,8 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: RAZDOLBAYS
   productName: Santa
-  defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  defaultCursor: {fileID: 2800000, guid: 8d88e48de0a505b4098928ee001667e9, type: 3}
+  cursorHotspot: {x: 32, y: 32}
   m_SplashScreenBackgroundColor: {r: 0.09411765, g: 0.09411765, b: 0.09411765, a: 0}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0

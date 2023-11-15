@@ -6,7 +6,6 @@ namespace Misc.GameStateMachine.States {
 	public class StatePlay : IState {
 		public void Enter() {
 			Core.UiController.Show(UiScreenType.Hud);
-			Cursor.visible = false;
 		}
 
 		public void Update() {
@@ -16,7 +15,6 @@ namespace Misc.GameStateMachine.States {
 		}
 
 		public void Exit() {
-			Cursor.visible = true;
 		}
 	}
 }
