@@ -34,7 +34,7 @@ namespace PoolSystem {
 			poolObject.Activate(position, rotation);
 		}
 
-		public T Spawn<T>(PoolType type, Vector3 position, Quaternion rotation) where T : PoolObject {
+		public T Spawn<T>(PoolType type) where T : PoolObject {
 			if (!_pools.TryGetValue(type, out Pool pool)) {
 				Debug.LogError($"Pool of type {type} does not exist!");
 				return null;

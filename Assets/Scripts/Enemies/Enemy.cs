@@ -1,4 +1,5 @@
 ﻿using System;
+using DamageSystem;
 using Player;
 using PoolSystem;
 using Units;
@@ -11,22 +12,29 @@ namespace Enemies {
 		[SerializeField] private Transform _bodyTransform;
 		[SerializeField] private MeshFilter _modelMeshFilter;
 		[SerializeField] private MeshRenderer _modelMeshRenderer;
-		private UnitConfig _config;
+
 		private UnitAnimation _animation;
+		private Action _onKill;
 		
-		public void Init(UnitConfig config) {
-			_config = config;
-			_animation = new UnitAnimation(_config.AnimationConfig, _bodyTransform);
+		public void Init(EnemyConfig config, Action onKill) {
+			_onKill = onKill;
+			
+			_animation = new UnitAnimation(config.AnimationConfig, _bodyTransform);
 			_agent.speed = config.MotionConfig.Speed;
 			_agent.acceleration = 1f / (config.MotionConfig.Drag > 0f ? config.MotionConfig.Drag : 0.001f);
-			//_modelMeshFilter.mesh = config.Model;
-			//_modelMeshRenderer.transform.localPosition = config.Offset;
+			_modelMeshFilter.mesh = config.Model;
+			_modelMeshRenderer.transform.localPosition = config.Offset;
 		}
 		
 		private void Update() {
 			_agent.SetDestination(PlayerController.POSITION);
 			_animation.Trigger();
 			_animation.Update();
+		}
+
+		public override void Deactivate(){
+			_onKill?.Invoke();
+			_onKill = null;
 		}
 	}
 }

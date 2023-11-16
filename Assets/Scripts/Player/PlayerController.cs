@@ -1,12 +1,16 @@
 ﻿using Units;
+using Units.UnitConfigs;
 using UnityEngine;
 
 namespace Player {
 	public class PlayerController : MonoBehaviour {
-		[SerializeField] private UnitConfig _config;
 		[SerializeField] private float _speed;
 		[SerializeField] private float _maxSpeed;
 		[SerializeField] private float _drag;
+
+		[SerializeField] private UnitAnimationConfig _animationConfig;
+		[SerializeField] private UnitRotationConfig _rotationConfig;
+		
 		[SerializeField] private Transform _unitTransform;
 		[SerializeField] private Transform _bodyTransform;
 		[SerializeField] private Rigidbody _rigidbody;
@@ -17,9 +21,9 @@ namespace Player {
 		private UnitAnimation _animation;
 		
 		private void Awake() {
-			_animation = new UnitAnimation(_config.AnimationConfig, _bodyTransform);
+			_animation = new UnitAnimation(_animationConfig, _bodyTransform);
 			_inputHandler = new InputHandler(Camera.main);
-			_rotation = new UnitRotation(_config.RotationConfig, _unitTransform);
+			_rotation = new UnitRotation(_rotationConfig, _unitTransform);
 		}
 
 		protected void Update() {
@@ -43,7 +47,7 @@ namespace Player {
 				_rigidbody.velocity = _rigidbody.velocity.normalized * _maxSpeed;
 			}
 
-			_rigidbody.velocity -= _rigidbody.velocity.normalized * _maxSpeed;
+			_rigidbody.velocity -= _rigidbody.velocity.normalized * _drag;
 		}
 	}
 }
