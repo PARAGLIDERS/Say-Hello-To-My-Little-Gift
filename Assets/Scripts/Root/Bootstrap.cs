@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Misc.Root {
 	public class Bootstrap : MonoBehaviour {
@@ -21,6 +20,10 @@ namespace Misc.Root {
 
 		private void Update() {
 			Core.Update();
+		}
+
+		private void OnDestroy() {
+			Core.Dispose();
 		}
 	}
 }

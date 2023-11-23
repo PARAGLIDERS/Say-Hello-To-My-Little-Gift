@@ -1,16 +1,11 @@
-﻿
-
-using EnemySpawning;
-using Misc.Root;
-using UnityEngine;
+﻿using EnemySpawning;
 
 namespace Misc.LevelControl {
 	public class LevelController {
 		public EnemySpawner EnemySpawner { get; }
 		
 		public LevelController() {
-			EnemySpawner = Object.Instantiate(Core.Resources.EnemySpawner);
-			EnemySpawner.Init(OnAllEnemiesKilled, OnFinishSpawning);
+			EnemySpawner = new EnemySpawner(OnAllEnemiesKilled);
 		}
 		
 		public void StartLevel() {
@@ -20,13 +15,18 @@ namespace Misc.LevelControl {
 		public void PlayerDied() {
 			EnemySpawner.StopSpawning();
 		}
-
-		public void OnFinishSpawning() {
-			
-		}
 		
 		public void OnAllEnemiesKilled() {
 			
+		}
+
+		public void OnQuitLevel() {
+			EnemySpawner?.StopSpawning();
+			EnemySpawner?.Dispose();
+		}
+
+		public void Dispose() {
+			OnQuitLevel();
 		}
 	}
 }

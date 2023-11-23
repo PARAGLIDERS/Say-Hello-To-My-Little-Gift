@@ -9,8 +9,8 @@ namespace Ui {
 		
 		private UiScreen _current;
 		
-		public UiController(Transform parent) {
-			_canvas = Object.Instantiate(Core.Resources.CanvasPrefab, parent).transform;
+		public UiController() {
+			_canvas = Object.Instantiate(Core.Resources.CanvasPrefab, Core.Container).transform;
 
 			foreach (UiScreenConfig screenConfig in Core.Resources.ScreenConfigs) {
 				_screens.TryAdd(screenConfig.Type, screenConfig.Prefab);

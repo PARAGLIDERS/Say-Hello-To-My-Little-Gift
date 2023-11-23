@@ -4,92 +4,115 @@ using System.Collections.Generic;
 using Enemies;
 using Misc.Root;
 using PoolSystem;
-using Units;
 using UnityEngine;
 
 namespace EnemySpawning {
-	public class EnemySpawner : MonoBehaviour {
-		[SerializeField] private EnemySpawnerGrid _grid;
-		[SerializeField] private EnemySpawnerConfig _config;
-		[SerializeField] private EnemiesConfig _enemiesConfigs;
+	public class EnemySpawner {
+		private readonly EnemySpawnerConfig _config;
+		private readonly EnemySpawnerPool _pool;
+		private readonly EnemySpawnerGrid _grid;
 
-		private Dictionary<EnemyType, EnemyConfig> _enemyDictionary;
+		public Action OnChange;
 
-		public Action<int> OnRoundChange;
-		public Action<int> OnWaveChange;
-		public Action<int> OnEnemyCountChange;
-		
 		private Action _onAllEnemiesKilled;
-		private Action _onFinishSpawning;
 
-		private int _currentEnemyCount;
-
-		private int CurrentEnemyCount {
-			get => _currentEnemyCount;
+		public int CurrentWaveEnemiesCountMax { get; private set; }
+		
+		private int _currentWaveEnemyCount;
+		public int CurrentWaveEnemyCount {
+			get => _currentWaveEnemyCount;
 			set {
-				_currentEnemyCount = value;
-				OnEnemyCountChange?.Invoke(_currentEnemyCount);
+				_currentWaveEnemyCount = value;
+				OnChange?.Invoke();
+			}
+		}
+
+		private int _currentRound;
+		public int CurrentRound {
+			get => _currentRound;
+			set {
+				_currentRound = value;
+				OnChange?.Invoke();
+			}
+		}
+
+		private int _currentWave;
+		public int CurrentWave {
+			get => _currentWave;
+			set {
+				_currentWave = value;
+				OnChange?.Invoke();
 			}
 		}
 		
-		public void Init(Action onAllEnemiesKilled, Action onFinishSpawning) {
-			_grid.Init();
+		public EnemySpawner(Action onAllEnemiesKilled) {
+			_config = Core.Resources.EnemySpawnerConfig;
+			_grid = new EnemySpawnerGrid(Core.Resources.EnemySpawnerGridConfig);
+			_pool = new EnemySpawnerPool(Core.Resources.EnemiesConfig);
 			_onAllEnemiesKilled = onAllEnemiesKilled;
-			_onFinishSpawning = onFinishSpawning;
-			
-			FillEnemyDictionary();
-		}
-
-		private void FillEnemyDictionary() {
-			foreach (EnemyConfig config in _enemiesConfigs.EnemyConfigs) {
-				_enemyDictionary.TryAdd(config.Type, config);
-			}
 		}
 
 		public void StartSpawning() {
-			StartCoroutine(Spawning());
+			Core.CoroutineRunner.Run(Spawning());
 		}
 
 		public void StopSpawning() {
-			StopCoroutine(Spawning());
+			Core.CoroutineRunner.Stop(Spawning());
 		}
 		
 		private IEnumerator Spawning() {
-			int currentRound = 0;
-			int currentWave = 0;
-			
-			while (currentRound < _config.Rounds.Count) {
-				EnemySpawnRound round = _config.Rounds[currentRound];
+			CurrentRound = 0;
+			CurrentWave = 0;
+
+			while (CurrentRound < _config.Rounds.Count) {
+				EnemySpawnRound round = _config.Rounds[CurrentRound];
 				yield return new WaitForSeconds(round.Delay);
 				
-				while (currentWave < round.Waves.Count) {
-					EnemySpawnWave wave = round.Waves[currentWave];
+				while (CurrentWave < round.Waves.Count) {
+					EnemySpawnWave wave = round.Waves[CurrentWave];
 					yield return new WaitForSeconds(wave.Delay);
-					
-					CurrentEnemyCount = wave.EnemyCount;
 
-					SpawnEnemy(wave.GetEnemyType());
+					for (int i = 0; i < wave.EnemyCount; i++) {
+						SpawnEnemy(wave.GetEnemyType());
+						CurrentWaveEnemyCount++;
+						yield return new WaitForSeconds(wave.Period);
+					}
+
+					float cooldown = _config.WaveCooldown;
+					
+					while (CurrentWaveEnemyCount > 0 || cooldown > 0) {
+						cooldown -= Time.deltaTime;
+						yield return null;
+					}
+
+					CurrentWave++;
 				}
 				
-				currentRound++;
+				CurrentRound++;
 			}
-			
-			_onFinishSpawning?.Invoke();
+
+			yield return new WaitUntil(() => CurrentWaveEnemyCount <= 0);
+			_onAllEnemiesKilled?.Invoke();
 		}
 
 		private void SpawnEnemy(EnemyType type) {
-			if (!_enemyDictionary.TryGetValue(type, out EnemyConfig config)) {
-				Debug.LogError($"enemy spawner can't get {type} from dictionary");
+			Enemy enemy = _pool.Get(type);
+
+			if (enemy == null) {
+				Debug.LogError($"enemy of type {type} is null");
 				return;
 			}
 			
-			Enemy enemy = Core.PoolController.Spawn<Enemy>(PoolType.Enemy);
-			enemy.Init(config, OnEnemyKilled);
-			enemy.Activate(_grid.GetPosition(), Quaternion.identity);
+			enemy.OnKill += OnEnemyKilled;
+			enemy.Activate(_grid.GetPosition());
 		}
 
 		private void OnEnemyKilled() {
-			CurrentEnemyCount--;
+			CurrentWaveEnemyCount--;
+		}
+
+		public void Dispose() {
+			_pool.Dispose();
 		}
 	}
 }

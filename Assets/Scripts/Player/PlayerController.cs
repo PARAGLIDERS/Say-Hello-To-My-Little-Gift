@@ -28,6 +28,7 @@ namespace Player {
 
 		protected void Update() {
 			POSITION = transform.position;
+			_animation.Update();
 		}
 
 		private void FixedUpdate() {
@@ -47,7 +48,7 @@ namespace Player {
 				_rigidbody.velocity = _rigidbody.velocity.normalized * _maxSpeed;
 			}
 
-			_rigidbody.velocity -= _rigidbody.velocity.normalized * _drag;
+			_rigidbody.velocity -= _rigidbody.velocity.normalized * _drag;			
 		}
 	}
 }

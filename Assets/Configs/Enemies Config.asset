@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2419ef8824c744b0b0c39e41b4b2924c, type: 3}
-  m_Name: EnemyOwlConfig
+  m_Name: Enemies Config
   m_EditorClassIdentifier: 
-  _animationConfig: {fileID: 11400000, guid: 43985656f3f05c64e8843f0a6ee24d7f, type: 2}
-  _motionConfig: {fileID: 11400000, guid: fab4a8216e72e6e458a27ce648cd1446, type: 2}
-  _rotationConfig: {fileID: 0}
-  _model: {fileID: 4300000, guid: 38234c74b1d06423c9ccb45c965c7a83, type: 3}
-  _offset: {x: 0, y: 0, z: 0}
+  _enemyConfigs:
+  - _type: 0
+    _enemy: {fileID: 0}

@@ -8,9 +8,8 @@ namespace PoolSystem {
 		private readonly Transform _container;
 		
 		public PoolController() {
-			GameObject containerGo = new ("Pools");
-			Object.DontDestroyOnLoad(containerGo);
-			_container = containerGo.transform;
+			_container = new GameObject("Pools").transform;
+			_container.SetParent(Core.Container);
 			
 			foreach (Pool pool in Core.Resources.Pools) {
 				_pools.Add(pool.Type, pool);
@@ -32,20 +31,6 @@ namespace PoolSystem {
 			}
 			
 			poolObject.Activate(position, rotation);
-		}
-
-		public T Spawn<T>(PoolType type) where T : PoolObject {
-			if (!_pools.TryGetValue(type, out Pool pool)) {
-				Debug.LogError($"Pool of type {type} does not exist!");
-				return null;
-			}
-			
-			if (!pool.TryGetObject(out PoolObject poolObject)) {
-				Debug.LogError($"Pool of type {type} returned null");
-				return null;
-			}
-
-			return (T)poolObject;
 		}
 		
 		public void DeactivateAll() {

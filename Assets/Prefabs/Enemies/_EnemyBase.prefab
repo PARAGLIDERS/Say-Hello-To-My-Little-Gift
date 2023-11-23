@@ -9,13 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849597675664714133}
-  - component: {fileID: 849597675664714129}
   - component: {fileID: 849597675664714130}
   - component: {fileID: 849597675664714131}
   - component: {fileID: 849597675664714132}
   - component: {fileID: 3707381945731016338}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: _EnemyBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,26 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &849597675664714129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849597675664714134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 995527bf414a4489af0222b0c509c37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agent: {fileID: 849597675664714130}
-  _bodyTransform: {fileID: 849597676535958372}
-  _modelMeshFilter: {fileID: 1516810033990772234}
-  _modelMeshRenderer: {fileID: 6578791936422918076}
-  _enemyModelConfigs:
-  - {fileID: 11400000, guid: d90e7e1055eebf64fa71824e3133627b, type: 2}
-  - {fileID: 11400000, guid: 5c001e14fb7a4764e86affa45549e31d, type: 2}
-  - {fileID: 11400000, guid: 35fb5d763cd23a949a30e60d7c0ce60e, type: 2}
 --- !u!195 &849597675664714130
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -189,7 +168,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3487454712505002027}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: af7a64c1306414117905669e3806f58b, type: 3}
 --- !u!23 &6578791936422918076
 MeshRenderer:
   m_ObjectHideFlags: 0

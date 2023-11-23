@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Enemies;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace EnemySpawning {
 	[CreateAssetMenu(menuName = "Enemy Spawner Config")]
 	public class EnemySpawnerConfig : ScriptableObject {
+		[SerializeField] private float _waveCooldown; // time between wave N finish and wave N+1 start
 		[SerializeField] private List<EnemySpawnRound> _rounds;
 
+		public float WaveCooldown => _waveCooldown;
 		public List<EnemySpawnRound> Rounds => _rounds;
 	}
 
@@ -33,15 +35,20 @@ namespace EnemySpawning {
 		public float Period => _period;
 
 		public EnemyType GetEnemyType() {
-			int chanceSum = _units.Sum(unit => unit.Chance);
-			float rand = Random.Range(0f, chanceSum);
+			int random = Random.Range(1, 101);
 
-			EnemyType type = default;
-			foreach (EnemySpawnWaveUnit unit in _units) {
-				if(unit.Chance > rand) continue;
-				type = unit.Type;
+			List<EnemyType> possibleTypes = new();
+			for (int i = 0; i < _units.Count; i++) {
+				if (_units[i].Chance < random) continue;
+				possibleTypes.Add(_units[i].Type);
 			}
+			
+			EnemyType type = default;
 
+			if (possibleTypes.Count > 0) {
+				type = possibleTypes[Random.Range(0, possibleTypes.Count)];
+			}
+			
 			return type;
 		}
 	}
@@ -49,18 +56,9 @@ namespace EnemySpawning {
 	[Serializable]
 	public struct EnemySpawnWaveUnit {
 		[SerializeField] private EnemyType _type;
-		[SerializeField] private int _chance;
+		[SerializeField] [Range(1, 100)] private int _chance;
 
 		public EnemyType Type => _type;
 		public int Chance => _chance;
-	}
-
-	public enum EnemyType {
-		Snowman,
-		Chicken,
-		Deer,
-		Owl,
-		Penguin,
-		Rabbit,
 	}
 }

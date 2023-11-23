@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9e2b570408489393c531c012c111af, type: 3}
   m_Name: Resources
   m_EditorClassIdentifier: 
+  _enemySpawnerConfig: {fileID: 11400000, guid: b7f1450300ca4334390762a72a4025dc, type: 2}
+  _enemiesConfig: {fileID: 11400000, guid: 2a5a6e98525455046928300bd601119f, type: 2}
+  _enemySpawnerGridConfig: {fileID: 11400000, guid: e24918a6712c5274eb915d3b1449148c, type: 2}
   _poolConfig: {fileID: 11400000, guid: f99ffe28d45a2cb4283eae53272dd95d, type: 2}
   _canvasPrefab: {fileID: 8709956557681040708, guid: 524c68d3c79c6d342b60fc9e07a87608, type: 3}
   _screenConfigs:
