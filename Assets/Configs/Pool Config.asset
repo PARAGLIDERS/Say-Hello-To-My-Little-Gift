@@ -13,27 +13,23 @@ MonoBehaviour:
   m_Name: Pool Config
   m_EditorClassIdentifier: 
   _pools:
-  - Name: Bullet
+  - Name: Snowman
     _type: 0
     _poolObject: {fileID: 1089798836698795475, guid: 1a0c57c9ca3fab04b9713c46171bbbb7, type: 3}
     _initSize: 1000
-  - Name: BulletExplosion
+  - Name: Chicken
     _type: 1
     _poolObject: {fileID: 1408789770161406065, guid: 2614a45a25707244cb82dff479184a7c, type: 3}
     _initSize: 1000
-  - Name: Steps
+  - Name: Deer
     _type: 2
     _poolObject: {fileID: 8043855276221891729, guid: 0fc1370e6e28f7b40a0503ff11176bcf, type: 3}
     _initSize: 1000
-  - Name: MuzzleFlash
+  - Name: Penguin
     _type: 4
     _poolObject: {fileID: 8763278943638151630, guid: 8c66d8960820df2448cf013da4867c52, type: 3}
     _initSize: 1000
-  - Name: Blood
+  - Name: Rabbit
     _type: 5
     _poolObject: {fileID: -3186307307424120560, guid: 621633ca5cc1d134290eea44ef9e00db, type: 3}
-    _initSize: 1000
-  - Name: Enemy
-    _type: 6
-    _poolObject: {fileID: 3707381945731016338, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
     _initSize: 1000

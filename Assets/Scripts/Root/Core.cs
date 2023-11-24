@@ -1,4 +1,4 @@
-﻿using Misc.GameStateMachine;
+using Misc.GameStateMachine;
 using Misc.LevelControl;
 using PoolSystem;
 using Ui;
@@ -24,7 +24,7 @@ namespace Misc.Root {
 			StateController = new StateController();
 			UiController = new UiController();
 			LevelController = new LevelController();
-			PoolController = new PoolController();
+			PoolController = new PoolController(Container, resources);
 			
 			StateController.SetState(StateType.Boot);
 		}

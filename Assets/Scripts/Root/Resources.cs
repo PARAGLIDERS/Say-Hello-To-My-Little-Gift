@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Enemies;
 using EnemySpawning;
 using PoolSystem;
@@ -9,7 +9,6 @@ namespace Misc.Root {
 	[CreateAssetMenu(menuName = "Santa/Resources")]
 	public class Resources : ScriptableObject {
 		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
-		[SerializeField] private EnemiesConfig _enemiesConfig;
 		[SerializeField] private EnemySpawnerGridConfig _enemySpawnerGridConfig; 
 
 		[SerializeField] private PoolConfig _poolConfig;
@@ -18,10 +17,9 @@ namespace Misc.Root {
 
 		public Canvas CanvasPrefab => _canvasPrefab;
 		public List<UiScreenConfig> ScreenConfigs => _screenConfigs;
-		public List<Pool> Pools => _poolConfig.Pools;
+		public PoolConfig PoolConfig => _poolConfig;
 
 		public EnemySpawnerConfig EnemySpawnerConfig => _enemySpawnerConfig;
-		public EnemiesConfig EnemiesConfig => _enemiesConfig;
 		public EnemySpawnerGridConfig EnemySpawnerGridConfig => _enemySpawnerGridConfig;
 	}
 }

@@ -1,50 +1,58 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using Misc.Root;
 using UnityEngine;
 
 namespace PoolSystem {
-	public class PoolController {
-		private readonly Dictionary<PoolType, Pool> _pools = new ();
-		private readonly Transform _container;
-		
-		public PoolController() {
-			_container = new GameObject("Pools").transform;
-			_container.SetParent(Core.Container);
-			
-			foreach (Pool pool in Core.Resources.Pools) {
-				_pools.Add(pool.Type, pool);
-				GameObject poolRoot = new (pool.Type.ToString());
-				poolRoot.transform.SetParent(_container);
-				pool.Init(poolRoot.transform);
-			}
-		}
-			
-		public void Spawn(PoolType type, Vector3 position, Quaternion rotation) {
-			if (!_pools.TryGetValue(type, out Pool pool)) {
-				Debug.LogError($"Pool of type {type} does not exist!");
-				return;
-			}
+    public class PoolController {
+        private readonly Dictionary<PoolType, Pool> _pools = new();
+        private readonly Transform _container;
 
-			if (!pool.TryGetObject(out PoolObject poolObject)) {
-				Debug.LogError($"Pool of type {type} returned null");
-				return;
-			}
-			
-			poolObject.Activate(position, rotation);
-		}
-		
-		public void DeactivateAll() {
-			foreach (KeyValuePair<PoolType,Pool> pool in _pools) {
-				pool.Value.DeactivateAll();
-			}
-		}
-		
-		public void Dispose() {
-			if(_container) Object.Destroy(_container.gameObject);
+        public PoolController(Transform parent, Misc.Root.Resources resources) {
+            _container = new GameObject("Pools").transform; 
+            _container.SetParent(parent);
 
-			foreach (var pool in _pools) {
-				pool.Value.Dispose();
-			}
-		}
-	}
+            foreach (PoolConfigItem item in resources.PoolConfig.Items) {
+                if (_pools.ContainsKey(item.Type)) {
+                    Debug.LogError($"{item.Type} already exists in pools dictionary");
+                    continue;
+                }
+
+                Pool pool = new Pool(_container, item.Type, item.Prefab, item.Size);
+                _pools.Add(item.Type, pool);
+            }
+        }
+
+        public void Spawn(PoolType type, Vector3 position, Quaternion rotation, Action onActivate = null, Action onDeactivate = null) {
+            if(!_pools.TryGetValue(type, out Pool pool)) {
+                Debug.LogError($"no such pool in dictionary: {type}");
+                return;
+            }
+
+            PoolObject poolObject = pool.Get();
+            if(poolObject == null ) {
+                Debug.LogError($"pool object is null: {type}");
+                return;
+            }
+
+            poolObject.OnActivate += onActivate;
+            poolObject.OnDeactivate += onDeactivate;
+
+            poolObject.Activate(position, rotation);
+        }
+
+        public void DeactivateAll() {
+            foreach (KeyValuePair<PoolType, Pool> pool in _pools) {
+                pool.Value.DeactivateAll();
+            }
+        }
+
+        public void Dispose() {
+            if (_container) GameObject.Destroy(_container.gameObject);
+
+            foreach (var pool in _pools) {
+                pool.Value.Dispose();
+            }
+        }
+    }
 }

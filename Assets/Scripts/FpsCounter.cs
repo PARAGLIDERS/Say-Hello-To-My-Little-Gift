@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Misc {
 	public class FpsCounter : MonoBehaviour{
@@ -22,5 +22,5 @@ namespace Misc {
 			style.normal.textColor = _colorGradient.Evaluate(fps / 60f);
 			GUI.Label(rect, text, style);
 		}
-	}
+    }
 }

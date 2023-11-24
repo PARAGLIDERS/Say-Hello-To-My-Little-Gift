@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enemies;
+using PoolSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -34,16 +35,16 @@ namespace EnemySpawning {
 		public int EnemyCount => _enemyCount;
 		public float Period => _period;
 
-		public EnemyType GetEnemyType() {
+		public PoolType GetEnemyType() {
 			int random = Random.Range(1, 101);
 
-			List<EnemyType> possibleTypes = new();
+			List<PoolType> possibleTypes = new();
 			for (int i = 0; i < _units.Count; i++) {
 				if (_units[i].Chance < random) continue;
 				possibleTypes.Add(_units[i].Type);
 			}
 			
-			EnemyType type = default;
+			PoolType type = default;
 
 			if (possibleTypes.Count > 0) {
 				type = possibleTypes[Random.Range(0, possibleTypes.Count)];
@@ -55,10 +56,10 @@ namespace EnemySpawning {
 
 	[Serializable]
 	public struct EnemySpawnWaveUnit {
-		[SerializeField] private EnemyType _type;
+		[SerializeField] private PoolType _type;
 		[SerializeField] [Range(1, 100)] private int _chance;
 
-		public EnemyType Type => _type;
+		public PoolType Type => _type;
 		public int Chance => _chance;
 	}
 }

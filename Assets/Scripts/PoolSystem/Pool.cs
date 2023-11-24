@@ -1,47 +1,42 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace PoolSystem {
-	[Serializable]
 	public class Pool {
-		public PoolType Type => _type;
-		[HideInInspector] public string Name;
+		private readonly PoolType _type;
+		private readonly PoolObject _prefab;
+		private readonly Queue<PoolObject> _objects;
+		private Transform _container;
 		
-		[SerializeField] private PoolType _type;
-		[SerializeField] private PoolObject _poolObject;
-		[SerializeField] private int _initSize = 1000;
+        public Pool(Transform parent, PoolType type, PoolObject prefab, int size) {
+            _type = type;
+            _prefab = prefab;
 
-		private Queue<PoolObject> _objects = new ();
+            _container = new GameObject(type.ToString()).transform;
+            _container.SetParent(parent);
 
-		private Transform _root;
-		
-		public void Init(Transform root) {
-			_root = root;
-			_objects.Clear();
+            _objects = new Queue<PoolObject>();
+            for (int i = 0; i < size; i++) {
+                _objects.Enqueue(Create());
+            }
+        }
 
-			for (int i = 0; i < _initSize; i++) {
-				CreateObject();
-			}
-		}
-
-		public bool TryGetObject(out PoolObject poolObject) {
-			poolObject = _objects.Dequeue();
-			_objects.Enqueue(poolObject);
-			
-			return poolObject != null;
+		public PoolObject Get() {
+			PoolObject poolObject = _objects.Peek().IsActive ? Create() : _objects.Dequeue();
+			_objects.Enqueue(poolObject);			
+			return poolObject;
 		}
 		
-		private PoolObject CreateObject() {
-			if (_poolObject == null) {
+		private PoolObject Create() {
+			if (_prefab == null) {
 				Debug.LogError($"pool object from pool of type {_type} is null");
 				return null;
 			}
 			
-			PoolObject poolObject = Object.Instantiate(_poolObject, _root);
+			PoolObject poolObject = Object.Instantiate(_prefab, _container);
 			poolObject.Init();
-			_objects.Enqueue(poolObject);
 			return poolObject;
 		}
 
@@ -52,8 +47,8 @@ namespace PoolSystem {
 		}
 		
 		public void Dispose() {
-			_objects.Clear();
-			_root = null;
+            Object.Destroy(_container.gameObject);
+            _objects.Clear();
 		}
 	}
 }

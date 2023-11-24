@@ -1,7 +1,5 @@
-﻿using System;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using Enemies;
 using Misc.Root;
 using PoolSystem;
 using UnityEngine;
@@ -9,7 +7,6 @@ using UnityEngine;
 namespace EnemySpawning {
 	public class EnemySpawner {
 		private readonly EnemySpawnerConfig _config;
-		private readonly EnemySpawnerPool _pool;
 		private readonly EnemySpawnerGrid _grid;
 
 		public Action OnChange;
@@ -48,7 +45,6 @@ namespace EnemySpawning {
 		public EnemySpawner(Action onAllEnemiesKilled) {
 			_config = Core.Resources.EnemySpawnerConfig;
 			_grid = new EnemySpawnerGrid(Core.Resources.EnemySpawnerGridConfig);
-			_pool = new EnemySpawnerPool(Core.Resources.EnemiesConfig);
 			_onAllEnemiesKilled = onAllEnemiesKilled;
 		}
 
@@ -73,8 +69,13 @@ namespace EnemySpawning {
 					yield return new WaitForSeconds(wave.Delay);
 
 					for (int i = 0; i < wave.EnemyCount; i++) {
-						SpawnEnemy(wave.GetEnemyType());
-						CurrentWaveEnemyCount++;
+                        PoolType type = wave.GetEnemyType();
+                        Vector3 position = _grid.GetPosition();
+                        Quaternion rotation = Quaternion.identity; // look at player?
+
+                        Core.PoolController.Spawn(type, position, rotation, onDeactivate: OnEnemyKilled);
+
+                        CurrentWaveEnemyCount++;
 						yield return new WaitForSeconds(wave.Period);
 					}
 
@@ -95,24 +96,11 @@ namespace EnemySpawning {
 			_onAllEnemiesKilled?.Invoke();
 		}
 
-		private void SpawnEnemy(EnemyType type) {
-			Enemy enemy = _pool.Get(type);
-
-			if (enemy == null) {
-				Debug.LogError($"enemy of type {type} is null");
-				return;
-			}
-			
-			enemy.OnKill += OnEnemyKilled;
-			enemy.Activate(_grid.GetPosition());
-		}
-
 		private void OnEnemyKilled() {
 			CurrentWaveEnemyCount--;
 		}
 
 		public void Dispose() {
-			_pool.Dispose();
 		}
 	}
 }
