@@ -1,4 +1,4 @@
-﻿using Misc.Root;
+using Misc.Root;
 
 namespace Misc.GameStateMachine.States {
 	public class StateLoadLevel : StateBaseLoadScene {
@@ -7,7 +7,7 @@ namespace Misc.GameStateMachine.States {
 
 		public override void Exit() {
 			base.Exit();
-			Core.LevelController.StartLevel();
+			Core.EnemySpawner.Start();
 		}
 	}
 }

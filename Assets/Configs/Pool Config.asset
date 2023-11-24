@@ -12,24 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c09e685591a4a42a83ed9a75c7b2e0f, type: 3}
   m_Name: Pool Config
   m_EditorClassIdentifier: 
-  _pools:
+  _items:
   - Name: Snowman
+    _size: 1
     _type: 0
-    _poolObject: {fileID: 1089798836698795475, guid: 1a0c57c9ca3fab04b9713c46171bbbb7, type: 3}
-    _initSize: 1000
+    _prefab: {fileID: 0}
   - Name: Chicken
+    _size: 50
     _type: 1
-    _poolObject: {fileID: 1408789770161406065, guid: 2614a45a25707244cb82dff479184a7c, type: 3}
-    _initSize: 1000
+    _prefab: {fileID: 0}
   - Name: Deer
+    _size: 50
     _type: 2
-    _poolObject: {fileID: 8043855276221891729, guid: 0fc1370e6e28f7b40a0503ff11176bcf, type: 3}
-    _initSize: 1000
-  - Name: Penguin
-    _type: 4
-    _poolObject: {fileID: 8763278943638151630, guid: 8c66d8960820df2448cf013da4867c52, type: 3}
-    _initSize: 1000
-  - Name: Rabbit
-    _type: 5
-    _poolObject: {fileID: -3186307307424120560, guid: 621633ca5cc1d134290eea44ef9e00db, type: 3}
-    _initSize: 1000
+    _prefab: {fileID: 0}
+  - Name: BulletExplosion
+    _size: 500
+    _type: 100
+    _prefab: {fileID: 1408789770161406065, guid: 2614a45a25707244cb82dff479184a7c, type: 3}
+  - Name: BloodParticles
+    _size: 100
+    _type: 101
+    _prefab: {fileID: -3186307307424120560, guid: 621633ca5cc1d134290eea44ef9e00db, type: 3}
+  - Name: MuzzleFlash
+    _size: 25
+    _type: 102
+    _prefab: {fileID: 0}
+  - Name: Steps
+    _size: 30
+    _type: 103
+    _prefab: {fileID: 0}
+  - Name: FloorBlood
+    _size: 100
+    _type: 104
+    _prefab: {fileID: 0}
+  - Name: Bullet
+    _size: 500
+    _type: 200
+    _prefab: {fileID: 1089798836698795475, guid: 1a0c57c9ca3fab04b9713c46171bbbb7, type: 3}

@@ -1,4 +1,4 @@
-﻿using CameraControl;
+using CameraControl;
 using GunSystem.GunComponents;
 using Misc.Root;
 using PoolSystem;
@@ -27,7 +27,6 @@ namespace GunSystem {
 		private void Update() {
 			if (Input.Handled && Shot.Available) {
 				Shot.Execute();
-				SfxPlayer.Play(SfxType.Shot);
 				CameraShaker.Shake();
 				Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
 			}

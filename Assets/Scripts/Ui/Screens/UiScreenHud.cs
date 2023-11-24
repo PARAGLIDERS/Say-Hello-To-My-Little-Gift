@@ -1,4 +1,4 @@
-﻿using EnemySpawning;
+using EnemySpawning;
 using Misc.Root;
 using TMPro;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace Ui.Screens {
 		private EnemySpawner _enemySpawner;
 		
 		public override void Init() {
-			_enemySpawner = Core.LevelController.EnemySpawner;
+			_enemySpawner = Core.EnemySpawner;
 			_enemySpawner.OnChange += UpdateVisuals;
 		}
 

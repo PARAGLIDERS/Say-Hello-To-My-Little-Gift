@@ -42,21 +42,20 @@ namespace EnemySpawning {
 			}
 		}
 		
-		public EnemySpawner(Action onAllEnemiesKilled) {
-			_config = Core.Resources.EnemySpawnerConfig;
-			_grid = new EnemySpawnerGrid(Core.Resources.EnemySpawnerGridConfig);
-			_onAllEnemiesKilled = onAllEnemiesKilled;
+		public EnemySpawner(EnemySpawnerConfig spawnConfig, EnemySpawnerGridConfig gridConfig) {
+			_config = spawnConfig;
+			_grid = new EnemySpawnerGrid(gridConfig);
 		}
 
-		public void StartSpawning() {
-			Core.CoroutineRunner.Run(Spawning());
+		public void Start() {
+			Core.CoroutineRunner.Run(Execute());
 		}
 
-		public void StopSpawning() {
-			Core.CoroutineRunner.Stop(Spawning());
+		public void Stop() {
+			Core.CoroutineRunner.Stop(Execute());
 		}
 		
-		private IEnumerator Spawning() {
+		private IEnumerator Execute() {
 			CurrentRound = 0;
 			CurrentWave = 0;
 

@@ -8,13 +8,18 @@ namespace PoolSystem {
         private readonly Dictionary<PoolType, Pool> _pools = new();
         private readonly Transform _container;
 
-        public PoolController(Transform parent, Misc.Root.Resources resources) {
+        public PoolController(Transform parent, PoolConfig config) {
             _container = new GameObject("Pools").transform; 
             _container.SetParent(parent);
 
-            foreach (PoolConfigItem item in resources.PoolConfig.Items) {
+            foreach (PoolConfigItem item in config.Items) {
                 if (_pools.ContainsKey(item.Type)) {
                     Debug.LogError($"{item.Type} already exists in pools dictionary");
+                    continue;
+                }
+
+                if(item.Prefab == null) {
+                    Debug.LogError($"pool object prefab is null: {item.Type}");
                     continue;
                 }
 

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Misc.Root;
 using UnityEngine;
 
@@ -9,11 +9,16 @@ namespace Ui {
 		
 		private UiScreen _current;
 		
-		public UiController() {
-			_canvas = Object.Instantiate(Core.Resources.CanvasPrefab, Core.Container).transform;
+		public UiController(Transform parent, Canvas canvasPrefab, UiScreenConfig config) {
+			_canvas = Object.Instantiate(canvasPrefab, parent).transform;
 
-			foreach (UiScreenConfig screenConfig in Core.Resources.ScreenConfigs) {
-				_screens.TryAdd(screenConfig.Type, screenConfig.Prefab);
+			foreach (UiScreenConfigItem item in config.Items) {
+                if (_screens.ContainsKey(item.Type)) {
+                    Debug.LogError($"screen already exists in dictionary: {item.Type}");
+                    continue;
+                }
+
+				_screens.Add(item.Type, item.Prefab);
 			}
 		}
 

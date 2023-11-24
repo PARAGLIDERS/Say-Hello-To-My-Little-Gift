@@ -1,4 +1,4 @@
-﻿using Misc.Root;
+using Misc.Root;
 
 namespace Misc.GameStateMachine.States {
 	public class StateQuitPlay : StateBaseLoadScene {
@@ -7,7 +7,7 @@ namespace Misc.GameStateMachine.States {
 
 		public override void Exit() {
 			base.Exit();
-			Core.LevelController.OnQuitLevel();
+			Core.EnemySpawner.Stop();
 		}
 	}
 }
