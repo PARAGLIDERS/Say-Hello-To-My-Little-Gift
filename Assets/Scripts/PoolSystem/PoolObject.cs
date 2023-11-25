@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 namespace PoolSystem {
-	public class PoolObject : MonoBehaviour {
+	public abstract class PoolObject : MonoBehaviour {
         public bool IsActive {get; private set;}
 
         public event Action OnActivate;
