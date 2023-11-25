@@ -41,18 +41,22 @@ namespace EnemySpawning {
 				OnChange?.Invoke();
 			}
 		}
-		
+
+        private IEnumerator _execution;
+
 		public EnemySpawner(EnemySpawnerConfig spawnConfig, EnemySpawnerGridConfig gridConfig) {
 			_config = spawnConfig;
 			_grid = new EnemySpawnerGrid(gridConfig);
 		}
 
 		public void Start() {
-			Core.CoroutineRunner.Run(Execute());
+            _execution = Execute();
+			Core.CoroutineRunner.Run(_execution);
 		}
 
 		public void Stop() {
-			Core.CoroutineRunner.Stop(Execute());
+            if (_execution == null) return;
+			Core.CoroutineRunner.Stop(_execution);
 		}
 		
 		private IEnumerator Execute() {

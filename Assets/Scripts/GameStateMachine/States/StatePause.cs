@@ -1,4 +1,4 @@
-﻿using Misc.Root;
+using Misc.Root;
 using Ui;
 using UnityEngine;
 

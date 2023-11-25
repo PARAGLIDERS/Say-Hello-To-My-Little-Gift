@@ -158,7 +158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1979391148}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &20674870
 MonoBehaviour:
@@ -10375,53 +10375,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 611023052982980822, guid: d4e6f0d22c2134d1db0f29932d980f4f, type: 3}
   m_PrefabInstance: {fileID: 994694510}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1692537765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1692537766}
-  - component: {fileID: 1692537767}
-  m_Layer: 0
-  m_Name: SoundController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1692537766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692537765}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1979391148}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1692537767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692537765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 892d17bd9f8741cc92102be9e2e0367b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolSize: 50
-  _config: {fileID: 11400000, guid: 3ad295ce95aa83644acfa0aeaff99c3a, type: 2}
-  _sfxPrefab: {fileID: 4660587321857406920, guid: eaebc114c0d4da644b86b03d8c1e1add, type: 3}
 --- !u!4 &1701353124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6832910217776909502, guid: 3e4c123686800a54ca31272486b9580b, type: 3}
@@ -11221,7 +11174,6 @@ Transform:
   - {fileID: 1701353124}
   - {fileID: 400021014}
   - {fileID: 1000737615}
-  - {fileID: 1692537766}
   - {fileID: 20674869}
   m_Father: {fileID: 0}
   m_RootOrder: 0

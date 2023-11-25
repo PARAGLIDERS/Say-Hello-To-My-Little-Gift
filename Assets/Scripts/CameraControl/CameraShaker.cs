@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -30,5 +30,9 @@ namespace CameraControl {
 		private void Update() {
 			//transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, Time.deltaTime * 25f);
 		}
-	}
+
+        private void OnDestroy() {
+            transform.DOKill();
+        }
+    }
 }

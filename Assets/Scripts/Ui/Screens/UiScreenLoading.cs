@@ -1,4 +1,4 @@
-﻿using DG.Tweening;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +8,11 @@ namespace Ui.Screens {
 
 		public override void Init() {
 			_slider.value = 0f;
-			_slider.DOValue(1f, 1f);
+			_slider.DOValue(1f, 1f).SetUpdate(true);
 		}
-	}
+
+        private void OnDestroy() {
+            _slider.DOKill();
+        }
+    }
 }

@@ -13,16 +13,8 @@ MonoBehaviour:
   m_Name: Resources
   m_EditorClassIdentifier: 
   _enemySpawnerConfig: {fileID: 11400000, guid: b7f1450300ca4334390762a72a4025dc, type: 2}
-  _enemiesConfig: {fileID: 11400000, guid: 2a5a6e98525455046928300bd601119f, type: 2}
   _enemySpawnerGridConfig: {fileID: 11400000, guid: e24918a6712c5274eb915d3b1449148c, type: 2}
   _poolConfig: {fileID: 11400000, guid: f99ffe28d45a2cb4283eae53272dd95d, type: 2}
+  _sfxConfig: {fileID: 11400000, guid: 3ad295ce95aa83644acfa0aeaff99c3a, type: 2}
   _canvasPrefab: {fileID: 8709956557681040708, guid: 524c68d3c79c6d342b60fc9e07a87608, type: 3}
-  _screenConfigs:
-  - _type: 0
-    _prefab: {fileID: 3232999654744598115, guid: dda2100f167b51a45987dec03a8a23e3, type: 3}
-  - _type: 4
-    _prefab: {fileID: 5160398289170760720, guid: cea75a56ec7502f4db5f1cac5533591f, type: 3}
-  - _type: 5
-    _prefab: {fileID: 5583813141277579066, guid: 57b9a7fa7778cf44b820e34a66ed5ce8, type: 3}
-  - _type: 3
-    _prefab: {fileID: 4014502783833649968, guid: cfe0ee3f3b9105347906dd646fc4787d, type: 3}
+  _screenConfig: {fileID: 11400000, guid: 76180024fcf91d94086ed13a624d88e6, type: 2}

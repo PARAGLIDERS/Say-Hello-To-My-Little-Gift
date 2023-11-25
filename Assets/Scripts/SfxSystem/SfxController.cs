@@ -17,7 +17,9 @@ namespace SfxSystem {
                 
                 Sfx sfx = sfxGo.AddComponent<Sfx>();
                 AudioSource source = sfxGo.AddComponent<AudioSource>();
-                
+                source.outputAudioMixerGroup = config.MixerGroup;
+                source.playOnAwake = false;
+
                 sfx.transform.SetParent(_container);
                 sfx.Init(source);
                 

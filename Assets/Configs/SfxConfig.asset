@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed3e43327fc4c4cbc9f1d0bb18f8dff, type: 3}
   m_Name: SfxConfig
   m_EditorClassIdentifier: 
-  _clips:
-  - Type: 0
-    Clip: {fileID: 8300000, guid: aaa419d641a80b24dbafb097d30756aa, type: 3}
+  _mixerGroup: {fileID: 7922086049004866256, guid: e5fd76036584030469c0ea3bffe2d0cf, type: 2}
+  _items: []

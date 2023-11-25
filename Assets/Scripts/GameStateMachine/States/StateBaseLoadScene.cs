@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Misc.Root;
 using Ui;
@@ -10,22 +10,30 @@ namespace Misc.GameStateMachine.States {
 		protected abstract int _sceneIndex { get; }
 		protected abstract StateType _nextState { get; }
 		
-		private AsyncOperation _loadingMainScene;
-		
 		public virtual void Enter() {
 			Core.UiController.Show(UiScreenType.Loading);
-			_loadingMainScene = SceneManager.LoadSceneAsync(_sceneIndex);
+            Time.timeScale = 0;
+            _ = Load();
 		}
 
-		public virtual void Update() {
-			if(_loadingMainScene == null) return;
-			if(!_loadingMainScene.isDone) return;
-			
-			Core.StateController.SetState(_nextState);
-		}
+        private async Task Load() {
+            AsyncOperation loading = SceneManager.LoadSceneAsync(_sceneIndex);
 
-		public virtual void Exit() {
-			
-		}
-	}
+            while (!loading.isDone) {
+                await Task.Delay(1000);
+            }
+
+            await Task.Delay(1000);
+
+            Core.StateController.SetState(_nextState);
+        }
+
+        public void Update() {
+
+        }
+
+        public virtual void Exit() {
+			Time.timeScale = 1;
+        }
+    }
 }
