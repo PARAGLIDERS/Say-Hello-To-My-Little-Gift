@@ -8,15 +8,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - pp
   - Water
   - UI
-  - pp
-  - projectile
-  - damageable
+  - player
+  - enemy
+  - bullet
+  - enemy bullet
   - obstacle
-  - 
-  - 
+  - level bounds
   - 
   - 
   - 

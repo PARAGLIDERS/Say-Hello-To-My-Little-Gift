@@ -10,26 +10,12 @@ using UnityEngine.AI;
 namespace Enemies {
 	[RequireComponent(typeof(NavMeshAgent))]
 	public abstract class Enemy : PoolObject {
-		[SerializeField] private Transform _bodyTransform;
-		[SerializeField] private UnitAnimationConfig _animationConfig;
-		[SerializeField] private UnitMotionConfig _motionConfig;
-
-		private UnitAnimation _animation;
-		private NavMeshAgent _agent;
-
-		private void Awake() {
-			_animation = new UnitAnimation(_animationConfig, _bodyTransform);
-			_agent = GetComponent<NavMeshAgent>();
-
-			if(_agent == null) return;
-			_agent.speed = _motionConfig.Speed;
-			_agent.acceleration = 1f / (_motionConfig.Drag > 0f ? _motionConfig.Drag : 0.001f);
-		}
-		
-		private void Update() {
+		[SerializeField] private UnitAnimation _animation;
+		[SerializeField] private NavMeshAgent _agent;
+        		
+		protected virtual void Update() {
 			_agent?.SetDestination(PlayerController.POSITION);
 			_animation?.Trigger();
-			_animation?.Update();
 		}	
 	}
 }

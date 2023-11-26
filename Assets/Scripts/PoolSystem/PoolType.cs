@@ -14,8 +14,11 @@ namespace PoolSystem {
 		MuzzleFlash = 102,
 		Steps = 103,
 		FloorBlood = 104,
+        SnowballExplosion = 105,
 
         // bullets
         Bullet = 200,
+        Rocket = 201,
+        Snowball = 202,
 	}
 }

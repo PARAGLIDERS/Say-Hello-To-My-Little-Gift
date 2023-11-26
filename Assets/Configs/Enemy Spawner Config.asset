@@ -18,25 +18,7 @@ MonoBehaviour:
     _waves:
     - _delay: 0
       _enemyCount: 50
-      _period: 0.1
+      _period: 0.5
       _units:
       - _type: 0
         _chance: 100
-    - _delay: 1
-      _enemyCount: 100
-      _period: 0.1
-      _units:
-      - _type: 0
-        _chance: 100
-      - _type: 1
-        _chance: 50
-    - _delay: 1
-      _enemyCount: 150
-      _period: 0.1
-      _units:
-      - _type: 0
-        _chance: 100
-      - _type: 1
-        _chance: 89
-      - _type: 2
-        _chance: 50

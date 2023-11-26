@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4601314828094096730}
   - component: {fileID: 4601314828095063962}
   - component: {fileID: 5742038347766386425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4601314828097488250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 004 Gift_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

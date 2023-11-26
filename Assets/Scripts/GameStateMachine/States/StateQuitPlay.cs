@@ -6,9 +6,9 @@ namespace Misc.GameStateMachine.States {
 		protected override StateType _nextState => StateType.Main;
 
 		public override void Enter() {
-			base.Enter();
 			Core.EnemySpawner.Stop();
             Core.PoolController.DeactivateAll();
+			base.Enter();
 		}
 	}
 }

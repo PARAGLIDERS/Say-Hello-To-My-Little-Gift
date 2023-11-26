@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972865}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.009002554, z: 0}
   m_LocalScale: {x: 2.3502905, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972949}
   m_Father: {fileID: 7950027380335972891}
@@ -40,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,6 +58,7 @@ Transform:
   m_LocalRotation: {x: 8.0003916e-17, y: 0.92387956, z: -8.0003916e-17, w: 0.38268346}
   m_LocalPosition: {x: -0, y: 0.0051421337, z: 0}
   m_LocalScale: {x: 2.8584614, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972937}
   m_Father: {fileID: 7950027380335972891}
@@ -71,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972869}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,6 +90,7 @@ Transform:
   m_LocalRotation: {x: 8.0003916e-17, y: 0.92387956, z: -8.0003916e-17, w: 0.38268346}
   m_LocalPosition: {x: -0, y: 0.02563913, z: 0}
   m_LocalScale: {x: 0.6722173, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972941}
   m_Father: {fileID: 7950027380335972891}
@@ -102,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972871}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +122,7 @@ Transform:
   m_LocalRotation: {x: 8.0003916e-17, y: 0.92387956, z: -8.0003916e-17, w: 0.38268346}
   m_LocalPosition: {x: -0, y: 0.013077443, z: 0}
   m_LocalScale: {x: 1.9324611, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972943}
   m_Father: {fileID: 7950027380335972891}
@@ -133,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972873}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,6 +154,7 @@ Transform:
   m_LocalRotation: {x: 3.3138708e-17, y: 0.92387956, z: -3.3138708e-17, w: -0.38268346}
   m_LocalPosition: {x: -0, y: 0.021411052, z: 0}
   m_LocalScale: {x: 1.0803492, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972945}
   m_Father: {fileID: 7950027380335972891}
@@ -164,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972875}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +186,7 @@ Transform:
   m_LocalRotation: {x: 3.3138708e-17, y: 0.92387956, z: -3.3138708e-17, w: -0.38268346}
   m_LocalPosition: {x: -0, y: 0.02563913, z: 0}
   m_LocalScale: {x: 0.6722173, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972947}
   m_Father: {fileID: 7950027380335972891}
@@ -195,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972877}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,6 +218,7 @@ Transform:
   m_LocalRotation: {x: 3.3138708e-17, y: 0.92387956, z: -3.3138708e-17, w: -0.38268346}
   m_LocalPosition: {x: -0, y: 0.009002554, z: 0}
   m_LocalScale: {x: 2.3502905, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972939}
   m_Father: {fileID: 7950027380335972891}
@@ -226,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972879}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +250,7 @@ Transform:
   m_LocalRotation: {x: 3.3138708e-17, y: 0.92387956, z: -3.3138708e-17, w: -0.38268346}
   m_LocalPosition: {x: -0, y: 0.017305523, z: 0}
   m_LocalScale: {x: 1.4958681, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972951}
   m_Father: {fileID: 7950027380335972891}
@@ -257,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972881}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,6 +282,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.009002554, z: 0}
   m_LocalScale: {x: 2.3502905, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972953}
   m_Father: {fileID: 7950027380335972891}
@@ -288,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,6 +314,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.017305523, z: 0}
   m_LocalScale: {x: 1.4958681, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972955}
   m_Father: {fileID: 7950027380335972891}
@@ -319,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,6 +346,7 @@ Transform:
   m_LocalRotation: {x: 3.3138708e-17, y: 0.92387956, z: -3.3138708e-17, w: -0.38268346}
   m_LocalPosition: {x: -0, y: 0.013077443, z: 0}
   m_LocalScale: {x: 1.9324611, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972957}
   m_Father: {fileID: 7950027380335972891}
@@ -350,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972887}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,6 +378,7 @@ Transform:
   m_LocalRotation: {x: 3.3138708e-17, y: 0.92387956, z: -3.3138708e-17, w: -0.38268346}
   m_LocalPosition: {x: -0, y: 0.0051421337, z: 0}
   m_LocalScale: {x: 2.8584614, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972959}
   m_Father: {fileID: 7950027380335972891}
@@ -381,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,6 +410,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972915}
   m_Father: {fileID: 7950027380335972891}
@@ -412,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 047 Xmas_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,6 +442,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972889}
   - {fileID: 7950027380335972895}
@@ -468,7 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,6 +499,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.021411052, z: 0}
   m_LocalScale: {x: 1.0803492, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972901}
   m_Father: {fileID: 7950027380335972891}
@@ -499,7 +514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,6 +531,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.0051421337, z: 0}
   m_LocalScale: {x: 2.8584614, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972929}
   m_Father: {fileID: 7950027380335972891}
@@ -530,7 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972897}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,6 +563,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972927}
   m_RootOrder: 0
@@ -560,7 +577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972899}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,6 +594,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972905}
   m_RootOrder: 0
@@ -590,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972901}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,6 +625,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972893}
   m_RootOrder: 0
@@ -620,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972903}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,6 +656,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972925}
   m_RootOrder: 0
@@ -650,7 +670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,6 +687,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.0051421337, z: 0}
   m_LocalScale: {x: 2.8584614, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972899}
   m_Father: {fileID: 7950027380335972891}
@@ -681,7 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972907}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,6 +719,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.02563913, z: 0}
   m_LocalScale: {x: 0.6722173, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972991}
   m_Father: {fileID: 7950027380335972891}
@@ -712,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972909}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,6 +751,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.02563913, z: 0}
   m_LocalScale: {x: 0.6722173, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972987}
   m_Father: {fileID: 7950027380335972891}
@@ -743,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972911}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,6 +783,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.013077443, z: 0}
   m_LocalScale: {x: 1.9324611, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972933}
   m_Father: {fileID: 7950027380335972891}
@@ -774,7 +798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972913}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,6 +815,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.013077443, z: 0}
   m_LocalScale: {x: 1.9324611, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972989}
   m_Father: {fileID: 7950027380335972891}
@@ -808,7 +833,7 @@ GameObject:
   - component: {fileID: 7950027380338872891}
   - component: {fileID: 7950027380337873147}
   - component: {fileID: 7950027380341973147}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,6 +850,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.014994102, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972889}
   m_RootOrder: 0
@@ -848,9 +874,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -864,6 +893,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -876,6 +906,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &7950027380341973147
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -886,9 +917,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ca38ea13634474659a08f213adb81ec9, type: 3}
 --- !u!1 &7950027380335677013
 GameObject:
@@ -899,7 +930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972917}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,6 +947,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.021411052, z: 0}
   m_LocalScale: {x: 1.0803492, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972985}
   m_Father: {fileID: 7950027380335972891}
@@ -930,7 +962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972919}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,6 +979,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.017305523, z: 0}
   m_LocalScale: {x: 1.4958681, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972935}
   m_Father: {fileID: 7950027380335972891}
@@ -961,7 +994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972921}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,6 +1011,7 @@ Transform:
   m_LocalRotation: {x: 8.0003916e-17, y: 0.92387956, z: -8.0003916e-17, w: 0.38268346}
   m_LocalPosition: {x: -0, y: 0.017305523, z: 0}
   m_LocalScale: {x: 1.4958681, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972979}
   m_Father: {fileID: 7950027380335972891}
@@ -992,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972923}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,6 +1043,7 @@ Transform:
   m_LocalRotation: {x: 8.0003916e-17, y: 0.92387956, z: -8.0003916e-17, w: 0.38268346}
   m_LocalPosition: {x: -0, y: 0.021411052, z: 0}
   m_LocalScale: {x: 1.0803492, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972931}
   m_Father: {fileID: 7950027380335972891}
@@ -1023,7 +1058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,6 +1075,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.0033561185, z: 0}
   m_LocalScale: {x: 0.15236911, y: 0.67407095, z: 0.15236911}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972903}
   m_Father: {fileID: 7950027380335972891}
@@ -1054,7 +1090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972927}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:pCube24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,6 +1107,7 @@ Transform:
   m_LocalRotation: {x: 8.0003916e-17, y: 0.92387956, z: -8.0003916e-17, w: 0.38268346}
   m_LocalPosition: {x: -0, y: 0.009002554, z: 0}
   m_LocalScale: {x: 2.3502905, y: 0.17783055, z: 0.17783055}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7950027380335972897}
   m_Father: {fileID: 7950027380335972891}
@@ -1085,7 +1122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972929}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,6 +1139,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972895}
   m_RootOrder: 0
@@ -1115,7 +1153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972931}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,6 +1170,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972923}
   m_RootOrder: 0
@@ -1145,7 +1184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972933}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,6 +1201,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972911}
   m_RootOrder: 0
@@ -1175,7 +1215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972935}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1192,6 +1232,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972919}
   m_RootOrder: 0
@@ -1205,7 +1246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972937}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,6 +1263,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972867}
   m_RootOrder: 0
@@ -1235,7 +1277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972939}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,6 +1294,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972877}
   m_RootOrder: 0
@@ -1265,7 +1308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,6 +1325,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972869}
   m_RootOrder: 0
@@ -1295,7 +1339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972943}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1312,6 +1356,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972871}
   m_RootOrder: 0
@@ -1325,7 +1370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972945}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,6 +1387,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972873}
   m_RootOrder: 0
@@ -1355,7 +1401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972947}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1372,6 +1418,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972875}
   m_RootOrder: 0
@@ -1385,7 +1432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,6 +1449,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972865}
   m_RootOrder: 0
@@ -1415,7 +1463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972951}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1432,6 +1480,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972879}
   m_RootOrder: 0
@@ -1445,7 +1494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972953}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,6 +1511,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972881}
   m_RootOrder: 0
@@ -1475,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972955}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,6 +1542,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972883}
   m_RootOrder: 0
@@ -1505,7 +1556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,6 +1573,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972885}
   m_RootOrder: 0
@@ -1535,7 +1587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972959}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,6 +1604,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972887}
   m_RootOrder: 0
@@ -1565,7 +1618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1582,6 +1635,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972921}
   m_RootOrder: 0
@@ -1595,7 +1649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972985}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1612,6 +1666,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972917}
   m_RootOrder: 0
@@ -1625,7 +1680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972987}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,6 +1697,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972909}
   m_RootOrder: 0
@@ -1655,7 +1711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972989}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,6 +1728,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972913}
   m_RootOrder: 0
@@ -1685,7 +1742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950027380335972991}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lowpoly_Christmas_Pack_047:transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1702,6 +1759,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7950027380335972907}
   m_RootOrder: 0

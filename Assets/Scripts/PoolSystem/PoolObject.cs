@@ -8,7 +8,7 @@ namespace PoolSystem {
         public event Action OnActivate;
 		public event Action OnDeactivate;
 
-		public void Init() {
+		public virtual void Hide() {
 			gameObject.SetActive(false);
 		}
 
@@ -16,12 +16,14 @@ namespace PoolSystem {
             IsActive = true;
 			transform.SetPositionAndRotation(position, rotation);
             OnActivate?.Invoke();
+            OnActivate = null;
             gameObject.SetActive(true);
 		}
 
 		public virtual void Deactivate() {
             IsActive = false;
 			OnDeactivate?.Invoke();
+            OnDeactivate = null;
 			gameObject.SetActive(false);
 		}
 	}

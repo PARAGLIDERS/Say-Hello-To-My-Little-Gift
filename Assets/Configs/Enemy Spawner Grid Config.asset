@@ -18,4 +18,4 @@ MonoBehaviour:
   _gridHeight: 1
   _obstaclesLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024

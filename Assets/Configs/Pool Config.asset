@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: Snowman
-    _size: 1
+    _size: 50
     _type: 0
-    _prefab: {fileID: 0}
+    _prefab: {fileID: -4666638226030545533, guid: fe493f5b90e8eed42ba07ee982a2951f, type: 3}
   - Name: Chicken
     _size: 50
     _type: 1
@@ -49,3 +49,11 @@ MonoBehaviour:
     _size: 500
     _type: 200
     _prefab: {fileID: 1089798836698795475, guid: 1a0c57c9ca3fab04b9713c46171bbbb7, type: 3}
+  - Name: SnowballExplosion
+    _size: 100
+    _type: 105
+    _prefab: {fileID: 2243687762600679556, guid: c9fb929538ed3c146947299d6462caf4, type: 3}
+  - Name: Snowball
+    _size: 100
+    _type: 202
+    _prefab: {fileID: 8387910483624825766, guid: 99c5baedeb9a7244dbbe396762a1954f, type: 3}

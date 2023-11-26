@@ -1,5 +1,4 @@
-﻿using Units;
-using Units.UnitConfigs;
+using Units;
 using UnityEngine;
 
 namespace Player {
@@ -7,33 +6,25 @@ namespace Player {
 		[SerializeField] private float _speed;
 		[SerializeField] private float _maxSpeed;
 		[SerializeField] private float _drag;
-
-		[SerializeField] private UnitAnimationConfig _animationConfig;
-		[SerializeField] private UnitRotationConfig _rotationConfig;
+        [SerializeField] private float _rotationSpeed;
 		
 		[SerializeField] private Transform _unitTransform;
-		[SerializeField] private Transform _bodyTransform;
 		[SerializeField] private Rigidbody _rigidbody;
+		[SerializeField] private UnitAnimation _animation;
 		
 		public static Vector3 POSITION;
 		private InputHandler _inputHandler;
-		private UnitRotation _rotation;
-		private UnitAnimation _animation;
 		
 		private void Awake() {
-			_animation = new UnitAnimation(_animationConfig, _bodyTransform);
 			_inputHandler = new InputHandler(Camera.main);
-			_rotation = new UnitRotation(_rotationConfig, _unitTransform);
 		}
 
-		protected void Update() {
+		private void Update() {
 			POSITION = transform.position;
-			_animation.Update();
 		}
 
 		private void FixedUpdate() {
-			_rotation.Rotate(_inputHandler.GetPointerPosition());
-
+            Rotate(_inputHandler.GetPointerPosition());
 			Vector3 input = _inputHandler.GetInput();
 			if(input == Vector3.zero) return;
 			
@@ -48,7 +39,12 @@ namespace Player {
 				_rigidbody.velocity = _rigidbody.velocity.normalized * _maxSpeed;
 			}
 
-			_rigidbody.velocity -= _rigidbody.velocity.normalized * _drag;			
-		}
-	}
+			_rigidbody.velocity -= _rigidbody.velocity.normalized * _drag;
+        }
+
+        private void Rotate(Vector3 point) {
+            Quaternion rotation = Quaternion.LookRotation(point - _unitTransform.position);
+            _unitTransform.rotation = Quaternion.Lerp(_unitTransform.rotation, rotation, Time.deltaTime * _rotationSpeed);
+        }
+    }
 }

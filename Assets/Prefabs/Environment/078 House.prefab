@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4340331986364966864}
   - component: {fileID: 3464645441725582442}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6445763824379527433}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 078 House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 6445763824376135977}
   - component: {fileID: 6445763824377234409}
   - component: {fileID: 1959750186971265173}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

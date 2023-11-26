@@ -36,13 +36,13 @@ namespace PoolSystem {
 			}
 			
 			PoolObject poolObject = Object.Instantiate(_prefab, _container);
-			poolObject.Init();
+			poolObject.Hide();
 			return poolObject;
 		}
 
 		public void DeactivateAll() {
 			foreach (PoolObject poolObject in _objects) {
-				poolObject.Deactivate();
+				poolObject.Hide();
 			}
 		}
 		
