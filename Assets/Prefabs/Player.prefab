@@ -73,14 +73,13 @@ GameObject:
   - component: {fileID: 206205479}
   - component: {fileID: 206205483}
   - component: {fileID: 206205482}
-  - component: {fileID: 206205484}
   m_Layer: 6
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &206205479
 Transform:
   m_ObjectHideFlags: 0
@@ -147,21 +146,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &206205484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206205478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd51b9c1a77f44af940b0b3340d723dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _muzzle: {fileID: 161825636}
-  _bulletCount: 10
-  _fireRate: 5
 --- !u!1 &342974687
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,14 +193,13 @@ GameObject:
   - component: {fileID: 546490147}
   - component: {fileID: 546490150}
   - component: {fileID: 546490149}
-  - component: {fileID: 546490148}
   m_Layer: 6
   m_Name: Auto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &546490147
 Transform:
   m_ObjectHideFlags: 0
@@ -283,21 +266,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &546490148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546490146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd51b9c1a77f44af940b0b3340d723dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _muzzle: {fileID: 1285581598}
-  _bulletCount: 10
-  _fireRate: 5
 --- !u!1 &853557743
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +405,6 @@ GameObject:
   - component: {fileID: 1258613569}
   - component: {fileID: 1258613572}
   - component: {fileID: 1258613571}
-  - component: {fileID: 1258613570}
   m_Layer: 6
   m_Name: Rocket
   m_TagString: Untagged
@@ -511,21 +478,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1258613570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258613568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd51b9c1a77f44af940b0b3340d723dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _muzzle: {fileID: 1582053309}
-  _bulletCount: 10
-  _fireRate: 5
 --- !u!1 &1285581597
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +551,6 @@ GameObject:
   - component: {fileID: 1741996900}
   - component: {fileID: 1741996903}
   - component: {fileID: 1741996902}
-  - component: {fileID: 1741996901}
   m_Layer: 6
   m_Name: Minigun
   m_TagString: Untagged
@@ -675,21 +626,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1741996901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741996899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd51b9c1a77f44af940b0b3340d723dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _muzzle: {fileID: 145634930}
-  _bulletCount: 10
-  _fireRate: 25
 --- !u!1 &1944994571
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +637,6 @@ GameObject:
   - component: {fileID: 1944994572}
   - component: {fileID: 1944994575}
   - component: {fileID: 1944994574}
-  - component: {fileID: 1944994573}
   m_Layer: 6
   m_Name: Shotgun
   m_TagString: Untagged
@@ -775,21 +710,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1944994573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944994571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd51b9c1a77f44af940b0b3340d723dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _muzzle: {fileID: 853557744}
-  _bulletCount: 10
-  _fireRate: 5
 --- !u!1 &1993105967
 GameObject:
   m_ObjectHideFlags: 0

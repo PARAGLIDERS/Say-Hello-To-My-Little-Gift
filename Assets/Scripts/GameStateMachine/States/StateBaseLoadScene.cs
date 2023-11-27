@@ -1,11 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using Misc.Root;
+using Root;
 using Ui;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Misc.GameStateMachine.States {
+namespace GameStateMachine.States {
 	public abstract class StateBaseLoadScene : IState {
 		protected abstract int _sceneIndex { get; }
 		protected abstract StateType _nextState { get; }

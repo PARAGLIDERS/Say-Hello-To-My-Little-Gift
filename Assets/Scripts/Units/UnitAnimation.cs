@@ -1,6 +1,5 @@
-using Misc.Root;
+using Root;
 using PoolSystem;
-using Units.UnitConfigs;
 using UnityEngine;
 
 namespace Units {

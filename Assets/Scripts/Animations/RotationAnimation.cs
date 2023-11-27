@@ -1,4 +1,3 @@
-﻿using DG.Tweening;
 using UnityEngine;
 
 namespace Animations {

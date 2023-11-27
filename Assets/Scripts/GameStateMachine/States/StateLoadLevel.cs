@@ -1,6 +1,6 @@
-using Misc.Root;
+using Root;
 
-namespace Misc.GameStateMachine.States {
+namespace GameStateMachine.States {
 	public class StateLoadLevel : StateBaseLoadScene {
 		protected override int _sceneIndex => 2;
 		protected override StateType _nextState => StateType.Play;
@@ -8,6 +8,7 @@ namespace Misc.GameStateMachine.States {
 		public override void Exit() {
 			base.Exit();
 			Core.EnemySpawner.Start();
+            Core.GunController.Init();
 		}
 	}
 }

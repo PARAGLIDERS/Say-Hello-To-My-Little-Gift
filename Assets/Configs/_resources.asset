@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc9e2b570408489393c531c012c111af, type: 3}
-  m_Name: Resources
+  m_Name: _resources
   m_EditorClassIdentifier: 
   _enemySpawnerConfig: {fileID: 11400000, guid: b7f1450300ca4334390762a72a4025dc, type: 2}
   _enemySpawnerGridConfig: {fileID: 11400000, guid: e24918a6712c5274eb915d3b1449148c, type: 2}
@@ -18,3 +18,4 @@ MonoBehaviour:
   _sfxConfig: {fileID: 11400000, guid: 3ad295ce95aa83644acfa0aeaff99c3a, type: 2}
   _canvasPrefab: {fileID: 8709956557681040708, guid: 524c68d3c79c6d342b60fc9e07a87608, type: 3}
   _screenConfig: {fileID: 11400000, guid: 76180024fcf91d94086ed13a624d88e6, type: 2}
+  _gunsConfig: {fileID: 11400000, guid: cac373b28312d264fb9183d1b8b7c219, type: 2}

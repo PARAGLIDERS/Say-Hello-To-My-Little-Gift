@@ -1,11 +1,12 @@
 using EnemySpawning;
-using Misc.GameStateMachine;
+using GunSystem;
+using GameStateMachine;
 using PoolSystem;
 using SfxSystem;
 using Ui;
 using UnityEngine;
 
-namespace Misc.Root {
+namespace Root {
 	public static class Core {
 		public static Transform Container { get; private set; }
 		public static UiController UiController { get; private set; }
@@ -14,7 +15,8 @@ namespace Misc.Root {
         public static EnemySpawner EnemySpawner { get; private set; }
         public static SfxController SfxController { get; private set; }
 		public static CoroutineRunner CoroutineRunner { get; private set; }
-		
+		public static GunController GunController { get; private set; }
+
 		public static void Init(Transform parent, Resources resources) {
 			Container = parent;
 			
@@ -26,6 +28,8 @@ namespace Misc.Root {
             PoolController = new PoolController(Container, resources.PoolConfig);
             EnemySpawner = new EnemySpawner(resources.EnemySpawnerConfig, resources.EnemySpawnerGridConfig);
             SfxController = new SfxController(parent, resources.SfxConfig);
+            GunController = new GunController(resources.GunsConfig, null); // todo: add player
+
 			StateController.SetState(StateType.Boot);
 		}
 

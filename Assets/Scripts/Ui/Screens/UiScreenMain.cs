@@ -1,9 +1,9 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-using Misc.GameStateMachine;
-using Misc.Root;
+using GameStateMachine;
+using Root;
 using UnityEngine;
 using UnityEngine.UI;
 

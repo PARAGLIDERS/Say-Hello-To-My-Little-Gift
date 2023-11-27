@@ -1,7 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
-namespace Misc.Root {
+namespace Root {
 	public class CoroutineRunner : MonoBehaviour{
 		public void Run(IEnumerator coroutine) {
 			StartCoroutine(coroutine);

@@ -1,45 +1,59 @@
 using CameraControl;
-using GunSystem.GunComponents;
-using Misc.Root;
+using Root;
 using PoolSystem;
 using SfxSystem;
 using UnityEngine;
 
 namespace GunSystem {
-	public abstract class Gun : MonoBehaviour {
+	public class Gun : MonoBehaviour {
 		[SerializeField] private Transform _muzzle;
+        [SerializeField] [Range(0f, 1f)] private float _spread = 0.1f;
+        [SerializeField] [Range(0.1f, 25f)] private float _fireRate = 1f;
+        [SerializeField] private int _bulletsPerShot = 1;
+        [SerializeField] private BulletType _bulletType;
+        [SerializeField] private SfxType _shotSound;
+        [SerializeField] private bool _isInfinite;
 
-		private GunAccuracy _accuracy;
-		private GunAccuracy Accuracy => _accuracy ??= GetAccuracy();
+        private float _cooldown;
+        private float _currentAmmo;
 
-		protected virtual GunAccuracy GetAccuracy() => new GunAccuracyDefault();
+        public GunType Type;
 
-		private GunInput _input;
-		private GunInput Input => _input ??= GetInput();
+        public void AddAmmo(int value) {
+            if (_isInfinite) return;
+            _currentAmmo += value;
+        }
 
-		protected virtual GunInput GetInput() => new GunInputClick();
+		public void Shoot() {
+            if (_currentAmmo <= 0 && !_isInfinite) return;
+            if (Time.time < _cooldown) return;
 
-		private GunShot _shot;
-		private GunShot Shot => _shot ??= GetShot();
+            for (int i = 0; i < _bulletsPerShot; i++) {
+                SpawnBullet();
+            }
 
-		protected virtual GunShot GetShot() => new GunShotDefault(SpawnBullet);
-		
-		private void Update() {
-			if (Input.Handled && Shot.Available) {
-				Shot.Execute();
-				CameraShaker.Shake();
-				Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
-			}
-		}
-	
+            _currentAmmo -= _bulletsPerShot;
+            if(_currentAmmo < 0) _currentAmmo = 0;
+
+            _cooldown = Time.time + 1f / _fireRate;
+			
+            CameraShaker.Shake();
+			Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
+		}       
+
 		private void SpawnBullet() {
 			Quaternion bulletRotation = GetBulletRotation();
-			Core.PoolController.Spawn(PoolType.Bullet, _muzzle.position, bulletRotation);
+			Core.PoolController.Spawn((PoolType) _bulletType, _muzzle.position, bulletRotation);
 		}
 
 		private Quaternion GetBulletRotation() {
-			float spread = Random.Range(-Accuracy.Value, Accuracy.Value);
+			float spread = Random.Range(-_spread, _spread);
 			return _muzzle.rotation * Quaternion.AngleAxis(spread, _muzzle.up);
 		}
 	}
+
+    public enum BulletType {
+        Default = PoolType.Bullet,
+        Rocket = PoolType.Rocket,
+    }
 }

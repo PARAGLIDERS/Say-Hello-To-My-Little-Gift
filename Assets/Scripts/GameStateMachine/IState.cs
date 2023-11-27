@@ -1,4 +1,4 @@
-﻿namespace Misc.GameStateMachine {
+namespace GameStateMachine {
 	public interface IState {
 		void Enter();
 		void Update();

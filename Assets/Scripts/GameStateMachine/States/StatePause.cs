@@ -1,8 +1,8 @@
-using Misc.Root;
+using Root;
 using Ui;
 using UnityEngine;
 
-namespace Misc.GameStateMachine.States {
+namespace GameStateMachine.States {
 	public class StatePause : IState {
 		public void Enter() {
 			Time.timeScale = 0;

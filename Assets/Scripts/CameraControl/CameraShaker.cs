@@ -1,7 +1,6 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace CameraControl {
 	public class CameraShaker : MonoBehaviour {
@@ -22,17 +21,11 @@ namespace CameraControl {
 		private void Shake_Internal(float magnitude) {
 			transform.DOComplete();
 			transform.DOShakePosition(.5f, magnitude);
-			//transform.DOShakeRotation(.3f, magnitude);
-
-			//transform.localPosition += Random.insideUnitSphere * magnitude;
-		}
-
-		private void Update() {
-			//transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, Time.deltaTime * 25f);
+			transform.DOShakeRotation(.3f, magnitude);
 		}
 
         private void OnDestroy() {
-            transform.DOKill();
+            transform.DOComplete();
         }
     }
 }

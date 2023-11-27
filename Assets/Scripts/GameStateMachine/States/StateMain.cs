@@ -1,7 +1,7 @@
-﻿using Misc.Root;
+using Root;
 using Ui;
 
-namespace Misc.GameStateMachine.States {
+namespace GameStateMachine.States {
 	public class StateMain : IState {
 		public void Enter() {
 			Core.UiController.Show(UiScreenType.Main);

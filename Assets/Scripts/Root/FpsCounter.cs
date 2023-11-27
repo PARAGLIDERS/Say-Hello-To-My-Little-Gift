@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Misc {
+namespace Root {
 	public class FpsCounter : MonoBehaviour{
 		[SerializeField] private Gradient _colorGradient;
 

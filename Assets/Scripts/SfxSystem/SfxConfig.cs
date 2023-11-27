@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Ui;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -34,20 +33,5 @@ namespace SfxSystem {
 		public AudioClip Clip => _clip;
         public float Volume => _volume;
         public float PitchShift => _pitchShift;
-	}
-	
-	public enum SfxType {
-        // ui
-        UiButtonPress = 0,
-        UiButtonSelect = 1,
-
-        // shots
-		ShotPistol = 100,
-        ShotAuto = 101,
-        ShotShotgun = 102,
-
-        // vfx
-        VfxExplosion = 300,
-        VfxBloodParticles = 301,
 	}
 }

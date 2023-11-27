@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Misc.GameStateMachine.States;
+using System.Collections.Generic;
+using GameStateMachine.States;
 using UnityEngine;
 
-namespace Misc.GameStateMachine {
+namespace GameStateMachine {
 	public class StateController {
 		private readonly Dictionary<StateType, IState> _states;
 		private IState _current;

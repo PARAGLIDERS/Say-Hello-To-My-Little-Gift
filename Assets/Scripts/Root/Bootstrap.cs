@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Misc.Root {
+namespace Root {
 	public class Bootstrap : MonoBehaviour {
 		[SerializeField] private Resources _resources;
 		

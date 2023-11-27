@@ -1,12 +1,11 @@
-using System.Collections.Generic;
-using Enemies;
 using EnemySpawning;
+using GunSystem;
 using PoolSystem;
 using SfxSystem;
 using Ui;
 using UnityEngine;
 
-namespace Misc.Root {
+namespace Root {
 	[CreateAssetMenu(menuName = "Santa/Resources")]
 	public class Resources : ScriptableObject {
 		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
@@ -18,7 +17,9 @@ namespace Misc.Root {
 		[SerializeField] private Canvas _canvasPrefab;
 		[SerializeField] private UiScreenConfig _screenConfig;
 
-		public Canvas CanvasPrefab => _canvasPrefab;
+        [SerializeField] private GunsConfig _gunsConfig;
+		
+        public Canvas CanvasPrefab => _canvasPrefab;
 		public UiScreenConfig ScreenConfig => _screenConfig;
 
 		public PoolConfig PoolConfig => _poolConfig;
@@ -26,5 +27,7 @@ namespace Misc.Root {
 
 		public EnemySpawnerConfig EnemySpawnerConfig => _enemySpawnerConfig;
 		public EnemySpawnerGridConfig EnemySpawnerGridConfig => _enemySpawnerGridConfig;
+
+        public GunsConfig GunsConfig => _gunsConfig;
 	}
 }
