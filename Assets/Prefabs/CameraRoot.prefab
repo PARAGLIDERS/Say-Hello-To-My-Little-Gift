@@ -5057,4 +5057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd19c4e9729a4a80bdda255c96e89565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _camera: {fileID: 6344910642274349416}
+  _head: {fileID: 6344910642963947222}
+  _speed: 30
+  _motionSmooth: 0.15

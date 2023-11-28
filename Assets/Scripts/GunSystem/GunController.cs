@@ -1,3 +1,6 @@
+using Player;
+using Root;
+using SfxSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +14,7 @@ namespace GunSystem {
         
         private Gun _current;
 
-        public GunController(GunsConfig config, Transform gunsHolder) {
+        public GunController(GunsConfig config, PlayerController player) {
             _availableGuns = new List<GunType>();
 
             _guns = new Dictionary<GunType, Gun>();
@@ -21,10 +24,11 @@ namespace GunSystem {
                     continue;
                 }
 
-                Gun gun = GameObject.Instantiate(item.Prefab, gunsHolder);
+                Gun gun = GameObject.Instantiate(item.Prefab, player.GunsHolder);
                 gun.Type = item.Type;
                 gun.gameObject.SetActive(false);
                 _guns.Add(item.Type, gun);
+                Debug.Log($"created {item.Type}");
             }
         }
 
@@ -55,23 +59,39 @@ namespace GunSystem {
                 return;
             }
 
-            _current?.gameObject.SetActive(false);
+            if (_current != null) {
+                _current.gameObject.SetActive(false);
+            }
+
             _current = gun;
-            _current?.gameObject.SetActive(true);
+            _current.gameObject.SetActive(true);
 
             OnSwitch?.Invoke(type);
         }
 
         public void Update() {
-            if (Input.GetMouseButton(0)) {
-                _current?.Shoot();
-            }
-
             float scroll = Input.mouseScrollDelta.y;
             if (!Mathf.Approximately(scroll, 0f)) {
                 Scroll(scroll > 0 ? 1 : -1);
             }
+
+            if (_current == null) return;
+            if (!GetInput(_current.InputType)) return;
+            if (!_current.CanShoot() && _current.InputType != InputType.Click) return;
+            if (!_current.HasAmmo()) {
+                Core.SfxController.Play(SfxType.ShotDry);
+                return;
+            }
+
+            _current.Shoot();
+            _current.SpendAmmo();
         }
+
+        private bool GetInput(InputType inputType) => inputType switch {
+            InputType.Click => Input.GetMouseButtonDown(0),
+            InputType.Hold => Input.GetMouseButton(0),
+            _ => false,
+        };
 
         private void Scroll(int value) {
             int currentIndex = _current != null ? _availableGuns.IndexOf(_current.Type) : 0;

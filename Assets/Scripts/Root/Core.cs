@@ -5,30 +5,38 @@ using PoolSystem;
 using SfxSystem;
 using Ui;
 using UnityEngine;
+using Player;
+using Level;
+using Unity.VisualScripting;
+using DayNightCycle;
 
 namespace Root {
 	public static class Core {
-		public static Transform Container { get; private set; }
-		public static UiController UiController { get; private set; }
-		public static StateController StateController { get; private set; }
-		public static PoolController PoolController { get; private set; }
-        public static EnemySpawner EnemySpawner { get; private set; }
-        public static SfxController SfxController { get; private set; }
 		public static CoroutineRunner CoroutineRunner { get; private set; }
-		public static GunController GunController { get; private set; }
+		public static UiController UiController { get; private set; }
+		public static PoolController PoolController { get; private set; }
+        public static SfxController SfxController { get; private set; }
+        public static LevelController LevelController { get; private set; }
+        public static InputController InputController { get; private set; }
+		public static StateController StateController { get; private set; }
 
 		public static void Init(Transform parent, Resources resources) {
-			Container = parent;
-			
+            parent.AddComponent<AudioListener>();
+            Object.Instantiate(resources.VolumePrefab, parent);
+
             CoroutineRunner = new GameObject("coroutine runner").AddComponent<CoroutineRunner>();
 			CoroutineRunner.transform.SetParent(parent);
 			
-            StateController = new StateController();
 			UiController = new UiController(parent, resources.CanvasPrefab, resources.ScreenConfig);
-            PoolController = new PoolController(Container, resources.PoolConfig);
-            EnemySpawner = new EnemySpawner(resources.EnemySpawnerConfig, resources.EnemySpawnerGridConfig);
+            PoolController = new PoolController(parent, resources.PoolConfig);
             SfxController = new SfxController(parent, resources.SfxConfig);
-            GunController = new GunController(resources.GunsConfig, null); // todo: add player
+            LevelController = new LevelController(parent, 
+                resources.EnemySpawnerConfig, resources.GunsConfig,
+                resources.PlayerPrefab, resources.CameraPrefab,
+                resources.DayNightConfig);
+
+            InputController = new InputController();
+            StateController = new StateController();
 
 			StateController.SetState(StateType.Boot);
 		}
@@ -39,9 +47,6 @@ namespace Root {
 
 		public static void Dispose() {
 			PoolController.Dispose();
-			
-            EnemySpawner.Stop();
-            EnemySpawner.Dispose();
 
 			CoroutineRunner.StopAll();
 			Object.Destroy(CoroutineRunner.gameObject);

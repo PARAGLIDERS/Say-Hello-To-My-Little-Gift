@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Root;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -17,15 +18,17 @@ namespace Ui {
 
 		public override void OnPointerClick(PointerEventData eventData) {
 			base.OnPointerClick(eventData);
+            Core.SfxController.Play(SfxSystem.SfxType.UiButtonPress);
 		}
 
 		public override void OnPointerEnter(PointerEventData eventData) {
 			base.OnPointerEnter(eventData);
 			transform.DOScale(_scale, 0.1f).SetUpdate(true);
 			_image.DOFade(_fade, 0.1f).SetUpdate(true);
-		}
+            Core.SfxController.Play(SfxSystem.SfxType.UiButtonSelect);
+        }
 
-		public override void OnPointerExit(PointerEventData eventData) {
+        public override void OnPointerExit(PointerEventData eventData) {
 			base.OnPointerExit(eventData);
 			transform.DOScale(1f, 0.1f).SetUpdate(true);
 			_image.DOFade(0f, 0.1f).SetUpdate(true);

@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: SfxConfig
   m_EditorClassIdentifier: 
   _mixerGroup: {fileID: 7922086049004866256, guid: e5fd76036584030469c0ea3bffe2d0cf, type: 2}
-  _items: []
+  _items:
+  - Name: UiButtonPress
+    _type: 0
+    _clip: {fileID: 8300000, guid: 35abc0d9de068084cb13406af9749519, type: 3}
+    _volume: 0.486
+    _pitchShift: 0
+  - Name: UiButtonSelect
+    _type: 1
+    _clip: {fileID: 8300000, guid: ec39d0c94ce756d478467f2590fe9576, type: 3}
+    _volume: 1
+    _pitchShift: 0

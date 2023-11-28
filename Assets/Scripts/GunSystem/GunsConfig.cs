@@ -24,10 +24,8 @@ namespace GunSystem {
 
         [SerializeField] private GunType _type;
         [SerializeField] private Gun _prefab;
-        [SerializeField] private int _pickupAmmo;
 
         public GunType Type => _type;
         public Gun Prefab => _prefab;
-        public int PickupAmmo => _pickupAmmo;
     }
 }

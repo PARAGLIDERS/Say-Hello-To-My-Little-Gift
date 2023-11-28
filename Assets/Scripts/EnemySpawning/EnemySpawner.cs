@@ -44,12 +44,13 @@ namespace EnemySpawning {
 
         private IEnumerator _execution;
 
-		public EnemySpawner(EnemySpawnerConfig spawnConfig, EnemySpawnerGridConfig gridConfig) {
-			_config = spawnConfig;
-			_grid = new EnemySpawnerGrid(gridConfig);
+		public EnemySpawner(EnemySpawnerConfig config) {
+			_config = config;
+			_grid = new EnemySpawnerGrid(config.GridConfig);
 		}
 
 		public void Start() {
+            _grid.CalculatePoints();
             _execution = Execute();
 			Core.CoroutineRunner.Run(_execution);
 		}

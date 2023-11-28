@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
   m_Name: Enemy Spawner Config
   m_EditorClassIdentifier: 
+  _gridConfig: {fileID: 11400000, guid: e24918a6712c5274eb915d3b1449148c, type: 2}
   _waveCooldown: 5
   _rounds:
   - _delay: 1
     _waves:
     - _delay: 0
-      _enemyCount: 50
-      _period: 0.5
+      _enemyCount: 5000
+      _period: 0.1
       _units:
       - _type: 0
         _chance: 100

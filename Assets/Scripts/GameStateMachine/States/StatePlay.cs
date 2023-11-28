@@ -9,7 +9,7 @@ namespace GameStateMachine.States {
 		}
 
 		public void Update() {
-            Core.GunController.Update();
+            Core.LevelController.Update();
 
 			if (Input.GetKeyDown(KeyCode.Escape)) {
 				Core.StateController.SetState(StateType.Pause);

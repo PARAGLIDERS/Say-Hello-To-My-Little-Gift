@@ -1,8 +1,11 @@
+using Root;
 using Units;
 using UnityEngine;
 
 namespace Player {
 	public class PlayerController : MonoBehaviour {
+        [SerializeField] private Vector3 _defaultPosition; //ducktape
+
 		[SerializeField] private float _speed;
 		[SerializeField] private float _maxSpeed;
 		[SerializeField] private float _drag;
@@ -11,21 +14,27 @@ namespace Player {
 		[SerializeField] private Transform _unitTransform;
 		[SerializeField] private Rigidbody _rigidbody;
 		[SerializeField] private UnitAnimation _animation;
+        [SerializeField] private Transform _gunsHolder;
+
+        public Transform GunsHolder => _gunsHolder;
+        public Vector3 Position { get; private set; }
 		
-		public static Vector3 POSITION;
-		private InputHandler _inputHandler;
-		
-		private void Awake() {
-			_inputHandler = new InputHandler(Camera.main);
-		}
+        public void Activate() {
+            transform.position = _defaultPosition;
+            gameObject.SetActive(true);
+        }
+
+        public void Deactivate() {
+            gameObject.SetActive(false);
+        }
 
 		private void Update() {
-			POSITION = transform.position;
+			Position = transform.position;
 		}
 
 		private void FixedUpdate() {
-            Rotate(_inputHandler.GetPointerPosition());
-			Vector3 input = _inputHandler.GetInput();
+            Rotate(Core.InputController.GetPointerPosition());
+			Vector3 input = Core.InputController.GetPlayerInput();
 			if(input == Vector3.zero) return;
 			
 			Move(input);

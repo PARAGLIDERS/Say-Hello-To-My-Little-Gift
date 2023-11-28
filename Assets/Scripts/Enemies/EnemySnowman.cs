@@ -18,7 +18,8 @@ namespace Enemies {
         protected override void Update() {
             base.Update();
 
-            bool atFireDistance = Vector3.Distance(PlayerController.POSITION, transform.position) <= _fireDistance;
+            Vector3 playerPosition = Core.LevelController.PlayerController.Position;
+            bool atFireDistance = Vector3.Distance(playerPosition, transform.position) <= _fireDistance;
             bool cooldownFinish = _cooldown >= 1f / _fireRate;
 
             if (atFireDistance && cooldownFinish) {

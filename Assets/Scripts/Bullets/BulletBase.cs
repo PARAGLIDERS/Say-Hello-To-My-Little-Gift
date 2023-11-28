@@ -29,7 +29,6 @@ namespace Bullets {
         private void OnTriggerEnter(Collider other) {
             if (other.TryGetComponent(out Damageable damageable)) {
                 damageable.ApplyDamage(_damage, transform.rotation);
-                return;
             }
 
             if (other.TryGetComponent(out Rigidbody rb)) {

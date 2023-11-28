@@ -1,5 +1,6 @@
 using Player;
 using PoolSystem;
+using Root;
 using Units;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,7 +12,8 @@ namespace Enemies {
 		[SerializeField] private NavMeshAgent _agent;
         		
 		protected virtual void Update() {
-			_agent?.SetDestination(PlayerController.POSITION);
+            Vector3 playerPosition = Core.LevelController.PlayerController.Position;
+			_agent?.SetDestination(playerPosition);
 			_animation?.Trigger();
 		}	
 	}

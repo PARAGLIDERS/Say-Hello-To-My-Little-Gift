@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace EnemySpawning {
@@ -13,11 +13,11 @@ namespace EnemySpawning {
 		}
 
 		private void OnDrawGizmosSelected() {
-			if(_config == null) return;
 			if(_grid == null) return;
-			
+            _grid.CalculatePoints();
+
 			Gizmos.color = Color.red;
-			List<Vector3> points = _grid.CalculatePoints();
+			List<Vector3> points = _grid.Points;
 			foreach (Vector3 point in points) {
 				Gizmos.DrawCube(point, Vector3.one * (_config.CellSize * 0.9f));
 			}

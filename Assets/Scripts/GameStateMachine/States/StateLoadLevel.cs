@@ -7,8 +7,7 @@ namespace GameStateMachine.States {
 
 		public override void Exit() {
 			base.Exit();
-			Core.EnemySpawner.Start();
-            Core.GunController.Init();
+            Core.LevelController.Start();
 		}
 	}
 }

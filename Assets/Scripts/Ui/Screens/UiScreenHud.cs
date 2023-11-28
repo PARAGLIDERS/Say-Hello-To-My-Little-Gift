@@ -8,18 +8,12 @@ namespace Ui.Screens {
 		[SerializeField] private TextMeshProUGUI _rounds;
 		[SerializeField] private TextMeshProUGUI _waves;
 		[SerializeField] private TextMeshProUGUI _enemies;
-
-		private EnemySpawner _enemySpawner;
-		
+        		
 		public override void Init() {
-			_enemySpawner = Core.EnemySpawner;
-			_enemySpawner.OnChange += UpdateVisuals;
+            // todo: add event bus
 		}
 
 		private void UpdateVisuals() {
-			_rounds.text = $"round:{_enemySpawner.CurrentRound}";
-			_waves.text = $"wave: {_enemySpawner.CurrentWave}";
-			_enemies.text = $"enemies: {_enemySpawner.CurrentWaveEnemyCount}";
 		}
 	}
 }
