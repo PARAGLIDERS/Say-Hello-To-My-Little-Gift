@@ -21,6 +21,7 @@ namespace Player {
 		
         public void Activate() {
             transform.position = _defaultPosition;
+			Position = transform.position;
             gameObject.SetActive(true);
         }
 

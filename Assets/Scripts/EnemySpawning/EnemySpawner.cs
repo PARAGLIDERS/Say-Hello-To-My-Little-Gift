@@ -78,6 +78,7 @@ namespace EnemySpawning {
                         Quaternion rotation = Quaternion.identity; // look at player?
 
                         Core.PoolController.Spawn(type, position, rotation, onDeactivate: OnEnemyKilled);
+                        Core.PoolController.Spawn(PoolType.EnemySpawnEffect, position, rotation);
 
                         CurrentWaveEnemyCount++;
 						yield return new WaitForSeconds(wave.Period);

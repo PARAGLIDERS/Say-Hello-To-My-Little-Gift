@@ -9,9 +9,14 @@ namespace GameStateMachine.States {
 	public abstract class StateBaseLoadScene : IState {
 		protected abstract int _sceneIndex { get; }
 		protected abstract StateType _nextState { get; }
-		
+		protected virtual bool _showLoadingScreen { get; } = true;
+		protected virtual int _delay { get; } = 500;
+
 		public virtual void Enter() {
-			Core.UiController.Show(UiScreenType.Loading);
+            if (_showLoadingScreen) {
+                Core.UiController.Show(UiScreenType.Loading);
+            }
+
             Time.timeScale = 0;
             _ = Load();
 		}
@@ -20,10 +25,10 @@ namespace GameStateMachine.States {
             AsyncOperation loading = SceneManager.LoadSceneAsync(_sceneIndex);
 
             while (!loading.isDone) {
-                await Task.Delay(1000);
+                await Task.Delay(1);
             }
 
-            await Task.Delay(1000);
+            await Task.Delay(_delay);
 
             Core.StateController.SetState(_nextState);
         }

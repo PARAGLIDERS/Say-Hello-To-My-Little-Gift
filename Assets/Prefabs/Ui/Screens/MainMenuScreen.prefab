@@ -38,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 235.30548, y: 204.70612}
-  m_SizeDelta: {x: 403.9119, y: 352.7772}
+  m_AnchoredPosition: {x: 250, y: 250}
+  m_SizeDelta: {x: 382.6432, y: 382.6432}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3613515455659390669
 MonoBehaviour:
@@ -138,11 +138,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_fontSize
-      value: 45.5
+      value: 45.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.y
@@ -220,6 +224,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -43.6746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.8372955
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
 --- !u!114 &3138937202829173592 stripped
@@ -255,11 +267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_fontSize
-      value: 45.5
+      value: 45.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.y
@@ -337,6 +353,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -43.6746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.8372955
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
 --- !u!224 &2141547706280134931 stripped
@@ -372,11 +396,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_fontSize
-      value: 45.5
+      value: 45.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.y
@@ -454,6 +482,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -43.6746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.8372955
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
 --- !u!224 &3276484811076525007 stripped
@@ -489,11 +525,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_fontSize
-      value: 45.5
+      value: 45.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6845939500110491148, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Pivot.y
@@ -570,6 +610,14 @@ PrefabInstance:
     - target: {fileID: 6986024188293260989, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_Name
       value: UiButton (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -43.6746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209849276897764380, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.8372955
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}

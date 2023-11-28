@@ -15,6 +15,7 @@ namespace PoolSystem {
 		Steps = 103,
 		FloorBlood = 104,
         SnowballExplosion = 105,
+        EnemySpawnEffect = 106,
 
         // bullets
         Bullet = 200,

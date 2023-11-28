@@ -42,9 +42,9 @@ MonoBehaviour:
     _type: 103
     _prefab: {fileID: 8043855276221891729, guid: 0fc1370e6e28f7b40a0503ff11176bcf, type: 3}
   - Name: FloorBlood
-    _size: 100
+    _size: 500
     _type: 104
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 3694085004727981354, guid: b2895c1ed1141594d9cb3f62cf3a48e8, type: 3}
   - Name: Bullet
     _size: 500
     _type: 200
@@ -57,3 +57,7 @@ MonoBehaviour:
     _size: 100
     _type: 202
     _prefab: {fileID: 8387910483624825766, guid: 99c5baedeb9a7244dbbe396762a1954f, type: 3}
+  - Name: EnemySpawnEffect
+    _size: 100
+    _type: 106
+    _prefab: {fileID: 2456940896281974865, guid: 7456d63495f779c4193b5ddececfbc9c, type: 3}

@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411415008503779379}
-  m_LocalRotation: {x: -0.12376521, y: -0, z: -0, w: 0.99231154}
+  m_LocalRotation: {x: -0.1985281, y: -0, z: -0, w: 0.9800952}
   m_LocalPosition: {x: 0, y: 1.54, z: 1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7536705900031883133}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -14.219, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -22.902, y: 0, z: 0}
 --- !u!1001 &7160057653497143016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48,7 +48,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_StoppingDistance
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_RootOrder
@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySnowman
       objectReference: {fileID: 0}
+    - target: {fileID: 1516810033990772234, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: af7a64c1306414117905669e3806f58b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
 --- !u!195 &7536705900031883130 stripped
@@ -129,8 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animation: {fileID: 8125128598104495160}
   _agent: {fileID: 7536705900031883130}
-  _fireDistance: 15
-  _fireRate: 1
+  _fireDistance: 25
+  _fireRate: 0.8
   _muzzle: {fileID: 6151822084307405742}
 --- !u!114 &8125128598104495160 stripped
 MonoBehaviour:
