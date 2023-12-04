@@ -3,11 +3,12 @@ using System.Collections;
 using Root;
 using PoolSystem;
 using UnityEngine;
+using Grid;
 
 namespace EnemySpawning {
 	public class EnemySpawner {
 		private readonly EnemySpawnerConfig _config;
-		private readonly EnemySpawnerGrid _grid;
+		private readonly SpawnerGrid _grid;
 
 		public Action OnChange;
 
@@ -46,7 +47,7 @@ namespace EnemySpawning {
 
 		public EnemySpawner(EnemySpawnerConfig config) {
 			_config = config;
-			_grid = new EnemySpawnerGrid(config.GridConfig);
+			_grid = new SpawnerGrid(config.GridConfig);
 		}
 
 		public void Start() {

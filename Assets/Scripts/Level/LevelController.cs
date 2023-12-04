@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Level {
     public class LevelController {
-        public readonly GunController GunController;
+        public readonly GunsController GunsController;
         public readonly EnemySpawner EnemySpawner;
         public readonly PlayerController PlayerController;
         public readonly CameraController CameraController;
@@ -23,14 +23,14 @@ namespace Level {
             CameraController = Object.Instantiate(cameraPrefab, parent);
             CameraController.Deactivate();
 
-            GunController = new GunController(gunsConfig, PlayerController);
+            GunsController = new GunsController(gunsConfig, PlayerController);
             EnemySpawner = new EnemySpawner(spawnerConfig);
 
             //DayNightController = new DayNightController(parent, dayNightConfig);
         }
 
         public void Start() {
-            GunController.Init();
+            GunsController.Init();
             EnemySpawner.Start();
             PlayerController.Activate();
             CameraController.Activate();
@@ -41,11 +41,12 @@ namespace Level {
             EnemySpawner.Stop();
             PlayerController.Deactivate();
             CameraController.Deactivate();
+            GunsController.Reset();
             //DayNightController.Stop();
         }
 
         public void Update() {
-            GunController.Update();
+            GunsController.Update();
             //DayNightController.Update();
         }
 

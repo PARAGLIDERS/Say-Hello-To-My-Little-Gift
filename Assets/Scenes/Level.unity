@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &20674869
 Transform:
   m_ObjectHideFlags: 0
@@ -157,8 +157,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 998533077}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &20674870
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd1199dcd37496bb8f8d764dd11b9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _config: {fileID: 11400000, guid: e24918a6712c5274eb915d3b1449148c, type: 2}
+  _config: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
 --- !u!1001 &28301839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 998533077}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 30.85, y: -33.474, z: -18.731}
 --- !u!108 &96861816
 Light:
@@ -3613,7 +3613,6 @@ Transform:
   - {fileID: 1938428656}
   - {fileID: 1305876391}
   - {fileID: 2452492916926291544}
-  - {fileID: 20674869}
   - {fileID: 96861815}
   m_Father: {fileID: 0}
   m_RootOrder: 1

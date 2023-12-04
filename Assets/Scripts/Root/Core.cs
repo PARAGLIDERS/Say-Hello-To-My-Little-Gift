@@ -45,9 +45,10 @@ namespace Root {
 			StateController?.Update();
 		}
 
+        // i dont think it's nessesary 
+        // but why not :)
 		public static void Dispose() {
 			PoolController.Dispose();
-
 			CoroutineRunner.StopAll();
 			Object.Destroy(CoroutineRunner.gameObject);
 		}

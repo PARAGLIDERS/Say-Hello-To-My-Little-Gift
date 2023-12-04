@@ -1,19 +1,17 @@
 using EnemySpawning;
+using GunSystem;
 using Root;
+using System.Collections.Generic;
 using TMPro;
+using Ui.Components;
 using UnityEngine;
 
 namespace Ui.Screens {
 	public class UiScreenHud : UiScreen {
-		[SerializeField] private TextMeshProUGUI _rounds;
-		[SerializeField] private TextMeshProUGUI _waves;
-		[SerializeField] private TextMeshProUGUI _enemies;
-        		
-		public override void Init() {
-            // todo: add event bus
-		}
+        [SerializeField] private GunHudIconsPanel _gunPanel;
 
-		private void UpdateVisuals() {
+		public override void Init() {
+            _gunPanel.Init();
 		}
 	}
 }

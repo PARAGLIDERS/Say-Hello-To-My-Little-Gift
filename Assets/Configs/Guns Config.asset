@@ -16,3 +16,12 @@ MonoBehaviour:
   - Name: Pistol
     _type: 0
     _prefab: {fileID: 6624218463922635809, guid: f7d4a43147ee1f541a457d3788a01299, type: 3}
+    _initialAmmo: 0
+  - Name: Uzi
+    _type: 1
+    _prefab: {fileID: 6624218463922635809, guid: d7ad61b1caa7b384d870c7faa9f6d01b, type: 3}
+    _initialAmmo: 100
+  - Name: Auto
+    _type: 4
+    _prefab: {fileID: 6624218463922635809, guid: c1e308fc8cb73014e9ef77493dd47c34, type: 3}
+    _initialAmmo: 500

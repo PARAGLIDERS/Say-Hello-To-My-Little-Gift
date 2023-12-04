@@ -13,5 +13,6 @@ namespace SfxSystem {
         // vfx
         VfxExplosion = 200,
         VfxBloodParticles = 201,
+        VfxGunPickup = 202,
     }
 }

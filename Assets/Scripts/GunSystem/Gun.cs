@@ -15,39 +15,42 @@ namespace GunSystem {
         [SerializeField] private InputType _inputType = InputType.Hold;
         [SerializeField] private bool _isInfinite;
 
-        private float _cooldown;
-        private float _currentAmmo;
-
-        [HideInInspector] public GunType Type;
         public InputType InputType => _inputType;
+        public bool IsInfinite => _isInfinite;
+
+        private float _cooldown;
+        public float CurrentAmmo { get; private set; }
 
         public void AddAmmo(int value) {
-            if (_isInfinite) return;
-            _currentAmmo += value;
+            if (value < 0) {
+                Debug.LogError("trying to add negative ammo!");
+                return;
+            }
+
+            CurrentAmmo += value;
         }
 
-        public void SpendAmmo() {
-            if (_isInfinite) return;
-            _currentAmmo -= _bulletsPerShot;
-            if (_currentAmmo < 0) _currentAmmo = 0;
-        }
-
-        public bool HasAmmo() {
-            return _isInfinite || _currentAmmo > 0;
-        }
-
-        public bool CanShoot() {
-            return Time.time >= _cooldown;
+        public void ResetAmmo() {
+            CurrentAmmo = 0;
         }
 
 		public void Shoot() {
+            if (_inputType != InputType.Click && Time.time < _cooldown) return;
+            if (!_isInfinite && CurrentAmmo <= 0) {
+                Core.SfxController.Play(SfxType.ShotDry);
+                return;
+            }
+
             for (int i = 0; i < _bulletsPerShot; i++) {
                 SpawnBullet();
             }
 
             _cooldown = Time.time + 1f / _fireRate;
-			
-			Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
+
+            CurrentAmmo -= _bulletsPerShot;
+            if (CurrentAmmo < 0) CurrentAmmo = 0;
+
+            Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
             Core.SfxController.Play((SfxType)_shotSound, _muzzle.position);
 		}       
 

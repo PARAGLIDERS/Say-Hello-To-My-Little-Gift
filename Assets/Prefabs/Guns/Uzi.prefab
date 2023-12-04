@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3020960181001309712}
   - component: {fileID: 6624218463922635809}
   m_Layer: 6
-  m_Name: Pistol
+  m_Name: Uzi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 3020960180927070046}
-  _spread: 0
+  _spread: 0.05
   _fireRate: 10
   _bulletsPerShot: 1
   _bulletType: 200
   _shotSound: 101
-  _inputType: 0
-  _isInfinite: 1
+  _inputType: 1
+  _isInfinite: 0

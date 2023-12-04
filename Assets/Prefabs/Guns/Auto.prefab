@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3020960180927070041}
   m_LocalRotation: {x: -0.00000038075535, y: -0.7071064, z: -0.7071072, w: -0.00000038935525}
-  m_LocalPosition: {x: 0, y: 0.371, z: 0.094}
+  m_LocalPosition: {x: -0, y: 0.713, z: -0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3020960181001309712}
   - component: {fileID: 6624218463922635809}
   m_Layer: 6
-  m_Name: Pistol
+  m_Name: Auto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3020960181001309724}
-  m_Mesh: {fileID: -5495902117074765545, guid: a7aff4522b36ee241b8f943fd706f86d, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 6d44894664d41d449a45cd597f68a02b, type: 3}
 --- !u!23 &3020960181001309712
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 3020960180927070046}
-  _spread: 0
-  _fireRate: 10
+  _spread: 0.1
+  _fireRate: 15
   _bulletsPerShot: 1
   _bulletType: 200
-  _shotSound: 101
-  _inputType: 0
-  _isInfinite: 1
+  _shotSound: 102
+  _inputType: 1
+  _isInfinite: 0

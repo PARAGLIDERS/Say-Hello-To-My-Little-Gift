@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Grid;
 using PoolSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,11 +8,11 @@ using Random = UnityEngine.Random;
 namespace EnemySpawning {
 	[CreateAssetMenu(menuName = "Enemy Spawner Config")]
 	public class EnemySpawnerConfig : ScriptableObject {
-        [SerializeField] private EnemySpawnerGridConfig _gridConfig;
+        [SerializeField] private SpawnerGridConfig _gridConfig;
 		[SerializeField] private float _waveCooldown; // time between wave N finish and wave N+1 start
 		[SerializeField] private List<EnemySpawnRound> _rounds;
 
-        public EnemySpawnerGridConfig GridConfig => _gridConfig;
+        public SpawnerGridConfig GridConfig => _gridConfig;
 		public float WaveCooldown => _waveCooldown;
 		public List<EnemySpawnRound> Rounds => _rounds;
 	}
