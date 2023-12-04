@@ -39,8 +39,8 @@ namespace GunSystem {
             SwitchTo(GunType.Pistol);
 
             // test
-            Pickup(GunType.Uzi, 1000);
-            Pickup(GunType.Auto, 5000);
+            Pickup(GunType.Uzi, 50);
+            Pickup(GunType.Auto, 100);
         }
 
         public void Reset() {

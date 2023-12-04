@@ -8,8 +8,9 @@ using UnityEngine;
 namespace Ui.Components {
     public class GunHudIconsPanel : MonoBehaviour {
         [SerializeField] private TextMeshProUGUI _ammo;
+        [SerializeField] private GameObject _infinity;
         [SerializeField] private GunHudIcon _iconPrefab;
-        [SerializeField] private RectTransform _container;
+        [SerializeField] private RectTransform _container;        
         [SerializeField] private List<GunIconPreset> _presets;
 
         private Dictionary<GunType, GunIconPreset> _presetsDictionary;
@@ -73,6 +74,7 @@ namespace Ui.Components {
 
         private void UpdateAmmo() {
             Gun gun = Core.LevelController.GunsController.Current.gun;
+            _infinity.SetActive(gun.IsInfinite);
             _ammo.gameObject.SetActive(!gun.IsInfinite);
             _ammo.text = gun.CurrentAmmo.ToString();
         }
