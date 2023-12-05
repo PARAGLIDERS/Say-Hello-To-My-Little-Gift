@@ -17,7 +17,7 @@ namespace EnemySpawning {
 		public int CurrentWaveEnemiesCountMax { get; private set; }
 		
 		private int _currentWaveEnemyCount;
-		public int CurrentWaveEnemyCount {
+		public int CurrentEnemyCount {
 			get => _currentWaveEnemyCount;
 			set {
 				_currentWaveEnemyCount = value;
@@ -50,63 +50,84 @@ namespace EnemySpawning {
 			_grid = new SpawnerGrid(config.GridConfig);
 		}
 
-		public void Start() {
+        public void Reset() {
+            CurrentRound = 0;
+            CurrentWave = 0;
+            CurrentEnemyCount = 0;
+        }
+
+        public void Start() {
             _grid.CalculatePoints();
             _execution = Execute();
-			Core.CoroutineRunner.Run(_execution);
+
+            Core.CoroutineRunner.Run(_execution);
 		}
 
 		public void Stop() {
             if (_execution == null) return;
 			Core.CoroutineRunner.Stop(_execution);
 		}
-		
-		private IEnumerator Execute() {
-			CurrentRound = 0;
-			CurrentWave = 0;
+
+        private IEnumerator Execute() {
+            EnemySpawnRound round;
+            EnemySpawnWave wave;
 
 			while (CurrentRound < _config.Rounds.Count) {
-				EnemySpawnRound round = _config.Rounds[CurrentRound];
+                Debug.LogWarning($"round {CurrentRound}");
+
+                round = _config.Rounds[CurrentRound];
 				yield return new WaitForSeconds(round.Delay);
-				
-				while (CurrentWave < round.Waves.Count) {
-					EnemySpawnWave wave = round.Waves[CurrentWave];
-					yield return new WaitForSeconds(wave.Delay);
+
+                while (CurrentWave < round.Waves.Count) {
+                    Debug.LogWarning($"wave{CurrentWave}");
+
+                    wave = round.Waves[CurrentWave];
+                    yield return new WaitForSeconds(wave.Delay);
 
 					for (int i = 0; i < wave.EnemyCount; i++) {
-                        PoolType type = wave.GetEnemyType();
-                        Vector3 position = _grid.GetPosition();
-                        Quaternion rotation = Quaternion.identity; // look at player?
-
-                        Core.PoolController.Spawn(type, position, rotation, onDeactivate: OnEnemyKilled);
-                        Core.PoolController.Spawn(PoolType.EnemySpawnEffect, position, rotation);
-
-                        CurrentWaveEnemyCount++;
+                        Spawn(wave.GetEnemyType());
+                        CurrentEnemyCount++;
 						yield return new WaitForSeconds(wave.Period);
 					}
 
-					float cooldown = _config.WaveCooldown;
-					
-					while (CurrentWaveEnemyCount > 0 || cooldown > 0) {
-						cooldown -= Time.deltaTime;
-						yield return null;
-					}
+                    float cooldown = _config.WaveCooldown;
 
-					CurrentWave++;
+                    while (cooldown > 0) {
+                        if (CurrentEnemyCount == 0) {
+                            Debug.LogWarning($"break cooldown");
+                            break;
+                        }
+
+                        cooldown -= Time.deltaTime;
+                        yield return null;
+                    }
+                    Debug.LogWarning(cooldown);
+                    CurrentWave++;
 				}
 				
 				CurrentRound++;
+                CurrentWave = 0;
 			}
 
-			yield return new WaitUntil(() => CurrentWaveEnemyCount <= 0);
-			_onAllEnemiesKilled?.Invoke();
+            Debug.LogWarning($"all rounds ended");
+			yield return new WaitUntil(() => CurrentEnemyCount <= 0);
+                
+            Debug.LogWarning($"all enemies killed");
+            _onAllEnemiesKilled?.Invoke();
+		}
+                
+        private void Spawn(EnemySpawnerUnitType type) {
+            Vector3 position = _grid.GetPosition();
+            Quaternion rotation = Quaternion.identity; // look at player?
+
+            Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: OnEnemyKilled);
+            Core.PoolController.Spawn(PoolType.EnemySpawnEffect, position, rotation);
+        }
+
+        private void OnEnemyKilled() {
+			CurrentEnemyCount--;
 		}
 
-		private void OnEnemyKilled() {
-			CurrentWaveEnemyCount--;
-		}
-
-		public void Dispose() {
-		}
+		public void Dispose() {}
 	}
 }

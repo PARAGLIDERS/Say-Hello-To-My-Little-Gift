@@ -12,14 +12,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
   m_Name: Enemy Spawner Config
   m_EditorClassIdentifier: 
-  _gridConfig: {fileID: 11400000, guid: e24918a6712c5274eb915d3b1449148c, type: 2}
-  _waveCooldown: 5
+  _waveCooldown: 10
+  _gridConfig: {fileID: 11400000, guid: 12b42a84aaf49c844aeb5555b0b28a67, type: 2}
   _rounds:
-  - _delay: 1
+  - _name: Round 1
+    _delay: 1
     _waves:
-    - _delay: 0
-      _enemyCount: 5000
+    - _name: Wave 1
+      _delay: 0
+      _enemyCount: 15
       _period: 0.1
       _units:
-      - _type: 0
+      - _name: Unit 1 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+    - _name: Wave 2
+      _delay: 0
+      _enemyCount: 25
+      _period: 0.15
+      _units:
+      - _name: Unit 1 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+      - _name: Unit 2 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+    - _name: Wave 3
+      _delay: 0
+      _enemyCount: 30
+      _period: 0.2
+      _units:
+      - _name: Unit 1 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+  - _name: Round 2
+    _delay: 1
+    _waves:
+    - _name: Wave 1
+      _delay: 0
+      _enemyCount: 15
+      _period: 0.01
+      _units:
+      - _name: Unit 1 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+    - _name: Wave 2
+      _delay: 0
+      _enemyCount: 25
+      _period: 0.1
+      _units:
+      - _name: Unit 1 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+      - _name: Unit 2 (Snowman)
+        Name: Snowman
+        _type: 0
+        _chance: 100
+    - _name: Wave 3
+      _delay: 0
+      _enemyCount: 50
+      _period: 0.15
+      _units:
+      - _name: Unit 1 (Snowman)
+        Name: Snowman
+        _type: 0
         _chance: 100

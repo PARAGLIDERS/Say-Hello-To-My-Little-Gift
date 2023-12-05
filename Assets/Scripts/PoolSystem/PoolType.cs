@@ -16,8 +16,8 @@ namespace PoolSystem {
 		FloorBlood = 104,
         SnowballExplosion = 105,
         EnemySpawnEffect = 106,
-        GunPickupActivateEffect = 107,
-        GunPickupDeactivateEffect = 107,
+        GunSpawnVfx = 107,
+        GunPickupVfx = 107,
 
         // bullets
         Bullet = 200,

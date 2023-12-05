@@ -31,7 +31,10 @@ namespace Level {
 
         public void Start() {
             GunsController.Init();
+            
+            EnemySpawner.Reset();
             EnemySpawner.Start();
+           
             PlayerController.Activate();
             CameraController.Activate();
             //DayNightController.Start();

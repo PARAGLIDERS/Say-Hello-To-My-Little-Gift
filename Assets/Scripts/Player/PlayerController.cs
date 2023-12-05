@@ -1,10 +1,12 @@
 using Root;
 using Units;
+using Unity.VisualScripting;
 using UnityEngine;
+using Utils;
 
 namespace Player {
 	public class PlayerController : MonoBehaviour {
-        [SerializeField] private Vector3 _defaultPosition; //ducktape
+        [SerializeField] private Vector3 _defaultPosition; 
 
 		[SerializeField] private float _speed;
 		[SerializeField] private float _maxSpeed;
@@ -18,31 +20,40 @@ namespace Player {
 
         public Transform GunsHolder => _gunsHolder;
         public Vector3 Position { get; private set; }
-		
-        public void Activate() {
-            transform.position = _defaultPosition;
-			Position = transform.position;
-            gameObject.SetActive(true);
+
+        private UnitRotation _rotation;
+        private UnitRotation _gunRotation;
+
+        private void Awake() {
+            _rotation = new UnitRotation(_unitTransform, _rotationSpeed);
+            _gunRotation = new UnitRotation(_gunsHolder, _rotationSpeed);
         }
 
+        private void FixedUpdate() {
+            UpdateRotation();
+            UpdatePosition();
+
+            if(TryGetInput(out Vector3 input)) {
+                Move(input);
+                _animation.Trigger();
+            }
+        }
+
+        public void Activate() {
+            ResetPosition();
+            gameObject.SetActive(true);
+        }
+        
         public void Deactivate() {
             gameObject.SetActive(false);
         }
-
-		private void Update() {
-			Position = transform.position;
-		}
-
-		private void FixedUpdate() {
-            Rotate(Core.InputController.GetPointerPosition());
-			Vector3 input = Core.InputController.GetPlayerInput();
-			if(input == Vector3.zero) return;
-			
-			Move(input);
-			_animation.Trigger();
-		}
 		
-		private void Move(Vector3 direction) {
+        private bool TryGetInput(out Vector3 input) {
+            input = Core.InputController.GetPlayerInput();
+            return input != Vector3.zero;
+        }
+
+        private void Move(Vector3 direction) {
 			_rigidbody.velocity += direction * (_speed);
 
 			if (_rigidbody.velocity.magnitude > _maxSpeed) {
@@ -52,9 +63,19 @@ namespace Player {
 			_rigidbody.velocity -= _rigidbody.velocity.normalized * _drag;
         }
 
-        private void Rotate(Vector3 point) {
-            Quaternion rotation = Quaternion.LookRotation(point - _unitTransform.position);
-            _unitTransform.rotation = Quaternion.Lerp(_unitTransform.rotation, rotation, Time.deltaTime * _rotationSpeed);
+        private void UpdateRotation() {
+            Vector3 target = Core.InputController.GetPointerPosition();
+            _rotation.Update(target);
+            _gunRotation.Update(target.With(y: _gunsHolder.position.y));
+        }
+
+        private void UpdatePosition() {
+            Position = transform.position;
+        }
+
+        private void ResetPosition() {
+            transform.position = _defaultPosition;
+            Position = transform.position;
         }
     }
 }

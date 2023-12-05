@@ -9,7 +9,7 @@ namespace Enemies {
 	[RequireComponent(typeof(NavMeshAgent))]
 	public abstract class Enemy : PoolObject {
 		[SerializeField] private UnitAnimation _animation;
-		[SerializeField] private NavMeshAgent _agent;
+		[SerializeField] protected NavMeshAgent _agent;
         		
 		protected virtual void Update() {
             Vector3 playerPosition = Core.LevelController.PlayerController.Position;
