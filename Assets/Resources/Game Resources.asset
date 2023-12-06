@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc9e2b570408489393c531c012c111af, type: 3}
-  m_Name: _resources
+  m_Name: Game Resources
   m_EditorClassIdentifier: 
   _enemySpawnerConfig: {fileID: 11400000, guid: b7f1450300ca4334390762a72a4025dc, type: 2}
   _poolConfig: {fileID: 11400000, guid: f99ffe28d45a2cb4283eae53272dd95d, type: 2}

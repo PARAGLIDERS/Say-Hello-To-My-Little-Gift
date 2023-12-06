@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace Grid {
-    [CreateAssetMenu(menuName = "spawner grid config")]
+    [CreateAssetMenu(menuName = "Santa/Spawner Grid Config", fileName = "Spawner Grid Config")]
     public class SpawnerGridConfig : ScriptableObject {
         [SerializeField] private float _cellSize = 5f;
         [SerializeField] private Vector2 _gridSize = new(10, 10);

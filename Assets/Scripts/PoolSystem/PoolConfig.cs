@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PoolSystem {
-	[CreateAssetMenu(menuName = "Pool Config")]
+	[CreateAssetMenu(menuName = "Santa/Pool Config", fileName = "Pool Config")]
 	public class PoolConfig : ScriptableObject {
 		[SerializeField] private List<PoolConfigItem> _items = new();
 		public List<PoolConfigItem> Items => _items;

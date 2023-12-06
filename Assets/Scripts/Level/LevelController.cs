@@ -8,15 +8,16 @@ using UnityEngine;
 namespace Level {
     public class LevelController {
         public readonly GunsController GunsController;
+        public readonly GunSpawner GunSpawner;
         public readonly EnemySpawner EnemySpawner;
         public readonly PlayerController PlayerController;
         public readonly CameraController CameraController;
         //public readonly DayNightController DayNightController;
 
         public LevelController(Transform parent, 
-            EnemySpawnerConfig spawnerConfig, GunsConfig gunsConfig, 
-            PlayerController playerPrefab, CameraController cameraPrefab,
-            DayNightConfig dayNightConfig) {
+            EnemySpawnerConfig spawnerConfig, GunsConfig gunsConfig,
+            GunsSpawnerConfig gunsSpawnerConfig, PlayerController playerPrefab, 
+            CameraController cameraPrefab, DayNightConfig dayNightConfig) {
             PlayerController = Object.Instantiate(playerPrefab, parent);
             PlayerController.Deactivate();
             
@@ -24,6 +25,7 @@ namespace Level {
             CameraController.Deactivate();
 
             GunsController = new GunsController(gunsConfig, PlayerController);
+            GunSpawner = new GunSpawner(parent, gunsSpawnerConfig);
             EnemySpawner = new EnemySpawner(spawnerConfig);
 
             //DayNightController = new DayNightController(parent, dayNightConfig);
@@ -31,8 +33,8 @@ namespace Level {
 
         public void Start() {
             GunsController.Init();
+            GunSpawner.Start();
             
-            EnemySpawner.Reset();
             EnemySpawner.Start();
            
             PlayerController.Activate();
@@ -41,10 +43,15 @@ namespace Level {
         }
 
         public void Stop() {
+            GunsController.Reset();
+            GunSpawner.Stop();
+
             EnemySpawner.Stop();
+            EnemySpawner.Reset();
+
             PlayerController.Deactivate();
             CameraController.Deactivate();
-            GunsController.Reset();
+
             //DayNightController.Stop();
         }
 

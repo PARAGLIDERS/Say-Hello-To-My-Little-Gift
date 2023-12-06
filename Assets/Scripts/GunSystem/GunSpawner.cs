@@ -12,7 +12,7 @@ namespace GunSystem {
         private readonly SpawnerGrid _grid;
         private readonly GunsSpawnerConfig _config;
         
-        public GunSpawner(Transform parent, GunsSpawnerConfig config, SpawnerGridConfig gridConfig) {
+        public GunSpawner(Transform parent, GunsSpawnerConfig config) {
             _config = config;
 
             _pickupsDictionary = new Dictionary<GunType, GunsSpawnerConfigItem>();
@@ -33,18 +33,18 @@ namespace GunSystem {
                 _pickups.Enqueue(pickup);
             }
 
-            _grid = new SpawnerGrid(gridConfig);            
+            _grid = new SpawnerGrid(_config.GridConfig);            
         }
 
         private IEnumerator _execution;
 
-        private void Start() {
+        public void Start() {
             _grid.CalculatePoints();
             _execution = Execute();
             Core.CoroutineRunner.Run(_execution);
         }
 
-        private void Stop() {
+        public void Stop() {
             if (_execution == null) return;
             Core.CoroutineRunner.Stop(_execution);
         }

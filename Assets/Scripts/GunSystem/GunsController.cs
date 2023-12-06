@@ -35,12 +35,7 @@ namespace GunSystem {
         }
 
         public void Init() {
-            AvailableGuns.Add(GunType.Pistol);
-            SwitchTo(GunType.Pistol);
-
-            // test
-            //Pickup(GunType.Uzi, 50);
-            //Pickup(GunType.Auto, 100);
+            Pickup(GunType.Pistol, 0);
         }
 
         public void Reset() {

@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace Settings {
-	[CreateAssetMenu(menuName = "setting")]
+	[CreateAssetMenu(menuName = "Santa/Setting", fileName = "Setting")]
 	public class Setting : ScriptableObject {
 		[SerializeField] private string _name;
 		[SerializeField] private float _minValue;

@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 namespace Root {
-	[CreateAssetMenu(menuName = "Santa/Resources")]
+	[CreateAssetMenu(menuName = "Santa/Resources", fileName = "Resources")]
 	public class Resources : ScriptableObject {
 		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
 
@@ -21,6 +21,7 @@ namespace Root {
 		[SerializeField] private UiScreenConfig _screenConfig;
 
         [SerializeField] private GunsConfig _gunsConfig;
+        [SerializeField] private GunsSpawnerConfig _gunSpawnerConfig;
         [SerializeField] private PlayerController _playerPrefab;
         [SerializeField] private CameraController _cameraPrefab;
 
@@ -36,6 +37,8 @@ namespace Root {
 		public EnemySpawnerConfig EnemySpawnerConfig => _enemySpawnerConfig;
 
         public GunsConfig GunsConfig => _gunsConfig;
+        public GunsSpawnerConfig GunsSpawnerConfig => _gunSpawnerConfig;
+
         public PlayerController PlayerPrefab => _playerPrefab;
         public CameraController CameraPrefab => _cameraPrefab;
 

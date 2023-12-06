@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd77c7f80759df048a0af6099a2e5042, type: 3}
+  m_Name: Gun Spawner Config
+  m_EditorClassIdentifier: 
+  _gridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
+  _cooldown: 5
+  _pickupablePrefab: {fileID: 0}
+  _items:
+  - Name: Uzi
+    _type: 1
+    _mesh: {fileID: 0}
+    _color: {r: 0, g: 0, b: 0, a: 0}
+    _pickupAmmo: 0
+    _dropChance: 0

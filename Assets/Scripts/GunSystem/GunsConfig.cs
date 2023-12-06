@@ -4,7 +4,7 @@ using Ui;
 using UnityEngine;
 
 namespace GunSystem {
-    [CreateAssetMenu(menuName ="Guns Config")]
+    [CreateAssetMenu(menuName = "Santa/Guns Config", fileName = "Guns Config")]
     public class GunsConfig : ScriptableObject {
         [SerializeField] private List<GunsConfigItem> _items;
         public List<GunsConfigItem> Items => _items;

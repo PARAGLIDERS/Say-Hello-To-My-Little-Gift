@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ui {
-    [CreateAssetMenu(menuName ="Screen Config")]
+    [CreateAssetMenu(menuName ="Santa/Ui Screen Config", fileName = "Ui Screen Config")]
     public class UiScreenConfig : ScriptableObject {
         [SerializeField] private List<UiScreenConfigItem> _items;
         public List<UiScreenConfigItem> Items => _items;

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace DayNightCycle {
-    [CreateAssetMenu(menuName ="day night config")]
+    [CreateAssetMenu(menuName = "Santa/Day Night Config", fileName = "Day Night Config")]
     public class DayNightConfig : ScriptableObject {
         [SerializeField, Range(0f, 1f)] private float _startPosition;
         [SerializeField] private AnimationCurve _sunRotation;

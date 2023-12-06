@@ -1,14 +1,9 @@
-using EnemySpawning;
-using GunSystem;
 using GameStateMachine;
 using PoolSystem;
 using SfxSystem;
 using Ui;
 using UnityEngine;
-using Player;
 using Level;
-using Unity.VisualScripting;
-using DayNightCycle;
 
 namespace Root {
 	public static class Core {
@@ -21,7 +16,7 @@ namespace Root {
 		public static StateController StateController { get; private set; }
 
 		public static void Init(Transform parent, Resources resources) {
-            parent.AddComponent<AudioListener>();
+            parent.gameObject.AddComponent<AudioListener>();
             Object.Instantiate(resources.VolumePrefab, parent);
 
             CoroutineRunner = new GameObject("coroutine runner").AddComponent<CoroutineRunner>();
@@ -32,8 +27,8 @@ namespace Root {
             SfxController = new SfxController(parent, resources.SfxConfig);
             LevelController = new LevelController(parent, 
                 resources.EnemySpawnerConfig, resources.GunsConfig,
-                resources.PlayerPrefab, resources.CameraPrefab,
-                resources.DayNightConfig);
+                resources.GunsSpawnerConfig, resources.PlayerPrefab, 
+                resources.CameraPrefab, resources.DayNightConfig);
 
             InputController = new InputController();
             StateController = new StateController();

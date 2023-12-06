@@ -17,6 +17,14 @@ MonoBehaviour:
     _size: 50
     _type: 0
     _prefab: {fileID: -4666638226030545533, guid: fe493f5b90e8eed42ba07ee982a2951f, type: 3}
+  - Name: Chicken
+    _size: 100
+    _type: 1
+    _prefab: {fileID: -4666638226030545533, guid: 35030c8d16218ad4794f874ea2a7d515, type: 3}
+  - Name: Deer
+    _size: 100
+    _type: 2
+    _prefab: {fileID: -4666638226030545533, guid: e39646fd7556a5b45ba33bf6fa32f6a3, type: 3}
   - Name: BulletExplosion
     _size: 500
     _type: 100

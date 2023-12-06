@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Grid;
 using PoolSystem;
+using RandomSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace EnemySpawning {
-	[CreateAssetMenu(menuName = "Enemy Spawner Config")]
+	[CreateAssetMenu(menuName = "Santa/Enemy Spawner Config", fileName = "Enemy Spawner Config")]
 	public class EnemySpawnerConfig : ScriptableObject {
 		[SerializeField] [Tooltip("time between wave N finish and wave N+1 start")] 
         private float _waveCooldown; 
@@ -56,24 +58,7 @@ namespace EnemySpawning {
 		public float Delay => _delay;
 		public int EnemyCount => _enemyCount;
 		public float Period => _period;
-
-        public EnemySpawnerUnitType GetEnemyType() {
-			int random = Random.Range(1, 101);
-
-			List<EnemySpawnerUnitType> possibleTypes = new();
-			for (int i = 0; i < _units.Count; i++) {
-				if (_units[i].Chance < random) continue;
-				possibleTypes.Add(_units[i].Type);
-			}
-
-            EnemySpawnerUnitType type = default;
-
-			if (possibleTypes.Count > 0) {
-				type = possibleTypes[Random.Range(0, possibleTypes.Count)];
-			}
-			
-			return type;
-		}
+        public List<EnemySpawnWaveUnit> Units => _units;
 
         public override void Validate(int index) {
             if (_delay < 0) _delay = 0;
@@ -81,17 +66,16 @@ namespace EnemySpawning {
             if (_period < 0) _period = 0;
 
             _name = $"Wave {index + 1}";
+            int sum = _units.Sum(x => x.Chance);
 
             for (int i = 0; i < _units.Count; i++) {
-                _units[i].Validate(i);
+                _units[i].Validate((int) (100 * (float)_units[i].Chance / sum));
             }
         }
     }
 
 	[Serializable]
-	public class EnemySpawnWaveUnit : EnemySpawnerConfigItem {
-        [HideInInspector] public string Name;
-
+	public class EnemySpawnWaveUnit : EnemySpawnerConfigItem, IRandomizerItem {
         [SerializeField] private EnemySpawnerUnitType _type;
 		[SerializeField] [Range(1, 100)] private int _chance;
 
@@ -99,7 +83,7 @@ namespace EnemySpawning {
 		public int Chance => _chance;
 
         public override void Validate(int index) {
-            _name = $"Unit {index + 1} ({_type})";
+            _name = $"{_type} : {index}%";
         }
     }
 

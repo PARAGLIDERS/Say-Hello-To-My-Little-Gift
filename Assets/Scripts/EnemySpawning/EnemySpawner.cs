@@ -4,13 +4,14 @@ using Root;
 using PoolSystem;
 using UnityEngine;
 using Grid;
+using RandomSystem;
 
 namespace EnemySpawning {
 	public class EnemySpawner {
+		public Action OnChange;
+
 		private readonly EnemySpawnerConfig _config;
 		private readonly SpawnerGrid _grid;
-
-		public Action OnChange;
 
 		private Action _onAllEnemiesKilled;
 
@@ -73,19 +74,17 @@ namespace EnemySpawning {
             EnemySpawnWave wave;
 
 			while (CurrentRound < _config.Rounds.Count) {
-                Debug.LogWarning($"round {CurrentRound}");
-
                 round = _config.Rounds[CurrentRound];
 				yield return new WaitForSeconds(round.Delay);
 
                 while (CurrentWave < round.Waves.Count) {
-                    Debug.LogWarning($"wave{CurrentWave}");
-
                     wave = round.Waves[CurrentWave];
+                    Randomizer<EnemySpawnWaveUnit> randomizer = new Randomizer<EnemySpawnWaveUnit>(wave.Units);
+
                     yield return new WaitForSeconds(wave.Delay);
 
 					for (int i = 0; i < wave.EnemyCount; i++) {
-                        Spawn(wave.GetEnemyType());
+                        Spawn(randomizer.GetItem().Type);
                         CurrentEnemyCount++;
 						yield return new WaitForSeconds(wave.Period);
 					}
@@ -94,14 +93,13 @@ namespace EnemySpawning {
 
                     while (cooldown > 0) {
                         if (CurrentEnemyCount == 0) {
-                            Debug.LogWarning($"break cooldown");
                             break;
                         }
 
                         cooldown -= Time.deltaTime;
                         yield return null;
                     }
-                    Debug.LogWarning(cooldown);
+
                     CurrentWave++;
 				}
 				
@@ -109,11 +107,10 @@ namespace EnemySpawning {
                 CurrentWave = 0;
 			}
 
-            Debug.LogWarning($"all rounds ended");
 			yield return new WaitUntil(() => CurrentEnemyCount <= 0);
                 
-            Debug.LogWarning($"all enemies killed");
             _onAllEnemiesKilled?.Invoke();
+            _onAllEnemiesKilled = null;
 		}
                 
         private void Spawn(EnemySpawnerUnitType type) {

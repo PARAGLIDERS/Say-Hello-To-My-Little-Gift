@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 namespace SfxSystem {
-	[CreateAssetMenu(menuName = "sfx config")]
+	[CreateAssetMenu(menuName = "Santa/Sfx Config" , fileName = "Sfx Config")]
 	public class SfxConfig : ScriptableObject {
         [SerializeField] private AudioMixerGroup _mixerGroup;
 		[SerializeField] private List<SfxConfigItem> _items;
