@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 6832910219722444586}
   - component: {fileID: 1397096538553473808}
   - component: {fileID: 5422649874369557922}
+  - component: {fileID: 8743682838484858706}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2372753e2840348537565d3e92a0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageable: {fileID: 8743682838484858706}
   _defaultPosition: {x: -5, y: 0, z: -5}
   _speed: 10
   _maxSpeed: 20
@@ -349,3 +351,18 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _body: {fileID: 6832910217776909500}
+--- !u!114 &8743682838484858706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832910217777074334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0293dbbb7e4866a83913c0614adf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _dieParticles: 101
+  _dieFloorDecals: 104

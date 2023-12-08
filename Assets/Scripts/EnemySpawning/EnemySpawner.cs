@@ -100,7 +100,7 @@ namespace EnemySpawning {
                     CurrentEnemyCount += wave.EnemyCount;
 
 					for (int i = 0; i < wave.EnemyCount; i++) {
-                        //Spawn(randomizer.GetItem().Type);
+                        Spawn(randomizer.GetItem().Type);
 						yield return new WaitForSeconds(wave.Period);
 					}
 

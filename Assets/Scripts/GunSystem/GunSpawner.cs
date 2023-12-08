@@ -29,7 +29,7 @@ namespace GunSystem {
             _container.SetParent(parent);
 
             _pickups = new Queue<GunPickupable>();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 25; i++) {
                 GunPickupable pickup = CreatePickupable();
                 _pickups.Enqueue(pickup);
             }
@@ -46,6 +46,10 @@ namespace GunSystem {
         }
 
         public void Stop() {
+            foreach (GunPickupable item in _pickups) {
+                item.Deactivate();
+            }
+
             if (_execution == null) return;
             Core.CoroutineRunner.Stop(_execution);
         }
@@ -66,6 +70,7 @@ namespace GunSystem {
                 GunPickupable pickupable = GetPickupable();
                 Vector3 position = _grid.GetPosition();
 
+                pickupable.Deactivate();
                 pickupable.Activate(param, position);
                 _pickups.Enqueue(pickupable);
             }

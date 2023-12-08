@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunPanel: {fileID: 1008932281382533326}
   _gunPickupPanel: {fileID: 2904443284718607399}
+  _playerHealthPanel: {fileID: 4359789906108160977}
 --- !u!1001 &1601688343563835201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +237,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc9a01334c6c9c40948d15917a419ff, type: 3}
+--- !u!114 &4359789906108160977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3079128291486502032, guid: 7bc9a01334c6c9c40948d15917a419ff, type: 3}
+  m_PrefabInstance: {fileID: 1601688343563835201}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae66883ffb427c41826c3d9928327f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8681920432158467449 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7946099811529486904, guid: 7bc9a01334c6c9c40948d15917a419ff, type: 3}

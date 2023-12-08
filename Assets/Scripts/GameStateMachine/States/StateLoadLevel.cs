@@ -6,8 +6,8 @@ namespace GameStateMachine.States {
 		protected override StateType _nextState => StateType.Play;
 
 		public override void Exit() {
-			base.Exit();
             Core.LevelController.Start();
+			base.Exit();
 		}
 	}
 }

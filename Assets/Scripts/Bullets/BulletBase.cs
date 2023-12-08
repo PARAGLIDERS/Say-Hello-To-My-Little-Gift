@@ -15,9 +15,16 @@ namespace Bullets {
         public override void Activate(Vector3 position, Quaternion rotation) {
             base.Activate(position, rotation);
 
+            ResetRigidbody();
+            ResetTimer();
+        }
+
+        private void ResetRigidbody() {
             _rigidbody.velocity *= 0;
             _rigidbody.angularVelocity *= 0;
+        }
 
+        private void ResetTimer() {
             _timer = Time.time + _lifeTime;
         }
 
@@ -29,10 +36,6 @@ namespace Bullets {
         private void OnTriggerEnter(Collider other) {
             if (other.TryGetComponent(out Damageable damageable)) {
                 damageable.ApplyDamage(_damage, transform.rotation);
-            }
-
-            if (other.TryGetComponent(out Rigidbody rb)) {
-                rb.AddForce(transform.forward * _damage, ForceMode.Impulse);
             }
 
             Deactivate();

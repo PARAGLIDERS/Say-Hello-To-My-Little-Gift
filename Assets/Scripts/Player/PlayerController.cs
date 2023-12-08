@@ -1,11 +1,14 @@
+using DamageSystem;
 using Root;
+using System;
 using Units;
-using Unity.VisualScripting;
 using UnityEngine;
 using Utils;
 
 namespace Player {
 	public class PlayerController : MonoBehaviour {
+        [SerializeField] private Damageable _damageable;
+
         [SerializeField] private Vector3 _defaultPosition; 
 
 		[SerializeField] private float _speed;
@@ -17,6 +20,24 @@ namespace Player {
 		[SerializeField] private Rigidbody _rigidbody;
 		[SerializeField] private UnitAnimation _animation;
         [SerializeField] private Transform _gunsHolder;
+
+        public event Action OnDamage {
+			add => _damageable.OnDamage += value;
+			remove => _damageable.OnDamage -= value;            
+		}
+
+        public event Action OnHeal {
+			add => _damageable.OnHeal += value;
+			remove => _damageable.OnHeal -= value;
+		}
+
+		public event Action OnDie {
+			add => _damageable.OnDie += value;
+			remove => _damageable.OnDie -= value;
+		}
+
+        public int MaxHealth => _damageable.MaxHealth;
+        public int CurrentHealth => _damageable.CurrentHealth;
 
         public Transform GunsHolder => _gunsHolder;
         public Vector3 Position { get; private set; }
@@ -41,10 +62,13 @@ namespace Player {
 
         public void Activate() {
             ResetPosition();
+            _damageable.ResetHealth();
+            _damageable.OnDie += Deactivate;
             gameObject.SetActive(true);
-        }
-        
-        public void Deactivate() {
+		}
+
+		public void Deactivate() {
+            _damageable.OnDie -= Deactivate;
             gameObject.SetActive(false);
         }
 		
@@ -77,5 +101,5 @@ namespace Player {
             transform.position = _defaultPosition;
             Position = transform.position;
         }
-    }
+	}
 }

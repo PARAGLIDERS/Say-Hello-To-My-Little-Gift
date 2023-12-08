@@ -32,8 +32,13 @@ namespace GunSystem {
             IsActive = true;
         }
 
-        // configured collision mask so it only triggers by the player 
-        private void OnTriggerEnter(Collider other) {
+		public void Deactivate() {
+			gameObject.SetActive(false);
+			IsActive = false;
+		}
+
+		// configured collision mask so it only triggers by the player 
+		private void OnTriggerEnter(Collider other) {
             Core.LevelController.GunsController.Pickup(_param.Type, _param.PickupAmmo);
 
             Core.SfxController.Play(SfxSystem.SfxType.VfxGunPickup);
@@ -46,11 +51,6 @@ namespace GunSystem {
             if(Time.time >= _currentLifetime) {
                 Deactivate();
             }
-        }
-
-        private void Deactivate() {
-            gameObject.SetActive(false);
-            IsActive = false;
         }
     }
 }
