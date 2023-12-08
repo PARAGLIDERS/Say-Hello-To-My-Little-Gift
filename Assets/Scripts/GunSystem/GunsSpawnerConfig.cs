@@ -31,13 +31,11 @@ namespace GunSystem {
         [SerializeField] private Mesh _mesh;
         [SerializeField] private Color _color;
         [SerializeField] private int _pickupAmmo;
-        [SerializeField] private int _dropChance;
 
         public GunType Type => _type;
         public Mesh Mesh => _mesh;
         public Color Color => _color;
         public int PickupAmmo => _pickupAmmo;
-        public int DropChance => _dropChance;
 
         public void Validate() {
             Name = _type.ToString();

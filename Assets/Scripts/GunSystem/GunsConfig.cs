@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Ui;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace GunSystem {
     [CreateAssetMenu(menuName = "Santa/Guns Config", fileName = "Guns Config")]
@@ -9,11 +9,9 @@ namespace GunSystem {
         [SerializeField] private List<GunsConfigItem> _items;
         public List<GunsConfigItem> Items => _items;
 
-        // oh no, incapsulation violation :)
-        // and code doubling lol
         private void OnValidate() {
             foreach (GunsConfigItem item in _items) {
-                item.Name = item.Type.ToString();
+                item.Validate();
             }
         }
     }
@@ -27,5 +25,9 @@ namespace GunSystem {
 
         public GunType Type => _type;
         public Gun Prefab => _prefab;
-    }
+
+		public void Validate() {
+			Name = Type.ToString();
+		}
+	}
 }

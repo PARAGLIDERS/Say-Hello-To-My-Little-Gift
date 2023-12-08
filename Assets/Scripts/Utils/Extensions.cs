@@ -11,5 +11,16 @@ namespace Utils {
 
             return result;
         }
+
+        public static Color With(this Color color, float? r = null, float? g = null, float? b = null, float? a = null) {
+            Color result = color;
+
+			result.r = r ?? color.r;
+			result.g = g ?? color.g;
+			result.b = b ?? color.b;
+			result.a = a ?? color.a;
+
+            return result;
+        }
     }
 }

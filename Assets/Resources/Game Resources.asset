@@ -18,6 +18,7 @@ MonoBehaviour:
   _canvasPrefab: {fileID: 8709956557681040708, guid: 524c68d3c79c6d342b60fc9e07a87608, type: 3}
   _screenConfig: {fileID: 11400000, guid: 76180024fcf91d94086ed13a624d88e6, type: 2}
   _gunsConfig: {fileID: 11400000, guid: cac373b28312d264fb9183d1b8b7c219, type: 2}
+  _gunSpawnerConfig: {fileID: 11400000, guid: d0ad95e65bf0b6848aed64ce7c492dd7, type: 2}
   _playerPrefab: {fileID: 1397096538553473808, guid: 3e4c123686800a54ca31272486b9580b, type: 3}
   _cameraPrefab: {fileID: 6344910643233517397, guid: 74b72620edbfcec448e21f245e32850d, type: 3}
   _volumePrefab: {fileID: 3445501708309228923, guid: a65deeea4cdf33345b3b0093af620375, type: 3}

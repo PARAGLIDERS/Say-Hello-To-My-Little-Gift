@@ -10,20 +10,20 @@ namespace RandomSystem {
         public static void Run() {
             const int itemsCount = 10;
             const int maxItemChance = 101;
-            const int iterationsCount = 1_000_000;
+            const int iterationsCount = 10;
 
             List<TestRandomizerItem> testRandomizerItems = new List<TestRandomizerItem>() {
-                new TestRandomizerItem(0, 10),
-                new TestRandomizerItem(1, 10),
-                new TestRandomizerItem(2, 10),
-                new TestRandomizerItem(3, 10),
-                new TestRandomizerItem(4, 10),
+                //new TestRandomizerItem(0, 10),
+                //new TestRandomizerItem(1, 10),
+                //new TestRandomizerItem(2, 10),
+                //new TestRandomizerItem(3, 10),
+                //new TestRandomizerItem(4, 10),
             };
 
             for (int i = 0; i < itemsCount; i++) {
                 int chance = Random.Range(0, maxItemChance);
                 TestRandomizerItem item = new TestRandomizerItem(i, chance);
-                //testRandomizerItems.Add(item);
+                testRandomizerItems.Add(item);
             }
 
             Randomizer<TestRandomizerItem> randomizer = new Randomizer<TestRandomizerItem>(testRandomizerItems);

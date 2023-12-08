@@ -4,7 +4,8 @@ using SfxSystem;
 using UnityEngine;
 
 namespace GunSystem {
-	public class Gun : MonoBehaviour {
+	public class Gun : MonoBehaviour, IGun {
+        [SerializeField] private string _name;
 		[SerializeField] private Transform _muzzle;
         [SerializeField] [Range(0f, 1f)] private float _spread = 0.1f;
         [SerializeField] [Range(0.1f, 25f)] private float _fireRate = 1f;
@@ -15,10 +16,12 @@ namespace GunSystem {
         [SerializeField] private bool _isInfinite;
 
         public InputType InputType => _inputType;
-        public bool IsInfinite => _isInfinite;
 
+        public bool IsInfinite => _isInfinite;
+        public string Name => _name;
+        public int Ammo { get; private set; }
+        
         private float _cooldown;
-        public float CurrentAmmo { get; private set; }
 
         public void AddAmmo(int value) {
             if (value < 0) {
@@ -26,16 +29,19 @@ namespace GunSystem {
                 return;
             }
 
-            CurrentAmmo += value;
+            Ammo += value;
         }
 
         public void ResetAmmo() {
-            CurrentAmmo = 0;
+            Ammo = 0;
         }
 
 		public void Shoot() {
-            if (_inputType != InputType.Click && Time.time < _cooldown) return;
-            if (!_isInfinite && CurrentAmmo <= 0) {
+            if (!CanShoot()) { 
+                return; 
+            }
+
+            if (!HasAmmo()) {
                 Core.SfxController.Play(SfxType.ShotDry);
                 return;
             }
@@ -44,14 +50,37 @@ namespace GunSystem {
                 SpawnBullet();
             }
 
-            _cooldown = Time.time + 1f / _fireRate;
-
-            CurrentAmmo -= _bulletsPerShot;
-            if (CurrentAmmo < 0) CurrentAmmo = 0;
+            UpdateCooldown();
+            SpendAmmo();
 
             Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
             Core.SfxController.Play((SfxType)_shotSound, _muzzle.position);
 		}       
+
+        private bool CanShoot() {
+            return Time.time > _cooldown || _inputType == InputType.Click;
+		}
+
+        private bool HasAmmo() {
+            return _isInfinite || Ammo > 0;
+		}
+
+        private void UpdateCooldown() {
+			_cooldown = Time.time + 1f / _fireRate;
+		}
+
+        private void SpendAmmo() {
+            if (IsInfinite) {
+                return;
+            }
+
+			Ammo--;
+
+            if (Ammo < 0) {
+                Debug.LogError("ammo dropped below zero!");
+                Ammo = 0;
+            }
+		}
 
 		private void SpawnBullet() {
 			Quaternion bulletRotation = GetBulletRotation();

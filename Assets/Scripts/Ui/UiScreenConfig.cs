@@ -8,10 +8,9 @@ namespace Ui {
         [SerializeField] private List<UiScreenConfigItem> _items;
         public List<UiScreenConfigItem> Items => _items;
 
-        // oh no, incapsulation violation :)
         private void OnValidate() {
             foreach (UiScreenConfigItem item in _items) {
-                item.Name = item.Type.ToString();
+				item.Validate();
             }
         }
     }
@@ -25,5 +24,9 @@ namespace Ui {
 		
 		public UiScreenType Type => _type;
 		public UiScreen Prefab => _prefab;
+
+		public void Validate() {
+			Name = Type.ToString();
+		}
 	}
 }

@@ -7,8 +7,6 @@ using UnityEngine;
 
 namespace Ui.Components {
     public class GunHudIconsPanel : MonoBehaviour {
-        [SerializeField] private TextMeshProUGUI _ammo;
-        [SerializeField] private GameObject _infinity;
         [SerializeField] private GunHudIcon _iconPrefab;
         [SerializeField] private RectTransform _container;        
         [SerializeField] private List<GunIconPreset> _presets;
@@ -18,36 +16,55 @@ namespace Ui.Components {
         private GunHudIcon _current;
 
         public void Init() {
-            _presetsDictionary = new Dictionary<GunType, GunIconPreset>();
+            InitPresets();
+            InitIcons();
+            SubscribeToEvents();
+            SetInitialIcon();
+        }
+
+		private void OnDestroy() {
+			UnsubscriveFromEvents();
+		}
+
+		private void InitPresets() {
+			_presetsDictionary = new Dictionary<GunType, GunIconPreset>();
+			
             foreach (GunIconPreset item in _presets) {
-                if(_presetsDictionary.ContainsKey(item.Type)) {
-                    Debug.LogError("gun icon preset already exists in dictionary");
-                    continue;
-                }
+				if (_presetsDictionary.ContainsKey(item.Type)) {
+					Debug.LogError("gun icon preset already exists in dictionary");
+					continue;
+				}
 
-                _presetsDictionary.Add(item.Type, item);
-            }
+				_presetsDictionary.Add(item.Type, item);
+			}
+		}
 
-            List<GunType> guns = Core.LevelController.GunsController.AvailableGuns;
-            _icons = new Dictionary<GunType, GunHudIcon>();
-         
-            foreach (GunType gunType in guns) {
-                GunHudIcon icon = CreateIcon(gunType);
-                _icons.Add(gunType, icon);
-            }
+        private void InitIcons() {
+			List<GunType> guns = Core.LevelController.GunsController.AvailableGuns;
+			_icons = new Dictionary<GunType, GunHudIcon>();
 
-            SwitchTo(Core.LevelController.GunsController.Current.type);
+			foreach (GunType gunType in guns) {
+				GunHudIcon icon = CreateIcon(gunType);
+				_icons.Add(gunType, icon);
+			}
+		}
 
-            Core.LevelController.GunsController.OnSwitch += SwitchTo;
-            Core.LevelController.GunsController.OnShoot += UpdateAmmo;
-        }
+        private void SubscribeToEvents() {
+			Core.LevelController.GunsController.OnSwitch += SwitchTo;
+			Core.LevelController.GunsController.OnAmmoChange += UpdateIcon;
+		}
 
-        private void OnDestroy() {
-            Core.LevelController.GunsController.OnSwitch -= SwitchTo;
-            Core.LevelController.GunsController.OnShoot -= UpdateAmmo;
-        }
+        private void UnsubscriveFromEvents() {
+			Core.LevelController.GunsController.OnSwitch -= SwitchTo;
+			Core.LevelController.GunsController.OnAmmoChange -= UpdateIcon;
+		}
 
-        private void SwitchTo(GunType type) {
+		private void SetInitialIcon() {
+			GunsController GunsController = Core.LevelController.GunsController;
+			SwitchTo(GunsController.Current.type, GunsController.Current.gun);
+		}
+
+		private void SwitchTo(GunType type, IGun gun) {
             if (_current != null) {
                 _current.Deselect();
             }
@@ -58,7 +75,7 @@ namespace Ui.Components {
             }
 
             _current.Select();
-            UpdateAmmo();
+            _current.UpdateAmmo(gun);
         }
 
         private GunHudIcon CreateIcon(GunType type) {
@@ -72,11 +89,13 @@ namespace Ui.Components {
             return icon;
         }
 
-        private void UpdateAmmo() {
-            Gun gun = Core.LevelController.GunsController.Current.gun;
-            _infinity.SetActive(gun.IsInfinite);
-            _ammo.gameObject.SetActive(!gun.IsInfinite);
-            _ammo.text = gun.CurrentAmmo.ToString();
+        private void UpdateIcon(GunType type, IGun gun) {
+            if(!_icons.TryGetValue(type, out GunHudIcon icon)) {
+                Debug.LogError($"icon does not exist in dictionary: {type}");
+                return;
+            }
+
+            icon.UpdateAmmo(gun);
         }
     }
 

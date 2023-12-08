@@ -17,93 +17,28 @@ MonoBehaviour:
   _rounds:
   - _name: Round 1
     _delay: 1
+    _guns:
+    - _name: 'Uzi : 51%'
+      _type: 1
+      _chance: 100
+    - _name: 'Shotgun : 24%'
+      _type: 2
+      _chance: 47
+    - _name: 'Auto : 24%'
+      _type: 4
+      _chance: 47
     _waves:
     - _name: Wave 1
       _delay: 0
-      _enemyCount: 25
-      _period: 0.1
+      _enemyCount: 100
+      _period: 1
       _units:
-      - _name: 'Snowman : 100%'
-        _type: 0
-        _chance: 9
-    - _name: Wave 2
-      _delay: 0
-      _enemyCount: 30
-      _period: 0.1
-      _units:
-      - _name: 'Snowman : 74%'
-        _type: 0
-        _chance: 100
-      - _name: 'Chicken : 25%'
-        _type: 1
-        _chance: 35
-    - _name: Wave 3
-      _delay: 0
-      _enemyCount: 45
-      _period: 0.1
-      _units:
-      - _name: 'Snowman : 54%'
-        _type: 0
-        _chance: 100
-      - _name: 'Chicken : 36%'
-        _type: 1
-        _chance: 67
-      - _name: 'Deer : 8%'
-        _type: 2
-        _chance: 15
-    - _name: Wave 4
-      _delay: 0
-      _enemyCount: 50
-      _period: 0.1
-      _units:
-      - _name: 'Snowman : 44%'
+      - _name: 'Snowman : 63%'
         _type: 0
         _chance: 100
       - _name: 'Chicken : 29%'
         _type: 1
-        _chance: 67
-      - _name: 'Deer : 25%'
+        _chance: 46
+      - _name: 'Deer : 7%'
         _type: 2
-        _chance: 57
-    - _name: Wave 5
-      _delay: 0
-      _enemyCount: 75
-      _period: 0.1
-      _units:
-      - _name: 'Snowman : 11%'
-        _type: 0
-        _chance: 10
-      - _name: 'Chicken : 78%'
-        _type: 1
-        _chance: 67
-      - _name: 'Deer : 9%'
-        _type: 2
-        _chance: 8
-    - _name: Wave 6
-      _delay: 0
-      _enemyCount: 100
-      _period: 0.1
-      _units:
-      - _name: 'Snowman : 8%'
-        _type: 0
-        _chance: 9
-      - _name: 'Chicken : 9%'
-        _type: 1
         _chance: 11
-      - _name: 'Deer : 82%'
-        _type: 2
-        _chance: 92
-    - _name: Wave 7
-      _delay: 0
-      _enemyCount: 125
-      _period: 0.1
-      _units:
-      - _name: 'Snowman : 33%'
-        _type: 0
-        _chance: 100
-      - _name: 'Chicken : 33%'
-        _type: 1
-        _chance: 100
-      - _name: 'Deer : 33%'
-        _type: 2
-        _chance: 100

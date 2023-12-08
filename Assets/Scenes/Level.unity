@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd1199dcd37496bb8f8d764dd11b9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _config: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
+  _config: {fileID: 11400000, guid: 5c33826a758d42a4493be96fb16b7e3d, type: 2}
 --- !u!1001 &28301839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -578,7 +578,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.55
+  m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

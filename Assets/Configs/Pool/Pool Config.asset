@@ -61,3 +61,11 @@ MonoBehaviour:
     _size: 100
     _type: 106
     _prefab: {fileID: 2456940896281974865, guid: 7456d63495f779c4193b5ddececfbc9c, type: 3}
+  - Name: GunSpawnVfx
+    _size: 100
+    _type: 107
+    _prefab: {fileID: 2456940896281974865, guid: 19cb15b5886dbdb4db21563c581f7cf9, type: 3}
+  - Name: GunPickupVfx
+    _size: 100
+    _type: 108
+    _prefab: {fileID: 2456940896281974865, guid: 19cb15b5886dbdb4db21563c581f7cf9, type: 3}

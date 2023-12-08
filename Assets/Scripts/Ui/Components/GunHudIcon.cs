@@ -1,4 +1,5 @@
 using DG.Tweening;
+using GunSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,10 +9,10 @@ namespace Ui.Components {
         [SerializeField] private RectTransform _body;
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private Image _icon;
-        [SerializeField] private Image _frame;
-        [SerializeField] private Color _selectedColor;
-
-        private const float _inactiveAlpha = 0.5f;
+        [SerializeField] private TextMeshProUGUI _ammo;
+        [SerializeField] private GameObject _infinity;
+        [SerializeField] private float _deselectedAlpha = 0.5f;
+        [SerializeField] private Color _noAmmoColor = Color.red;
 
         public void Init(Sprite sprite) {
             _icon.sprite = sprite;
@@ -22,14 +23,19 @@ namespace Ui.Components {
             _canvasGroup.alpha = 1f;
             _body.DOKill();
             _body.DOScale(1.2f, 0.15f);
-            _frame.color = _selectedColor;
         }
 
         public void Deselect() {
-            _canvasGroup.alpha = _inactiveAlpha;
+            _canvasGroup.alpha = _deselectedAlpha;
             _body.DOKill();
             _body.DOScale(1, 0.15f);
-            _frame.color = Color.white;
         }
+
+        public void UpdateAmmo(IGun gun) {
+            _ammo.text = gun.Ammo.ToString();
+            _ammo.color = gun.Ammo <= 0 ? _noAmmoColor : Color.white;
+			_ammo.gameObject.SetActive(!gun.IsInfinite);
+			_infinity.gameObject.SetActive(gun.IsInfinite);
+		}
     }
 }

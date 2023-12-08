@@ -28,6 +28,7 @@ namespace GunSystem {
             _container = new GameObject("gun pickups").transform;
             _container.SetParent(parent);
 
+            _pickups = new Queue<GunPickupable>();
             for (int i = 0; i < 100; i++) {
                 GunPickupable pickup = CreatePickupable();
                 _pickups.Enqueue(pickup);
@@ -53,11 +54,13 @@ namespace GunSystem {
             while (true) {
                 yield return new WaitForSeconds(_config.Cooldown);
 
-                GunType gunType = GetGun();
+                if(!Core.LevelController.EnemySpawner.TryGetCurrentGun(out GunType gunType)) {
+                    continue;
+                }
 
                 if(!_pickupsDictionary.TryGetValue(gunType, out GunsSpawnerConfigItem param)) {
                     Debug.LogError($"no pickup item in dictionary of type: {gunType}");
-                    yield return null;
+                    continue;
                 }
 
                 GunPickupable pickupable = GetPickupable();
@@ -66,10 +69,6 @@ namespace GunSystem {
                 pickupable.Activate(param, position);
                 _pickups.Enqueue(pickupable);
             }
-        }
-
-        private GunType GetGun() {
-            return default;
         }
 
         private GunPickupable GetPickupable() {

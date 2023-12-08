@@ -20,8 +20,8 @@ namespace GunSystem {
             _meshFilter.mesh = _param.Mesh;
 
             foreach (ParticleSystem particle in _particles) {
-                ParticleSystem.MainModule particlesMain = particle.main;
-                particlesMain.startColor = param.Color;
+                //ParticleSystem.MainModule particlesMain = particle.main;
+               // particlesMain.startColor = param.Color;
             }
 
             transform.position = position;

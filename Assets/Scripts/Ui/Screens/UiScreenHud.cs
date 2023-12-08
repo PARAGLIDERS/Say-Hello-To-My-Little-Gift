@@ -1,17 +1,14 @@
-using EnemySpawning;
-using GunSystem;
-using Root;
-using System.Collections.Generic;
-using TMPro;
-using Ui.Components;
 using UnityEngine;
+using Ui.Components;
 
 namespace Ui.Screens {
 	public class UiScreenHud : UiScreen {
         [SerializeField] private GunHudIconsPanel _gunPanel;
+		[SerializeField] private GunHudPickupPanel _gunPickupPanel;
 
 		public override void Init() {
             _gunPanel.Init();
+			_gunPickupPanel.Init();
 		}
 	}
 }

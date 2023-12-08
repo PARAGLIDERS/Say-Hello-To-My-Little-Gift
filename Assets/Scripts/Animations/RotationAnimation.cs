@@ -1,9 +1,12 @@
 using UnityEngine;
 
 namespace Animations {
-	public class RotationAnimation : MonoBehaviour{
+	public class RotationAnimation : MonoBehaviour {
+		[SerializeField] private float _speed = 30f;
+		[SerializeField] private Vector3 _orientation = Vector3.up;
+
 		private void Update() {
-			transform.Rotate(Vector3.forward, Time.deltaTime * 30f);
+			transform.Rotate(_orientation, Time.deltaTime * _speed);
 		}
 	}
 }

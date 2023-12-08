@@ -5,6 +5,7 @@ using PoolSystem;
 using UnityEngine;
 using Grid;
 using RandomSystem;
+using GunSystem;
 
 namespace EnemySpawning {
 	public class EnemySpawner {
@@ -51,6 +52,17 @@ namespace EnemySpawning {
 			_grid = new SpawnerGrid(config.GridConfig);
 		}
 
+		private Randomizer<EnemySpawnRoundGun> _gunRandomizer;
+		public bool TryGetCurrentGun(out GunType type) {
+			if( _gunRandomizer == null ) {
+				type = GunType.Pistol;
+				return false;
+			}
+
+			type = _gunRandomizer.GetItem().Type;
+			return true;
+		}
+
         public void Reset() {
             CurrentRound = 0;
             CurrentWave = 0;
@@ -75,6 +87,8 @@ namespace EnemySpawning {
 
 			while (CurrentRound < _config.Rounds.Count) {
                 round = _config.Rounds[CurrentRound];
+				_gunRandomizer = new Randomizer<EnemySpawnRoundGun>(round.Guns);
+
 				yield return new WaitForSeconds(round.Delay);
 
                 while (CurrentWave < round.Waves.Count) {
@@ -83,9 +97,10 @@ namespace EnemySpawning {
 
                     yield return new WaitForSeconds(wave.Delay);
 
+                    CurrentEnemyCount += wave.EnemyCount;
+
 					for (int i = 0; i < wave.EnemyCount; i++) {
-                        Spawn(randomizer.GetItem().Type);
-                        CurrentEnemyCount++;
+                        //Spawn(randomizer.GetItem().Type);
 						yield return new WaitForSeconds(wave.Period);
 					}
 

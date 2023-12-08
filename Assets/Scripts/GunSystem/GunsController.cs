@@ -1,20 +1,18 @@
 using Player;
-using Root;
-using SfxSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace GunSystem {
     public class GunsController {
-        public event Action<GunType> OnSwitch;
-        public event Action OnShoot;
+        public event Action<GunType, IGun> OnSwitch;
+        public event Action<GunType, IGun> OnAmmoChange;
+        public event Action<IGun, int> OnPickup;
 
         public readonly List<GunType> AvailableGuns;
+        public (GunType type, Gun gun) Current { get; private set; }
 
         private readonly Dictionary<GunType, Gun> _gunsDictionary;
-
-        public (GunType type, Gun gun) Current { get; private set; }
         private int _currentIndex;
 
         public GunsController(GunsConfig config, PlayerController player) {
@@ -54,17 +52,21 @@ namespace GunSystem {
         }
 
         public void Pickup(GunType type, int ammo) {
-            if(!_gunsDictionary.TryGetValue(type, out Gun gunPreset)){
+            if(!_gunsDictionary.TryGetValue(type, out Gun gun)){
                 Debug.LogError($"weapon does not exist in dictionary: {type}");
                 return;
             }
 
-            gunPreset.AddAmmo(ammo);
+            gun.AddAmmo(ammo);
 
-            if(!AvailableGuns.Contains(type)) {
+			if (!AvailableGuns.Contains(type)) {
                 AvailableGuns.Add(type);
                 SwitchTo(type);
-            }
+            } else {
+				OnAmmoChange?.Invoke(type, gun);
+			}
+
+			OnPickup?.Invoke(gun, ammo);
         }
 
         public void Update() {
@@ -77,7 +79,7 @@ namespace GunSystem {
             if (!GetInput(Current.gun.InputType)) return;
 
             Current.gun.Shoot();
-            OnShoot?.Invoke();
+            OnAmmoChange?.Invoke(Current.type, Current.gun);
         }
 
         private bool GetInput(InputType inputType) => inputType switch {
@@ -111,7 +113,7 @@ namespace GunSystem {
             Current = new (type, gun);
             Current.gun.gameObject.SetActive(true);
 
-            OnSwitch?.Invoke(type);
+            OnSwitch?.Invoke(type, gun);
         }
     }
 }

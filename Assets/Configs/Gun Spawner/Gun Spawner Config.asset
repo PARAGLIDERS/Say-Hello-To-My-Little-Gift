@@ -13,12 +13,21 @@ MonoBehaviour:
   m_Name: Gun Spawner Config
   m_EditorClassIdentifier: 
   _gridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
-  _cooldown: 5
-  _pickupablePrefab: {fileID: 0}
+  _cooldown: 3
+  _pickupablePrefab: {fileID: 4350365431954603433, guid: 8b47cfb5d5e84e644880acef9c901c5f, type: 3}
   _items:
   - Name: Uzi
     _type: 1
-    _mesh: {fileID: 0}
-    _color: {r: 0, g: 0, b: 0, a: 0}
-    _pickupAmmo: 0
-    _dropChance: 0
+    _mesh: {fileID: -5495902117074765545, guid: a7aff4522b36ee241b8f943fd706f86d, type: 3}
+    _color: {r: 0.99178326, g: 1, b: 0, a: 1}
+    _pickupAmmo: 25
+  - Name: Shotgun
+    _type: 2
+    _mesh: {fileID: -5495902117074765545, guid: 0406dc7af1567a946bd74e7ddaf58e18, type: 3}
+    _color: {r: 1, g: 0.5754001, b: 0, a: 1}
+    _pickupAmmo: 10
+  - Name: Auto
+    _type: 4
+    _mesh: {fileID: -5495902117074765545, guid: 6d44894664d41d449a45cd597f68a02b, type: 3}
+    _color: {r: 1, g: 0.14192978, b: 0, a: 1}
+    _pickupAmmo: 50

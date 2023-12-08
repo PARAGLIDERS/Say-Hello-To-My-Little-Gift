@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Gun Spawner Grid Config
   m_EditorClassIdentifier: 
   _cellSize: 5
-  _gridSize: {x: 13.7, y: 13.84}
-  _gridInnerSize: {x: 0, y: 0}
+  _gridSize: {x: 12.3, y: 12.3}
+  _gridInnerSize: {x: 1, y: 1}
   _gridHeight: 1
   _obstaclesLayer:
     serializedVersion: 2
