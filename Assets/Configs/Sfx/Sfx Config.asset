@@ -24,3 +24,53 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: ec39d0c94ce756d478467f2590fe9576, type: 3}
     _volume: 1
     _pitchShift: 0
+  - Name: ShotDry
+    _type: 100
+    _clip: {fileID: 8300000, guid: d3b379406e5246a4fb68795c3631a700, type: 3}
+    _volume: 0.487
+    _pitchShift: 0
+  - Name: ShotPistol
+    _type: 101
+    _clip: {fileID: 8300000, guid: e683b11c2d10ce34fb20970a68cf1537, type: 3}
+    _volume: 0.16
+    _pitchShift: 0.164
+  - Name: ShotAuto
+    _type: 102
+    _clip: {fileID: 8300000, guid: e7ec1c6e70b695c48af6446151602748, type: 3}
+    _volume: 0.16
+    _pitchShift: 0.175
+  - Name: ShotShotgun
+    _type: 103
+    _clip: {fileID: 8300000, guid: 3fc4998d3e21b9b4e8eb4cf3df1fc847, type: 3}
+    _volume: 0.225
+    _pitchShift: 0.183
+  - Name: ShotUzi
+    _type: 104
+    _clip: {fileID: 8300000, guid: 0b01107d69f78ec43952cda0023fe96b, type: 3}
+    _volume: 0.175
+    _pitchShift: 0.114
+  - Name: EnemySpawn
+    _type: 201
+    _clip: {fileID: 8300000, guid: a28fac7d2df375f429504d4dcd28f870, type: 3}
+    _volume: 0.891
+    _pitchShift: 0.34
+  - Name: EnemySnowmanThrow
+    _type: 202
+    _clip: {fileID: 8300000, guid: 95c7015ba0b930f47ab952bc0150523c, type: 3}
+    _volume: 1
+    _pitchShift: 0.16
+  - Name: EnemyChickenExplode
+    _type: 203
+    _clip: {fileID: 8300000, guid: 85b9f18a2ca301147a7ef0ade3b9937d, type: 3}
+    _volume: 0.376
+    _pitchShift: 0.098
+  - Name: VfxGunPickup
+    _type: 302
+    _clip: {fileID: 8300000, guid: a65a94ab305ff9045baec40e5372f945, type: 3}
+    _volume: 0.584
+    _pitchShift: 0.094
+  - Name: EnemyBloodParticles
+    _type: 200
+    _clip: {fileID: 8300000, guid: df2c5908d3e8e7047a24ee2831a5f146, type: 3}
+    _volume: 1
+    _pitchShift: 0.114

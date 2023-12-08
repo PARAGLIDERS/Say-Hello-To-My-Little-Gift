@@ -134,6 +134,7 @@ namespace EnemySpawning {
 
             Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: OnEnemyKilled);
             Core.PoolController.Spawn(PoolType.EnemySpawnEffect, position, rotation);
+			Core.SfxController.Play(SfxSystem.SfxType.EnemySpawn, position);
         }
 
         private void OnEnemyKilled() {

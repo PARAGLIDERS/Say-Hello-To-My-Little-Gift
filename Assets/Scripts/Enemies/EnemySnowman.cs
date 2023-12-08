@@ -55,6 +55,7 @@ namespace Enemies {
 
         private void Shoot() {
             Core.PoolController.Spawn(PoolSystem.PoolType.Snowball, _muzzle.position, _muzzle.rotation);
+            Core.SfxController.Play(SfxSystem.SfxType.EnemySnowmanThrow, _muzzle.position);
         }
 
         private bool IsNearPlayer() {

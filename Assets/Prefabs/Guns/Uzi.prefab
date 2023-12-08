@@ -134,6 +134,6 @@ MonoBehaviour:
   _fireRate: 10
   _bulletsPerShot: 1
   _bulletType: 200
-  _shotSound: 101
+  _shotSound: 104
   _inputType: 1
   _isInfinite: 0

@@ -22,6 +22,7 @@ namespace GunSystem {
         public int Ammo { get; private set; }
         
         private float _cooldown;
+        private bool _dryShotPlayed; // ducktape
 
         public void AddAmmo(int value) {
             if (value < 0) {
@@ -30,6 +31,7 @@ namespace GunSystem {
             }
 
             Ammo += value;
+            _dryShotPlayed = false;
         }
 
         public void ResetAmmo() {
@@ -42,7 +44,11 @@ namespace GunSystem {
             }
 
             if (!HasAmmo()) {
-                Core.SfxController.Play(SfxType.ShotDry);
+                if (!_dryShotPlayed) {
+                    Core.SfxController.Play(SfxType.ShotDry);
+                    _dryShotPlayed = true;
+                }
+
                 return;
             }
 
@@ -54,7 +60,7 @@ namespace GunSystem {
             SpendAmmo();
 
             Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
-            Core.SfxController.Play((SfxType)_shotSound, _muzzle.position);
+            Core.SfxController.Play((SfxType)_shotSound);
 		}       
 
         private bool CanShoot() {
@@ -102,6 +108,7 @@ namespace GunSystem {
         Pistol = SfxType.ShotPistol,
         Auto = SfxType.ShotAuto,
         Shotgun = SfxType.ShotShotgun,
+        Uzi = SfxType.ShotUzi,
     }
 
     public enum InputType {

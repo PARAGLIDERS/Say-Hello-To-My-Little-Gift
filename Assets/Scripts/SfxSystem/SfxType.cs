@@ -9,10 +9,17 @@ namespace SfxSystem {
         ShotPistol = 101,
         ShotAuto = 102,
         ShotShotgun = 103,
+        ShotUzi = 104,
+
+        // enemies
+        EnemyBloodParticles = 200,
+        EnemySpawn = 201,
+        EnemySnowmanThrow = 202, 
+        EnemyChickenExplode = 203, 
 
         // vfx
-        VfxExplosion = 200,
-        VfxBloodParticles = 201,
-        VfxGunPickup = 202,
+        VfxExplosion = 300,
+        VfxBloodParticles = 301,
+        VfxGunPickup = 302,
     }
 }

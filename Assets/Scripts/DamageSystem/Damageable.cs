@@ -2,12 +2,14 @@ using Root;
 using PoolSystem;
 using UnityEngine;
 using System;
+using SfxSystem;
 
 namespace DamageSystem {
 	public class Damageable : MonoBehaviour {
 		[SerializeField] private int _maxHealth = 100;
 		[SerializeField] private PoolType _dieParticles = PoolType.BloodParticles;
 		[SerializeField] private PoolType _dieFloorDecals = PoolType.FloorBlood;
+		[SerializeField] private SfxType _dieSfx = SfxType.EnemyBloodParticles;
 
 		public event Action OnDamage;
 		public event Action OnHeal;
@@ -32,6 +34,7 @@ namespace DamageSystem {
 			
 			Core.PoolController.Spawn(_dieFloorDecals, transform.position, Quaternion.identity);
 			Core.PoolController.Spawn(_dieParticles, transform.position, damagerRotation);
+			Core.SfxController.Play(_dieSfx, transform.position);
 
 			OnDie?.Invoke();
 		}

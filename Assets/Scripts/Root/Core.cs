@@ -16,7 +16,6 @@ namespace Root {
 		public static StateController StateController { get; private set; }
 
 		public static void Init(Transform parent, Resources resources) {
-            parent.gameObject.AddComponent<AudioListener>();
             Object.Instantiate(resources.VolumePrefab, parent);
 
             CoroutineRunner = new GameObject("coroutine runner").AddComponent<CoroutineRunner>();

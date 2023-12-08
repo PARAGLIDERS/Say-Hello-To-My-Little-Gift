@@ -366,3 +366,4 @@ MonoBehaviour:
   _maxHealth: 100
   _dieParticles: 101
   _dieFloorDecals: 104
+  _dieSfx: 200
