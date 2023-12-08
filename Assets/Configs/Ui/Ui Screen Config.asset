@@ -21,7 +21,10 @@ MonoBehaviour:
     _prefab: {fileID: 4014502783833649968, guid: cfe0ee3f3b9105347906dd646fc4787d, type: 3}
   - Name: Pause
     _type: 5
-    _prefab: {fileID: 5583813141277579066, guid: 57b9a7fa7778cf44b820e34a66ed5ce8, type: 3}
+    _prefab: {fileID: 8928223036181889523, guid: f4c3d3d15d02c8c4f8f245a1effd240a, type: 3}
   - Name: Hud
     _type: 4
     _prefab: {fileID: 5160398289170760720, guid: cea75a56ec7502f4db5f1cac5533591f, type: 3}
+  - Name: Credits
+    _type: 2
+    _prefab: {fileID: 2285411947024924368, guid: 57b9a7fa7778cf44b820e34a66ed5ce8, type: 3}
