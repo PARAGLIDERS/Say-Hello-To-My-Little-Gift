@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Shotgun
   _muzzle: {fileID: 3020960180927070046}
-  _spread: 0.2
+  _spread: 0.09
   _fireRate: 0.1
   _bulletsPerShot: 10
   _bulletType: 200

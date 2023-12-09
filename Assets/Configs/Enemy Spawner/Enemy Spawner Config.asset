@@ -12,33 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
   m_Name: Enemy Spawner Config
   m_EditorClassIdentifier: 
-  _waveCooldown: 10
+  _waveCooldown: 2
   _gridConfig: {fileID: 11400000, guid: 12b42a84aaf49c844aeb5555b0b28a67, type: 2}
   _rounds:
   - _name: Round 1
     _delay: 1
     _guns:
-    - _name: 'Uzi : 51%'
+    - _name: 'Uzi : 65%'
       _type: 1
-      _chance: 100
+      _chance: 64
     - _name: 'Shotgun : 24%'
       _type: 2
-      _chance: 47
-    - _name: 'Auto : 24%'
-      _type: 4
-      _chance: 47
+      _chance: 24
+    - _name: 'DoubleShotgun : 10%'
+      _type: 3
+      _chance: 10
     _waves:
     - _name: Wave 1
       _delay: 0
-      _enemyCount: 100
+      _enemyCount: 45
+      _period: 3
+      _units:
+      - _name: 'Snowman : 90%'
+        _type: 0
+        _chance: 90
+      - _name: 'Chicken : 10%'
+        _type: 1
+        _chance: 10
+    - _name: Wave 2
+      _delay: 3
+      _enemyCount: 90
       _period: 1
       _units:
-      - _name: 'Snowman : 63%'
-        _type: 0
-        _chance: 100
-      - _name: 'Chicken : 29%'
+      - _name: 'Chicken : 50%'
         _type: 1
-        _chance: 46
-      - _name: 'Deer : 7%'
+        _chance: 50
+      - _name: 'Snowman : 50%'
+        _type: 0
+        _chance: 50
+    - _name: Wave 3
+      _delay: 5
+      _enemyCount: 40
+      _period: 5
+      _units:
+      - _name: 'Deer : 80%'
         _type: 2
-        _chance: 11
+        _chance: 80
+      - _name: 'Chicken : 20%'
+        _type: 1
+        _chance: 20
