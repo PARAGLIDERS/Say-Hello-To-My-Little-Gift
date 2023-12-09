@@ -33,7 +33,6 @@ namespace GunSystem {
         }
 
 		public void Deactivate() {
-            Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
 			gameObject.SetActive(false);
 			IsActive = false;
 		}
@@ -43,12 +42,14 @@ namespace GunSystem {
             Core.LevelController.GunsController.Pickup(_param.Type, _param.PickupAmmo);
             Core.SfxController.Play(SfxSystem.SfxType.VfxGunPickup);
             
+            Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
             Deactivate();
         }
 
         private void Update() {
             if(Time.time >= _currentLifetime) {
-                Deactivate();
+				Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
+				Deactivate();
             }
         }
     }

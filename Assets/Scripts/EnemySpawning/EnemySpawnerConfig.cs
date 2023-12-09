@@ -39,7 +39,17 @@ namespace EnemySpawning {
 		public List<EnemySpawnWave> Waves => _waves;
 		public List<EnemySpawnRoundGun> Guns => _guns;
 
-        public override void Validate(int index) {
+		public int GetEnemiesCount() {
+            int count = 0;
+
+            for (int i = 0; i < _waves.Count; i++) {
+                count += _waves[i].EnemyCount;
+            }
+
+            return count;
+		}
+
+		public override void Validate(int index) {
             if (_delay < 0) _delay = 0; 
 
             _name = $"Round {index + 1}";
@@ -67,7 +77,7 @@ namespace EnemySpawning {
 		public float Period => _period;
         public List<EnemySpawnWaveUnit> Units => _units;
 
-        public override void Validate(int index) {
+		public override void Validate(int index) {
             if (_delay < 0) _delay = 0;
             if (_enemyCount < 0) _enemyCount = 0;
             if (_period < 0) _period = 0;

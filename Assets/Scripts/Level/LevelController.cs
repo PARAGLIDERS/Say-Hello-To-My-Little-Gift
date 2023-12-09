@@ -39,6 +39,7 @@ namespace Level {
             CameraController.Activate();
 
             PlayerController.OnDie += HandlePlayerDeath;
+            EnemySpawner.AllEnemiesKilled += HandleWin;
         }
 
         public void Stop() {
@@ -52,9 +53,10 @@ namespace Level {
             CameraController.Deactivate();
 
 			PlayerController.OnDie -= HandlePlayerDeath;
+			EnemySpawner.AllEnemiesKilled -= HandleWin;
 		}
 
-        public void Pause() {
+		public void Pause() {
 			GunSpawner.Stop();
 			EnemySpawner.Stop();
 		}
@@ -63,7 +65,6 @@ namespace Level {
             GunsController.Update();
         }
 
-
         public void Dispose() {
             EnemySpawner.Stop();
             EnemySpawner.Dispose();
@@ -71,6 +72,10 @@ namespace Level {
 
         private void HandlePlayerDeath() {
             Core.StateController.SetState(StateType.Fail);
+		}
+
+        private void HandleWin() {
+			Core.StateController.SetState(StateType.Win);
 		}
 	}
 }

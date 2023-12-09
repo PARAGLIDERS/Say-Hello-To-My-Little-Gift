@@ -31,3 +31,6 @@ MonoBehaviour:
   - Name: Fail
     _type: 7
     _prefab: {fileID: 7859002987587114581, guid: 3c2dc19a5517fc24896e37f7e9aad47d, type: 3}
+  - Name: Win
+    _type: 6
+    _prefab: {fileID: 1738990158200099365, guid: 83297086cb9b853479cfd39d074f1a65, type: 3}

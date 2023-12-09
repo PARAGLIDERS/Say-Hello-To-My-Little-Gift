@@ -52,8 +52,8 @@ MonoBehaviour:
   - Name: EnemySpawn
     _type: 201
     _clip: {fileID: 8300000, guid: a28fac7d2df375f429504d4dcd28f870, type: 3}
-    _volume: 0.891
-    _pitchShift: 0.34
+    _volume: 0.243
+    _pitchShift: 0.066
   - Name: EnemySnowmanThrow
     _type: 202
     _clip: {fileID: 8300000, guid: 95c7015ba0b930f47ab952bc0150523c, type: 3}

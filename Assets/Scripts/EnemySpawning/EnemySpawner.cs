@@ -9,41 +9,19 @@ using GunSystem;
 
 namespace EnemySpawning {
 	public class EnemySpawner {
-		public Action OnChange;
+		public event Action RoundStarted;
+		public event Action RoundFinished;
+		public event Action EnemyKilled;
+		public event Action AllEnemiesKilled;
 
 		private readonly EnemySpawnerConfig _config;
 		private readonly SpawnerGrid _grid;
 
-		private Action _onAllEnemiesKilled;
+		public int CurrentEnemyCount {get; private set;}
+		public int MaxEnemies {get; private set;}
 
-		public int CurrentWaveEnemiesCountMax { get; private set; }
-		
-		private int _currentWaveEnemyCount;
-		public int CurrentEnemyCount {
-			get => _currentWaveEnemyCount;
-			set {
-				_currentWaveEnemyCount = value;
-				OnChange?.Invoke();
-			}
-		}
-
-		private int _currentRound;
-		public int CurrentRound {
-			get => _currentRound;
-			set {
-				_currentRound = value;
-				OnChange?.Invoke();
-			}
-		}
-
-		private int _currentWave;
-		public int CurrentWave {
-			get => _currentWave;
-			set {
-				_currentWave = value;
-				OnChange?.Invoke();
-			}
-		}
+		public int CurrentRound {get; private set; }
+		public int MaxRounds => _config.Rounds.Count;
 
         private IEnumerator _execution;
 
@@ -65,7 +43,6 @@ namespace EnemySpawning {
 
         public void Reset() {
             CurrentRound = 0;
-            CurrentWave = 0;
             CurrentEnemyCount = 0;
         }
 
@@ -91,13 +68,17 @@ namespace EnemySpawning {
 
 				yield return new WaitForSeconds(round.Delay);
 
-                while (CurrentWave < round.Waves.Count) {
-                    wave = round.Waves[CurrentWave];
+				CurrentEnemyCount = round.GetEnemiesCount();
+				MaxEnemies = CurrentEnemyCount;
+
+				RoundStarted?.Invoke();
+				int currentWave = 0;
+
+                while (currentWave < round.Waves.Count) {
+                    wave = round.Waves[currentWave];
                     Randomizer<EnemySpawnWaveUnit> randomizer = new Randomizer<EnemySpawnWaveUnit>(wave.Units);
 
                     yield return new WaitForSeconds(wave.Delay);
-
-                    CurrentEnemyCount += wave.EnemyCount;
 
 					for (int i = 0; i < wave.EnemyCount; i++) {
                         Spawn(randomizer.GetItem().Type);
@@ -115,30 +96,31 @@ namespace EnemySpawning {
                         yield return null;
                     }
 
-                    CurrentWave++;
+                    currentWave++;
 				}
 				
+				yield return new WaitUntil(() => CurrentEnemyCount <= 0);
 				CurrentRound++;
-                CurrentWave = 0;
+				RoundFinished?.Invoke();
 			}
 
-			yield return new WaitUntil(() => CurrentEnemyCount <= 0);
-                
-            _onAllEnemiesKilled?.Invoke();
-            _onAllEnemiesKilled = null;
+			yield return new WaitForSeconds(1.5f);
+			
+            AllEnemiesKilled?.Invoke();
 		}
                 
         private void Spawn(EnemySpawnerUnitType type) {
             Vector3 position = _grid.GetPosition();
-            Quaternion rotation = Quaternion.identity; // look at player?
+            Quaternion rotation = Quaternion.identity; // look at player? or away?)
 
-            Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: OnEnemyKilled);
+            Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: HandleEnemyKill);
             Core.PoolController.Spawn(PoolType.EnemySpawnEffect, position, rotation);
 			Core.SfxController.Play(SfxSystem.SfxType.EnemySpawn, position);
         }
 
-        private void OnEnemyKilled() {
+        private void HandleEnemyKill() {
 			CurrentEnemyCount--;
+			EnemyKilled?.Invoke();
 		}
 
 		public void Dispose() {}

@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 namespace Music {
 	public class MusicController {
@@ -13,6 +14,7 @@ namespace Music {
 			
 			_source = sourceObject.AddComponent<AudioSource>();
 			_source.outputAudioMixerGroup = config.MixerGroup;
+			_source.playOnAwake = false;
 			_source.volume = 0;
 
 			_clips = new Dictionary<MusicClipType, MusicConfigItem>();
@@ -42,8 +44,9 @@ namespace Music {
 		}
 
 		public void Stop() {
-			_source.DOKill();
-			_source.DOFade(0f, 0.3f).OnComplete(_source.Stop);
+			_source.Stop();
+			//_source.DOKill();
+			//_source.DOFade(0f, 0.3f).OnComplete();
 		}
 	}
 }

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU ARE DEAD
+  m_text: WIN!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73902debcd80ec04b8d61e30c8c5ae98, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 5b8bbd35556b1594fb05ef8a6b8e7f4a, type: 2}
@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284111615
-  m_fontColor: {r: 1, g: 0.3537736, b: 0.3537736, a: 1}
+    rgba: 4284146943
+  m_fontColor: {r: 1, g: 0.89268386, b: 0.3537736, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -93,12 +93,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95.6
+  m_fontSize: 116.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 95.6
+  m_fontSizeMax: 116.95
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -285,9 +285,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762048259994359342}
-  - component: {fileID: 7859002987587114581}
+  - component: {fileID: 1738990158200099365}
   m_Layer: 5
-  m_Name: FailScreen
+  m_Name: WinScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +308,7 @@ RectTransform:
   - {fileID: 3866717462510185795}
   - {fileID: 692907840988822380}
   - {fileID: 8481152399298778225}
-  - {fileID: 112406617953877376}
+  - {fileID: 2066629708122674948}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -317,7 +317,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7859002987587114581
+--- !u!114 &1738990158200099365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,13 +326,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6246363987222501847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146222eb56fba7e4c9e8337f7ecc11e3, type: 3}
+  m_Script: {fileID: 11500000, guid: dc323ed83898b954ebbf97dd2188370a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _restartButton: {fileID: 4900357530903550146}
+  _continueButton: {fileID: 4900357530903550146}
   _quitButton: {fileID: 8413206719465130526}
-  _subtitle: {fileID: 1991559316046613157}
---- !u!1001 &2891602551335835588
+  _subtitle: {fileID: 468951989140906017}
+--- !u!1001 &3819180916964375872
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -423,49 +423,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[0]
-      value: loooooser
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[1]
-      value: booooo
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[2]
-      value: comooooon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[3]
-      value: really?
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[4]
-      value: stop it
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[5]
-      value: not big surprize
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-      propertyPath: _values.Array.data[6]
-      value: can you shoot 'em?
-      objectReference: {fileID: 0}
     - target: {fileID: 8952727273647229751, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
       propertyPath: m_Name
       value: UiSubtitle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
---- !u!224 &112406617953877376 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3003426005423974980, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-  m_PrefabInstance: {fileID: 2891602551335835588}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1991559316046613157 stripped
+--- !u!114 &468951989140906017 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3711662729567165793, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
-  m_PrefabInstance: {fileID: 2891602551335835588}
+  m_PrefabInstance: {fileID: 3819180916964375872}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -473,6 +440,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c0fa1153b28cf4b9747761a942dfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2066629708122674948 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3003426005423974980, guid: f40c94ec7202c7a4eae809715c08efc1, type: 3}
+  m_PrefabInstance: {fileID: 3819180916964375872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4808129159186867999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_text
-      value: restart
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 6369728045588267836, guid: b9cdbfc98e21df14e87167921ac7f8d7, type: 3}
       propertyPath: m_fontSize

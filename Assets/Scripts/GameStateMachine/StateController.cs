@@ -17,6 +17,7 @@ namespace GameStateMachine {
 				{ StateType.QuitPlay,	new StateQuitPlay()},
 				{ StateType.Fail,		new StateFail()},
 				{ StateType.Restart,	new StateRestart()},
+				{ StateType.Win,		new StateWin()},
 			};
 		}
 
