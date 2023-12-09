@@ -9,12 +9,14 @@ namespace GameStateMachine {
 
 		public StateController() {
 			_states = new Dictionary<StateType, IState>() {
-				{ StateType.Boot , new StateBoot()},
-				{ StateType.Main , new StateMain()},
-				{ StateType.Play , new StatePlay()},
-				{ StateType.Pause , new StatePause()},
-				{ StateType.LoadLevel , new StateLoadLevel()},
-				{ StateType.QuitPlay , new StateQuitPlay()},
+				{ StateType.Boot,		new StateBoot()},
+				{ StateType.Main,		new StateMain()},
+				{ StateType.Play,		new StatePlay()},
+				{ StateType.Pause,		new StatePause()},
+				{ StateType.LoadLevel,	new StateLoadLevel()},
+				{ StateType.QuitPlay,	new StateQuitPlay()},
+				{ StateType.Fail,		new StateFail()},
+				{ StateType.Restart,	new StateRestart()},
 			};
 		}
 
@@ -44,5 +46,6 @@ namespace GameStateMachine {
 		QuitPlay,
 		Win,
 		Fail,
+		Restart,
 	}
 }

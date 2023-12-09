@@ -31,7 +31,7 @@ namespace Ui.Components {
             _body.DOScale(1, 0.15f);
         }
 
-        public void UpdateAmmo(IGun gun) {
+        public void UpdateAmmo(Gun gun) {
             _ammo.text = gun.Ammo.ToString();
             _ammo.color = gun.Ammo <= 0 ? _noAmmoColor : Color.white;
 			_ammo.gameObject.SetActive(!gun.IsInfinite);

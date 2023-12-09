@@ -38,7 +38,7 @@ namespace Ui.Components {
 			Core.LevelController.GunsController.OnPickup -= OnPickup;
 		}
 
-		private void OnPickup(IGun gun, int ammo) {
+		private void OnPickup(Gun gun, int ammo) {
 			GunHudPickupPanelItem item = _items.Dequeue();
 			
 			item.Deactivate();

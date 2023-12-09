@@ -16,8 +16,11 @@ namespace GameStateMachine.States {
             if (_showLoadingScreen) {
                 Core.UiController.Show(UiScreenType.Loading);
             }
+			
+            Core.PoolController.DeactivateAll();
+            Core.MusicController.Stop();
 
-            Time.timeScale = 0;
+			Time.timeScale = 0;
             _ = Load();
 		}
 

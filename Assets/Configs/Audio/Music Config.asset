@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d02ae3eccd564a41883c89fdc930f59, type: 3}
+  m_Name: Music Config
+  m_EditorClassIdentifier: 
+  _mixerGroup: {fileID: -3556969890034013801, guid: e5fd76036584030469c0ea3bffe2d0cf, type: 2}
+  _clips:
+  - name: Menu
+    _type: 0
+    _clip: {fileID: 8300000, guid: 34fb635dc036d884db629964a85f2fff, type: 3}
+    _volume: 0.066
+  - name: Level1
+    _type: 1
+    _clip: {fileID: 8300000, guid: d78687152fd3cf0409a2752eb73e9d66, type: 3}
+    _volume: 0.374
+  - name: Level2
+    _type: 2
+    _clip: {fileID: 8300000, guid: 6852c868b805a6240a89315f0eb3dd6b, type: 3}
+    _volume: 0.325
+  - name: Level3
+    _type: 3
+    _clip: {fileID: 8300000, guid: 87d78ef706fb80043b4353ba14c5984b, type: 3}
+    _volume: 0.332
+  - name: PlayerDeath
+    _type: 4
+    _clip: {fileID: 8300000, guid: 6b77488b47d66e249a830a0fc42933b7, type: 3}
+    _volume: 0.332

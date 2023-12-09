@@ -1,3 +1,4 @@
+using Music;
 using Root;
 
 namespace GameStateMachine.States {
@@ -6,7 +7,8 @@ namespace GameStateMachine.States {
 		protected override StateType _nextState => StateType.Play;
 
 		public override void Exit() {
-            Core.LevelController.Start();
+            Core.LevelController.Start();			
+			Core.MusicController.Play(MusicClipType.Level1);
 			base.Exit();
 		}
 	}

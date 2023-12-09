@@ -4,7 +4,7 @@ using SfxSystem;
 using UnityEngine;
 
 namespace GunSystem {
-	public class Gun : MonoBehaviour, IGun {
+	public class Gun : MonoBehaviour {
         [SerializeField] private string _name;
 		[SerializeField] private Transform _muzzle;
         [SerializeField] [Range(0f, 1f)] private float _spread = 0.1f;
@@ -15,14 +15,18 @@ namespace GunSystem {
         [SerializeField] private InputType _inputType = InputType.Hold;
         [SerializeField] private bool _isInfinite;
 
-        public InputType InputType => _inputType;
-
+        public GunType Type { get; private set; }
         public bool IsInfinite => _isInfinite;
         public string Name => _name;
         public int Ammo { get; private set; }
+        public InputType InputType => _inputType;
         
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape
+
+        public void Init(GunType type) {
+            Type = type;
+        }
 
         public void AddAmmo(int value) {
             if (value < 0) {

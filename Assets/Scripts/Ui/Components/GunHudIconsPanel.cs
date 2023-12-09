@@ -2,7 +2,6 @@ using GunSystem;
 using Root;
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace Ui.Components {
@@ -40,12 +39,13 @@ namespace Ui.Components {
 		}
 
         private void InitIcons() {
-			List<GunType> guns = Core.LevelController.GunsController.AvailableGuns;
+			List<Gun> guns = Core.LevelController.GunsController.AvailableGuns;
 			_icons = new Dictionary<GunType, GunHudIcon>();
 
-			foreach (GunType gunType in guns) {
-				GunHudIcon icon = CreateIcon(gunType);
-				_icons.Add(gunType, icon);
+			foreach (Gun gun in guns) {
+				GunHudIcon icon = CreateIcon(gun.Type);
+				_icons.Add(gun.Type, icon);
+                icon.UpdateAmmo(gun);
 			}
 		}
 
@@ -61,17 +61,17 @@ namespace Ui.Components {
 
 		private void SetInitialIcon() {
 			GunsController GunsController = Core.LevelController.GunsController;
-			SwitchTo(GunsController.Current.type, GunsController.Current.gun);
+			SwitchTo(GunsController.Current);
 		}
 
-		private void SwitchTo(GunType type, IGun gun) {
+		private void SwitchTo(Gun gun) {
             if (_current != null) {
                 _current.Deselect();
             }
 
-            if(!_icons.TryGetValue(type, out _current)) {
-                _current = CreateIcon(type);
-                _icons.Add(type, _current);
+            if(!_icons.TryGetValue(gun.Type, out _current)) {
+                _current = CreateIcon(gun.Type);
+                _icons.Add(gun.Type, _current);
             }
 
             _current.Select();
@@ -89,9 +89,9 @@ namespace Ui.Components {
             return icon;
         }
 
-        private void UpdateIcon(GunType type, IGun gun) {
-            if(!_icons.TryGetValue(type, out GunHudIcon icon)) {
-                Debug.LogError($"icon does not exist in dictionary: {type}");
+        private void UpdateIcon(Gun gun) {
+            if(!_icons.TryGetValue(gun.Type, out GunHudIcon icon)) {
+                Debug.LogError($"icon does not exist in dictionary: {gun.Type}");
                 return;
             }
 

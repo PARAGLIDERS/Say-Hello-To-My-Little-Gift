@@ -64,13 +64,18 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 85b9f18a2ca301147a7ef0ade3b9937d, type: 3}
     _volume: 0.376
     _pitchShift: 0.098
-  - Name: VfxGunPickup
-    _type: 302
-    _clip: {fileID: 8300000, guid: a65a94ab305ff9045baec40e5372f945, type: 3}
-    _volume: 0.584
-    _pitchShift: 0.094
   - Name: EnemyBloodParticles
     _type: 200
     _clip: {fileID: 8300000, guid: df2c5908d3e8e7047a24ee2831a5f146, type: 3}
     _volume: 1
     _pitchShift: 0.114
+  - Name: VfxGunPickup
+    _type: 302
+    _clip: {fileID: 8300000, guid: a65a94ab305ff9045baec40e5372f945, type: 3}
+    _volume: 0.584
+    _pitchShift: 0.094
+  - Name: PlayerDeath
+    _type: 500
+    _clip: {fileID: 8300000, guid: 6b77488b47d66e249a830a0fc42933b7, type: 3}
+    _volume: 0.272
+    _pitchShift: 0

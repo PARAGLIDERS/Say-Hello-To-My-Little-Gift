@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace GunSystem {
     public class GunsController {
-        public event Action<GunType, IGun> OnSwitch;
-        public event Action<GunType, IGun> OnAmmoChange;
-        public event Action<IGun, int> OnPickup;
+        public event Action<Gun> OnSwitch;
+        public event Action<Gun> OnAmmoChange;
+        public event Action<Gun, int> OnPickup;
 
-        public readonly List<GunType> AvailableGuns;
-        public (GunType type, Gun gun) Current { get; private set; }
+        public readonly List<Gun> AvailableGuns;
+        public Gun Current { get; private set; }
 
         private readonly Dictionary<GunType, Gun> _gunsDictionary;
         private int _currentIndex;
 
         public GunsController(GunsConfig config, PlayerController player) {
-            AvailableGuns = new List<GunType>();
+            AvailableGuns = new List<Gun>();
 
             _gunsDictionary = new Dictionary<GunType, Gun>();
             foreach (GunsConfigItem item in config.Items) {
@@ -26,6 +26,7 @@ namespace GunSystem {
                 }
 
                 Gun gun = GameObject.Instantiate(item.Prefab, player.GunsHolder);
+                gun.Init(item.Type);
                 gun.gameObject.SetActive(false);
 
                 _gunsDictionary.Add(item.Type, gun);
@@ -59,11 +60,11 @@ namespace GunSystem {
 
             gun.AddAmmo(ammo);
 
-			if (!AvailableGuns.Contains(type)) {
-                AvailableGuns.Add(type);
-                SwitchTo(type);
+			if (!AvailableGuns.Contains(gun)) {
+                AvailableGuns.Add(gun);
+                SwitchTo(gun);
             } else {
-				OnAmmoChange?.Invoke(type, gun);
+				OnAmmoChange?.Invoke(gun);
 			}
 
 			OnPickup?.Invoke(gun, ammo);
@@ -75,11 +76,11 @@ namespace GunSystem {
                 Scroll(scroll > 0 ? -1 : 1);
             }
 
-            if (Current.gun == null) return;
-            if (!GetInput(Current.gun.InputType)) return;
+            if (Current == null) return;
+            if (!GetInput(Current.InputType)) return;
 
-            Current.gun.Shoot();
-            OnAmmoChange?.Invoke(Current.type, Current.gun);
+            Current.Shoot();
+            OnAmmoChange?.Invoke(Current);
         }
 
         private bool GetInput(InputType inputType) => inputType switch {
@@ -100,20 +101,15 @@ namespace GunSystem {
             SwitchTo(AvailableGuns[_currentIndex]);
         }
 
-        private void SwitchTo(GunType type) {
-            if (!_gunsDictionary.TryGetValue(type, out Gun gun)) {
-                Debug.LogError($"gun does not exist in dictionary: {type}");
-                return;
+        private void SwitchTo(Gun gun) {
+            if (Current != null) {
+                Current.gameObject.SetActive(false);
             }
 
-            if (Current.gun != null) {
-                Current.gun.gameObject.SetActive(false);
-            }
+            Current = gun;
+            Current.gameObject.SetActive(true);
 
-            Current = new (type, gun);
-            Current.gun.gameObject.SetActive(true);
-
-            OnSwitch?.Invoke(type, gun);
+            OnSwitch?.Invoke(Current);
         }
     }
 }

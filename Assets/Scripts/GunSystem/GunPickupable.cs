@@ -33,6 +33,7 @@ namespace GunSystem {
         }
 
 		public void Deactivate() {
+            Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
 			gameObject.SetActive(false);
 			IsActive = false;
 		}
@@ -40,9 +41,7 @@ namespace GunSystem {
 		// configured collision mask so it only triggers by the player 
 		private void OnTriggerEnter(Collider other) {
             Core.LevelController.GunsController.Pickup(_param.Type, _param.PickupAmmo);
-
             Core.SfxController.Play(SfxSystem.SfxType.VfxGunPickup);
-            Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
             
             Deactivate();
         }

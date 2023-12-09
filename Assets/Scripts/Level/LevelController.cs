@@ -1,8 +1,9 @@
 using CameraControl;
-using DayNightCycle;
 using EnemySpawning;
+using GameStateMachine;
 using GunSystem;
 using Player;
+using Root;
 using UnityEngine;
 
 namespace Level {
@@ -12,12 +13,11 @@ namespace Level {
         public readonly EnemySpawner EnemySpawner;
         public readonly PlayerController PlayerController;
         public readonly CameraController CameraController;
-        //public readonly DayNightController DayNightController;
 
         public LevelController(Transform parent, 
             EnemySpawnerConfig spawnerConfig, GunsConfig gunsConfig,
             GunsSpawnerConfig gunsSpawnerConfig, PlayerController playerPrefab, 
-            CameraController cameraPrefab, DayNightConfig dayNightConfig) {
+            CameraController cameraPrefab) {
             PlayerController = Object.Instantiate(playerPrefab, parent);
             PlayerController.Deactivate();
             
@@ -27,8 +27,6 @@ namespace Level {
             GunsController = new GunsController(gunsConfig, PlayerController);
             GunSpawner = new GunSpawner(parent, gunsSpawnerConfig);
             EnemySpawner = new EnemySpawner(spawnerConfig);
-
-            //DayNightController = new DayNightController(parent, dayNightConfig);
         }
 
         public void Start() {
@@ -39,7 +37,8 @@ namespace Level {
            
             PlayerController.Activate();
             CameraController.Activate();
-            //DayNightController.Start();
+
+            PlayerController.OnDie += HandlePlayerDeath;
         }
 
         public void Stop() {
@@ -52,17 +51,26 @@ namespace Level {
             PlayerController.Deactivate();
             CameraController.Deactivate();
 
-            //DayNightController.Stop();
+			PlayerController.OnDie -= HandlePlayerDeath;
+		}
+
+        public void Pause() {
+			GunSpawner.Stop();
+			EnemySpawner.Stop();
+		}
+
+		public void Update() {
+            GunsController.Update();
         }
 
-        public void Update() {
-            GunsController.Update();
-            //DayNightController.Update();
-        }
 
         public void Dispose() {
             EnemySpawner.Stop();
             EnemySpawner.Dispose();
         }
-    }
+
+        private void HandlePlayerDeath() {
+            Core.StateController.SetState(StateType.Fail);
+		}
+	}
 }

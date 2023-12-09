@@ -4,9 +4,12 @@ using SfxSystem;
 using Ui;
 using UnityEngine;
 using Level;
+using Music;
 
 namespace Root {
 	public static class Core {
+		public static string Version => Application.version;
+
 		public static CoroutineRunner CoroutineRunner { get; private set; }
 		public static UiController UiController { get; private set; }
 		public static PoolController PoolController { get; private set; }
@@ -14,6 +17,7 @@ namespace Root {
         public static LevelController LevelController { get; private set; }
         public static InputController InputController { get; private set; }
 		public static StateController StateController { get; private set; }
+		public static MusicController MusicController { get; private set; }
 
 		public static void Init(Transform parent, Resources resources) {
             Object.Instantiate(resources.VolumePrefab, parent);
@@ -24,10 +28,11 @@ namespace Root {
 			UiController = new UiController(parent, resources.CanvasPrefab, resources.ScreenConfig);
             PoolController = new PoolController(parent, resources.PoolConfig);
             SfxController = new SfxController(parent, resources.SfxConfig);
+			MusicController = new MusicController(parent, resources.MusicConfig);
             LevelController = new LevelController(parent, 
                 resources.EnemySpawnerConfig, resources.GunsConfig,
                 resources.GunsSpawnerConfig, resources.PlayerPrefab, 
-                resources.CameraPrefab, resources.DayNightConfig);
+                resources.CameraPrefab);
 
             InputController = new InputController();
             StateController = new StateController();

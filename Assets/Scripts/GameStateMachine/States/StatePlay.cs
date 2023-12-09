@@ -16,7 +16,6 @@ namespace GameStateMachine.States {
 			}
 		}
 
-		public void Exit() {
-		}
+		public void Exit() {}
 	}
 }

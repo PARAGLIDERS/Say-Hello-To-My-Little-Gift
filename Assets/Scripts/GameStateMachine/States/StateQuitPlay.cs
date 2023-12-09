@@ -7,7 +7,6 @@ namespace GameStateMachine.States {
 
 		public override void Enter() {
 			Core.LevelController.Stop();
-            Core.PoolController.DeactivateAll();
 			base.Enter();
 		}
 	}
