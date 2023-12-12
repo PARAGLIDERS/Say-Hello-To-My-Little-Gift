@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 4134139087455873862}
   _title: {fileID: 1965986576817346103}
+  _description: {fileID: 8655807205562976077}
   _block: {fileID: 1075200659574097127}
   _select: {fileID: 5780477538487729182}
 --- !u!1 &683124547002369203
@@ -163,7 +164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2794895235695533928
 RectTransform:
   m_ObjectHideFlags: 0
@@ -182,7 +183,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -19.9131, y: -19.0454}
+  m_SizeDelta: {x: -6.000003, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8261126770959098236
 CanvasRenderer:

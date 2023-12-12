@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Level;
 using Root;
 using System;
 using TMPro;
@@ -11,16 +12,18 @@ namespace Ui.Components {
 	public class ChooseLevelItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler {
 		[SerializeField] private Image _icon;
 		[SerializeField] private TextMeshProUGUI _title;
+		[SerializeField] private TextMeshProUGUI _description;
 		[SerializeField] private Image _block;
 		[SerializeField] private Image _select;
 
 		private Action _onClick;
 		private bool _isAvailable;
 
-		public void Init(Sprite icon, string title, bool available, Action onClick) {
+		public void Init(LevelsConfigItem item, bool available, Action onClick) {
 			_onClick = onClick;
-			_icon.sprite = icon;
-			_title.text = title;
+			_icon.sprite = item.Icon;
+			_title.text = item.Name;
+			_description.text = item.Description;
 			_block.gameObject.SetActive(!available);
 			_isAvailable = available;
 			_select.color = _select.color.With(a: 0f);

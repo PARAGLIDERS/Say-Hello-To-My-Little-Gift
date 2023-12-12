@@ -16,13 +16,14 @@ namespace Ui.Screens {
 			_backButton.onClick.AddListener(HandleBackButton);
 
 			List<LevelsConfigItem> levels = Core.LevelController.GetLevels();
-			int currentLevel = Core.DataController.Data.CurrentLevel;
+			int currentLevel = Core.DataController.Data.LevelData.CurrentLevel;
+			Debug.LogError(currentLevel);
 
 			for (int i = 0; i < levels.Count; i++) {
 				ChooseLevelItem item = Instantiate(_itemPrefab, _itemsContainer);
 				bool available = currentLevel >= i;
 				int level = i;
-				item.Init(levels[i].Icon, levels[i].Name, available, () => HandlePlay(level));
+				item.Init(levels[i], available, () => HandlePlay(level));
 			}
 		}
 

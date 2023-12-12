@@ -2,7 +2,6 @@ using CameraControl;
 using EnemySpawning;
 using GameStateMachine;
 using GunSystem;
-using Music;
 using Player;
 using Root;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using UnityEngine;
 
 namespace Level {
     public class LevelController {
-
         public readonly GunsController GunsController;
         public readonly GunSpawner GunSpawner;
         public readonly EnemySpawner EnemySpawner;
@@ -50,9 +48,15 @@ namespace Level {
 
         public void Win() {
             Core.DataController.Data.LevelPassed();
-        }
+            Core.DataController.Save();
+            _currentLevel++;
+        }        
 
-        public void Start() {
+        public bool HasNextLevel() {
+			return _currentLevel < _config.Items.Count;
+		}
+
+		public void Start() {
             GunsController.Init();
             GunSpawner.Start();
 

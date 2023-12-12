@@ -50,6 +50,7 @@ namespace Ui {
 		Win = 6,
 		Fail = 7,
 		ChooseLevel = 8,
+		Ending = 9,
 
 		DeveloperScreen = 100
 	}

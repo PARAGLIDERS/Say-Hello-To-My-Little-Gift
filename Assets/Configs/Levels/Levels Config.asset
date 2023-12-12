@@ -18,16 +18,19 @@ MonoBehaviour:
     _sceneIndex: 2
     _musicType: 1
     _enemySpawnerConfig: {fileID: 11400000, guid: 776a51b7964d9c74f8b630e7253dd596, type: 2}
+    _description: Such a pretty view
     ItemName: Christmas Village
   - _name: Holiday Town
     _icon: {fileID: 21300000, guid: 0fe35fe567b244f41b1bd1c609dd1711, type: 3}
     _sceneIndex: 3
     _musicType: 2
     _enemySpawnerConfig: {fileID: 11400000, guid: 1f2cd94796e005742bd576bba2930496, type: 2}
+    _description: Nice people were here
     ItemName: Holiday Town
   - _name: Gift Lane
     _icon: {fileID: 21300000, guid: 7f2bc1e4dbce36c4fac27aff1a456de2, type: 3}
     _sceneIndex: 4
     _musicType: 3
     _enemySpawnerConfig: {fileID: 11400000, guid: 6000234c0e1181d4185858cb891e139a, type: 2}
+    _description: Get off this place
     ItemName: Gift Lane

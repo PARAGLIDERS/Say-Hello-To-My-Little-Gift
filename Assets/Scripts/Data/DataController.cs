@@ -30,7 +30,7 @@ namespace Data {
 			PlayerData data = new PlayerData();
 			if (File.Exists(DataPath)) {
 				string s = File.ReadAllText(DataPath);
-				data = JsonConvert.DeserializeObject<PlayerData>(s);
+				data = JsonConvert.DeserializeObject<PlayerData>(s);				
 			} else {
 				string s = JsonConvert.SerializeObject(data);
 				File.WriteAllText(DataPath, s);

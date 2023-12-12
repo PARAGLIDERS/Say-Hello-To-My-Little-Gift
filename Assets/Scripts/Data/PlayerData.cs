@@ -3,16 +3,16 @@
 namespace Data {
 	[Serializable]
 	public class PlayerData {
-		public int CurrentLevel { get; private set; }
+		public LevelData LevelData { get; private set; }
 		public SettingsData Settings { get; private set; }
 
 		public PlayerData() {
-			CurrentLevel = 2;
+			LevelData = new LevelData();
 			Settings = new SettingsData();
 		}
 
 		public void LevelPassed() {
-			CurrentLevel++;
+			LevelData.CurrentLevel++;
 		}
 	}
 }

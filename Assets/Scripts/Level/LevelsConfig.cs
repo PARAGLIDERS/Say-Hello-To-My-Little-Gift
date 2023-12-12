@@ -25,12 +25,14 @@ namespace Level {
 		[SerializeField] private int _sceneIndex;
 		[SerializeField] private MusicClipType _musicType;
 		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
+		[SerializeField] [TextArea] private string _description;
 
 		public string Name => _name;
 		public Sprite Icon => _icon;
 		public int SceneIndex => _sceneIndex;
 		public MusicClipType MusicType => _musicType;
 		public EnemySpawnerConfig EnemySpawnerConfig => _enemySpawnerConfig;
+		public string Description => _description;
 
 		[HideInInspector] public string ItemName;
 		public void Validate() {

@@ -18,6 +18,8 @@ namespace GameStateMachine {
 				{ StateType.Fail,		new StateFail()},
 				{ StateType.Restart,	new StateRestart()},
 				{ StateType.Win,		new StateWin()},
+				{ StateType.NextLevel,	new StateNextLevel()},
+				{ StateType.Ending,		new StateEnding()},
 			};
 		}
 
@@ -48,5 +50,7 @@ namespace GameStateMachine {
 		Win,
 		Fail,
 		Restart,
+		NextLevel,
+		Ending,
 	}
 }
