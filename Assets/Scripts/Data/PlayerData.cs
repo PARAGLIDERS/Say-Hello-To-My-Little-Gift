@@ -14,5 +14,9 @@ namespace Data {
 		public void LevelPassed() {
 			LevelData.CurrentLevel++;
 		}
+
+		public void DropLevelData() {
+			LevelData.CurrentLevel = 0;
+		}
 	}
 }

@@ -9,6 +9,8 @@ using UnityEngine.UI;
 namespace Ui.Screens {
 	public class UiScreenChooseLevel : UiScreenBlurredBack {
 		[SerializeField] private Button _backButton;
+		[SerializeField] private Button _clearData;
+
 		[SerializeField] private RectTransform _itemsContainer;
 		[SerializeField] private ChooseLevelItem _itemPrefab;
 
@@ -17,7 +19,9 @@ namespace Ui.Screens {
 
 			List<LevelsConfigItem> levels = Core.LevelController.GetLevels();
 			int currentLevel = Core.DataController.Data.LevelData.CurrentLevel;
-			Debug.LogError(currentLevel);
+
+			_clearData.gameObject.SetActive(currentLevel > 0);
+			_clearData.onClick.AddListener(HandleClearDataButton);
 
 			for (int i = 0; i < levels.Count; i++) {
 				ChooseLevelItem item = Instantiate(_itemPrefab, _itemsContainer);
@@ -34,6 +38,12 @@ namespace Ui.Screens {
 		private void HandlePlay(int level) {
 			Core.LevelController.ChooseLevel(level);
 			Core.StateController.SetState(StateType.LoadLevel);
+		}
+
+		private void HandleClearDataButton() {
+			Core.DataController.Data.DropLevelData();
+			Core.DataController.Save();
+			Core.UiController.Show(UiScreenType.ChooseLevel);
 		}
 	}
 }
