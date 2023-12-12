@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd284f8d07f22e489cbdb9441ae27d8, type: 3}
+  m_Name: Levels Config
+  m_EditorClassIdentifier: 
+  _items:
+  - _name: Christmas Village
+    _icon: {fileID: 21300000, guid: 8a501e3e25d107043bff2fc23eca78f5, type: 3}
+    _sceneIndex: 2
+    _musicType: 1
+    ItemName: Christmas Village
+  - _name: Holiday Town
+    _icon: {fileID: 21300000, guid: 0fe35fe567b244f41b1bd1c609dd1711, type: 3}
+    _sceneIndex: 3
+    _musicType: 2
+    ItemName: Holiday Town
+  - _name: Gift Lane
+    _icon: {fileID: 21300000, guid: 7f2bc1e4dbce36c4fac27aff1a456de2, type: 3}
+    _sceneIndex: 4
+    _musicType: 3
+    ItemName: Gift Lane

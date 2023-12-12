@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ui.Screens {
-	public class UiScreenCredits : UiScreen {
+	public class UiScreenCredits : UiScreenBlurredBack {
 		[SerializeField] private Button _back;
 
 		public override void Init() {

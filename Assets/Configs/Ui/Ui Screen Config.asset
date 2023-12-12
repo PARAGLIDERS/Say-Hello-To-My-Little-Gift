@@ -34,3 +34,9 @@ MonoBehaviour:
   - Name: Win
     _type: 6
     _prefab: {fileID: 1738990158200099365, guid: 83297086cb9b853479cfd39d074f1a65, type: 3}
+  - Name: Settings
+    _type: 1
+    _prefab: {fileID: 6152951361504717663, guid: cb5b4e9dece384647ab59ad9b6513fb9, type: 3}
+  - Name: ChooseLevel
+    _type: 8
+    _prefab: {fileID: 5753041837413826385, guid: e9e987a0a4e205649b9e9493d253bd38, type: 3}

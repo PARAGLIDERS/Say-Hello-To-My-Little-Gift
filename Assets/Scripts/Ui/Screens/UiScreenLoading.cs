@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ui.Screens {
-	public class UiScreenLoading : UiScreen{
+	public class UiScreenLoading : UiScreen {
 		[SerializeField] private Slider _slider;
 
 		public override void Init() {

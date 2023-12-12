@@ -2,6 +2,7 @@ using CameraControl;
 using DayNightCycle;
 using EnemySpawning;
 using GunSystem;
+using Level;
 using Music;
 using Player;
 using PoolSystem;
@@ -30,6 +31,8 @@ namespace Root {
         [SerializeField] private PostProcessVolume _volumePrefab;
         [SerializeField] private DayNightConfig _dayNightConfig;
 
+        [SerializeField] private LevelsConfig _levelsConfig;
+
         public Canvas CanvasPrefab => _canvasPrefab;
 		public UiScreenConfig ScreenConfig => _screenConfig;
 
@@ -48,5 +51,7 @@ namespace Root {
         public DayNightConfig DayNightConfig => _dayNightConfig;
 
         public MusicConfig MusicConfig => _musicConfig;
+
+        public LevelsConfig LevelsConfig => _levelsConfig;
 	}
 }

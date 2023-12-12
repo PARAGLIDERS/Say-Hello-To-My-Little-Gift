@@ -1,13 +1,17 @@
+using Root;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace SfxSystem {
     public class SfxController {
+        private readonly SfxConfig _config;
         private readonly Queue<Sfx> _sounds;
         private readonly Transform _container;
         private readonly Dictionary<SfxType, SfxConfigItem> _soundsDictionary;
 
         public SfxController(Transform parent, SfxConfig config) {
+            _config = config;
             _container = new GameObject("Sounds").transform;
             _container.SetParent(parent);
             
@@ -35,9 +39,11 @@ namespace SfxSystem {
 
                 _soundsDictionary.Add(item.Type, item);
             }
-        }
 
-        public void Play(SfxType type, Vector3? position = null) {
+			Core.DataController.OnSave += ApplySettings;
+		}
+
+		public void Play(SfxType type, Vector3? position = null) {
             if(!_soundsDictionary.TryGetValue(type, out SfxConfigItem item)) {
                 Debug.LogError($"sound is not found in dictionary: {type}");
                 return;
@@ -54,6 +60,14 @@ namespace SfxSystem {
             Object.Destroy(_container.gameObject);
             _sounds.Clear();
             _soundsDictionary.Clear();
-        }
-    }
+			Core.DataController.OnSave -= ApplySettings;
+		}
+
+		private void ApplySettings() {
+			Data.SliderSetting setting = Core.DataController.Data.Settings.Audio.SfxVolume;
+			float volume = setting.Current;
+			if (volume == setting.Min) volume = -80f;
+			_config.MixerGroup.audioMixer.SetFloat("SfxVolume", volume);
+		}
+	}
 }

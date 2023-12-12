@@ -3,6 +3,7 @@ using Root;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Utils;
 
 namespace Ui {
 	public class UiButton : Button {
@@ -13,7 +14,7 @@ namespace Ui {
 		protected override void Awake() {
 			base.Awake();
 			_image = GetComponent<Image>();
-			_image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0f);
+			_image.color = _image.color.With(a: 0);
 		}
 
 		public override void OnPointerClick(PointerEventData eventData) {

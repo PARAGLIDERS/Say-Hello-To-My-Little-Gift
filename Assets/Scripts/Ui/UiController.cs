@@ -31,9 +31,11 @@ namespace Ui {
 
 			_current = Object.Instantiate(screen, _canvas);
 			_current.Init();
+			_current.Enter();
 		}
 
 		private void Hide(UiScreen screen) {
+			screen.Exit();
 			Object.Destroy(screen.gameObject);
 		}
 	}
@@ -47,5 +49,8 @@ namespace Ui {
 		Pause = 5,
 		Win = 6,
 		Fail = 7,
+		ChooseLevel = 8,
+
+		DeveloperScreen = 100
 	}
 }

@@ -5,6 +5,8 @@ using Ui;
 using UnityEngine;
 using Level;
 using Music;
+using Data;
+using PostProcessing;
 
 namespace Root {
 	public static class Core {
@@ -18,6 +20,8 @@ namespace Root {
         public static InputController InputController { get; private set; }
 		public static StateController StateController { get; private set; }
 		public static MusicController MusicController { get; private set; }
+		public static DataController DataController { get; private set; }
+		public static PostProcessingController PostProcessingController { get; private set; }
 
 		public static void Init(Transform parent, Resources resources) {
             Object.Instantiate(resources.VolumePrefab, parent);
@@ -25,6 +29,8 @@ namespace Root {
             CoroutineRunner = new GameObject("coroutine runner").AddComponent<CoroutineRunner>();
 			CoroutineRunner.transform.SetParent(parent);
 			
+			DataController = new DataController();
+			PostProcessingController = new PostProcessingController(resources.VolumePrefab.sharedProfile);
 			UiController = new UiController(parent, resources.CanvasPrefab, resources.ScreenConfig);
             PoolController = new PoolController(parent, resources.PoolConfig);
             SfxController = new SfxController(parent, resources.SfxConfig);
@@ -32,7 +38,7 @@ namespace Root {
             LevelController = new LevelController(parent, 
                 resources.EnemySpawnerConfig, resources.GunsConfig,
                 resources.GunsSpawnerConfig, resources.PlayerPrefab, 
-                resources.CameraPrefab);
+                resources.CameraPrefab, resources.LevelsConfig);
 
             InputController = new InputController();
             StateController = new StateController();

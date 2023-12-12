@@ -10,6 +10,7 @@ namespace Ui.Components {
 		[SerializeField] private RectTransform _body;
 		[SerializeField] private TextMeshProUGUI _value;
 		[SerializeField] private ProgressBar _progress;
+		[SerializeField] private PlayerHealthBarFace _face;
 
 		private PlayerController _player => Core.LevelController.PlayerController;
 		private Sequence _damageSequence;

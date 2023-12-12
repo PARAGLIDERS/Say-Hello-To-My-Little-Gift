@@ -1,14 +1,17 @@
 ﻿using DG.Tweening;
+using Root;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
 
 namespace Music {
 	public class MusicController {
+		private readonly MusicConfig _config;
 		private readonly AudioSource _source;
 		private readonly Dictionary<MusicClipType, MusicConfigItem> _clips;
 
 		public MusicController(Transform parent, MusicConfig config) {
+			_config = config;
+
 			GameObject sourceObject = new GameObject("MusicPlayer");
 			sourceObject.transform.SetParent(parent);
 			
@@ -26,6 +29,8 @@ namespace Music {
 
 				_clips.Add(item.Type, item);
 			}
+
+			Core.DataController.OnSave += ApplySettings;
 		}
 
 		public void Play(MusicClipType type, bool loop = true) {
@@ -47,6 +52,17 @@ namespace Music {
 			_source.Stop();
 			//_source.DOKill();
 			//_source.DOFade(0f, 0.3f).OnComplete();
+		}
+
+		public void Dispose() {
+			Core.DataController.OnSave -= ApplySettings;
+		}
+
+		private void ApplySettings() {
+			Data.SliderSetting setting = Core.DataController.Data.Settings.Audio.MusicVolume;
+			float volume = setting.Current;
+			if (volume == setting.Min) volume = -80f;
+			_config.MixerGroup.audioMixer.SetFloat("MusicVolume", volume);
 		}
 	}
 }

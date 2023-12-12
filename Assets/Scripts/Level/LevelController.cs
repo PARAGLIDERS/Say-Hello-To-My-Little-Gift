@@ -2,22 +2,30 @@ using CameraControl;
 using EnemySpawning;
 using GameStateMachine;
 using GunSystem;
+using Music;
 using Player;
 using Root;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Level {
     public class LevelController {
+
         public readonly GunsController GunsController;
         public readonly GunSpawner GunSpawner;
         public readonly EnemySpawner EnemySpawner;
         public readonly PlayerController PlayerController;
         public readonly CameraController CameraController;
 
+        private readonly LevelsConfig _config;
+        private int _currentLevel;
+
         public LevelController(Transform parent, 
             EnemySpawnerConfig spawnerConfig, GunsConfig gunsConfig,
             GunsSpawnerConfig gunsSpawnerConfig, PlayerController playerPrefab, 
-            CameraController cameraPrefab) {
+            CameraController cameraPrefab, LevelsConfig config) {
+            _config = config;
+
             PlayerController = Object.Instantiate(playerPrefab, parent);
             PlayerController.Deactivate();
             
@@ -27,6 +35,22 @@ namespace Level {
             GunsController = new GunsController(gunsConfig, PlayerController);
             GunSpawner = new GunSpawner(parent, gunsSpawnerConfig);
             EnemySpawner = new EnemySpawner(spawnerConfig);
+        }
+
+        public List<LevelsConfigItem> GetLevels() {
+            return _config.Items;
+        }
+
+        public void ChooseLevel(int level) {
+            _currentLevel = level;
+        }
+
+        public LevelsConfigItem GetCurrentLevelConfig() {
+            return _config.Items[_currentLevel];
+        }
+
+        public void Win() {
+            Core.DataController.Data.LevelPassed();
         }
 
         public void Start() {

@@ -24,3 +24,4 @@ MonoBehaviour:
   _cameraPrefab: {fileID: 6344910643233517397, guid: 74b72620edbfcec448e21f245e32850d, type: 3}
   _volumePrefab: {fileID: 3445501708309228923, guid: a65deeea4cdf33345b3b0093af620375, type: 3}
   _dayNightConfig: {fileID: 11400000, guid: 1f55c9f2c3a123f4b8027019d83ca1c5, type: 2}
+  _levelsConfig: {fileID: 11400000, guid: 7a9a825252aa84e4584ae1af6599fe5d, type: 2}

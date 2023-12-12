@@ -26,7 +26,7 @@ namespace Ui.Screens {
 		}
 
 		private void HandlePlay() {
-			Core.StateController.SetState(StateType.LoadLevel);
+			Core.UiController.Show(UiScreenType.ChooseLevel);
 		}
 
 		private void HandleSettings() {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ui.Screens {
-	public class UiScreenPause : UiScreen{
+	public class UiScreenPause : UiScreenBlurredBack {
 		[SerializeField] private Button _back;
 		[SerializeField] private Button _quit;
 
