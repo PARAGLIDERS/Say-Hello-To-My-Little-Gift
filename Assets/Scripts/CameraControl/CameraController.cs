@@ -1,4 +1,4 @@
-using Player;
+using DG.Tweening;
 using Root;
 using UnityEngine;
 
@@ -25,7 +25,17 @@ namespace CameraControl {
             gameObject.SetActive(false);
         }
 
-        private void LateUpdate() {
+		public void Shake(float magnitude = 0.1f) {
+            if (!Core.DataController.Data.Settings.Gameplay.CameraShaking) {
+                return;
+            }
+
+			_camera.transform.DOComplete();
+			_camera.transform.DOShakePosition(.5f, magnitude);
+			_camera.transform.DOShakeRotation(.3f, magnitude);
+		}
+
+		private void LateUpdate() {
             Vector3 playerPos = Core.LevelController.PlayerController.Position;
             transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref _velocity, _motionSmooth, _speed);
         }

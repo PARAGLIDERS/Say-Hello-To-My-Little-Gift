@@ -64,14 +64,20 @@ namespace Player {
             ResetPosition();
             _damageable.ResetHealth();
             _damageable.OnDie += Deactivate;
+            _damageable.OnDamage += HandleDamage;
             gameObject.SetActive(true);
 		}
 
 		public void Deactivate() {
             _damageable.OnDie -= Deactivate;
-            gameObject.SetActive(false);
+			_damageable.OnDamage -= HandleDamage;
+			gameObject.SetActive(false);
         }
 		
+        private void HandleDamage() {
+            Core.LevelController.CameraController.Shake(.5f);
+        }
+
         private bool TryGetInput(out Vector3 input) {
             input = Core.InputController.GetPlayerInput();
             return input != Vector3.zero;
