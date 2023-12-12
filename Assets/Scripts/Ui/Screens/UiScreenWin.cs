@@ -16,7 +16,7 @@ namespace Ui.Screens {
 		}
 
 		private void HandleContinueButton() {
-			Core.StateController.SetState(GameStateMachine.StateType.Restart);// temp
+			Core.StateController.SetState(GameStateMachine.StateType.LoadLevel);
 		}
 
 		private void HandleQuitButton() {

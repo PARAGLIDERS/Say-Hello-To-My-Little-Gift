@@ -22,7 +22,7 @@ namespace Root {
 			Core.Update();
 		}
 
-		private void OnDestroy() {
+		private void OnApplicationQuit() {
 			Core.Dispose();
 		}
 	}

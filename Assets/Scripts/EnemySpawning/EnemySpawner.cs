@@ -14,8 +14,6 @@ namespace EnemySpawning {
 		public event Action EnemyKilled;
 		public event Action AllEnemiesKilled;
 
-		private readonly EnemySpawnerConfig _config;
-		private readonly SpawnerGrid _grid;
 
 		public int CurrentEnemyCount {get; private set;}
 		public int MaxEnemies {get; private set;}
@@ -23,12 +21,11 @@ namespace EnemySpawning {
 		public int CurrentRound {get; private set; }
 		public int MaxRounds => _config.Rounds.Count;
 
+		private EnemySpawnerConfig _config;
+		private SpawnerGrid _grid;
         private IEnumerator _execution;
 
-		public EnemySpawner(EnemySpawnerConfig config) {
-			_config = config;
-			_grid = new SpawnerGrid(config.GridConfig);
-		}
+		public EnemySpawner() {}
 
 		private Randomizer<EnemySpawnRoundGun> _gunRandomizer;
 		public bool TryGetCurrentGun(out GunType type) {
@@ -46,8 +43,11 @@ namespace EnemySpawning {
             CurrentEnemyCount = 0;
         }
 
-        public void Start() {
-            _grid.CalculatePoints();
+        public void Start(EnemySpawnerConfig config) {
+			_config = config;
+			_grid = new SpawnerGrid(config.GridConfig);
+
+			_grid.CalculatePoints();
             _execution = Execute();
 
             Core.CoroutineRunner.Run(_execution);

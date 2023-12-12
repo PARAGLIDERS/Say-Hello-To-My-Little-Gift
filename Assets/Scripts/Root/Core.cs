@@ -35,8 +35,7 @@ namespace Root {
             PoolController = new PoolController(parent, resources.PoolConfig);
             SfxController = new SfxController(parent, resources.SfxConfig);
 			MusicController = new MusicController(parent, resources.MusicConfig);
-            LevelController = new LevelController(parent, 
-                resources.EnemySpawnerConfig, resources.GunsConfig,
+            LevelController = new LevelController(parent, resources.GunsConfig,
                 resources.GunsSpawnerConfig, resources.PlayerPrefab, 
                 resources.CameraPrefab, resources.LevelsConfig);
 
@@ -53,6 +52,7 @@ namespace Root {
         // i dont think it's nessesary 
         // but why not :)
 		public static void Dispose() {
+			PostProcessingController.Dispose();
 			PoolController.Dispose();
 			CoroutineRunner.StopAll();
 			Object.Destroy(CoroutineRunner.gameObject);

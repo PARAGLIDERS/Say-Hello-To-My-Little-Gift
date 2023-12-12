@@ -14,8 +14,6 @@ using UnityEngine.Rendering.PostProcessing;
 namespace Root {
 	[CreateAssetMenu(menuName = "Santa/Resources", fileName = "Resources")]
 	public class Resources : ScriptableObject {
-		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
-
 		[SerializeField] private PoolConfig _poolConfig;
         [SerializeField] private SfxConfig _sfxConfig;
         [SerializeField] private MusicConfig _musicConfig;
@@ -38,8 +36,6 @@ namespace Root {
 
 		public PoolConfig PoolConfig => _poolConfig;
         public SfxConfig SfxConfig => _sfxConfig;
-
-		public EnemySpawnerConfig EnemySpawnerConfig => _enemySpawnerConfig;
 
         public GunsConfig GunsConfig => _gunsConfig;
         public GunsSpawnerConfig GunsSpawnerConfig => _gunSpawnerConfig;

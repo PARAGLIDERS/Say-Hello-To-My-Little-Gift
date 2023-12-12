@@ -7,7 +7,7 @@ namespace Data {
 		public SettingsData Settings { get; private set; }
 
 		public PlayerData() {
-			CurrentLevel = 0;
+			CurrentLevel = 2;
 			Settings = new SettingsData();
 		}
 
