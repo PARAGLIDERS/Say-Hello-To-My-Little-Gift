@@ -18,8 +18,8 @@ MonoBehaviour:
   - _name: Round 1
     _delay: 1
     _guns:
-    - _name: 'Uzi : 100%'
-      _type: 1
+    - _name: 'Shotgun : 100%'
+      _type: 2
       _chance: 100
     _waves:
     - _name: Wave 1
