@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Root {
     public class InputController {
         private readonly Plane _floor;
-        private CameraController _camera => Core.LevelController.CameraController;
+        private CameraController _camera => Core.LevelController.Camera;
 
         public InputController() {
             _floor = new (Vector3.up, 0);

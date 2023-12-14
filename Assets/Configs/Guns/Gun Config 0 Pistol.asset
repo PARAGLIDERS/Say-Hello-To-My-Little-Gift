@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isInfinite: 1
   _name: Pistol
-  _spread: 0.1
+  _spread: 0.01
   _fireRate: 1
   _bulletsPerShot: 1
   _bulletType: 200
   _shotSound: 101
+  _muzzleFlashType: 350
   _inputType: 0
   _initialAmmo: 0
   _pickupAmmo: 0

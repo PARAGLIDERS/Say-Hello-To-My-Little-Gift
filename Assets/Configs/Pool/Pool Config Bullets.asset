@@ -36,7 +36,7 @@ MonoBehaviour:
   - Name: Bullet_RocketLauncher
     _size: 500
     _type: 205
-    _prefab: {fileID: 3109694973181921341, guid: cd9de463a0d4e854d9847788b63646ed, type: 3}
+    _prefab: {fileID: 5116427969242301190, guid: cd9de463a0d4e854d9847788b63646ed, type: 3}
   - Name: Bullet_Minigun
     _size: 500
     _type: 206

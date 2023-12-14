@@ -12,7 +12,7 @@ namespace Ui.Components {
 		[SerializeField] private ProgressBar _progress;
 		[SerializeField] private PlayerHealthBarFace _face;
 
-		private PlayerController _player => Core.LevelController.PlayerController;
+		private PlayerController _player => Core.LevelController.Player;
 		private Sequence _damageSequence;
 
 		public void Init() {

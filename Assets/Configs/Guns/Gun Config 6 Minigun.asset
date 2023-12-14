@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isInfinite: 0
   _name: Minigun
-  _spread: 0.338
-  _fireRate: 25
-  _bulletsPerShot: 5
+  _spread: 0.08
+  _fireRate: 15
+  _bulletsPerShot: 3
   _bulletType: 206
   _shotSound: 107
   _muzzleFlashType: 356

@@ -25,7 +25,7 @@ namespace Enemies {
 		}
 
 		protected virtual void Update() {
-            Vector3 playerPosition = Core.LevelController.PlayerController.Position;
+            Vector3 playerPosition = Core.LevelController.Player.Position;
 			_agent?.SetDestination(playerPosition);
 			_animation?.Trigger();
 		}

@@ -75,7 +75,7 @@ namespace Player {
         }
 		
         private void HandleDamage() {
-            Core.LevelController.CameraController.Shake(.5f);
+            Core.LevelController.Camera.Shake(transform.position, 0.7f);
         }
 
         private bool TryGetInput(out Vector3 input) {

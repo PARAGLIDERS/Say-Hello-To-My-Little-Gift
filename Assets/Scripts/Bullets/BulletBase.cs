@@ -44,7 +44,7 @@ namespace Bullets {
             Despawn();
         }
 
-        private void Despawn() {
+        protected virtual void Despawn() {
             Core.PoolController.Spawn((PoolType)_baseConfig.ExplosionType, transform.position, transform.rotation);
             Deactivate();
         }

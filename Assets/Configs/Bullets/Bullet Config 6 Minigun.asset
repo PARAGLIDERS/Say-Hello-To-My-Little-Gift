@@ -15,5 +15,5 @@ MonoBehaviour:
   _damage: 3
   _lifetime: 5
   _explosionType: 406
-  _speedMin: 110
-  _speedMax: 130
+  _speedMin: 70
+  _speedMax: 150

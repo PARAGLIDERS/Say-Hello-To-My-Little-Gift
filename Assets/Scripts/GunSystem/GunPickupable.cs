@@ -35,7 +35,7 @@ namespace GunSystem {
         }
 
         private bool IsNearPlayer() {
-            Vector3 playerPosition = Core.LevelController.PlayerController.Position;
+            Vector3 playerPosition = Core.LevelController.Player.Position;
             return Vector3.Distance(transform.position, playerPosition) <= _distanceToPlayer;
 		}
 

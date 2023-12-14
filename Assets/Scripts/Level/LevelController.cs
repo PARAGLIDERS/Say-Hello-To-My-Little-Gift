@@ -12,8 +12,8 @@ namespace Level {
         public readonly GunsController GunsController;
         public readonly GunSpawner GunSpawner;
         public readonly EnemySpawner EnemySpawner;
-        public readonly PlayerController PlayerController;
-        public readonly CameraController CameraController;
+        public readonly PlayerController Player;
+        public readonly CameraController Camera;
 
         private readonly LevelsConfig _config;
         private int _currentLevel;
@@ -23,13 +23,13 @@ namespace Level {
             CameraController cameraPrefab, LevelsConfig config) {
             _config = config;
 
-            PlayerController = Object.Instantiate(playerPrefab, parent);
-            PlayerController.Deactivate();
+            Player = Object.Instantiate(playerPrefab, parent);
+            Player.Deactivate();
             
-            CameraController = Object.Instantiate(cameraPrefab, parent);
-            CameraController.Deactivate();
+            Camera = Object.Instantiate(cameraPrefab, parent);
+            Camera.Deactivate();
 
-            GunsController = new GunsController(gunsConfig, PlayerController);
+            GunsController = new GunsController(gunsConfig, Player);
             GunSpawner = new GunSpawner(gunsSpawnerConfig);
             EnemySpawner = new EnemySpawner();
         }
@@ -65,10 +65,10 @@ namespace Level {
             GunSpawner.Start(levelConfig.GunSpawnerGridConfig);
 
            
-            PlayerController.Activate();
-            CameraController.Activate();
+            Player.Activate();
+            Camera.Activate();
 
-            PlayerController.OnDie += HandlePlayerDeath;
+            Player.OnDie += HandlePlayerDeath;
             EnemySpawner.AllEnemiesKilled += HandleWin;
         }
 
@@ -79,10 +79,10 @@ namespace Level {
             EnemySpawner.Stop();
             EnemySpawner.Reset();
 
-            PlayerController.Deactivate();
-            CameraController.Deactivate();
+            Player.Deactivate();
+            Camera.Deactivate();
 
-			PlayerController.OnDie -= HandlePlayerDeath;
+			Player.OnDie -= HandlePlayerDeath;
 			EnemySpawner.AllEnemiesKilled -= HandleWin;
 		}
 

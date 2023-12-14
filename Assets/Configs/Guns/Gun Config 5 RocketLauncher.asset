@@ -15,7 +15,7 @@ MonoBehaviour:
   _isInfinite: 0
   _name: Bazooka
   _spread: 0.1
-  _fireRate: 0.5
+  _fireRate: 1
   _bulletsPerShot: 1
   _bulletType: 205
   _shotSound: 106

@@ -69,7 +69,7 @@ namespace Enemies {
         }
 
         private Vector3 GetPlayerPosition() {
-            return Core.LevelController.PlayerController.Position;
+            return Core.LevelController.Player.Position;
         }
     }
 }

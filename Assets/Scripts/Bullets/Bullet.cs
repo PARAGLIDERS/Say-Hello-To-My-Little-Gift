@@ -11,7 +11,7 @@ namespace Bullets {
 		}
 
 		public override void Activate(Vector3 position, Quaternion rotation) {
-            _trail.Clear();
+            if(_trail != null) _trail.Clear();
             base.Activate(position, rotation);            
             _rigidbody.AddForce(Random.Range(_config.SpeedMin, _config.SpeedMax) * transform.forward, ForceMode.Impulse);
         }
