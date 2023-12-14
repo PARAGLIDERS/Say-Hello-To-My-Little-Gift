@@ -95,7 +95,7 @@ namespace Player {
 
         private void UpdateRotation() {
             Vector3 target = Core.InputController.GetPointerPosition();
-            _rotation.Update(target);
+            _rotation.Update(target.With(y: _unitTransform.position.y));
             _gunRotation.Update(target.With(y: _gunsHolder.position.y));
         }
 

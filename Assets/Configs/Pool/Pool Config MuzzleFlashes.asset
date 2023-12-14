@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c09e685591a4a42a83ed9a75c7b2e0f, type: 3}
+  m_Name: Pool Config MuzzleFlashes
+  m_EditorClassIdentifier: 
+  _items:
+  - Name: MuzzleFlash_Pistol
+    _size: 100
+    _type: 350
+    _prefab: {fileID: 8763278943638151630, guid: 8c66d8960820df2448cf013da4867c52, type: 3}
+  - Name: MuzzleFlash_Uzi
+    _size: 100
+    _type: 351
+    _prefab: {fileID: 8763278943638151630, guid: fc3c4b1e749ad9b41b978b4f6556fb5d, type: 3}
+  - Name: MuzzleFlash_Shotgun
+    _size: 100
+    _type: 352
+    _prefab: {fileID: 8763278943638151630, guid: 37bf23f8923466545b725c860074ff5f, type: 3}
+  - Name: MuzzleFlash_Auto
+    _size: 100
+    _type: 353
+    _prefab: {fileID: 8763278943638151630, guid: 67b143c5ddf740e40965f3bf62acdc15, type: 3}
+  - Name: MuzzleFlash_DoubleShotgun
+    _size: 100
+    _type: 354
+    _prefab: {fileID: 8763278943638151630, guid: 9be77aaba30ef7949969a430e3c0f519, type: 3}
+  - Name: MuzzleFlash_RocketLauncher
+    _size: 100
+    _type: 355
+    _prefab: {fileID: 8763278943638151630, guid: 118b0707dc2ec334caa4a8a1240dd143, type: 3}
+  - Name: MuzzleFlash_Minigun
+    _size: 100
+    _type: 356
+    _prefab: {fileID: 8763278943638151630, guid: 6fc83808b0cbc464fa9aeca9a2e015a6, type: 3}

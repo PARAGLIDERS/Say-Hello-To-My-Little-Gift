@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c09e685591a4a42a83ed9a75c7b2e0f, type: 3}
+  m_Name: Pool Config Enemy Projectiles
+  m_EditorClassIdentifier: 
+  _items:
+  - Name: EnemyProjectile_Snowball
+    _size: 100
+    _type: 250
+    _prefab: {fileID: 8387910483624825766, guid: 99c5baedeb9a7244dbbe396762a1954f, type: 3}

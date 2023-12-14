@@ -15,7 +15,7 @@ namespace GunSystem {
         private readonly Dictionary<GunType, Gun> _gunsDictionary;
         private int _currentIndex;
 
-        public GunsController(GunsConfig config, PlayerController player) {
+        public GunsController(GunsControllerConfig config, PlayerController player) {
             AvailableGuns = new List<Gun>();
 
             _gunsDictionary = new Dictionary<GunType, Gun>();
@@ -34,7 +34,7 @@ namespace GunSystem {
         }
 
         public void Init() {
-            Pickup(GunType.Pistol, 0);
+            Pickup(GunType.Pistol);
         }
 
         public void Reset() {
@@ -52,22 +52,23 @@ namespace GunSystem {
             _currentIndex = 0;
         }
 
-        public void Pickup(GunType type, int ammo) {
+        public void Pickup(GunType type) {            
             if(!_gunsDictionary.TryGetValue(type, out Gun gun)){
                 Debug.LogError($"weapon does not exist in dictionary: {type}");
                 return;
             }
 
-            gun.AddAmmo(ammo);
-
 			if (!AvailableGuns.Contains(gun)) {
                 AvailableGuns.Add(gun);
                 SwitchTo(gun);
+                gun.ResetAmmo();
+	    		OnPickup?.Invoke(gun, gun.InitialAmmo);
             } else {
-				OnAmmoChange?.Invoke(gun);
+                gun.Pickup();
+	    		OnPickup?.Invoke(gun, gun.PickupAmmo);
 			}
 
-			OnPickup?.Invoke(gun, ammo);
+			OnAmmoChange?.Invoke(gun);
         }
 
         public void Update() {

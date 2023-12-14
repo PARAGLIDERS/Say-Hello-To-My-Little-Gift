@@ -58,6 +58,14 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.07881904
       objectReference: {fileID: 0}
+    - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: _config
+      value: 
+      objectReference: {fileID: 11400000, guid: 5783123619df2454399088f6a8c19ea0, type: 2}
+    - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: _maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_RootOrder
       value: 0

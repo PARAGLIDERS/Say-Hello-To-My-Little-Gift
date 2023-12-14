@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c09e685591a4a42a83ed9a75c7b2e0f, type: 3}
+  m_Name: Pool Config Bullet Explosions
+  m_EditorClassIdentifier: 
+  _items:
+  - Name: BulletExplosion_Pistol
+    _size: 100
+    _type: 400
+    _prefab: {fileID: 1408789770161406065, guid: 2614a45a25707244cb82dff479184a7c, type: 3}
+  - Name: BulletExplosion_Uzi
+    _size: 100
+    _type: 401
+    _prefab: {fileID: 1408789770161406065, guid: 7a2cb75f6286a444da2d659c14a05bac, type: 3}
+  - Name: BulletExplosion_Shotgun
+    _size: 100
+    _type: 402
+    _prefab: {fileID: 1408789770161406065, guid: d2a0d1ad69690f640b643fbf2dbaa9db, type: 3}
+  - Name: BulletExplosion_Auto
+    _size: 100
+    _type: 403
+    _prefab: {fileID: 1408789770161406065, guid: 15f7c45717a495748b8387dd518daaa0, type: 3}
+  - Name: BulletExplosion_DoubleShotgun
+    _size: 100
+    _type: 404
+    _prefab: {fileID: 1408789770161406065, guid: c8c9ba11b62991d4fb36ea8ee23ed752, type: 3}
+  - Name: BulletExplosion_RocketLauncher
+    _size: 100
+    _type: 405
+    _prefab: {fileID: 1408789770161406065, guid: e4abed7c26c543c47beeb510a278d46f, type: 3}
+  - Name: BulletExplosion_Minigun
+    _size: 100
+    _type: 406
+    _prefab: {fileID: 1408789770161406065, guid: 7eceb7128818cbb44af0d072ed0f0b92, type: 3}
+  - Name: ProjectileExplosion_Snowball
+    _size: 100
+    _type: 407
+    _prefab: {fileID: 2243687762600679556, guid: c9fb929538ed3c146947299d6462caf4, type: 3}

@@ -18,7 +18,7 @@ namespace Level {
         private readonly LevelsConfig _config;
         private int _currentLevel;
 
-        public LevelController(Transform parent, GunsConfig gunsConfig,
+        public LevelController(Transform parent, GunsControllerConfig gunsConfig,
             GunsSpawnerConfig gunsSpawnerConfig, PlayerController playerPrefab, 
             CameraController cameraPrefab, LevelsConfig config) {
             _config = config;
@@ -30,7 +30,7 @@ namespace Level {
             CameraController.Deactivate();
 
             GunsController = new GunsController(gunsConfig, PlayerController);
-            GunSpawner = new GunSpawner(parent, gunsSpawnerConfig);
+            GunSpawner = new GunSpawner(gunsSpawnerConfig);
             EnemySpawner = new EnemySpawner();
         }
 
@@ -57,10 +57,13 @@ namespace Level {
 		}
 
 		public void Start() {
-            GunsController.Init();
-            GunSpawner.Start();
+			LevelsConfigItem levelConfig = GetCurrentLevelConfig();
 
-            EnemySpawner.Start(GetCurrentLevelConfig().EnemySpawnerConfig);
+			EnemySpawner.Start(levelConfig.EnemySpawnerConfig);
+
+            GunsController.Init();
+            GunSpawner.Start(levelConfig.GunSpawnerGridConfig);
+
            
             PlayerController.Activate();
             CameraController.Activate();

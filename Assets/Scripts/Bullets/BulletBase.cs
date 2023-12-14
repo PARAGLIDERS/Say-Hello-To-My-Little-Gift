@@ -5,12 +5,14 @@ using UnityEngine;
 
 namespace Bullets {
     public abstract class BulletBase : PoolObject {
-        [SerializeField] protected int _damage;
-        [SerializeField] protected float _lifeTime;
         [SerializeField] protected Rigidbody _rigidbody;
         
-        protected abstract PoolType _explosionType { get; }
+        private BulletBaseConfig _baseConfig;
         private float _timer;
+
+        protected void Init(BulletBaseConfig config) {
+            _baseConfig = config;
+        }
 
         public override void Activate(Vector3 position, Quaternion rotation) {
             base.Activate(position, rotation);
@@ -25,24 +27,25 @@ namespace Bullets {
         }
 
         private void ResetTimer() {
-            _timer = Time.time + _lifeTime;
-        }
-
-        public override void Deactivate() {
-            base.Deactivate();
-            Core.PoolController.Spawn(_explosionType, transform.position, transform.rotation);
+            _timer = Time.time + _baseConfig.Lifetime;
         }
 
         private void OnTriggerEnter(Collider other) {
+            Debug.LogWarning("AAAAAAAAAAAAAAAA");
             if (other.TryGetComponent(out Damageable damageable)) {
-                damageable.ApplyDamage(_damage, transform.rotation);
+                damageable.ApplyDamage(_baseConfig.Damage, transform.rotation);
             }
 
-            Deactivate();
+            Despawn();
         }
 
         private void Update() {
             if (Time.time < _timer) return;
+            Despawn();
+        }
+
+        private void Despawn() {
+            Core.PoolController.Spawn((PoolType)_baseConfig.ExplosionType, transform.position, transform.rotation);
             Deactivate();
         }
     }

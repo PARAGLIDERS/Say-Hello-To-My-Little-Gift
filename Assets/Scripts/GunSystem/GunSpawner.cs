@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using Root;
+using PoolSystem;
+using UnityEngine.UIElements;
 
 namespace GunSystem {
     public class GunSpawner {
         private readonly Dictionary<GunType, GunsSpawnerConfigItem> _pickupsDictionary;
-        private readonly Queue<GunPickupable> _pickups;
-        private readonly Transform _container;
-        private readonly SpawnerGrid _grid;
         private readonly GunsSpawnerConfig _config;
+
+		private IEnumerator _execution;
+		private SpawnerGrid _grid;
         
-        public GunSpawner(Transform parent, GunsSpawnerConfig config) {
+        public GunSpawner(GunsSpawnerConfig config) {
             _config = config;
 
             _pickupsDictionary = new Dictionary<GunType, GunsSpawnerConfigItem>();
@@ -23,33 +25,18 @@ namespace GunSystem {
                 }
 
                 _pickupsDictionary.Add(item.Type, item);
-            }
-
-            _container = new GameObject("gun pickups").transform;
-            _container.SetParent(parent);
-
-            _pickups = new Queue<GunPickupable>();
-            for (int i = 0; i < 25; i++) {
-                GunPickupable pickup = CreatePickupable();
-                _pickups.Enqueue(pickup);
-            }
-
-            _grid = new SpawnerGrid(_config.GridConfig);            
+            }        
         }
 
-        private IEnumerator _execution;
 
-        public void Start() {
+        public void Start(SpawnerGridConfig gridConfig) {
+            _grid = new SpawnerGrid(gridConfig);
             _grid.CalculatePoints();
             _execution = Execute();
             Core.CoroutineRunner.Run(_execution);
         }
 
         public void Stop() {
-            foreach (GunPickupable item in _pickups) {
-                item.Deactivate();
-            }
-
             if (_execution == null) return;
             Core.CoroutineRunner.Stop(_execution);
         }
@@ -59,37 +46,22 @@ namespace GunSystem {
                 yield return new WaitForSeconds(_config.Cooldown);
 
                 if(!Core.LevelController.EnemySpawner.TryGetCurrentGun(out GunType gunType)) {
-                    continue;
+					Debug.LogError($"can't get gun from spawner: {gunType}");
+					continue;
                 }
 
                 if(!_pickupsDictionary.TryGetValue(gunType, out GunsSpawnerConfigItem param)) {
                     Debug.LogError($"no pickup item in dictionary of type: {gunType}");
                     continue;
                 }
-
-                GunPickupable pickupable = GetPickupable();
+                
                 Vector3 position = _grid.GetPosition();
+                Quaternion rotation = Quaternion.identity;
 
-                pickupable.Deactivate();
-                pickupable.Activate(param, position);
-                _pickups.Enqueue(pickupable);
-            }
-        }
+                Core.PoolController.Spawn(param.Pickupable, position, rotation);
+				Core.PoolController.Spawn(PoolType.VFX_GunSpawnVfx, position, rotation);
 
-        private GunPickupable GetPickupable() {
-            return _pickups.Peek().IsActive ? CreatePickupable() : _pickups.Dequeue();
-        }
-
-        private GunPickupable CreatePickupable() {
-            GunPickupable pickup = Object.Instantiate(_config.PickupablePrefab, _container);
-            pickup.transform.SetParent(_container);
-            return pickup;
-        }
-
-        public void Dispose() {
-            Object.Destroy(_container);
-            _pickups.Clear();
-            _pickupsDictionary.Clear();
-        }
+			}
+		}
     }
 }

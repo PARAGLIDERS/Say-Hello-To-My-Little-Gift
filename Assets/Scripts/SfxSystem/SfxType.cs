@@ -7,12 +7,15 @@ namespace SfxSystem {
         // shots
         ShotDry = 100,
         ShotPistol = 101,
-        ShotAuto = 102,
+        ShotUzi = 102,
         ShotShotgun = 103,
-        ShotUzi = 104,
+        ShotAuto = 104,
+        ShotDoubleShotgun = 105,
+        ShotRocketLauncher = 106,
+        ShotMinigun = 107,
 
         // enemies
-        EnemyBloodParticles = 200,
+        BloodParticles = 200,
         EnemySpawn = 201,
         EnemySnowmanThrow = 202, 
         EnemyChickenExplode = 203, 

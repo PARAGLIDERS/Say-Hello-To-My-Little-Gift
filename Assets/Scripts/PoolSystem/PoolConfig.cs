@@ -8,10 +8,9 @@ namespace PoolSystem {
 		[SerializeField] private List<PoolConfigItem> _items = new();
 		public List<PoolConfigItem> Items => _items;
 		
-        // oh no, incapsulation violation :)
-		private void OnValidate() {
+		private void OnValidate() {	
             foreach (PoolConfigItem item in _items) {
-				item.Name = item.Type.ToString();
+				item.Validate();
 			}
 		}
 	}
@@ -27,5 +26,9 @@ namespace PoolSystem {
         public int Size => _size;
         public PoolType Type => _type;
         public PoolObject Prefab => _prefab;
-    }
+
+		public void Validate() {
+			Name = Type.ToString();
+		}
+	}
 }

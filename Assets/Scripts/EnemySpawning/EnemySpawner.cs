@@ -114,7 +114,7 @@ namespace EnemySpawning {
             Quaternion rotation = Quaternion.identity; // look at player? or away?)
 
             Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: HandleEnemyKill);
-            Core.PoolController.Spawn(PoolType.EnemySpawnEffect, position, rotation);
+            Core.PoolController.Spawn(PoolType.VFX_EnemySpawnEffect, position, rotation);
 			Core.SfxController.Play(SfxSystem.SfxType.EnemySpawn, position);
         }
 

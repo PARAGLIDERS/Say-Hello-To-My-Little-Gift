@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd77c7f80759df048a0af6099a2e5042, type: 3}
   m_Name: Gun Spawner Config
   m_EditorClassIdentifier: 
-  _gridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
-  _cooldown: 3
-  _pickupablePrefab: {fileID: 4350365431954603433, guid: 8b47cfb5d5e84e644880acef9c901c5f, type: 3}
+  _cooldown: 1
   _items:
   - Name: Uzi
     _type: 1
-    _mesh: {fileID: -5495902117074765545, guid: a7aff4522b36ee241b8f943fd706f86d, type: 3}
-    _color: {r: 0.99178326, g: 1, b: 0, a: 1}
-    _pickupAmmo: 25
+    _pickupable: 301
   - Name: Shotgun
     _type: 2
-    _mesh: {fileID: -5495902117074765545, guid: 0406dc7af1567a946bd74e7ddaf58e18, type: 3}
-    _color: {r: 1, g: 0.5754001, b: 0, a: 1}
-    _pickupAmmo: 10
+    _pickupable: 302
   - Name: Auto
+    _type: 3
+    _pickupable: 303
+  - Name: DoubleShotgun
     _type: 4
-    _mesh: {fileID: -5495902117074765545, guid: 6d44894664d41d449a45cd597f68a02b, type: 3}
-    _color: {r: 1, g: 0.14192978, b: 0, a: 1}
-    _pickupAmmo: 50
+    _pickupable: 304
+  - Name: RocketLauncher
+    _type: 5
+    _pickupable: 305
+  - Name: Minigun
+    _type: 6
+    _pickupable: 306

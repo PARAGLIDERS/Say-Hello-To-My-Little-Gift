@@ -7,11 +7,11 @@ namespace PoolSystem {
         private readonly Dictionary<PoolType, Pool> _pools = new();
         private readonly Transform _container;
 
-        public PoolController(Transform parent, PoolConfig config) {
+        public PoolController(Transform parent, PoolControllerConfig config) {
             _container = new GameObject("Pools").transform; 
             _container.SetParent(parent);
 
-            foreach (PoolConfigItem item in config.Items) {
+            foreach (PoolConfigItem item in config.GetItems()) {
                 if (_pools.ContainsKey(item.Type)) {
                     Debug.LogError($"{item.Type} already exists in pools dictionary");
                     continue;

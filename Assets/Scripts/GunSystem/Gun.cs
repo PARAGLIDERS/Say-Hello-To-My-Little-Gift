@@ -5,22 +5,17 @@ using UnityEngine;
 
 namespace GunSystem {
 	public class Gun : MonoBehaviour {
-        [SerializeField] private string _name;
+        [SerializeField] private GunConfig _config;
 		[SerializeField] private Transform _muzzle;
-        [SerializeField] [Range(0f, 1f)] private float _spread = 0.1f;
-        [SerializeField] [Range(0.1f, 25f)] private float _fireRate = 1f;
-        [SerializeField] private int _bulletsPerShot = 1;
-        [SerializeField] private BulletType _bulletType = BulletType.Default;
-        [SerializeField] private SfxShotType _shotSound = SfxShotType.Pistol;
-        [SerializeField] private InputType _inputType = InputType.Hold;
-        [SerializeField] private bool _isInfinite;
 
-        public GunType Type { get; private set; }
-        public bool IsInfinite => _isInfinite;
-        public string Name => _name;
+		public GunType Type { get; private set; }
+        public bool IsInfinite => _config.IsInfinite;
+        public string Name => _config.Name;
         public int Ammo { get; private set; }
-        public InputType InputType => _inputType;
-        
+        public InputType InputType => _config.InputType;
+        public int PickupAmmo => _config.PickupAmmo;
+        public int InitialAmmo => _config.InitialAmmo;
+
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape
 
@@ -28,18 +23,13 @@ namespace GunSystem {
             Type = type;
         }
 
-        public void AddAmmo(int value) {
-            if (value < 0) {
-                Debug.LogError("trying to add negative ammo!");
-                return;
-            }
-
-            Ammo += value;
-            _dryShotPlayed = false;
+        public void ResetAmmo() {
+            Ammo = _config.InitialAmmo;
         }
 
-        public void ResetAmmo() {
-            Ammo = 0;
+        public void Pickup() {
+            Ammo += _config.PickupAmmo;
+            _dryShotPlayed = false;
         }
 
 		public void Shoot() {
@@ -56,27 +46,27 @@ namespace GunSystem {
                 return;
             }
 
-            for (int i = 0; i < _bulletsPerShot; i++) {
+            for (int i = 0; i < _config.BulletsPerShot; i++) {
                 SpawnBullet();
             }
 
             UpdateCooldown();
             SpendAmmo();
 
-            Core.PoolController.Spawn(PoolType.MuzzleFlash, _muzzle.position, _muzzle.rotation);
-            Core.SfxController.Play((SfxType)_shotSound);
+            Core.PoolController.Spawn((PoolType) _config.MuzzleFlashType, _muzzle.position, _muzzle.rotation);
+            Core.SfxController.Play((SfxType)_config.ShotSound);
 		}       
 
         private bool CanShoot() {
-            return Time.time > _cooldown || _inputType == InputType.Click;
+            return Time.time > _cooldown || _config.InputType == InputType.Click;
 		}
 
         private bool HasAmmo() {
-            return _isInfinite || Ammo > 0;
+            return _config.IsInfinite || Ammo > 0;
 		}
 
         private void UpdateCooldown() {
-			_cooldown = Time.time + 1f / _fireRate;
+			_cooldown = Time.time + 1f / _config.FireRate;
 		}
 
         private void SpendAmmo() {
@@ -94,29 +84,12 @@ namespace GunSystem {
 
 		private void SpawnBullet() {
 			Quaternion bulletRotation = GetBulletRotation();
-			Core.PoolController.Spawn((PoolType) _bulletType, _muzzle.position, bulletRotation);
+			Core.PoolController.Spawn((PoolType) _config.BulletType, _muzzle.position, bulletRotation);
 		}
 
 		private Quaternion GetBulletRotation() {
-			float spread = Random.Range(-_spread, _spread) * 90f;
+			float spread = Random.Range(-_config.Spread, _config.Spread) * 90f;
 			return _muzzle.rotation * Quaternion.AngleAxis(spread, _muzzle.up);
 		}
 	}
-
-    public enum BulletType {
-        Default = PoolType.Bullet,
-        Rocket = PoolType.Rocket,
-    }
-
-    public enum SfxShotType {
-        Pistol = SfxType.ShotPistol,
-        Auto = SfxType.ShotAuto,
-        Shotgun = SfxType.ShotShotgun,
-        Uzi = SfxType.ShotUzi,
-    }
-
-    public enum InputType {
-        Click = 0,
-        Hold = 1,
-    }
 }

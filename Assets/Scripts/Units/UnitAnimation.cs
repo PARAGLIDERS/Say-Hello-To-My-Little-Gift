@@ -1,12 +1,11 @@
 using Root;
 using PoolSystem;
 using UnityEngine;
+using Units.UnitConfigs;
 
 namespace Units {
 	public class UnitAnimation : MonoBehaviour {
-        [SerializeField] private float _playSpeed = 3f;
-        [SerializeField] private AnimationCurve _jumpCurve;
-        [SerializeField] private AnimationCurve _scaleCurve;
+		[SerializeField] private UnitAnimationConfig _config;
 		[SerializeField] private Transform _body;
 		
 		private float _playTimer;
@@ -21,14 +20,14 @@ namespace Units {
 		private void Update() {
 			if(!_isPlayin) return;
 			
-			_body.localPosition = new Vector3(0f, _jumpCurve.Evaluate(1f - _playTimer), 0f);
-			_body.localScale = new Vector3(1f, 1f + _scaleCurve.Evaluate(1f - _playTimer), 1f);
+			_body.localPosition = new Vector3(0f, _config.JumpCurve.Evaluate(1f - _playTimer), 0f);
+			_body.localScale = new Vector3(1f, 1f + _config.ScaleCurve.Evaluate(1f - _playTimer), 1f);
 
-			_playTimer -= Time.deltaTime * _playSpeed;
+			_playTimer -= Time.deltaTime * _config.AnimationSpeed;
 
 			if (_playTimer <= 0f) {
 				_isPlayin = false;
-				Core.PoolController.Spawn(PoolType.Steps, _body.position, _body.rotation);
+				Core.PoolController.Spawn(PoolType.VFX_Steps, _body.position, _body.rotation);
 			}
 		}
 	}

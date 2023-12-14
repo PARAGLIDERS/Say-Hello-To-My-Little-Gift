@@ -18,14 +18,32 @@ MonoBehaviour:
   - _name: Round 1
     _delay: 1
     _guns:
-    - _name: 'Shotgun : 100%'
+    - _name: 'Uzi : 14%'
+      _type: 1
+      _chance: 100
+    - _name: 'Uzi : 14%'
+      _type: 1
+      _chance: 100
+    - _name: 'Shotgun : 14%'
       _type: 2
+      _chance: 100
+    - _name: 'Auto : 14%'
+      _type: 3
+      _chance: 100
+    - _name: 'DoubleShotgun : 14%'
+      _type: 4
+      _chance: 100
+    - _name: 'RocketLauncher : 14%'
+      _type: 5
+      _chance: 100
+    - _name: 'Minigun : 14%'
+      _type: 6
       _chance: 100
     _waves:
     - _name: Wave 1
       _delay: 0
-      _enemyCount: 5
-      _period: 0.5
+      _enemyCount: 500
+      _period: 1
       _units:
       - _name: 'Snowman : 100%'
         _type: 0

@@ -1,20 +1,20 @@
-using PoolSystem;
 using UnityEngine;
 
 namespace Bullets {
     public class Snowball : BulletBase {
-        [SerializeField] private float _force;
-        [SerializeField] private float _gravity;
+        [SerializeField] private ProjectileConfig _config; 
 
-        protected override PoolType _explosionType => PoolType.SnowballExplosion;
+		private void Awake() {
+			Init(_config);
+		}
 
-        public override void Activate(Vector3 position, Quaternion rotation) {
+		public override void Activate(Vector3 position, Quaternion rotation) {
             base.Activate(position, rotation);
-            _rigidbody.AddForce(transform.forward * _force, ForceMode.Impulse);
+            _rigidbody.AddForce(transform.forward * (_config as ProjectileConfig).Force, ForceMode.Impulse);
         }
 
         private void FixedUpdate() {
-            _rigidbody.velocity -= Vector3.up * _gravity;
+            _rigidbody.velocity -= Vector3.up * (_config as ProjectileConfig).Gravity;
         }
     }
 }

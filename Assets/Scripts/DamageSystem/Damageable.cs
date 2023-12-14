@@ -1,22 +1,17 @@
 using Root;
-using PoolSystem;
 using UnityEngine;
 using System;
-using SfxSystem;
 
 namespace DamageSystem {
 	public class Damageable : MonoBehaviour {
-		[SerializeField] private int _maxHealth = 100;
-		[SerializeField] private PoolType _dieParticles = PoolType.BloodParticles;
-		[SerializeField] private PoolType _dieFloorDecals = PoolType.FloorBlood;
-		[SerializeField] private SfxType _dieSfx = SfxType.EnemyBloodParticles;
+		[SerializeField] private DamageableConfig _config;
 
 		public event Action OnDamage;
 		public event Action OnHeal;
 		public event Action OnDie;
 		
 		public int CurrentHealth { get; private set; }
-		public int MaxHealth => _maxHealth;
+		public int MaxHealth => _config.MaxHealth;
 
 		public void ApplyDamage(int amount, Quaternion damagerRotation) {
 			if (amount < 0) {
@@ -32,9 +27,9 @@ namespace DamageSystem {
 			if (CurrentHealth > 0) return;
 			CurrentHealth = 0;
 			
-			Core.PoolController.Spawn(_dieFloorDecals, transform.position, Quaternion.identity);
-			Core.PoolController.Spawn(_dieParticles, transform.position, damagerRotation);
-			Core.SfxController.Play(_dieSfx, transform.position);
+			Core.PoolController.Spawn(_config.DieFloorDecals, transform.position, Quaternion.identity);
+			Core.PoolController.Spawn(_config.DieParticles, transform.position, damagerRotation);
+			Core.SfxController.Play(_config.DieSfx, transform.position);
 
 			OnDie?.Invoke();
 		}
@@ -49,15 +44,15 @@ namespace DamageSystem {
 
 			CurrentHealth += amount;
 
-			if(CurrentHealth > _maxHealth) {
-				CurrentHealth = _maxHealth;
+			if(CurrentHealth > _config.MaxHealth) {
+				CurrentHealth = _config.MaxHealth;
 			}
 
 			OnHeal?.Invoke();
 		}
 
 		public void ResetHealth() {
-			CurrentHealth = _maxHealth;
+			CurrentHealth = _config.MaxHealth;
 		}
 	}
 }

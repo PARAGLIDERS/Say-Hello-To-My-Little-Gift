@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c09e685591a4a42a83ed9a75c7b2e0f, type: 3}
+  m_Name: Pool Config Pickupables
+  m_EditorClassIdentifier: 
+  _items:
+  - Name: Pickupable_Uzi
+    _size: 100
+    _type: 301
+    _prefab: {fileID: 6463424241103894445, guid: d4d5a2f91afbaa4499e00db417dac057, type: 3}
+  - Name: Pickupable_Shotgun
+    _size: 100
+    _type: 302
+    _prefab: {fileID: 6463424241103894445, guid: c758593abc44b8e469f6b119b471623b, type: 3}
+  - Name: Pickupable_Auto
+    _size: 100
+    _type: 303
+    _prefab: {fileID: 6463424241103894445, guid: 383515b75ef025f4f9752f29d08f8f57, type: 3}
+  - Name: Pickupable_DoubleShotgun
+    _size: 100
+    _type: 304
+    _prefab: {fileID: 6463424241103894445, guid: 5c274e9a66632e2468dc828863e69fae, type: 3}
+  - Name: Pickupable_RocketLauncher
+    _size: 100
+    _type: 305
+    _prefab: {fileID: 6463424241103894445, guid: 630c01151bb525b4bbfe07668a4da11f, type: 3}
+  - Name: Pickupable_Minigun
+    _size: 100
+    _type: 306
+    _prefab: {fileID: 6463424241103894445, guid: e82ea4ded5d513241b981c6e492096e8, type: 3}

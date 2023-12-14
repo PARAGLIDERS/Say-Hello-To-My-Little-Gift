@@ -3,54 +3,49 @@ using Root;
 using UnityEngine;
 
 namespace GunSystem {
-    public class GunPickupable : MonoBehaviour {
-        [SerializeField] private MeshFilter _meshFilter;
-        [SerializeField] private ParticleSystem[] _particles;
-
-        public bool IsActive { get; private set; }
-
-        private GunsSpawnerConfigItem _param;
-        private const float _lifetime = 25f;
+    public class GunPickupable : PoolObject {
+        [SerializeField] private GunType _type;
+        [SerializeField] private float _lifetime = 25f;
+        [SerializeField] private const float _distanceToPlayer = 50f;
+        
         private float _currentLifetime;
 
-        public void Activate(GunsSpawnerConfigItem param, Vector3 position) {
-            _param = param;
-            _currentLifetime = Time.time + _lifetime;
-
-            _meshFilter.mesh = _param.Mesh;
-
-            foreach (ParticleSystem particle in _particles) {
-                //ParticleSystem.MainModule particlesMain = particle.main;
-               // particlesMain.startColor = param.Color;
-            }
-
-            transform.position = position;
-            gameObject.SetActive(true);
-
-            Core.PoolController.Spawn(PoolType.GunSpawnVfx, transform.position, Quaternion.identity);
-
-            IsActive = true;
-        }
-
-		public void Deactivate() {
-			gameObject.SetActive(false);
-			IsActive = false;
+		public override void Activate(Vector3 position, Quaternion rotation) {
+			base.Activate(position, rotation);
+            ResetTimer();
 		}
 
 		// configured collision mask so it only triggers by the player 
 		private void OnTriggerEnter(Collider other) {
-            Core.LevelController.GunsController.Pickup(_param.Type, _param.PickupAmmo);
+            Core.LevelController.GunsController.Pickup(_type);
             Core.SfxController.Play(SfxSystem.SfxType.VfxGunPickup);
             
-            Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
-            Deactivate();
+            Despawn();
         }
 
         private void Update() {
             if(Time.time >= _currentLifetime) {
-				Core.PoolController.Spawn(PoolType.GunPickupVfx, transform.position, Quaternion.identity);
-				Deactivate();
+                if(IsNearPlayer()) {
+                    ResetTimer();
+                    return;
+                }
+
+                Despawn();
             }
         }
-    }
+
+        private bool IsNearPlayer() {
+            Vector3 playerPosition = Core.LevelController.PlayerController.Position;
+            return Vector3.Distance(transform.position, playerPosition) <= _distanceToPlayer;
+		}
+
+        private void ResetTimer() {
+			_currentLifetime = Time.time + _lifetime;
+		}
+
+        private void Despawn() {
+			Core.PoolController.Spawn(PoolType.VFX_GunPickupVfx, transform.position, Quaternion.identity);
+			Deactivate();
+		}
+	}
 }

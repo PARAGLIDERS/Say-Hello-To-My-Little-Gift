@@ -32,7 +32,7 @@ namespace Root {
 			DataController = new DataController();
 			PostProcessingController = new PostProcessingController(resources.VolumePrefab.sharedProfile);
 			UiController = new UiController(parent, resources.CanvasPrefab, resources.ScreenConfig);
-            PoolController = new PoolController(parent, resources.PoolConfig);
+            PoolController = new PoolController(parent, resources.PoolControllerConfig);
             SfxController = new SfxController(parent, resources.SfxConfig);
 			MusicController = new MusicController(parent, resources.MusicConfig);
             LevelController = new LevelController(parent, resources.GunsConfig,

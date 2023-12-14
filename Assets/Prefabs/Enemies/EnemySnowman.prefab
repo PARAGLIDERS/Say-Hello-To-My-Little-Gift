@@ -50,6 +50,14 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: _config
+      value: 
+      objectReference: {fileID: 11400000, guid: a94a961793805344cbbbdfdae2173d45, type: 2}
+    - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: _maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_RootOrder
       value: 0
