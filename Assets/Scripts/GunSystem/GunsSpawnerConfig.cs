@@ -25,9 +25,11 @@ namespace GunSystem {
 
         [SerializeField] private GunType _type;
         [SerializeField] private PoolType _pickupable;
+        [SerializeField] private PoolType _spawnEffect;
 
         public GunType Type => _type;
         public PoolType Pickupable => _pickupable;
+        public PoolType SpawnEffect => _spawnEffect;
 
         public void Validate() {
             Name = _type.ToString();

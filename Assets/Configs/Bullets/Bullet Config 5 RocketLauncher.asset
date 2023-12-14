@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 5 RocketLauncher
   m_EditorClassIdentifier: 
   _damage: 10
-  _lifetime: 1
+  _lifetime: 0.25
   _explosionType: 405
   _speedMin: 90
   _speedMax: 100

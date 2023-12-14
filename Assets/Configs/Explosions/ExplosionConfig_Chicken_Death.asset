@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ExplosionConfig_Chicken_Death
   m_EditorClassIdentifier: 
   _damage: 25
-  _radius: 5
+  _radius: 7
   _layerMask:
     serializedVersion: 2
     m_Bits: 1216

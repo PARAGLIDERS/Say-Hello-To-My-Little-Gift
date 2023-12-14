@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 6 Minigun
   m_EditorClassIdentifier: 
   _damage: 3
-  _lifetime: 5
+  _lifetime: 0.5
   _explosionType: 406
   _speedMin: 70
   _speedMax: 150

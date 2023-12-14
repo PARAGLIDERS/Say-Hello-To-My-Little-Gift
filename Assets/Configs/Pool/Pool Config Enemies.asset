@@ -20,7 +20,7 @@ MonoBehaviour:
   - Name: Enemy_Chicken
     _size: 100
     _type: 1
-    _prefab: {fileID: -4666638226030545533, guid: 35030c8d16218ad4794f874ea2a7d515, type: 3}
+    _prefab: {fileID: 8825687128029400017, guid: 35030c8d16218ad4794f874ea2a7d515, type: 3}
   - Name: Enemy_Deer
     _size: 100
     _type: 2
@@ -28,12 +28,12 @@ MonoBehaviour:
   - Name: Enemy_Owl
     _size: 100
     _type: 3
-    _prefab: {fileID: -4666638226030545533, guid: e39646fd7556a5b45ba33bf6fa32f6a3, type: 3}
+    _prefab: {fileID: -4666638226030545533, guid: a69cd158431114549b28368952b00f23, type: 3}
   - Name: Enemy_Penguin
     _size: 100
     _type: 4
-    _prefab: {fileID: -4666638226030545533, guid: e39646fd7556a5b45ba33bf6fa32f6a3, type: 3}
+    _prefab: {fileID: -4666638226030545533, guid: 8760407cb7f71e348a3089a7d76409aa, type: 3}
   - Name: Enemy_Rabbit
     _size: 100
     _type: 5
-    _prefab: {fileID: -4666638226030545533, guid: e39646fd7556a5b45ba33bf6fa32f6a3, type: 3}
+    _prefab: {fileID: -4666638226030545533, guid: f0e19132f6b6aac418dee79e8c977dce, type: 3}

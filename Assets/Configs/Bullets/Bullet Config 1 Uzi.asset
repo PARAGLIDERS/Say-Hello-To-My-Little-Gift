@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 1 Uzi
   m_EditorClassIdentifier: 
   _damage: 1
-  _lifetime: 5
+  _lifetime: 0.5
   _explosionType: 401
   _speedMin: 110
   _speedMax: 130

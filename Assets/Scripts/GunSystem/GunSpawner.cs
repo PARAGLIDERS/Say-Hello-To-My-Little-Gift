@@ -59,7 +59,7 @@ namespace GunSystem {
                 Quaternion rotation = Quaternion.identity;
 
                 Core.PoolController.Spawn(param.Pickupable, position, rotation);
-				Core.PoolController.Spawn(PoolType.VFX_GunSpawnVfx, position, rotation);
+				Core.PoolController.Spawn(param.SpawnEffect, position, rotation);
 
 			}
 		}

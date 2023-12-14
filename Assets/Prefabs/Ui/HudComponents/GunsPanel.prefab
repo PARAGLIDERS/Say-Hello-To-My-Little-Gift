@@ -54,19 +54,19 @@ MonoBehaviour:
   _container: {fileID: 204978529705661184}
   _presets:
   - Type: 0
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
   - Type: 1
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 5032b1d7145b3434a94742f511d9ad7e, type: 3}
   - Type: 2
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 20f471664f6ea394690eefdd66d70b23, type: 3}
   - Type: 3
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
   - Type: 4
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
   - Type: 5
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
   - Type: 6
-    Sprite: {fileID: 21300000, guid: b6fc0da5ec6a34c478ceeb4e0c8994dd, type: 3}
+    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
 --- !u!1 &5420707286102145016
 GameObject:
   m_ObjectHideFlags: 0

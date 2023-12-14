@@ -26,7 +26,7 @@ namespace DamageSystem {
 
 			if (CurrentHealth > 0) return;
 			CurrentHealth = 0;
-			
+
 			Core.PoolController.Spawn(_config.DieFloorDecals, transform.position, Quaternion.identity);
 			Core.PoolController.Spawn(_config.DieParticles, transform.position, damagerRotation);
 			Core.SfxController.Play(_config.DieSfx, transform.position);

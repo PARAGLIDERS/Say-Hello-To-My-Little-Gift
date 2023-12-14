@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 0 Pistol
   m_EditorClassIdentifier: 
   _damage: 1
-  _lifetime: 5
+  _lifetime: 0.5
   _explosionType: 400
   _speedMin: 110
   _speedMax: 120

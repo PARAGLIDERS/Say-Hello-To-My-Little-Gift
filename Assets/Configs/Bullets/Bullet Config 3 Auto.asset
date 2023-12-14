@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 3 Auto
   m_EditorClassIdentifier: 
   _damage: 2
-  _lifetime: 5
+  _lifetime: 0.5
   _explosionType: 403
   _speedMin: 150
   _speedMax: 160

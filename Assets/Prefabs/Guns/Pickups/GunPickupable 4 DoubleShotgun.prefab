@@ -85,6 +85,10 @@ PrefabInstance:
       propertyPath: _type
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4350365431954603433, guid: 8b47cfb5d5e84e644880acef9c901c5f, type: 3}
+      propertyPath: _pickupEffect
+      value: 504
+      objectReference: {fileID: 0}
     - target: {fileID: 4350365431954603435, guid: 8b47cfb5d5e84e644880acef9c901c5f, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8203599491120050838}
   - component: {fileID: 2456940896281974865}
   m_Layer: 0
-  m_Name: GunSpawnEffect
+  m_Name: GunSpawnEffectBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -56,5 +56,12 @@ namespace PoolSystem {
         BulletExplosion_Minigun = 406,
         ProjectileExplosion_Snowball = 407,
 
+        // gun pickup vfx
+        GunPickupVfx_Uzi = 501,
+        GunPickupVfx_Shotgun = 502,
+        GunPickupVfx_Auto = 503,
+        GunPickupVfx_DoubleShotgun = 504,
+        GunPickupVfx_RocketLauncher = 505,
+        GunPickupVfx_Minigun = 506,
 	}
 }

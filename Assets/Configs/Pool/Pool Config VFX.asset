@@ -33,11 +33,7 @@ MonoBehaviour:
     _size: 100
     _type: 105
     _prefab: {fileID: 2456940896281974865, guid: 19cb15b5886dbdb4db21563c581f7cf9, type: 3}
-  - Name: VFX_GunPickupVfx
-    _size: 100
-    _type: 106
-    _prefab: {fileID: 2456940896281974865, guid: 19cb15b5886dbdb4db21563c581f7cf9, type: 3}
   - Name: VFX_ChickenExplosion
     _size: 100
     _type: 107
-    _prefab: {fileID: 5175640084872236731, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
+    _prefab: {fileID: 5175640084872236731, guid: 7932cedf615e0a642a678b446a38c953, type: 3}

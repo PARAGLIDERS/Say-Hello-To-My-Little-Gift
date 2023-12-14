@@ -17,18 +17,24 @@ MonoBehaviour:
   - Name: Uzi
     _type: 1
     _pickupable: 301
+    _spawnEffect: 501
   - Name: Shotgun
     _type: 2
     _pickupable: 302
+    _spawnEffect: 502
   - Name: Auto
     _type: 3
     _pickupable: 303
+    _spawnEffect: 503
   - Name: DoubleShotgun
     _type: 4
     _pickupable: 304
+    _spawnEffect: 503
   - Name: RocketLauncher
     _type: 5
     _pickupable: 305
+    _spawnEffect: 505
   - Name: Minigun
     _type: 6
     _pickupable: 306
+    _spawnEffect: 506

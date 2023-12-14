@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1411415008503779379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6151822084307405742}
-  m_Layer: 7
-  m_Name: Muzzle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6151822084307405742
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411415008503779379}
-  m_LocalRotation: {x: -0.1985281, y: -0, z: -0, w: 0.9800952}
-  m_LocalPosition: {x: 0, y: 1.54, z: 1.08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7536705900031883133}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -22.902, y: 0, z: 0}
 --- !u!1001 &7160057653497143016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_StoppingDistance
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_Size.z
@@ -136,11 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0293dbbb7e4866a83913c0614adf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7536705900031883133 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
-  m_PrefabInstance: {fileID: 7160057653497143016}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7536705900031883134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 849597675664714134, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
@@ -159,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: f29a83a960bdea84a8802b32342c5bf8, type: 2}
---- !u!114 &-4666638226030545533
+--- !u!114 &8825687128029400017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,16 +132,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 7536705900031883134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b702d7ed1cbe584e8a5d99bddfa36e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 528fa6290fef46846a3278141899ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damageable: {fileID: 7536705900031883132}
   _animation: {fileID: 8125128598104495160}
   _agent: {fileID: 7536705900031883130}
-  _fireDistance: 25
-  _fireRate: 0.5
-  _muzzle: {fileID: 6151822084307405742}
   _rotationSpeed: 5
+  _attackDistance: 5
+  _boomTime: 1
+  _boomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5971955
+      value: 1.0028484
+      inSlope: -0.48802045
+      outSlope: -0.48802045
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.50145495
+    - serializedVersion: 3
+      time: 0.80016893
+      value: 0.57726145
+      inSlope: -0.07137514
+      outSlope: -0.07137514
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9284031
+      value: 0.8418721
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -33.925972
+      outSlope: -33.925972
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.082362846
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _maxScale: 1.1
+  _explosion: {fileID: -7750702381480111768}
 --- !u!114 &8125128598104495160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1414099399300172496, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}

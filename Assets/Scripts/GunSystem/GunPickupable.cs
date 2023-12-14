@@ -5,8 +5,9 @@ using UnityEngine;
 namespace GunSystem {
     public class GunPickupable : PoolObject {
         [SerializeField] private GunType _type;
+        [SerializeField] private PoolType _pickupEffect;
         [SerializeField] private float _lifetime = 25f;
-        [SerializeField] private const float _distanceToPlayer = 50f;
+        [SerializeField] private float _distanceToPlayer = 50f;
         
         private float _currentLifetime;
 
@@ -44,7 +45,7 @@ namespace GunSystem {
 		}
 
         private void Despawn() {
-			Core.PoolController.Spawn(PoolType.VFX_GunPickupVfx, transform.position, Quaternion.identity);
+			Core.PoolController.Spawn(_pickupEffect, transform.position, Quaternion.identity);
 			Deactivate();
 		}
 	}

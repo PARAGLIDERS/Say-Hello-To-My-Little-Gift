@@ -16,7 +16,7 @@ namespace Data {
 		}
 
 		public void DropLevelData() {
-			LevelData.CurrentLevel = 0;
+			LevelData.CurrentLevel = 2;
 		}
 	}
 }
