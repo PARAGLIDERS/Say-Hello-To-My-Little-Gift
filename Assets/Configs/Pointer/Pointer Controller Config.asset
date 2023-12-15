@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbc8bde3153f0145b2e68a8607e3bda, type: 3}
+  m_Name: Pointer Controller Config
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 8709956557681040708, guid: 25d8a9a9b1d527e458e5dd60e136bb23, type: 3}
+  _pointerPrefab: {fileID: 6588171445838985068, guid: 0b9fd4b04fec5bf4d9f5c1af9da6f20b, type: 3}
+  _items:
+  - _type: 1
+    _sprite: {fileID: 21300000, guid: 3e9fb4261ca65ba4cbfc42b463e584b1, type: 3}
+    _pivot: {x: 0, y: 1}
+  - _type: 2
+    _sprite: {fileID: 21300000, guid: ca5b5a8c9cb6a784b9f96f64e1871652, type: 3}
+    _pivot: {x: 0.5, y: 0.5}

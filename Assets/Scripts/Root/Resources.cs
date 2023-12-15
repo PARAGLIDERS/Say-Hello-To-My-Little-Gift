@@ -4,6 +4,7 @@ using GunSystem;
 using Level;
 using Music;
 using Player;
+using Pointer;
 using PoolSystem;
 using SfxSystem;
 using Ui;
@@ -30,6 +31,8 @@ namespace Root {
 
         [SerializeField] private LevelsConfig _levelsConfig;
 
+        [SerializeField] private PointerControllerConfig _pointerControllerConfig;
+
         public Canvas CanvasPrefab => _canvasPrefab;
 		public UiScreenConfig ScreenConfig => _screenConfig;
 
@@ -48,5 +51,7 @@ namespace Root {
         public MusicConfig MusicConfig => _musicConfig;
 
         public LevelsConfig LevelsConfig => _levelsConfig;
+
+        public PointerControllerConfig PointerControllerConfig => _pointerControllerConfig;
 	}
 }

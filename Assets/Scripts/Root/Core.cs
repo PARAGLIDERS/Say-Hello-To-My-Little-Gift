@@ -7,6 +7,7 @@ using Level;
 using Music;
 using Data;
 using PostProcessing;
+using Pointer;
 
 namespace Root {
 	public static class Core {
@@ -22,6 +23,7 @@ namespace Root {
 		public static MusicController MusicController { get; private set; }
 		public static DataController DataController { get; private set; }
 		public static PostProcessingController PostProcessingController { get; private set; }
+		public static PointerController PointerController { get; private set; }
 
 		public static void Init(Transform parent, Resources resources) {
             Object.Instantiate(resources.VolumePrefab, parent);
@@ -41,12 +43,16 @@ namespace Root {
 
             InputController = new InputController();
             StateController = new StateController();
+			
+			PointerController = new PointerController(parent, resources.PointerControllerConfig);
+			PointerController.Set(Pointer.PointerType.Ui);
 
 			StateController.SetState(StateType.Boot);
 		}
 
 		public static void Update() {
 			StateController?.Update();
+			PointerController?.Update();
 		}
 
         // i dont think it's nessesary 
