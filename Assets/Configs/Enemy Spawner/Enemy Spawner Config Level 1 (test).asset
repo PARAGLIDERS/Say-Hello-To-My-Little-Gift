@@ -45,6 +45,6 @@ MonoBehaviour:
       _enemyCount: 500
       _period: 1
       _units:
-      - _name: 'Snowman : 100%'
-        _type: 0
+      - _name: 'Deer : 100%'
+        _type: 2
         _chance: 100

@@ -28,13 +28,12 @@ namespace Enemies {
 			}
 		}
 
-		protected override void Update() {
-			base.Update();
+		protected override void Attack() {
+			if (_finalCountdown != null)
+				return;
 
-            if(IsNearPlayer() && _finalCountdown == null) {
-                _finalCountdown = FinalCountdown();
-                StartCoroutine(_finalCountdown);
-            }
+			_finalCountdown = FinalCountdown();
+			StartCoroutine(_finalCountdown);
 		}
 
 		private IEnumerator FinalCountdown() {

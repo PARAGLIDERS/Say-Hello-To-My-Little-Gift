@@ -13,35 +13,49 @@ namespace Enemies {
 		[SerializeField] private UnitAnimation _animation;
 		[SerializeField] protected NavMeshAgent _agent;
 		[SerializeField] private float _rotationSpeed;
-		[SerializeField] private float _attackDistance;
+		[SerializeField] protected float _attackDistance;
+		[SerializeField] private float _lookThreshold = 0.03f;
+		[SerializeField] private float _attackCooldown;
 
 		private UnitRotation _rotation;
+		private EnemyAttack _attack;
 
 		private void Awake() {
-			_agent.updateRotation = false;
 			_rotation = new UnitRotation(transform, _rotationSpeed);
+			_attack = new EnemyAttack(_attackCooldown);
 		}
 
-		public override void Activate(Vector3 position, Quaternion rotation) {
+		public override void Activate(Vector3 position, Quaternion rotation) {			
 			base.Activate(position, rotation);
+
 			_damageable.ResetHealth();
 			_damageable.OnDie += Deactivate;
+
+			_attack.ResetCooldown(); 
+			_attack.OnAttack += Attack;
 		}
 
 		public override void Deactivate() {
 			base.Deactivate();
 			_damageable.OnDie -= Deactivate;
+			_attack.OnAttack -= Attack;
 		}
 
 		protected virtual void Update() {
 			Move();
-			Rotate();
 			UpdateAnimation();
+			_agent.updateRotation = true;
+
+			if (!IsNearPlayer()) return;
+			if (!IsLookingAtPlayer()) return;
+
+			//Rotate();
+			_attack.Update();
 		}
 
 		protected bool IsLookingAtPlayer() {
 			Vector3 playerPosition = GetPlayerPosition();
-			return _rotation.IsLookingAt(playerPosition);
+			return _rotation.IsLookingAt(playerPosition, _lookThreshold);
 		}
 
 		protected bool IsNearPlayer() {
@@ -66,5 +80,7 @@ namespace Enemies {
 		private Vector3 GetPlayerPosition() {
 			return Core.LevelController.Player.Position;
 		}
+
+		protected abstract void Attack();
 	}
 }

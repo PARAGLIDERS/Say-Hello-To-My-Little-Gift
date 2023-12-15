@@ -1,6 +1,7 @@
 using Root;
 using UnityEngine;
 using System;
+using System.Collections;
 
 namespace DamageSystem {
 	public class Damageable : MonoBehaviour {
@@ -12,6 +13,8 @@ namespace DamageSystem {
 		
 		public int CurrentHealth { get; private set; }
 		public int MaxHealth => _config.MaxHealth;
+
+		private IEnumerator _death;
 
 		public void ApplyDamage(int amount, Quaternion damagerRotation) {
 			if (amount < 0) {
@@ -26,6 +29,13 @@ namespace DamageSystem {
 
 			if (CurrentHealth > 0) return;
 			CurrentHealth = 0;
+
+			_death = Die(damagerRotation);
+			StartCoroutine(_death);
+		}
+
+		private IEnumerator Die(Quaternion damagerRotation) {
+			yield return new WaitForSeconds(_config.DeathDelay);
 
 			Core.PoolController.Spawn(_config.DieFloorDecals, transform.position, Quaternion.identity);
 			Core.PoolController.Spawn(_config.DieParticles, transform.position, damagerRotation);
@@ -53,6 +63,11 @@ namespace DamageSystem {
 
 		public void ResetHealth() {
 			CurrentHealth = _config.MaxHealth;
+
+			if(_death != null) {
+				StopCoroutine(_death);
+				_death = null;
+			}
 		}
 	}
 }
