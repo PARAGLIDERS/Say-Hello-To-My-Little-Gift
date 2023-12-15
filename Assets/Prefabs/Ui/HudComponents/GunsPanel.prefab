@@ -60,13 +60,13 @@ MonoBehaviour:
   - Type: 2
     Sprite: {fileID: 21300000, guid: 20f471664f6ea394690eefdd66d70b23, type: 3}
   - Type: 3
-    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
+    Sprite: {fileID: 21300000, guid: da0f473bf02b9594ea71b5a4c709b33d, type: 3}
   - Type: 4
-    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
+    Sprite: {fileID: 21300000, guid: 8419b58196beb2b4da78c710dfacc3df, type: 3}
   - Type: 5
-    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
+    Sprite: {fileID: 21300000, guid: cbe878d32912ce14894fa60acdd2680a, type: 3}
   - Type: 6
-    Sprite: {fileID: 21300000, guid: 2b016c1743232ec4c8279373e72bfa48, type: 3}
+    Sprite: {fileID: 21300000, guid: d2bef5c5d9d50654a902a34eb830781d, type: 3}
 --- !u!1 &5420707286102145016
 GameObject:
   m_ObjectHideFlags: 0
