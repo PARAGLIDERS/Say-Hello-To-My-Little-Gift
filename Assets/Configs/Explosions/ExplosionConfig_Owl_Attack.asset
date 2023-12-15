@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a20d82d8968f854480078dd379b6af7, type: 3}
-  m_Name: ExplosionConfig_Chicken_Death
+  m_Name: ExplosionConfig_Owl_Attack
   m_EditorClassIdentifier: 
-  _damage: 25
-  _radius: 7
+  _damage: 30
+  _radius: 6
   _layerMask:
     serializedVersion: 2
     m_Bits: 1088
-  _cameraShake: 0.3
+  _cameraShake: 0.25

@@ -28,7 +28,7 @@ MonoBehaviour:
   - Name: Enemy_Owl
     _size: 100
     _type: 3
-    _prefab: {fileID: -4666638226030545533, guid: a69cd158431114549b28368952b00f23, type: 3}
+    _prefab: {fileID: 7797805770980307270, guid: a69cd158431114549b28368952b00f23, type: 3}
   - Name: Enemy_Penguin
     _size: 100
     _type: 4

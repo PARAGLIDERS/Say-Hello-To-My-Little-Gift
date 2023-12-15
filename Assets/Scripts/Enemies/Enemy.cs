@@ -21,6 +21,7 @@ namespace Enemies {
 		private EnemyAttack _attack;
 
 		private void Awake() {
+			_agent.updateRotation = false;
 			_rotation = new UnitRotation(transform, _rotationSpeed);
 			_attack = new EnemyAttack(_attackCooldown);
 		}
@@ -44,12 +45,11 @@ namespace Enemies {
 		protected virtual void Update() {
 			Move();
 			UpdateAnimation();
-			_agent.updateRotation = true;
+			Rotate();
 
 			if (!IsNearPlayer()) return;
 			if (!IsLookingAtPlayer()) return;
 
-			//Rotate();
 			_attack.Update();
 		}
 

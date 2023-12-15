@@ -20,6 +20,7 @@ namespace DamageSystem {
 				}
 			}
 
+			if (_config.CameraShake == 0) return;
 			Core.LevelController.Camera.Shake(transform.position, _config.CameraShake);
 		}
 	}

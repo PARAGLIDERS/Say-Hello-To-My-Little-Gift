@@ -155,8 +155,8 @@ MonoBehaviour:
   _agent: {fileID: 7536705900031883130}
   _rotationSpeed: 5
   _attackDistance: 25
-  _fireDistance: 25
-  _fireRate: 0.5
+  _lookThreshold: 0.03
+  _attackCooldown: 1
   _muzzle: {fileID: 6151822084307405742}
 --- !u!114 &8125128598104495160 stripped
 MonoBehaviour:

@@ -5009,11 +5009,21 @@ MonoBehaviour:
   _attackDistance: 3
   _lookThreshold: 0.5
   _attackCooldown: 1
-  _damage: 30
-  _attackableLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  _explosion: {fileID: 6485906835558421957}
   _effect: {fileID: 7274509228311742257}
+--- !u!114 &6485906835558421957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536705900031883134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b8ead7d9651474ab7467b81259026e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: a76c57c92759c8b468d693f47c0ec29d, type: 2}
 --- !u!114 &8125128598104495160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1414099399300172496, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
