@@ -76,6 +76,7 @@ namespace Ui.Components {
 
             _current.Select();
             _current.UpdateAmmo(gun);
+            Core.PointerController.Set(_presetsDictionary[gun.Type].PointerType);
         }
 
         private GunHudIcon CreateIcon(GunType type) {
@@ -102,6 +103,7 @@ namespace Ui.Components {
     [Serializable]
     public struct GunIconPreset {
         public GunType Type;
+        public Pointer.PointerType PointerType;
         public Sprite Sprite;
     }
 }

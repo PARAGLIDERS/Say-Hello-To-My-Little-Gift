@@ -87,6 +87,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 2d177b6aa459d43e4a392d2881d9ce12, type: 3}
+    - target: {fileID: 3240851682931575473, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 2d177b6aa459d43e4a392d2881d9ce12, type: 3}
+    - target: {fileID: 6253131197673417925, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
 --- !u!195 &7536705900031883130 stripped
@@ -140,6 +148,8 @@ MonoBehaviour:
   _agent: {fileID: 7536705900031883130}
   _rotationSpeed: 5
   _attackDistance: 5
+  _lookThreshold: 0.03
+  _attackCooldown: 0
   _boomTime: 1
   _boomCurve:
     serializedVersion: 2
@@ -192,7 +202,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _maxScale: 1.1
+  _maxScale: 1.5
   _explosion: {fileID: -7750702381480111768}
 --- !u!114 &8125128598104495160 stripped
 MonoBehaviour:

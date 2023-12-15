@@ -20,9 +20,13 @@ namespace Pointer {
 		[SerializeField] private PointerType _type;
 		[SerializeField] private Sprite _sprite;
 		[SerializeField] private Vector2 _pivot;
+		[SerializeField] private float _scale;
+		[SerializeField] private bool _animated;
 
 		public PointerType Type => _type;
 		public Sprite Sprite => _sprite;
 		public Vector2 Pivot => _pivot;
+		public float Scale => _scale;
+		public bool Animated => _animated;
 	}
 }

@@ -55,6 +55,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a94a961793805344cbbbdfdae2173d45, type: 2}
     - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: _hitModel
+      value: 
+      objectReference: {fileID: 3862460316352721453}
+    - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: _maxHealth
       value: 2
       objectReference: {fileID: 0}
@@ -110,8 +114,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: af7a64c1306414117905669e3806f58b, type: 3}
+    - target: {fileID: 3240851682931575473, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: af7a64c1306414117905669e3806f58b, type: 3}
+    - target: {fileID: 6253131197673417925, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+--- !u!1 &3862460316352721453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6253131197673417925, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+  m_PrefabInstance: {fileID: 7160057653497143016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!195 &7536705900031883130 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
@@ -154,7 +171,7 @@ MonoBehaviour:
   _animation: {fileID: 8125128598104495160}
   _agent: {fileID: 7536705900031883130}
   _rotationSpeed: 5
-  _attackDistance: 25
+  _attackDistance: 21
   _lookThreshold: 0.03
   _attackCooldown: 1
   _muzzle: {fileID: 6151822084307405742}

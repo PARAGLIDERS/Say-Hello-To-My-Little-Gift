@@ -51,7 +51,6 @@ namespace Ui {
 		Fail = 7,
 		ChooseLevel = 8,
 		Ending = 9,
-
-		DeveloperScreen = 100
+		Prefail = 10,
 	}
 }

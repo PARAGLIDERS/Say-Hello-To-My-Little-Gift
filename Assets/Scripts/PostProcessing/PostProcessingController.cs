@@ -15,10 +15,15 @@ namespace PostProcessing {
 		public void Dispose() {
 			Core.DataController.OnSave -= ApplySettings;
 			SetActiveDepthOfField(false);
+			SetActiveGreyScale(false);
 		}
 
 		public void SetActiveDepthOfField(bool active) {
 			_profile.GetSetting<DepthOfField>().enabled.value = active;
+		}
+
+		public void SetActiveGreyScale(bool active) {
+			_profile.GetSetting<ColorGrading>().saturation.overrideState = active;
 		}
 
 		public void ApplySettings() {

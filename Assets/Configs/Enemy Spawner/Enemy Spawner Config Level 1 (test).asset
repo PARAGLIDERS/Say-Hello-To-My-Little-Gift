@@ -43,8 +43,14 @@ MonoBehaviour:
     - _name: Wave 1
       _delay: 0
       _enemyCount: 500
-      _period: 1
+      _period: 0.5
       _units:
-      - _name: 'Owl : 100%'
-        _type: 3
+      - _name: 'Snowman : 33%'
+        _type: 0
+        _chance: 100
+      - _name: 'Chicken : 33%'
+        _type: 1
+        _chance: 100
+      - _name: 'Deer : 33%'
+        _type: 2
         _chance: 100

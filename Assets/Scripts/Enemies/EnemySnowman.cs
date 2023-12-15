@@ -1,6 +1,5 @@
 using Root;
 using UnityEngine;
-using Units;
 
 namespace Enemies {
     public class EnemySnowman : Enemy {

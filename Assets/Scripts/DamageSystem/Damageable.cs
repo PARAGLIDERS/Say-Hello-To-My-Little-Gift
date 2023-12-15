@@ -6,6 +6,7 @@ using System.Collections;
 namespace DamageSystem {
 	public class Damageable : MonoBehaviour {
 		[SerializeField] private DamageableConfig _config;
+		[SerializeField] private GameObject _hitModel;
 
 		public event Action OnDamage;
 		public event Action OnHeal;
@@ -26,12 +27,19 @@ namespace DamageSystem {
 			
 			CurrentHealth -= amount;
 			OnDamage?.Invoke();
+			if(_hitModel != null) _hitModel.SetActive(true);
+			StartCoroutine(HideHitModel());
 
 			if (CurrentHealth > 0) return;
 			CurrentHealth = 0;
 
 			_death = Die(damagerRotation);
 			StartCoroutine(_death);
+		}
+
+		private IEnumerator HideHitModel() {
+			yield return new WaitForSeconds(0.1f);
+			if (_hitModel != null) _hitModel.SetActive(false);
 		}
 
 		private IEnumerator Die(Quaternion damagerRotation) {
@@ -68,6 +76,8 @@ namespace DamageSystem {
 				StopCoroutine(_death);
 				_death = null;
 			}
+
+			if (_hitModel != null) _hitModel.SetActive(false);
 		}
 	}
 }

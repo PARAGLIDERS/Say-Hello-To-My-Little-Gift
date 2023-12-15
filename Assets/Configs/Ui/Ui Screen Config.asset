@@ -43,3 +43,6 @@ MonoBehaviour:
   - Name: Ending
     _type: 9
     _prefab: {fileID: 8285437812130557110, guid: e6ecb29d00a61c049a60b013e0b74503, type: 3}
+  - Name: Prefail
+    _type: 10
+    _prefab: {fileID: -4669748973868495695, guid: 32ebac1a3f4c7b64f8885b83b529a70e, type: 3}

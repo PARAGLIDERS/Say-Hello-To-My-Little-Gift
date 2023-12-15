@@ -16,5 +16,5 @@ MonoBehaviour:
   _radius: 7
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 1216
   _cameraShake: 0.3

@@ -15,9 +15,23 @@ MonoBehaviour:
   _canvas: {fileID: 8709956557681040708, guid: 25d8a9a9b1d527e458e5dd60e136bb23, type: 3}
   _pointerPrefab: {fileID: 6588171445838985068, guid: 0b9fd4b04fec5bf4d9f5c1af9da6f20b, type: 3}
   _items:
-  - _type: 1
+  - _type: 0
     _sprite: {fileID: 21300000, guid: 3e9fb4261ca65ba4cbfc42b463e584b1, type: 3}
     _pivot: {x: 0, y: 1}
-  - _type: 2
+    _scale: 32
+    _animated: 0
+  - _type: 1
     _sprite: {fileID: 21300000, guid: ca5b5a8c9cb6a784b9f96f64e1871652, type: 3}
     _pivot: {x: 0.5, y: 0.5}
+    _scale: 80
+    _animated: 1
+  - _type: 2
+    _sprite: {fileID: 21300000, guid: 0b96bf5f7c85bb34db55435cb2b1a7f6, type: 3}
+    _pivot: {x: 0.5, y: 0.5}
+    _scale: 70
+    _animated: 1
+  - _type: 3
+    _sprite: {fileID: 21300000, guid: f407c51ee82d944489d4898355a7eac8, type: 3}
+    _pivot: {x: 0.5, y: 0.5}
+    _scale: 90
+    _animated: 1

@@ -8,6 +8,8 @@ namespace Pointer {
 		private readonly Canvas _canvas;
 		private readonly Dictionary<PointerType, PointerConfig> _pointers;
 		private readonly Image _pointer;
+		
+		private Tweener _pointerAnimation;
 
 		public PointerController(Transform parent, PointerControllerConfig config) {
 			Cursor.visible = false;
@@ -19,11 +21,6 @@ namespace Pointer {
 			foreach (var p in config.Items) {
 				_pointers.TryAdd(p.Type, p);
 			}
-
-			_pointer.transform
-				.DOScale(_pointer.transform.localScale * 1.2f, 0.7f)
-				.SetLoops(-1, LoopType.Yoyo)
-				.SetUpdate(true);
 		}
 
 		public void Set(PointerType pointerType) {
@@ -32,8 +29,22 @@ namespace Pointer {
 				return;
 			}
 
+			_pointerAnimation?.SetLoops(0);
+			_pointerAnimation?.Complete();
+			_pointerAnimation?.Kill();
+			_pointer.transform.localScale = Vector3.one;
+
 			_pointer.sprite = config.Sprite;
 			_pointer.rectTransform.pivot = config.Pivot;
+			_pointer.rectTransform.sizeDelta = Vector2.one * (config.Scale);
+
+
+			if (config.Animated) {
+				_pointerAnimation = _pointer.transform
+					.DOScale(_pointer.transform.localScale * 1.2f, 0.7f)
+					.SetLoops(-1, LoopType.Yoyo)
+					.SetUpdate(true);
+			}
 		}
 
 		public void Update() {
@@ -50,7 +61,9 @@ namespace Pointer {
 	}
 
 	public enum PointerType {
-		Ui = 1,
-		Gameplay = 2,
+		Ui = 0,
+		Pistol = 1,
+		Uzi = 2,
+		Shotgun = 3,
 	}
 }
