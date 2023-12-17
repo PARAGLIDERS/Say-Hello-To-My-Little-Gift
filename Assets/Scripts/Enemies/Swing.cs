@@ -1,5 +1,6 @@
 ﻿using DamageSystem;
 using DG.Tweening;
+using Root;
 using UnityEngine;
 
 namespace Enemies {
@@ -31,6 +32,7 @@ namespace Enemies {
 				.InsertCallback(_time + _trail.time, () => _trail.enabled = false);
 
 			_explosion.Activate();
+			Core.SfxController.Play(SfxSystem.SfxType.EnemySnowmanThrow, transform.position);
 		}
 	}
 }

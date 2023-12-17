@@ -7,18 +7,16 @@ using UnityEngine;
 namespace Enemies {
 	public class EnemyOwl : Enemy {
 		[SerializeField] private float _initScale;
-		[SerializeField] private List<int> _stages;
 		[SerializeField] private ParticleSystem _attackEffect;
 		[SerializeField] private Explosion _explosion;
 		[SerializeField] private Transform _bodyContainer;
-
-		private int _currentParamIndex;
+		[SerializeField] private EnemyStage _stage;
 
 		public override void Activate(Vector3 position, Quaternion rotation) {
 			base.Activate(position, rotation);
 			_damageable.OnDamage += HandleDamage;
 			SetScale(_initScale);
-			_currentParamIndex = 0;
+			_stage.Reset();
 		}
 
 		public override void Deactivate() {
@@ -32,24 +30,11 @@ namespace Enemies {
 		}
 
 		private void HandleDamage() {
-			int index = _currentParamIndex;
 			float percentage = (float) _damageable.CurrentHealth / _damageable.MaxHealth;
-			
-			for (int i = _currentParamIndex; i < _stages.Count; i++) {
-				index = i;
-
-				if (_stages[i] < percentage * 100) {
-					break;
-				}
+			if (_stage.IsChanged(percentage)) {
+				SetScale(percentage * _initScale);
+				Attack();
 			}
-
-			if (index == _currentParamIndex) {
-				return;
-			}
-
-			_currentParamIndex = index;
-			SetScale(percentage * _initScale);
-			Attack();
 		}
 
 		private void SetScale(float scale) {

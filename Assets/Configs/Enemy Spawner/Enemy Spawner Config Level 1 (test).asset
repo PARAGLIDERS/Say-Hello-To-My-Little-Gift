@@ -45,6 +45,6 @@ MonoBehaviour:
       _enemyCount: 500
       _period: 1
       _units:
-      - _name: 'Owl : 100%'
-        _type: 3
+      - _name: 'Rabbit : 100%'
+        _type: 5
         _chance: 100

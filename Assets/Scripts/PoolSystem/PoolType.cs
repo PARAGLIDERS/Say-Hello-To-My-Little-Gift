@@ -7,6 +7,7 @@ namespace PoolSystem {
         Enemy_Owl = 3,
         Enemy_Penguin = 4,
         Enemy_Rabbit = 5,
+        Enemy_Rabbit_Clone = 6,
 
         // vfx
 		VFX_BloodParticles = 101,

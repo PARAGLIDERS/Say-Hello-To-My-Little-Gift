@@ -62,7 +62,7 @@ namespace Enemies {
 			return Vector3.Distance(playerPosition, transform.position) <= _attackDistance;
 		}
 
-		private void Move() {
+		protected virtual void Move() {
 			Vector3 playerPosition = Core.LevelController.Player.Position;
 			_agent?.SetDestination(playerPosition);
 		}

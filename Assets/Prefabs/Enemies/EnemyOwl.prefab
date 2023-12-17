@@ -5046,10 +5046,11 @@ MonoBehaviour:
   _lookThreshold: 0.1
   _attackCooldown: 1
   _initScale: 1.5
-  _stages: 5a0000004b00000032000000190000000a000000
   _attackEffect: {fileID: 5154174212495547230}
   _explosion: {fileID: 1929863944471404256}
   _bodyContainer: {fileID: 7983959305503600479}
+  _stage:
+    _stages: 5a0000004b00000032000000190000000a000000
 --- !u!4 &7983959305503600479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 977591387873931703, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}

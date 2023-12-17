@@ -27,22 +27,23 @@ namespace PoolSystem {
             }
         }
 
-        public void Spawn(PoolType type, Vector3 position, Quaternion rotation, Action onActivate = null, Action onDeactivate = null) {
+        public PoolObject Spawn(PoolType type, Vector3 position, Quaternion rotation, Action onActivate = null, Action onDeactivate = null) {
             if(!_pools.TryGetValue(type, out Pool pool)) {
                 Debug.LogError($"no such pool in dictionary: {type}");
-                return;
+                return null;
             }
 
             PoolObject poolObject = pool.Get();
             if(poolObject == null ) {
                 Debug.LogError($"pool object is null: {type}");
-                return;
+                return null;
             }
 
             poolObject.OnActivate += onActivate;
             poolObject.OnDeactivate += onDeactivate;
 
             poolObject.Activate(position, rotation);
+            return poolObject;
         }
 
         public void DeactivateAll() {
