@@ -10,6 +10,7 @@ namespace Enemies {
 		[SerializeField] private List<int> _stages;
 		[SerializeField] private ParticleSystem _attackEffect;
 		[SerializeField] private Explosion _explosion;
+		[SerializeField] private Transform _bodyContainer;
 
 		private int _currentParamIndex;
 
@@ -52,8 +53,9 @@ namespace Enemies {
 		}
 
 		private void SetScale(float scale) {
-			transform.DOComplete();
-			transform.DOScale(scale, 0.1f).SetEase(Ease.OutBack);
+			Vector3 targetScale = new Vector3(_initScale, scale, _initScale);
+			_bodyContainer.DOComplete();
+			_bodyContainer.DOScale(targetScale, 0.25f).SetEase(Ease.OutBack);
 		}
 	}
 }
