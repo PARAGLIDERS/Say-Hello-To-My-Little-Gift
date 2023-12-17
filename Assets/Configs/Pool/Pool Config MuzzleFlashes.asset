@@ -36,7 +36,7 @@ MonoBehaviour:
   - Name: MuzzleFlash_RocketLauncher
     _size: 100
     _type: 355
-    _prefab: {fileID: 8763278943638151630, guid: 118b0707dc2ec334caa4a8a1240dd143, type: 3}
+    _prefab: {fileID: 8763278943638151630, guid: 8d18dc0c4218ee947b2fa1c6566f2f44, type: 3}
   - Name: MuzzleFlash_Minigun
     _size: 100
     _type: 356

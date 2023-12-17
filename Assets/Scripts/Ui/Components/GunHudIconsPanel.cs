@@ -64,7 +64,7 @@ namespace Ui.Components {
 			SwitchTo(GunsController.Current);
 		}
 
-		private void SwitchTo(Gun gun) {
+		private void SwitchTo(Gun gun) {            
             if (_current != null) {
                 _current.Deselect();
             }
@@ -77,6 +77,7 @@ namespace Ui.Components {
             _current.Select();
             _current.UpdateAmmo(gun);
             Core.PointerController.Set(_presetsDictionary[gun.Type].PointerType);
+            Core.SfxController.Play(SfxSystem.SfxType.GunScroll);
         }
 
         private GunHudIcon CreateIcon(GunType type) {

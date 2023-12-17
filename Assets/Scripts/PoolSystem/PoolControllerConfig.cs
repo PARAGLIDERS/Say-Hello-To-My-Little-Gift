@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace PoolSystem {
-	[CreateAssetMenu(menuName = "Santa/Pool Controller Config", fileName = "Pool Controller Config")]
+	[CreateAssetMenu(menuName = "Santa/Pools/Pool Controller Config", fileName = "Pool Controller Config")]
 	public class PoolControllerConfig : ScriptableObject {
 		[SerializeField] private List<PoolConfig> _configs = new();
 

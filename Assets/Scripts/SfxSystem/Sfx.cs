@@ -13,7 +13,7 @@ namespace SfxSystem {
 			_source.clip = clip;
             _source.volume = volume;
 			_source.pitch = 1f + Random.Range(-pitchShift, pitchShift);
-            _source.spatialBlend = is3d ? 0.85f : 0;
+            _source.spatialBlend = is3d ? 0.35f : 0;
 			_source.Play();
 		}
 	}

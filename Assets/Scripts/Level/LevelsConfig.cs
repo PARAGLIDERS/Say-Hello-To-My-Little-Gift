@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Level {
-	[CreateAssetMenu(menuName = "Santa/Levels Config", fileName = "Levels Config")]
+	[CreateAssetMenu(menuName = "Santa/Levels/Levels Config", fileName = "Levels Config")]
 	public class LevelsConfig : ScriptableObject {
 		[SerializeField] private List<LevelsConfigItem> _items;
 

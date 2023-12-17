@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace SfxSystem {
     public class SfxController {
-        private readonly SfxConfig _config;
+        private readonly SfxControllerConfig _config;
         private readonly Queue<Sfx> _sounds;
         private readonly Transform _container;
         private readonly Dictionary<SfxType, SfxConfigItem> _soundsDictionary;
 
-        public SfxController(Transform parent, SfxConfig config) {
+        public SfxController(Transform parent, SfxControllerConfig config) {
             _config = config;
             _container = new GameObject("Sounds").transform;
             _container.SetParent(parent);
@@ -31,7 +31,7 @@ namespace SfxSystem {
             }
 
             _soundsDictionary = new Dictionary<SfxType, SfxConfigItem>();
-            foreach (SfxConfigItem item in config.Items) {
+            foreach (SfxConfigItem item in config.GetItems()) {
                 if (_soundsDictionary.ContainsKey(item.Type)) {
                     Debug.LogError($"sound already exists in dictionary: {item.Type}");
                     continue;

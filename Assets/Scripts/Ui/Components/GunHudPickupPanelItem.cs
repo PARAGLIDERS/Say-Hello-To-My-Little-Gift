@@ -20,7 +20,7 @@ namespace Ui.Components {
 			_text.DOKill();
 			_text.DOFade(1f, 0.15f);
 
-			transform.SetAsLastSibling();
+			transform.SetAsFirstSibling();
 			_timer = Time.time + _lifetime;
 			_active = true;
 		}

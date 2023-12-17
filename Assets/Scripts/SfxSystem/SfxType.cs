@@ -22,10 +22,9 @@ namespace SfxSystem {
 
         // vfx
         VfxExplosion = 300,
-        VfxBloodParticles = 301,
         VfxGunPickup = 302,
 
-        // events
-        PlayerDeath = 500,
+        // guns
+        GunScroll = 400,        
     }
 }

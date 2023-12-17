@@ -8,7 +8,7 @@ using RandomSystem;
 using UnityEngine;
 
 namespace EnemySpawning {
-	[CreateAssetMenu(menuName = "Santa/Enemy Spawner Config", fileName = "Enemy Spawner Config")]
+	[CreateAssetMenu(menuName = "Santa/Enemies/Enemy Spawner Config", fileName = "Enemy Spawner Config")]
 	public class EnemySpawnerConfig : ScriptableObject {
 		[SerializeField] [Tooltip("time between wave N finish and wave N+1 start")] 
         private float _waveCooldown; 

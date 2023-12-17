@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed3e43327fc4c4cbc9f1d0bb18f8dff, type: 3}
+  m_Name: Sfx Controller Config
+  m_EditorClassIdentifier: 
+  _mixerGroup: {fileID: 7922086049004866256, guid: e5fd76036584030469c0ea3bffe2d0cf, type: 2}
+  _configs:
+  - {fileID: 11400000, guid: a3171b1b92cc79542a3b80d84e33bc4f, type: 2}
+  - {fileID: 11400000, guid: edaf47b3b5f754949a95884fe5ab4cac, type: 2}
+  - {fileID: 11400000, guid: 34cc60fab46252647b3b3faf822dad54, type: 2}

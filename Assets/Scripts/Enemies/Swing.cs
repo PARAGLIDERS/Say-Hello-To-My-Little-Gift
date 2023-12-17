@@ -1,30 +1,36 @@
-﻿using DG.Tweening;
+﻿using DamageSystem;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Enemies {
 	public class Swing : MonoBehaviour {
 		[SerializeField] private TrailRenderer _trail;
 		[SerializeField] private Transform _swing;
-		[SerializeField] [Range(0f, 360)] private float _angle;
+		[SerializeField] private Vector3 _targetRotation;
 		[SerializeField] private float _time;
-		[SerializeField] private int _damage;
-		[SerializeField] private float _radius;
+		[SerializeField] private Explosion _explosion;
 
-
+		private Vector3 _initialRotation;
+		private Sequence _sequence;
 
 		private void Awake() {
 			_trail.enabled = false;
+			_initialRotation = _swing.localEulerAngles;
 		}
 
 		public void Activate() {
-			_trail.enabled = true;
+			_trail.enabled = false;
+			_swing.localEulerAngles = _initialRotation;
+
 			_trail.Clear();
+			_trail.enabled = true;
 
+			_sequence?.Kill();
+			_sequence = DOTween.Sequence()
+				.Insert(0f, _swing.DOLocalRotate(_targetRotation, _time))
+				.InsertCallback(_time + _trail.time, () => _trail.enabled = false);
 
-		}
-
-		private void OnDrawGizmos() {
-			
+			_explosion.Activate();
 		}
 	}
 }

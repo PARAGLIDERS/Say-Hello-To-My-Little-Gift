@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039733009908082117, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1722333610481257042, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: simulationSpeed
@@ -65,11 +65,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2495699344824866068, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: m_Name
-      value: MuzzleFlash
+      value: MuzzleFlash_Auto
       objectReference: {fileID: 0}
     - target: {fileID: 5636995270998970834, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5636995270998970834, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.327
+      objectReference: {fileID: 0}
+    - target: {fileID: 5636995270998970834, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.327
+      objectReference: {fileID: 0}
+    - target: {fileID: 5636995270998970834, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.327
       objectReference: {fileID: 0}
     - target: {fileID: 5636995270998970834, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: m_LocalPosition.x

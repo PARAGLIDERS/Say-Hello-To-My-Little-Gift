@@ -3,7 +3,7 @@ using SfxSystem;
 using UnityEngine;
 
 namespace DamageSystem {
-	[CreateAssetMenu(menuName = "Santa/Damageable Config")]
+	[CreateAssetMenu(menuName = "Santa/Damageable/Damageable Config")]
 	public class DamageableConfig : ScriptableObject {
 		[SerializeField] private int _maxHealth = 100;
 		[SerializeField] private PoolType _dieParticles = PoolType.VFX_BloodParticles;

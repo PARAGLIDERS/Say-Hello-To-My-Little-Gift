@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1517622403430632790, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1517622403430632790, guid: 6bc269800d71c9d43acf202b5a222bc1, type: 3}
       propertyPath: TrailModule.widthOverTrail.maxCurve.m_Curve.Array.data[1].value

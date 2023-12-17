@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 namespace Music {
-	[CreateAssetMenu(menuName = "Santa/MusicConfig", fileName = "MusicConfig")]
+	[CreateAssetMenu(menuName = "Santa/Audio/MusicConfig", fileName = "MusicConfig")]
 	public class MusicConfig : ScriptableObject {
 		[SerializeField] private AudioMixerGroup _mixerGroup;
 		[SerializeField] private List<MusicConfigItem> _clips;

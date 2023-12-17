@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GunSystem {
-    [CreateAssetMenu(menuName = "Santa/Guns Controller Config", fileName = "Guns Controller Config")]
+    [CreateAssetMenu(menuName = "Santa/Guns/Guns Controller Config", fileName = "Guns Controller Config")]
     public class GunsControllerConfig : ScriptableObject {
         [SerializeField] private List<GunsConfigItem> _items;
         public List<GunsConfigItem> Items => _items;

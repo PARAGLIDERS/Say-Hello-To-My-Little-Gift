@@ -3,7 +3,7 @@ using SfxSystem;
 using UnityEngine;
 
 namespace GunSystem {
-	[CreateAssetMenu(menuName ="Santa/Gun Config")]
+	[CreateAssetMenu(menuName ="Santa/Guns/Gun Config")]
 	public class GunConfig : ScriptableObject {
 		[SerializeField] private bool _isInfinite;
 		[SerializeField] private string _name;

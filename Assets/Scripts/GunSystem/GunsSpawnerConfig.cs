@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GunSystem {
-    [CreateAssetMenu(menuName = "Santa/Guns Spawner Config", fileName = "Guns Spawner Config")]
+    [CreateAssetMenu(menuName = "Santa/Guns/Guns Spawner Config", fileName = "Guns Spawner Config")]
     public class GunsSpawnerConfig : ScriptableObject {
         [SerializeField] private float _cooldown = 3f;
         [SerializeField] private List<GunsSpawnerConfigItem> _items;

@@ -115,6 +115,9 @@ namespace EnemySpawning {
 
             Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: HandleEnemyKill);
             Core.PoolController.Spawn(PoolType.VFX_EnemySpawnEffect, position, rotation);
+
+			float distance = Vector3.Distance(position, Core.LevelController.Player.Position);
+			if (distance > 50f) return;
 			Core.SfxController.Play(SfxSystem.SfxType.EnemySpawn, position);
         }
 

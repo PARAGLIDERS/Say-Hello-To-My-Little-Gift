@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ExplosionConfig_Deer_Attack
   m_EditorClassIdentifier: 
   _damage: 15
-  _radius: 7
+  _radius: 3.18
   _layerMask:
     serializedVersion: 2
     m_Bits: 64

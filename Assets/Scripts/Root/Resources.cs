@@ -15,7 +15,7 @@ namespace Root {
 	[CreateAssetMenu(menuName = "Santa/Resources", fileName = "Resources")]
 	public class Resources : ScriptableObject {
 		[SerializeField] private PoolControllerConfig _poolControllerConfig;
-        [SerializeField] private SfxConfig _sfxConfig;
+        [SerializeField] private SfxControllerConfig _sfxConfig;
         [SerializeField] private MusicConfig _musicConfig;
 
 		[SerializeField] private Canvas _canvasPrefab;
@@ -37,7 +37,7 @@ namespace Root {
 		public UiScreenConfig ScreenConfig => _screenConfig;
 
 		public PoolControllerConfig PoolControllerConfig => _poolControllerConfig;
-        public SfxConfig SfxConfig => _sfxConfig;
+        public SfxControllerConfig SfxConfig => _sfxConfig;
 
         public GunsControllerConfig GunsConfig => _gunsConfig;
         public GunsSpawnerConfig GunsSpawnerConfig => _gunSpawnerConfig;

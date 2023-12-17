@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace DamageSystem {
-	[CreateAssetMenu(menuName ="Santa/Explosion Config")]
+	[CreateAssetMenu(menuName ="Santa/Explosion/Explosion Config")]
 	public class ExplosionConfig : ScriptableObject {
 		[SerializeField] private int _damage;
 		[SerializeField] private float _radius;

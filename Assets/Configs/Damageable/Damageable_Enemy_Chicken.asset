@@ -15,5 +15,5 @@ MonoBehaviour:
   _maxHealth: 2
   _dieParticles: 107
   _dieFloorDecals: 103
-  _dieSfx: 200
+  _dieSfx: 300
   _deathDelay: 0.05

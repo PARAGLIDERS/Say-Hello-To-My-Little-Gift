@@ -15,7 +15,7 @@ MonoBehaviour:
   _isInfinite: 0
   _name: Minigun
   _spread: 0.08
-  _fireRate: 15
+  _fireRate: 20
   _bulletsPerShot: 3
   _bulletType: 206
   _shotSound: 107
