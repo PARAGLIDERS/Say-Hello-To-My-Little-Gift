@@ -32,7 +32,7 @@ MonoBehaviour:
   - Name: Enemy_Penguin
     _size: 100
     _type: 4
-    _prefab: {fileID: -4666638226030545533, guid: 8760407cb7f71e348a3089a7d76409aa, type: 3}
+    _prefab: {fileID: 3046637857465998083, guid: 8760407cb7f71e348a3089a7d76409aa, type: 3}
   - Name: Enemy_Rabbit
     _size: 100
     _type: 5

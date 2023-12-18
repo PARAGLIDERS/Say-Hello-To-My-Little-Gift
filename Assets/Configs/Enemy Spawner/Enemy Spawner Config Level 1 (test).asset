@@ -43,8 +43,11 @@ MonoBehaviour:
     - _name: Wave 1
       _delay: 0
       _enemyCount: 500
-      _period: 1
+      _period: 0.5
       _units:
-      - _name: 'Rabbit : 100%'
-        _type: 5
+      - _name: 'Penguin : 20%'
+        _type: 4
+        _chance: 25
+      - _name: 'Snowman : 80%'
+        _type: 0
         _chance: 100

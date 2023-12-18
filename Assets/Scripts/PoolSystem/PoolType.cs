@@ -17,6 +17,7 @@ namespace PoolSystem {
         VFX_GunSpawnVfx = 105,
         VFX_GunPickupVfx = 106,
         VFX_ChickenExplosion = 107,
+        VFX_PenguinExplosion = 108,
 
         // bullets
         Bullet_Pistol = 200,

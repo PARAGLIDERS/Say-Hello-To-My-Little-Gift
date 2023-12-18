@@ -18,6 +18,7 @@ namespace Enemies {
 
 		private UnitRotation _rotation;
 		private EnemyAttack _attack;
+		protected bool _updateAnimation = true;
 
 		private void Awake() {
 			_agent.updateRotation = false;
@@ -73,6 +74,7 @@ namespace Enemies {
 		}
 
 		private void UpdateAnimation() {
+			if(!_updateAnimation) return;
 			_animation?.Trigger();
 		}
 

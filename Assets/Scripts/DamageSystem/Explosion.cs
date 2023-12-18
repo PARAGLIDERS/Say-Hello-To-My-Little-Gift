@@ -5,6 +5,7 @@ using Utils;
 namespace DamageSystem {
 	public class Explosion : MonoBehaviour {
 		[SerializeField] private ExplosionConfig _config;
+		[SerializeField] private Damageable _self;
 
 		public void Activate() {
 			Collider[] targets = Physics.OverlapSphere(transform.position, _config.Radius, _config.LayerMask);
@@ -16,6 +17,7 @@ namespace DamageSystem {
 					Vector3 direction = targetPosition - selfPosition;
 					Quaternion rotation = Quaternion.LookRotation(direction);
 
+					if (damageable == _self) continue;
 					damageable.ApplyDamage(_config.Damage, rotation);
 				}
 			}
