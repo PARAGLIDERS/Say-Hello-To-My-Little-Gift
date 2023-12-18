@@ -27,7 +27,7 @@ MonoBehaviour:
     _prefab: {fileID: 6624218463922635809, guid: c1e308fc8cb73014e9ef77493dd47c34, type: 3}
   - Name: DoubleShotgun
     _type: 4
-    _prefab: {fileID: 6624218463922635809, guid: 94df7f22d02647a4f858b6333ae795c8, type: 3}
+    _prefab: {fileID: 2272472825259343941, guid: 94df7f22d02647a4f858b6333ae795c8, type: 3}
   - Name: RocketLauncher
     _type: 5
     _prefab: {fileID: 6624218463922635809, guid: 85baa25bedc6c2846bccb6cbd57cba09, type: 3}

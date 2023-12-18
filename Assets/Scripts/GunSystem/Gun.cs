@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GunSystem {
 	public class Gun : MonoBehaviour {
-        [SerializeField] private GunConfig _config;
+        [SerializeField] protected GunConfig _config;
 		[SerializeField] private Transform _muzzle;
 
 		public GunType Type { get; private set; }
