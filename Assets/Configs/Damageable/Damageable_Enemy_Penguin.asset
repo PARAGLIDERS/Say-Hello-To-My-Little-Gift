@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Damageable_Enemy_Penguin
   m_EditorClassIdentifier: 
   _maxHealth: 30
-  _dieParticles: 108
+  _dieParticles: 107
   _dieFloorDecals: 103
   _dieSfx: 300
   _deathDelay: 0
