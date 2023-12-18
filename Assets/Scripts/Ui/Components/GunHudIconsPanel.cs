@@ -47,6 +47,8 @@ namespace Ui.Components {
 				_icons.Add(gun.Type, icon);
                 icon.UpdateAmmo(gun);
 			}
+
+            Sort();
 		}
 
         private void SubscribeToEvents() {
@@ -72,6 +74,7 @@ namespace Ui.Components {
             if(!_icons.TryGetValue(gun.Type, out _current)) {
                 _current = CreateIcon(gun.Type);
                 _icons.Add(gun.Type, _current);
+                Sort();
             }
 
             _current.Select();
@@ -98,6 +101,14 @@ namespace Ui.Components {
             }
 
             icon.UpdateAmmo(gun);
+        }
+
+        private void Sort() {
+            var list = Core.LevelController.GunsController.AvailableGuns;
+
+            for (int i = 0; i < list.Count; i++) {
+                _icons[list[i].Type].transform.SetSiblingIndex(i);
+            }
         }
     }
 

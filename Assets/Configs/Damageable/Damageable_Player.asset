@@ -16,3 +16,4 @@ MonoBehaviour:
   _dieParticles: 101
   _dieFloorDecals: 103
   _dieSfx: 200
+  _deathDelay: 0

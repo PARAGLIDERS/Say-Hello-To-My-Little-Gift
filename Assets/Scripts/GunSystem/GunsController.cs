@@ -1,6 +1,7 @@
 using Player;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GunSystem {
@@ -9,7 +10,7 @@ namespace GunSystem {
         public event Action<Gun> OnAmmoChange;
         public event Action<Gun, int> OnPickup;
 
-        public readonly List<Gun> AvailableGuns;
+        public List<Gun> AvailableGuns { get; private set; }
         public Gun Current { get; private set; }
 
         private readonly Dictionary<GunType, Gun> _gunsDictionary;
@@ -60,6 +61,7 @@ namespace GunSystem {
 
 			if (!AvailableGuns.Contains(gun)) {
                 AvailableGuns.Add(gun);
+                Sort();
                 SwitchTo(gun);
                 gun.ResetAmmo();
 	    		OnPickup?.Invoke(gun, gun.InitialAmmo);
@@ -110,7 +112,13 @@ namespace GunSystem {
             Current = gun;
             Current.gameObject.SetActive(true);
 
+            _currentIndex = AvailableGuns.IndexOf(Current);
+
             OnSwitch?.Invoke(Current);
+        }
+
+        private void Sort() {
+            AvailableGuns = AvailableGuns.OrderBy(x => (int)(x.Type)).ToList();
         }
     }
 }
