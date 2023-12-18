@@ -52,6 +52,7 @@ namespace GunSystem {
 
             UpdateCooldown();
             SpendAmmo();
+            OnShoot();
 
             Core.PoolController.Spawn((PoolType) _config.MuzzleFlashType, _muzzle.position, _muzzle.rotation);
             Core.SfxController.Play((SfxType)_config.ShotSound);
@@ -91,5 +92,7 @@ namespace GunSystem {
 			float spread = Random.Range(-_config.Spread, _config.Spread) * 90f;
 			return _muzzle.rotation * Quaternion.AngleAxis(spread, _muzzle.up);
 		}
+
+        protected virtual void OnShoot() { }
 	}
 }

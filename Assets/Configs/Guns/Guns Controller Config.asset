@@ -33,4 +33,4 @@ MonoBehaviour:
     _prefab: {fileID: 6624218463922635809, guid: 85baa25bedc6c2846bccb6cbd57cba09, type: 3}
   - Name: Minigun
     _type: 6
-    _prefab: {fileID: 6624218463922635809, guid: f36e5f12b13143e448739b2f7f00a5e3, type: 3}
+    _prefab: {fileID: 5069580402929518370, guid: f36e5f12b13143e448739b2f7f00a5e3, type: 3}

@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3020960181001309725}
-  - component: {fileID: 6624218463922635809}
+  - component: {fileID: 5069580402929518370}
   m_Layer: 6
   m_Name: 6 Minigun
   m_TagString: Untagged
@@ -65,7 +65,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6624218463922635809
+--- !u!114 &5069580402929518370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,11 +74,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3020960181001309724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4d6b00af894aa0af8fbfa78b7b3bf8, type: 3}
+  m_Script: {fileID: 11500000, guid: f895e810446703b4ca79b02eebba003b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: 099094c45c3f24f42b3fb5a820a5bc76, type: 2}
   _muzzle: {fileID: 3020960180927070046}
+  _barrel: {fileID: 4861248594738359638}
+  _orientation: {x: 0, y: 0, z: 1}
+  _speed: 1000
+  _deceleration: 400
 --- !u!1001 &2243743052120954383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,5 +167,10 @@ PrefabInstance:
 --- !u!4 &1777190218539397604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5a29ca9ecad23a449aad23d1caa3d1f, type: 3}
+  m_PrefabInstance: {fileID: 2243743052120954383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4861248594738359638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2569866828304827559, guid: d5a29ca9ecad23a449aad23d1caa3d1f, type: 3}
   m_PrefabInstance: {fileID: 2243743052120954383}
   m_PrefabAsset: {fileID: 0}
