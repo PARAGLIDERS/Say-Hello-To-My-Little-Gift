@@ -243,8 +243,8 @@ MonoBehaviour:
   _icon: {fileID: 8166518066169860255}
   _ammo: {fileID: 6486284346057679544}
   _infinity: {fileID: 6746014078362685943}
-  _deselectedAlpha: 0.3
-  _noAmmoColor: {r: 1, g: 0.27058825, b: 0.27058825, a: 1}
+  _deselectedAlpha: 0.65
+  _noAmmoColor: {r: 1, g: 0.13679248, b: 0.13679248, a: 1}
 --- !u!1 &2442621349806377394
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,8 @@ namespace GunSystem {
 
                 Gun gun = GameObject.Instantiate(item.Prefab, player.GunsHolder);
                 gun.Init(item.Type);
-                gun.gameObject.SetActive(false);
+                gun.NoAmmo += HandleNoAmmo;
+                gun.Deactivate();
 
                 _gunsDictionary.Add(item.Type, gun);
             }
@@ -101,16 +102,23 @@ namespace GunSystem {
                 _currentIndex = 0;
             }
 
-            SwitchTo(AvailableGuns[_currentIndex]);
+            Gun nextGun = AvailableGuns[_currentIndex];
+
+			if (!nextGun.HasAmmo()) {
+                Scroll(value);
+                return; 
+            }
+
+            SwitchTo(nextGun);
         }
 
         private void SwitchTo(Gun gun) {
             if (Current != null) {
-                Current.gameObject.SetActive(false);
+                Current.Deactivate();
             }
 
             Current = gun;
-            Current.gameObject.SetActive(true);
+            Current.Activate();
 
             _currentIndex = AvailableGuns.IndexOf(Current);
 
@@ -120,5 +128,15 @@ namespace GunSystem {
         private void Sort() {
             AvailableGuns = AvailableGuns.OrderBy(x => (int)(x.Type)).ToList();
         }
-    }
+
+		private void HandleNoAmmo(Gun gun) {
+            OnAmmoChange?.Invoke(gun);
+
+            if(_currentIndex == AvailableGuns.Count - 1) {
+                Scroll(-1);
+            } else {
+                Scroll(1);
+            }
+		}
+	}
 }

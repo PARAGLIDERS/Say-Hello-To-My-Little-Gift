@@ -2,11 +2,14 @@ using Root;
 using PoolSystem;
 using SfxSystem;
 using UnityEngine;
+using System;
 
 namespace GunSystem {
 	public class Gun : MonoBehaviour {
         [SerializeField] protected GunConfig _config;
 		[SerializeField] private Transform _muzzle;
+
+        public event Action<Gun> NoAmmo;
 
 		public GunType Type { get; private set; }
         public bool IsInfinite => _config.IsInfinite;
@@ -19,7 +22,15 @@ namespace GunSystem {
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape
 
-        public void Init(GunType type) {
+        public void Activate() {
+            gameObject.SetActive(true);
+        }
+
+        public void Deactivate() {
+			gameObject.SetActive(false);
+		}
+
+		public void Init(GunType type) {
             Type = type;
         }
 
@@ -62,7 +73,7 @@ namespace GunSystem {
             return Time.time > _cooldown || _config.InputType == InputType.Click;
 		}
 
-        private bool HasAmmo() {
+        public bool HasAmmo() {
             return _config.IsInfinite || Ammo > 0;
 		}
 
@@ -77,9 +88,9 @@ namespace GunSystem {
 
 			Ammo--;
 
-            if (Ammo < 0) {
-                Debug.LogError("ammo dropped below zero!");
+            if (Ammo <= 0) {
                 Ammo = 0;
+                NoAmmo?.Invoke(this);
             }
 		}
 
@@ -89,7 +100,7 @@ namespace GunSystem {
 		}
 
 		private Quaternion GetBulletRotation() {
-			float spread = Random.Range(-_config.Spread, _config.Spread) * 90f;
+			float spread = UnityEngine.Random.Range(-_config.Spread, _config.Spread) * 90f;
 			return _muzzle.rotation * Quaternion.AngleAxis(spread, _muzzle.up);
 		}
 
