@@ -18,26 +18,26 @@ MonoBehaviour:
     _type: 200
     _prefab: {fileID: 4284314417211878477, guid: 1620dc28a744fdd409b97564b01ca740, type: 3}
   - Name: Bullet_Uzi
-    _size: 500
+    _size: 50
     _type: 201
     _prefab: {fileID: 600661336781151889, guid: 1e2cb04b223cd4647b572b33cbc4401a, type: 3}
   - Name: Bullet_Shotgun
-    _size: 500
+    _size: 50
     _type: 202
     _prefab: {fileID: 1381884996958345057, guid: 4facaf3657974a14abca6916ed59902e, type: 3}
   - Name: Bullet_Auto
-    _size: 500
+    _size: 50
     _type: 203
     _prefab: {fileID: 7965195130878934383, guid: bdd1daea5552fc842a0af3fc22a46836, type: 3}
   - Name: Bullet_DoubleShotgun
-    _size: 500
+    _size: 50
     _type: 204
     _prefab: {fileID: 8870902351336339461, guid: 7266ca40ec709f344bcb6aa9c911daa8, type: 3}
   - Name: Bullet_RocketLauncher
-    _size: 500
+    _size: 50
     _type: 205
     _prefab: {fileID: 5116427969242301190, guid: cd9de463a0d4e854d9847788b63646ed, type: 3}
   - Name: Bullet_Minigun
-    _size: 500
+    _size: 50
     _type: 206
     _prefab: {fileID: 7884687428728667960, guid: 6fa831685833e7e4e971ab2a70bc56cc, type: 3}

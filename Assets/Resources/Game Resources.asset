@@ -25,3 +25,4 @@ MonoBehaviour:
   _dayNightConfig: {fileID: 11400000, guid: 1f55c9f2c3a123f4b8027019d83ca1c5, type: 2}
   _levelsConfig: {fileID: 11400000, guid: 7a9a825252aa84e4584ae1af6599fe5d, type: 2}
   _pointerControllerConfig: {fileID: 11400000, guid: 7b3b7a27f11f5c1488fc39925514b066, type: 2}
+  _healSpawnerConfig: {fileID: 11400000, guid: cb88fbbccf869054dab5771c17b9ebdc, type: 2}

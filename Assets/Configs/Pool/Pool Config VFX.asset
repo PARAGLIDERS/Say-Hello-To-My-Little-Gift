@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: VFX_BloodParticles
-    _size: 100
+    _size: 50
     _type: 101
     _prefab: {fileID: -3186307307424120560, guid: 621633ca5cc1d134290eea44ef9e00db, type: 3}
   - Name: VFX_Steps
-    _size: 100
+    _size: 50
     _type: 102
     _prefab: {fileID: 8043855276221891729, guid: 0fc1370e6e28f7b40a0503ff11176bcf, type: 3}
   - Name: VFX_FloorBlood
-    _size: 100
+    _size: 50
     _type: 103
     _prefab: {fileID: 3694085004727981354, guid: b2895c1ed1141594d9cb3f62cf3a48e8, type: 3}
   - Name: VFX_EnemySpawnEffect
-    _size: 100
+    _size: 50
     _type: 104
     _prefab: {fileID: 2456940896281974865, guid: 7456d63495f779c4193b5ddececfbc9c, type: 3}
   - Name: VFX_GunSpawnVfx
-    _size: 100
+    _size: 50
     _type: 105
     _prefab: {fileID: 2456940896281974865, guid: 19cb15b5886dbdb4db21563c581f7cf9, type: 3}
   - Name: VFX_ChickenExplosion
-    _size: 100
+    _size: 50
     _type: 107
     _prefab: {fileID: 5175640084872236731, guid: 7932cedf615e0a642a678b446a38c953, type: 3}

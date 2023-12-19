@@ -39,7 +39,7 @@ MonoBehaviour:
     _waves:
     - _name: Wave 1
       _delay: 0
-      _enemyCount: 500
+      _enemyCount: 20
       _period: 1
       _units:
       - _name: 'Snowman : 16%'

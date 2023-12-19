@@ -47,8 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21de2be1dd891642985f6f6f63e1f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
   _lifetime: 25
+  _distanceToPlayer: 50
+  _pickupEffect: 0
+  _pickupSfx: 302
+  _type: 0
 --- !u!65 &4350365431954603434
 BoxCollider:
   m_ObjectHideFlags: 0

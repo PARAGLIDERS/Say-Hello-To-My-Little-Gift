@@ -14,30 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: Enemy_Snowman
-    _size: 100
+    _size: 50
     _type: 0
     _prefab: {fileID: -4666638226030545533, guid: fe493f5b90e8eed42ba07ee982a2951f, type: 3}
   - Name: Enemy_Chicken
-    _size: 100
+    _size: 50
     _type: 1
     _prefab: {fileID: 8825687128029400017, guid: 35030c8d16218ad4794f874ea2a7d515, type: 3}
   - Name: Enemy_Deer
-    _size: 100
+    _size: 50
     _type: 2
     _prefab: {fileID: 2639994961124180894, guid: e39646fd7556a5b45ba33bf6fa32f6a3, type: 3}
   - Name: Enemy_Owl
-    _size: 100
+    _size: 50
     _type: 3
     _prefab: {fileID: 7797805770980307270, guid: a69cd158431114549b28368952b00f23, type: 3}
   - Name: Enemy_Penguin
-    _size: 100
+    _size: 50
     _type: 4
     _prefab: {fileID: 3046637857465998083, guid: 8760407cb7f71e348a3089a7d76409aa, type: 3}
   - Name: Enemy_Rabbit
-    _size: 100
+    _size: 50
     _type: 5
     _prefab: {fileID: 6248718552991784696, guid: f0e19132f6b6aac418dee79e8c977dce, type: 3}
   - Name: Enemy_Rabbit_Clone
-    _size: 100
+    _size: 50
     _type: 6
     _prefab: {fileID: 3741722154177667761, guid: fb55def3ee19fec41a21675d55e2570d, type: 3}

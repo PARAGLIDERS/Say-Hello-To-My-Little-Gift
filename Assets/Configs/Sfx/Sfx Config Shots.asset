@@ -53,3 +53,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: d6567dfd76974ff42a70b6f0ca93155d, type: 3}
     _volume: 0.554
     _pitchShift: 0.146
+  - Name: EnemySnowmanThrow
+    _type: 202
+    _clip: {fileID: 8300000, guid: 95c7015ba0b930f47ab952bc0150523c, type: 3}
+    _volume: 0.554
+    _pitchShift: 0.146

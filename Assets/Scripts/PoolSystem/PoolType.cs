@@ -65,5 +65,9 @@ namespace PoolSystem {
         GunPickupVfx_DoubleShotgun = 504,
         GunPickupVfx_RocketLauncher = 505,
         GunPickupVfx_Minigun = 506,
+
+        // heal
+        Heal = 666, //:)
+        HealVfx = 667,
 	}
 }

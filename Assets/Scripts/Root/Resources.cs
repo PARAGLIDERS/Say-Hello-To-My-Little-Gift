@@ -1,6 +1,7 @@
 using CameraControl;
 using DayNightCycle;
 using GunSystem;
+using Heals;
 using Level;
 using Music;
 using Player;
@@ -33,6 +34,8 @@ namespace Root {
 
         [SerializeField] private PointerControllerConfig _pointerControllerConfig;
 
+        [SerializeField] private HealSpawnerConfig _healSpawnerConfig;
+
         public Canvas CanvasPrefab => _canvasPrefab;
 		public UiScreenConfig ScreenConfig => _screenConfig;
 
@@ -53,5 +56,7 @@ namespace Root {
         public LevelsConfig LevelsConfig => _levelsConfig;
 
         public PointerControllerConfig PointerControllerConfig => _pointerControllerConfig;
+
+        public HealSpawnerConfig HealSpawnerConfig => _healSpawnerConfig;
 	}
 }

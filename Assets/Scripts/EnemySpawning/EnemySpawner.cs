@@ -14,7 +14,6 @@ namespace EnemySpawning {
 		public event Action EnemyKilled;
 		public event Action AllEnemiesKilled;
 
-
 		public int CurrentEnemyCount {get; private set;}
 		public int MaxEnemies {get; private set;}
 
@@ -81,7 +80,7 @@ namespace EnemySpawning {
                     yield return new WaitForSeconds(wave.Delay);
 
 					for (int i = 0; i < wave.EnemyCount; i++) {
-                        //Spawn(randomizer.GetItem().Type);
+                        Spawn(randomizer.GetItem().Type);
 						yield return new WaitForSeconds(wave.Period);
 					}
 

@@ -14,30 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: MuzzleFlash_Pistol
-    _size: 100
+    _size: 20
     _type: 350
     _prefab: {fileID: 8763278943638151630, guid: 8c66d8960820df2448cf013da4867c52, type: 3}
   - Name: MuzzleFlash_Uzi
-    _size: 100
+    _size: 20
     _type: 351
     _prefab: {fileID: 8763278943638151630, guid: fc3c4b1e749ad9b41b978b4f6556fb5d, type: 3}
   - Name: MuzzleFlash_Shotgun
-    _size: 100
+    _size: 20
     _type: 352
     _prefab: {fileID: 8763278943638151630, guid: 37bf23f8923466545b725c860074ff5f, type: 3}
   - Name: MuzzleFlash_Auto
-    _size: 100
+    _size: 20
     _type: 353
     _prefab: {fileID: 8763278943638151630, guid: 67b143c5ddf740e40965f3bf62acdc15, type: 3}
   - Name: MuzzleFlash_DoubleShotgun
-    _size: 100
+    _size: 20
     _type: 354
     _prefab: {fileID: 8763278943638151630, guid: 9be77aaba30ef7949969a430e3c0f519, type: 3}
   - Name: MuzzleFlash_RocketLauncher
-    _size: 100
+    _size: 20
     _type: 355
     _prefab: {fileID: 8763278943638151630, guid: 8d18dc0c4218ee947b2fa1c6566f2f44, type: 3}
   - Name: MuzzleFlash_Minigun
-    _size: 100
+    _size: 20
     _type: 356
     _prefab: {fileID: 8763278943638151630, guid: 6fc83808b0cbc464fa9aeca9a2e015a6, type: 3}

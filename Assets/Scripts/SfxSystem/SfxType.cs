@@ -23,6 +23,7 @@ namespace SfxSystem {
         // vfx
         VfxExplosion = 300,
         VfxGunPickup = 302,
+        VfxHealPickup = 303,
 
         // guns
         GunScroll = 400,        

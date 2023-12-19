@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: GunPickupVfx_Uzi
-    _size: 1
+    _size: 10
     _type: 501
     _prefab: {fileID: 8268194929973851186, guid: efd6271a0bb81d442ae82a6904d003a2, type: 3}
   - Name: GunPickupVfx_Shotgun
-    _size: 1
+    _size: 10
     _type: 502
     _prefab: {fileID: 8268194929973851186, guid: e20825f6283b9c34c9adb13c89598242, type: 3}
   - Name: GunPickupVfx_Auto
-    _size: 1
+    _size: 10
     _type: 503
     _prefab: {fileID: 8268194929973851186, guid: 887639ff865b95e4d89905a65799b921, type: 3}
   - Name: GunPickupVfx_DoubleShotgun
-    _size: 1
+    _size: 10
     _type: 504
     _prefab: {fileID: 8268194929973851186, guid: 62a544ac94a10fb43b19723981667746, type: 3}
   - Name: GunPickupVfx_RocketLauncher
-    _size: 1
+    _size: 10
     _type: 505
     _prefab: {fileID: 8268194929973851186, guid: 67b9f0fba4e70174a9d678724058a05a, type: 3}
   - Name: GunPickupVfx_Minigun
-    _size: 1
+    _size: 10
     _type: 506
     _prefab: {fileID: 8268194929973851186, guid: ca872fe9e6a63104d84003fed373b2db, type: 3}

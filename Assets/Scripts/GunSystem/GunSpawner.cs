@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using Root;
-using PoolSystem;
-using UnityEngine.UIElements;
+using Spawner;
 
 namespace GunSystem {
-    public class GunSpawner {
+    public class GunSpawner : SpawnerBase {
         private readonly Dictionary<GunType, GunsSpawnerConfigItem> _pickupsDictionary;
         private readonly GunsSpawnerConfig _config;
-
-		private IEnumerator _execution;
-		private SpawnerGrid _grid;
         
         public GunSpawner(GunsSpawnerConfig config) {
             _config = config;
@@ -28,20 +24,7 @@ namespace GunSystem {
             }        
         }
 
-
-        public void Start(SpawnerGridConfig gridConfig) {
-            _grid = new SpawnerGrid(gridConfig);
-            _grid.CalculatePoints();
-            _execution = Execute();
-            Core.CoroutineRunner.Run(_execution);
-        }
-
-        public void Stop() {
-            if (_execution == null) return;
-            Core.CoroutineRunner.Stop(_execution);
-        }
-
-        private IEnumerator Execute() {
+        protected override IEnumerator Execute() {
             while (true) {
                 yield return new WaitForSeconds(_config.Cooldown);
 

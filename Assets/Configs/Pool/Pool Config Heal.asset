@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c09e685591a4a42a83ed9a75c7b2e0f, type: 3}
+  m_Name: Pool Config Heal
+  m_EditorClassIdentifier: 
+  _items:
+  - Name: Heal
+    _size: 10
+    _type: 666
+    _prefab: {fileID: 2099792253000366792, guid: 657abe757510fff42bb27a32547eb7aa, type: 3}
+  - Name: HealVfx
+    _size: 10
+    _type: 667
+    _prefab: {fileID: 8268194929973851186, guid: 26521ebf32f66b345a7d2b69240f41a7, type: 3}

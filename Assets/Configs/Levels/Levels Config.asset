@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: Levels Config
   m_EditorClassIdentifier: 
   _items:
-  - _name: Christmas Village
+  - _name: The Village
     _icon: {fileID: 21300000, guid: 8a501e3e25d107043bff2fc23eca78f5, type: 3}
     _sceneIndex: 2
     _musicType: 1
     _enemySpawnerConfig: {fileID: 11400000, guid: 776a51b7964d9c74f8b630e7253dd596, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
+    _healSpawnerGridConfig: {fileID: 11400000, guid: e88fb0b68725cec4cbe3dc269e7db3d2, type: 2}
     _description: Such a pretty view
-    ItemName: Christmas Village
+    ItemName: The Village
   - _name: Holiday Town
     _icon: {fileID: 21300000, guid: 0fe35fe567b244f41b1bd1c609dd1711, type: 3}
     _sceneIndex: 3
     _musicType: 2
     _enemySpawnerConfig: {fileID: 11400000, guid: 776a51b7964d9c74f8b630e7253dd596, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
+    _healSpawnerGridConfig: {fileID: 11400000, guid: e88fb0b68725cec4cbe3dc269e7db3d2, type: 2}
     _description: Nice people were here
     ItemName: Holiday Town
   - _name: Gift Lane
@@ -35,5 +37,6 @@ MonoBehaviour:
     _musicType: 3
     _enemySpawnerConfig: {fileID: 11400000, guid: 776a51b7964d9c74f8b630e7253dd596, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
+    _healSpawnerGridConfig: {fileID: 11400000, guid: e88fb0b68725cec4cbe3dc269e7db3d2, type: 2}
     _description: Get off this place
     ItemName: Gift Lane

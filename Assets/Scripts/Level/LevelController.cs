@@ -2,6 +2,7 @@ using CameraControl;
 using EnemySpawning;
 using GameStateMachine;
 using GunSystem;
+using Heals;
 using Player;
 using Root;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Level {
         public readonly GunsController GunsController;
         public readonly GunSpawner GunSpawner;
         public readonly EnemySpawner EnemySpawner;
+        public readonly HealSpawner HealSpawner;
         public readonly PlayerController Player;
         public readonly CameraController Camera;
 
@@ -20,7 +22,7 @@ namespace Level {
 
         public LevelController(Transform parent, GunsControllerConfig gunsConfig,
             GunsSpawnerConfig gunsSpawnerConfig, PlayerController playerPrefab, 
-            CameraController cameraPrefab, LevelsConfig config) {
+            CameraController cameraPrefab, LevelsConfig config, HealSpawnerConfig healSpawnerConfig) {
             _config = config;
 
             Player = Object.Instantiate(playerPrefab, parent);
@@ -31,7 +33,9 @@ namespace Level {
 
             GunsController = new GunsController(gunsConfig, Player);
             GunSpawner = new GunSpawner(gunsSpawnerConfig);
+            
             EnemySpawner = new EnemySpawner();
+            HealSpawner = new HealSpawner(healSpawnerConfig);
         }
 
         public List<LevelsConfigItem> GetLevels() {
@@ -68,6 +72,8 @@ namespace Level {
             Player.Activate();
             Camera.Activate();
 
+            HealSpawner.Start(levelConfig.HealSpawnerGridConfig);
+
             Player.OnDie += HandlePlayerDeath;
             EnemySpawner.AllEnemiesKilled += HandleWin;
         }
@@ -81,6 +87,8 @@ namespace Level {
 
             Player.Deactivate();
             Camera.Deactivate();
+
+            HealSpawner.Stop();
 
 			Player.OnDie -= HandlePlayerDeath;
 			EnemySpawner.AllEnemiesKilled -= HandleWin;

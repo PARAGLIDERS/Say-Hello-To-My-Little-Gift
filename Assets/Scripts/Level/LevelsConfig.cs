@@ -27,6 +27,7 @@ namespace Level {
 		[SerializeField] private MusicClipType _musicType;
 		[SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
 		[SerializeField] private SpawnerGridConfig _gunSpawnerGridConfig;
+		[SerializeField] private SpawnerGridConfig _healSpawnerGridConfig;
 		[SerializeField] [TextArea] private string _description;
 
 		public string Name => _name;
@@ -35,6 +36,7 @@ namespace Level {
 		public MusicClipType MusicType => _musicType;
 		public EnemySpawnerConfig EnemySpawnerConfig => _enemySpawnerConfig;
 		public SpawnerGridConfig GunSpawnerGridConfig => _gunSpawnerGridConfig;
+		public SpawnerGridConfig HealSpawnerGridConfig => _healSpawnerGridConfig; 
 		public string Description => _description;
 
 		[HideInInspector] public string ItemName;

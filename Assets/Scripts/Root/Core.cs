@@ -39,7 +39,7 @@ namespace Root {
 			MusicController = new MusicController(parent, resources.MusicConfig);
             LevelController = new LevelController(parent, resources.GunsConfig,
                 resources.GunsSpawnerConfig, resources.PlayerPrefab, 
-                resources.CameraPrefab, resources.LevelsConfig);
+                resources.CameraPrefab, resources.LevelsConfig, resources.HealSpawnerConfig);
 
             InputController = new InputController();
             StateController = new StateController();

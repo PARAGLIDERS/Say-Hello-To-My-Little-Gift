@@ -18,7 +18,7 @@ TagManager:
   - obstacle
   - level bounds
   - floor
-  - gun pickupable
+  - pickupable
   - enemy trigger
   - 
   - 

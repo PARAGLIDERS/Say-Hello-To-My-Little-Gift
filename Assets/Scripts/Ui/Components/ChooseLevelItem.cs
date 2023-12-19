@@ -18,6 +18,7 @@ namespace Ui.Components {
 
 		private Action _onClick;
 		private bool _isAvailable;
+		private Vector3 _initScale;
 
 		public void Init(LevelsConfigItem item, bool available, Action onClick) {
 			_onClick = onClick;
@@ -27,6 +28,7 @@ namespace Ui.Components {
 			_block.gameObject.SetActive(!available);
 			_isAvailable = available;
 			_select.color = _select.color.With(a: 0f);
+			_initScale = transform.localScale;
 		}
 
 		public void OnPointerClick(PointerEventData eventData) {
@@ -37,15 +39,15 @@ namespace Ui.Components {
 
 		public void OnPointerEnter(PointerEventData eventData) {
 			if(!_isAvailable) return;
-			transform.DOScale(1.05f, 0.1f).SetUpdate(true);
 			_select.DOFade(1f, 0.1f).SetUpdate(true);
+			transform.DOScale(_initScale * 1.05f, 0.1f).SetUpdate(true);
 			Core.SfxController.Play(SfxSystem.SfxType.UiButtonSelect);
 		}
 
 		public void OnPointerExit(PointerEventData eventData) {
 			if(!_isAvailable) return;
-			transform.DOScale(1f, 0.1f).SetUpdate(true);
 			_select.DOFade(0f, 0.1f).SetUpdate(true);
+			transform.DOScale(_initScale * 1f, 0.1f).SetUpdate(true);
 		}
 	}
 }
