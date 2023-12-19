@@ -11,6 +11,7 @@ namespace GunSystem {
 
         public event Action<Gun> NoAmmo;
 
+        public Color Color => _config.Color;
 		public GunType Type { get; private set; }
         public bool IsInfinite => _config.IsInfinite;
         public string Name => _config.Name;

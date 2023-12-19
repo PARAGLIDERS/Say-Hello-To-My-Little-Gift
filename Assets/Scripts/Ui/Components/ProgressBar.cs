@@ -20,8 +20,10 @@ namespace Ui.Components {
 		}
 
 		public Sequence GetUpdateSequence(int value) {
-			_sequence?.Complete();
+			_sliderBack.DOComplete();
+			_sliderMain.DOComplete();
 			
+			_sequence?.Complete();
 			_sequence.Insert(0.0f, _sliderMain.DOValue(value, 0.1f));
 			_sequence.Insert(0.5f, _sliderBack.DOValue(value, 0.5f));
 			

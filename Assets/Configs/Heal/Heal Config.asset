@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8b86af58851404abeff020253e535b, type: 3}
   m_Name: Heal Config
   m_EditorClassIdentifier: 
+  _name: HP
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _value: 25

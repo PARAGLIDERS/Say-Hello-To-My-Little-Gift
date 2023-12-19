@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6139979890288258073}
   - component: {fileID: 6493037022919604487}
   - component: {fileID: 3017482974497029446}
-  - component: {fileID: 3424946941356901102}
+  - component: {fileID: 807094471171744779}
   m_Layer: 5
-  m_Name: GunPickupPanelItem
+  m_Name: PickupPanelItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 380.45, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6493037022919604487
 CanvasRenderer:
@@ -69,8 +69,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Minigun +1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f36677a87acc2bb4d9c664232ceedb8b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73902debcd80ec04b8d61e30c8c5ae98, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 5b8bbd35556b1594fb05ef8a6b8e7f4a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -94,13 +94,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 37
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontSizeMax: 37
+  m_fontStyle: 19
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3424946941356901102
+--- !u!114 &807094471171744779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,8 +145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2797733530745358401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3646e4214494ed64698ad8a9cca9c4fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 937567d2e9ca66b49a4e7b835ee40672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 3017482974497029446}
-  _lifetime: 3

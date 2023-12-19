@@ -5,6 +5,7 @@ using UnityEngine;
 namespace GunSystem {
 	[CreateAssetMenu(menuName ="Santa/Guns/Gun Config")]
 	public class GunConfig : ScriptableObject {
+		[SerializeField] private Color _color = Color.white;
 		[SerializeField] private bool _isInfinite;
 		[SerializeField] private string _name;
 		[SerializeField][Range(0f, 1f)] private float _spread = 0.1f;
@@ -17,6 +18,7 @@ namespace GunSystem {
 		[SerializeField] private int _initialAmmo;
 		[SerializeField] private int _pickupAmmo;
 
+		public Color Color => _color;
 		public bool IsInfinite => _isInfinite;
 		public string Name => _name;
 		public float Spread => _spread;

@@ -1,4 +1,5 @@
 using Player;
+using Root;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,17 +61,20 @@ namespace GunSystem {
                 return;
             }
 
+            int ammo = 0;
+
 			if (!AvailableGuns.Contains(gun)) {
                 AvailableGuns.Add(gun);
                 Sort();
                 SwitchTo(gun);
                 gun.ResetAmmo();
-	    		OnPickup?.Invoke(gun, gun.InitialAmmo);
+	    		ammo = gun.InitialAmmo;
             } else {
                 gun.Pickup();
-	    		OnPickup?.Invoke(gun, gun.PickupAmmo);
+	    		ammo = gun.PickupAmmo;
 			}
 
+            Core.EventsBus.Pickup?.Invoke(gun.Name, ammo, gun.Color);
 			OnAmmoChange?.Invoke(gun);
         }
 

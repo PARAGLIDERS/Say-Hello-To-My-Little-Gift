@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334ee0c2bc9b3d84d92dbfa3870dbe4d, type: 3}
   m_Name: Gun Config 5 RocketLauncher
   m_EditorClassIdentifier: 
+  _color: {r: 1, g: 0.64594895, b: 0.3160377, a: 1}
   _isInfinite: 0
   _name: Bazooka
   _spread: 0.1

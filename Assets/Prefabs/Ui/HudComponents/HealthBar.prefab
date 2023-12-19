@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 79.52925, y: 31.972}
-  m_SizeDelta: {x: 428.03, y: 63.944}
+  m_AnchoredPosition: {x: 65.36507, y: -1}
+  m_SizeDelta: {x: 416.6799, y: 63.944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3964087682517165784
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73902debcd80ec04b8d61e30c8c5ae98, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 5b8bbd35556b1594fb05ef8a6b8e7f4a, type: 2}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 57.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 3738873828593331443}
   - component: {fileID: 112819091172705226}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
   _body: {fileID: 5835508567939772060}
   _value: {fileID: 4291556310353950954}
   _progress: {fileID: 6130916245896513771}
+  _face: {fileID: 0}
 --- !u!1001 &2274168292623992983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641251301706437180, guid: fe31ad0bd08545a4ab1e909e12b302dd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 47.9375
+      value: 28.2804
       objectReference: {fileID: 0}
     - target: {fileID: 1641251301706437180, guid: fe31ad0bd08545a4ab1e909e12b302dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -376,11 +377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641251301706437180, guid: fe31ad0bd08545a4ab1e909e12b302dd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 68.64
+      value: 48.8
       objectReference: {fileID: 0}
     - target: {fileID: 1641251301706437180, guid: fe31ad0bd08545a4ab1e909e12b302dd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.531452
+      value: -49.7
       objectReference: {fileID: 0}
     - target: {fileID: 1641251301706437180, guid: fe31ad0bd08545a4ab1e909e12b302dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
