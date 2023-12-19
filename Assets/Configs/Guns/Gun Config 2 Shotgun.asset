@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isInfinite: 0
   _name: Shotgun
-  _spread: 0.082
+  _spread: 0.11
   _fireRate: 1
-  _bulletsPerShot: 5
+  _bulletsPerShot: 9
   _bulletType: 202
   _shotSound: 103
   _muzzleFlashType: 352

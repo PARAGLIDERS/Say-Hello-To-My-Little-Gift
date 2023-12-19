@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fbc875e9eca5a48b42fefa6d112dda, type: 3}
   m_Name: Bullet Config 5 RocketLauncher
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 40
   _lifetime: 0.25
   _explosionType: 405
   _speedMin: 90

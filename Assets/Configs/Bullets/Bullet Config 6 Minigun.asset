@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fbc875e9eca5a48b42fefa6d112dda, type: 3}
   m_Name: Bullet Config 6 Minigun
   m_EditorClassIdentifier: 
-  _damage: 3
+  _damage: 1
   _lifetime: 0.5
   _explosionType: 406
   _speedMin: 70

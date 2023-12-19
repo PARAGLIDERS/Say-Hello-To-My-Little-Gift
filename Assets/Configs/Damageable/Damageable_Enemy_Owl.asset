@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5079dfbeb97b07e48ae053f75b79649d, type: 3}
   m_Name: Damageable_Enemy_Owl
   m_EditorClassIdentifier: 
-  _maxHealth: 25
+  _maxHealth: 50
   _dieParticles: 107
   _dieFloorDecals: 103
   _dieSfx: 200
