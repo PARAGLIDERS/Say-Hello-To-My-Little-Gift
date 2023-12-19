@@ -18,8 +18,8 @@ MonoBehaviour:
   - _name: Round 1
     _delay: 1
     _guns:
-    - _name: 'Pistol : 100%'
-      _type: 0
+    - _name: 'Minigun : 100%'
+      _type: 6
       _chance: 100
     _waves:
     - _name: Wave 1
@@ -73,8 +73,8 @@ MonoBehaviour:
   - _name: Round 2
     _delay: 1
     _guns:
-    - _name: 'Uzi : 100%'
-      _type: 1
+    - _name: 'RocketLauncher : 100%'
+      _type: 5
       _chance: 100
     _waves:
     - _name: Wave 1
@@ -128,8 +128,8 @@ MonoBehaviour:
   - _name: Round 3
     _delay: 1
     _guns:
-    - _name: 'Shotgun : 100%'
-      _type: 2
+    - _name: 'DoubleShotgun : 100%'
+      _type: 4
       _chance: 100
     _waves:
     - _name: Wave 1
@@ -238,8 +238,8 @@ MonoBehaviour:
   - _name: Round 5
     _delay: 1
     _guns:
-    - _name: 'DoubleShotgun : 100%'
-      _type: 4
+    - _name: 'Shotgun : 100%'
+      _type: 2
       _chance: 100
     _waves:
     - _name: Wave 1
@@ -293,8 +293,8 @@ MonoBehaviour:
   - _name: Round 6
     _delay: 1
     _guns:
-    - _name: 'RocketLauncher : 100%'
-      _type: 5
+    - _name: 'Uzi : 100%'
+      _type: 1
       _chance: 100
     _waves:
     - _name: Wave 1
@@ -348,8 +348,8 @@ MonoBehaviour:
   - _name: Round 7
     _delay: 1
     _guns:
-    - _name: 'Minigun : 100%'
-      _type: 6
+    - _name: 'Pistol : 100%'
+      _type: 0
       _chance: 100
     _waves:
     - _name: Wave 1
