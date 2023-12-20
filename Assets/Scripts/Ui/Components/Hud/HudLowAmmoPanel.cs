@@ -13,8 +13,7 @@ namespace Ui.Components.Hud {
 			_label.color = _label.color.With(a: 0);
 			_label.transform
 				.DOScale(_label.transform.localScale * 1.1f, 0.3f)
-				.SetLoops(-1, LoopType.Yoyo)
-				.SetUpdate(true);
+				.SetLoops(-1, LoopType.Yoyo);
 
 			Core.LevelController.GunsController.OnAmmoChange += UpdateLabel;
 			Core.LevelController.GunsController.OnSwitch += UpdateLabel;
