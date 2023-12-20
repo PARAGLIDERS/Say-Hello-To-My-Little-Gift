@@ -17,6 +17,7 @@ namespace GunSystem {
 		[SerializeField] private InputType _inputType = InputType.Hold;
 		[SerializeField] private int _initialAmmo;
 		[SerializeField] private int _pickupAmmo;
+		[SerializeField] private int _lowAmmo;
 
 		public Color Color => _color;
 		public bool IsInfinite => _isInfinite;
@@ -30,6 +31,7 @@ namespace GunSystem {
 		public InputType InputType => _inputType;
 		public int InitialAmmo => _initialAmmo;
 		public int PickupAmmo => _pickupAmmo;
+		public int LowAmmo => _lowAmmo;
 	}
 
 	public enum BulletType {

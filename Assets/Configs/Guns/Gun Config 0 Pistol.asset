@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334ee0c2bc9b3d84d92dbfa3870dbe4d, type: 3}
   m_Name: Gun Config 0 Pistol
   m_EditorClassIdentifier: 
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _isInfinite: 1
   _name: Pistol
   _spread: 0.01
@@ -23,3 +24,4 @@ MonoBehaviour:
   _inputType: 0
   _initialAmmo: 0
   _pickupAmmo: 0
+  _lowAmmo: -1

@@ -19,6 +19,7 @@ namespace GunSystem {
         public InputType InputType => _config.InputType;
         public int PickupAmmo => _config.PickupAmmo;
         public int InitialAmmo => _config.InitialAmmo;
+        public bool LowAmmo => Ammo <= _config.LowAmmo;
 
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape

@@ -10,6 +10,7 @@ namespace Ui.Screens {
 		[SerializeField] private EnemySpawnerHudPanel _enemySpawnerPanel;
 		[SerializeField] private HudHitVignette _hudHitVignette;
 		[SerializeField] private HudHealVignette _hudHealVignette;
+		[SerializeField] private HudLowAmmoPanel _lowAmmoPanel;
 
 		public override void Init() {
             _gunPanel.Init();
@@ -18,6 +19,7 @@ namespace Ui.Screens {
 			_enemySpawnerPanel.Init();
 			_hudHitVignette.Init();
 			_hudHealVignette.Init();
+			_lowAmmoPanel.Init();
 		}
 	}
 }

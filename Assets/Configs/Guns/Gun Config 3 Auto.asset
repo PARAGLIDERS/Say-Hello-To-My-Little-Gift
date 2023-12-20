@@ -24,3 +24,4 @@ MonoBehaviour:
   _inputType: 1
   _initialAmmo: 60
   _pickupAmmo: 30
+  _lowAmmo: 10

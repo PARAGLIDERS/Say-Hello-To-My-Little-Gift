@@ -61,7 +61,7 @@ namespace GunSystem {
                 return;
             }
 
-            int ammo = 0;
+            int ammo;
 
 			if (!AvailableGuns.Contains(gun)) {
                 AvailableGuns.Add(gun);
