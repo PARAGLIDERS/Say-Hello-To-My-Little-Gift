@@ -65,5 +65,9 @@ namespace Pointer {
 		Pistol = 1,
 		Uzi = 2,
 		Shotgun = 3,
+		Auto = 4,
+		DoubleShotgun = 5,
+		RocketLauncher = 6,
+		Minigun = 7,
 	}
 }

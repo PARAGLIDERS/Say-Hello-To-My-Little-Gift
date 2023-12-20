@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334ee0c2bc9b3d84d92dbfa3870dbe4d, type: 3}
   m_Name: Gun Config 1 Uzi
   m_EditorClassIdentifier: 
+  _color: {r: 0.3254717, g: 1, b: 0.3254717, a: 1}
   _isInfinite: 0
   _name: Uzi
   _spread: 0.01
@@ -23,3 +24,4 @@ MonoBehaviour:
   _inputType: 1
   _initialAmmo: 50
   _pickupAmmo: 25
+  _lowAmmo: 10

@@ -21,17 +21,37 @@ MonoBehaviour:
     _scale: 32
     _animated: 0
   - _type: 1
-    _sprite: {fileID: 21300000, guid: ca5b5a8c9cb6a784b9f96f64e1871652, type: 3}
+    _sprite: {fileID: 21300000, guid: 8d594e1b3cd08f84fbd67e0eb15ff079, type: 3}
     _pivot: {x: 0.5, y: 0.5}
     _scale: 80
     _animated: 1
   - _type: 2
-    _sprite: {fileID: 21300000, guid: 0b96bf5f7c85bb34db55435cb2b1a7f6, type: 3}
+    _sprite: {fileID: 21300000, guid: a82225840f312524cabd1d324088424c, type: 3}
     _pivot: {x: 0.5, y: 0.5}
     _scale: 70
     _animated: 1
   - _type: 3
-    _sprite: {fileID: 21300000, guid: f407c51ee82d944489d4898355a7eac8, type: 3}
+    _sprite: {fileID: 21300000, guid: 917d571952c68ef4c82181cc883b975d, type: 3}
+    _pivot: {x: 0.5, y: 0.5}
+    _scale: 90
+    _animated: 1
+  - _type: 4
+    _sprite: {fileID: 21300000, guid: cb218933f61de0f40abc72f23e3b1ceb, type: 3}
+    _pivot: {x: 0.5, y: 0.5}
+    _scale: 90
+    _animated: 1
+  - _type: 5
+    _sprite: {fileID: 21300000, guid: 54ebb0f190f71934ca2f8e7387ab5604, type: 3}
+    _pivot: {x: 0.5, y: 0.5}
+    _scale: 90
+    _animated: 1
+  - _type: 6
+    _sprite: {fileID: 21300000, guid: 983a38b8f6149324aa1b048ed80a4c96, type: 3}
+    _pivot: {x: 0.5, y: 0.5}
+    _scale: 90
+    _animated: 1
+  - _type: 7
+    _sprite: {fileID: 21300000, guid: 9232ef2aad132e643821cb98a78c6216, type: 3}
     _pivot: {x: 0.5, y: 0.5}
     _scale: 90
     _animated: 1

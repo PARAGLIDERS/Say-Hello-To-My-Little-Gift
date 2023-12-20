@@ -24,8 +24,11 @@ namespace Root {
 		public static DataController DataController { get; private set; }
 		public static PostProcessingController PostProcessingController { get; private set; }
 		public static PointerController PointerController { get; private set; }
+		public static EventsBus EventsBus { get; private set; }	
 
 		public static void Init(Transform parent, Resources resources) {
+			EventsBus = new EventsBus();
+
             Object.Instantiate(resources.VolumePrefab, parent);
 
             CoroutineRunner = new GameObject("coroutine runner").AddComponent<CoroutineRunner>();
