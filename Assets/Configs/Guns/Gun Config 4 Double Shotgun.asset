@@ -16,7 +16,7 @@ MonoBehaviour:
   _isInfinite: 0
   _name: Boomstick
   _spread: 0.21
-  _fireRate: 1.22
+  _fireRate: 1
   _bulletsPerShot: 18
   _bulletType: 204
   _shotSound: 105
