@@ -1,6 +1,7 @@
 using DamageSystem;
 using Dash;
 using Root;
+using SfxSystem;
 using System;
 using Units;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Player {
         [SerializeField] private Damageable _damageable;
         [SerializeField] private PlayerDashConfig _dashConfig;
         [SerializeField] private ParticleSystem _dashParticles;
+        [SerializeField] private SfxType[] _damageSounds;
 
         [SerializeField] private Vector3 _defaultPosition; 
 
@@ -86,6 +88,7 @@ namespace Player {
 		
         private void HandleDamage() {
             Core.LevelController.Camera.Shake(transform.position, 0.7f);
+            Core.SfxController.Play(_damageSounds[UnityEngine.Random.Range(0, _damageSounds.Length)]);
         }
 
         private bool TryGetInput(out Vector3 input) {

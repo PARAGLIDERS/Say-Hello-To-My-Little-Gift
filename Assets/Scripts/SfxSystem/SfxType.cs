@@ -26,6 +26,14 @@ namespace SfxSystem {
         VfxHealPickup = 303,
 
         // guns
-        GunScroll = 400,        
+        GunScroll = 400, 
+        
+        // player voice
+        PlayerVoice_01 = 500,
+        PlayerVoice_02 = 501,
+        PlayerVoice_03 = 502,
+        PlayerVoice_04 = 503,
+        PlayerVoice_05 = 504,
+        PlayerVoice_06 = 505,
     }
 }
