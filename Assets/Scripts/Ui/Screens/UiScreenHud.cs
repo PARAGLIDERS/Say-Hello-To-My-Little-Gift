@@ -4,6 +4,7 @@ using Ui.Components.Hud;
 
 namespace Ui.Screens {
 	public class UiScreenHud : UiScreen {
+		[SerializeField] private GameObject _container;
         [SerializeField] private GunHudIconsPanel _gunPanel;
 		[SerializeField] private HudPickupEventsPanel _pickupEventsPanel;
 		[SerializeField] private PlayerHealthHudPanel _playerHealthPanel;
@@ -12,7 +13,10 @@ namespace Ui.Screens {
 		[SerializeField] private HudHealVignette _hudHealVignette;
 		[SerializeField] private HudLowAmmoPanel _lowAmmoPanel;
 
+		public static bool Active = true;
+
 		public override void Init() {
+			_container.SetActive(Active);
             _gunPanel.Init();
 			_pickupEventsPanel.Init();
 			_playerHealthPanel.Init();

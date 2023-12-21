@@ -98,7 +98,7 @@ namespace Assets.Scripts.Ui.Screens {
 
 		private void HandleBackButton() {
 			Core.DataController.Save();
-			Core.UiController.Show(UiScreenType.Main);
+			Core.UiController.HideCurrent();
 		}
 	}
 }

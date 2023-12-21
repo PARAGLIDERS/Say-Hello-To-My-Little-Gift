@@ -21,8 +21,10 @@ namespace Root {
 
             return pointerPosition;
         }
+		
+        public bool GetPlayerDashInput() => Input.GetKeyDown(KeyCode.Space);
 
-        public Vector3 GetPlayerInput() {
+		public Vector3 GetPlayerInput() {
             Vector3 right = GetAxis("Horizontal", _camera.transform.right);
             Vector3 forward = GetAxis("Vertical", _camera.transform.forward);
 

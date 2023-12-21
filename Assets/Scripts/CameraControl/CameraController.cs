@@ -43,7 +43,9 @@ namespace CameraControl {
 
 		private void LateUpdate() {
             Vector3 playerPos = Core.LevelController.Player.Position;
-            transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref _velocity, _motionSmooth, _speed);
+            float distanceSqr = (transform.position - playerPos).sqrMagnitude;
+            transform.position = Vector3.SmoothDamp(transform.position, 
+                playerPos, ref _velocity, _motionSmooth, _speed * distanceSqr);
         }
     }
 }

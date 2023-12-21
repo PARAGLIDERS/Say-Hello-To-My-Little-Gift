@@ -1,5 +1,7 @@
 using DamageSystem;
+using Dash;
 using Root;
+using SfxSystem;
 using System;
 using Units;
 using UnityEngine;
@@ -8,6 +10,9 @@ using Utils;
 namespace Player {
 	public class PlayerController : MonoBehaviour {
         [SerializeField] private Damageable _damageable;
+        [SerializeField] private PlayerDashConfig _dashConfig;
+        [SerializeField] private ParticleSystem _dashParticles;
+        [SerializeField] private SfxType[] _damageSounds;
 
         [SerializeField] private Vector3 _defaultPosition; 
 
@@ -20,6 +25,7 @@ namespace Player {
 		[SerializeField] private Rigidbody _rigidbody;
 		[SerializeField] private UnitAnimation _animation;
         [SerializeField] private Transform _gunsHolder;
+
 
         public event Action OnDamage {
 			add => _damageable.OnDamage += value;
@@ -44,13 +50,19 @@ namespace Player {
 
         private UnitRotation _rotation;
         private UnitRotation _gunRotation;
+        private PlayerDash _dash;
 
         private void Awake() {
             _rotation = new UnitRotation(_unitTransform, _rotationSpeed);
             _gunRotation = new UnitRotation(_gunsHolder, _rotationSpeed);
+            _dash = new PlayerDash(_dashConfig, _rigidbody, _dashParticles);
         }
 
-        private void FixedUpdate() {
+		private void Update() {
+			_dash.Update();
+		}
+
+		private void FixedUpdate() {
             UpdateRotation();
             UpdatePosition();
 
@@ -63,19 +75,25 @@ namespace Player {
         public void Activate() {
             ResetPosition();
             _damageable.ResetHealth();
-            _damageable.OnDie += Deactivate;
+            _damageable.OnDie += HandleDie;
             _damageable.OnDamage += HandleDamage;
+            _dash.Reset();
             gameObject.SetActive(true);
 		}
 
 		public void Deactivate() {
-            _damageable.OnDie -= Deactivate;
+            _damageable.OnDie -= HandleDie;
 			_damageable.OnDamage -= HandleDamage;
 			gameObject.SetActive(false);
+        }
+
+        private void HandleDie() {
+            Deactivate();
         }
 		
         private void HandleDamage() {
             Core.LevelController.Camera.Shake(transform.position, 0.7f);
+            Core.SfxController.Play(_damageSounds[UnityEngine.Random.Range(0, _damageSounds.Length)]);
         }
 
         private bool TryGetInput(out Vector3 input) {

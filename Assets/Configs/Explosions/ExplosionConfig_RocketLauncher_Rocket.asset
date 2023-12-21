@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a20d82d8968f854480078dd379b6af7, type: 3}
   m_Name: ExplosionConfig_RocketLauncher_Rocket
   m_EditorClassIdentifier: 
-  _damage: 40
-  _radius: 15
+  _damage: 20
+  _radius: 10
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1152
+    m_Bits: 1216
   _cameraShake: 0.3

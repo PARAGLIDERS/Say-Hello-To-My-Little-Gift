@@ -17,7 +17,7 @@ namespace DamageSystem {
 
 		private IEnumerator _death;
 
-		public void ApplyDamage(int amount, Quaternion damagerRotation) {
+		public virtual void ApplyDamage(int amount, Quaternion damagerRotation) {
 			if (amount < 0) {
 				Debug.LogError("damage is below zero!");
 				return;
