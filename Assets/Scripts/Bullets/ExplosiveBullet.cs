@@ -1,4 +1,5 @@
 ﻿using DamageSystem;
+using Root;
 using UnityEngine;
 
 namespace Bullets {
@@ -8,6 +9,7 @@ namespace Bullets {
 		protected override void Despawn() {
 			base.Despawn();
 			_explosion.Activate();
+			Core.SfxController.Play(SfxSystem.SfxType.VfxExplosion);
 		}
 	}
 }
