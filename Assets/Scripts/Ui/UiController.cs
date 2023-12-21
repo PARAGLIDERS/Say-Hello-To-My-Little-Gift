@@ -6,7 +6,8 @@ namespace Ui {
 		private readonly Dictionary<UiScreenType, UiScreen> _screens = new();
 		private readonly Transform _canvas;
 		
-		private UiScreen _current;
+		private (UiScreenType type, UiScreen screen) _current;
+		private UiScreenType _previous;
 		
 		public UiController(Transform parent, Canvas canvasPrefab, UiScreenConfig config) {
 			_canvas = Object.Instantiate(canvasPrefab, parent).transform;
@@ -21,17 +22,25 @@ namespace Ui {
 			}
 		}
 
-		public void Show(UiScreenType screenType) {
+		public void Show(UiScreenType screenType, bool rememberCurrent = false) {
 			if (!_screens.TryGetValue(screenType, out UiScreen screen)) {
 				Debug.LogError($"screen {screenType} does not exist");
 				return;
 			}
-			
-			if(_current != null) Hide(_current);
 
-			_current = Object.Instantiate(screen, _canvas);
-			_current.Init();
-			_current.Enter();
+			if (rememberCurrent) _previous = _current.type;
+			if (_current.screen != null) Hide(_current.screen);
+
+			_current.type = screenType;
+			_current.screen = Object.Instantiate(screen, _canvas);
+
+			_current.screen.Init();
+			_current.screen.Enter();
+		}
+
+		public void HideCurrent() {
+			if (_current.screen != null ) Hide(_current.screen);
+			Show(_previous);
 		}
 
 		private void Hide(UiScreen screen) {

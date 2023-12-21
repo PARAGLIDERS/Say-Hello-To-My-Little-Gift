@@ -30,7 +30,7 @@ namespace Ui.Screens {
 		}
 
 		private void HandleSettings() {
-			Core.UiController.Show(UiScreenType.Settings);
+			Core.UiController.Show(UiScreenType.Settings, true);
 		}
 
 		private void HandleCredits() {

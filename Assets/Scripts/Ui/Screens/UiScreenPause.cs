@@ -7,11 +7,13 @@ namespace Ui.Screens {
 	public class UiScreenPause : UiScreenBlurredBack {
 		[SerializeField] private Button _back;
 		[SerializeField] private Button _restart;
+		[SerializeField] private Button _settings;
 		[SerializeField] private Button _quit;
 
 		public override void Init() {
 			_back.onClick.AddListener(HandleBack);
 			_restart.onClick.AddListener(HandleRestart);
+			_settings.onClick.AddListener(HandleSettings);
 			_quit.onClick.AddListener(HandleQuit);
 		}
 
@@ -25,6 +27,10 @@ namespace Ui.Screens {
 
 		private void HandleQuit() {
 			Core.StateController.SetState(StateType.QuitPlay);
+		}
+
+		private void HandleSettings() {
+			Core.UiController.Show(UiScreenType.Settings, true);
 		}
 	}
 }
