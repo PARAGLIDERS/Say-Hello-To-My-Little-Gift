@@ -35,7 +35,13 @@ namespace Ui {
 			_image.DOFade(0f, 0.1f).SetUpdate(true);
 		}
 
-        protected override void OnDestroy() {
+		public override void OnPointerDown(PointerEventData eventData) {
+			base.OnPointerDown(eventData);
+			transform.DOScale(1f, 0.03f).SetUpdate(true)
+				.OnComplete(() => transform.DOScale(_scale, 0.1f).SetUpdate(true));
+		}
+
+		protected override void OnDestroy() {
             base.OnDestroy();
             transform.DOKill();
             _image.DOKill();

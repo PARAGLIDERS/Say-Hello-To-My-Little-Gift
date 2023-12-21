@@ -9,7 +9,7 @@ using UnityEngine.UI;
 using Utils;
 
 namespace Ui.Components {
-	public class ChooseLevelItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler {
+	public class ChooseLevelItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
 		[SerializeField] private Image _icon;
 		[SerializeField] private TextMeshProUGUI _title;
 		[SerializeField] private TextMeshProUGUI _description;
@@ -37,6 +37,11 @@ namespace Ui.Components {
 			Core.SfxController.Play(SfxSystem.SfxType.UiButtonPress);
 		}
 
+		public void OnPointerDown(PointerEventData eventData) {
+			transform.DOScale(_initScale, 0.03f).SetUpdate(true)
+				.OnComplete(() => transform.DOScale(_initScale * 1.05f, 0.1f).SetUpdate(true));
+		}
+
 		public void OnPointerEnter(PointerEventData eventData) {
 			if(!_isAvailable) return;
 			_select.DOFade(1f, 0.1f).SetUpdate(true);
@@ -47,7 +52,7 @@ namespace Ui.Components {
 		public void OnPointerExit(PointerEventData eventData) {
 			if(!_isAvailable) return;
 			_select.DOFade(0f, 0.1f).SetUpdate(true);
-			transform.DOScale(_initScale * 1f, 0.1f).SetUpdate(true);
+			transform.DOScale(_initScale, 0.1f).SetUpdate(true);
 		}
 	}
 }
