@@ -1,4 +1,5 @@
 using DamageSystem;
+using Dash;
 using Root;
 using System;
 using Units;
@@ -8,6 +9,8 @@ using Utils;
 namespace Player {
 	public class PlayerController : MonoBehaviour {
         [SerializeField] private Damageable _damageable;
+        [SerializeField] private PlayerDashConfig _dashConfig;
+        [SerializeField] private ParticleSystem _dashParticles;
 
         [SerializeField] private Vector3 _defaultPosition; 
 
@@ -44,13 +47,19 @@ namespace Player {
 
         private UnitRotation _rotation;
         private UnitRotation _gunRotation;
+        private PlayerDash _dash;
 
         private void Awake() {
             _rotation = new UnitRotation(_unitTransform, _rotationSpeed);
             _gunRotation = new UnitRotation(_gunsHolder, _rotationSpeed);
+            _dash = new PlayerDash(_dashConfig, _rigidbody, _dashParticles);
         }
 
-        private void FixedUpdate() {
+		private void Update() {
+			_dash.Update();
+		}
+
+		private void FixedUpdate() {
             UpdateRotation();
             UpdatePosition();
 
@@ -65,6 +74,7 @@ namespace Player {
             _damageable.ResetHealth();
             _damageable.OnDie += Deactivate;
             _damageable.OnDamage += HandleDamage;
+            _dash.Reset();
             gameObject.SetActive(true);
 		}
 
