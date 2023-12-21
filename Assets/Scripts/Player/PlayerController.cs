@@ -26,6 +26,7 @@ namespace Player {
 		[SerializeField] private UnitAnimation _animation;
         [SerializeField] private Transform _gunsHolder;
 
+
         public event Action OnDamage {
 			add => _damageable.OnDamage += value;
 			remove => _damageable.OnDamage -= value;            
@@ -74,16 +75,20 @@ namespace Player {
         public void Activate() {
             ResetPosition();
             _damageable.ResetHealth();
-            _damageable.OnDie += Deactivate;
+            _damageable.OnDie += HandleDie;
             _damageable.OnDamage += HandleDamage;
             _dash.Reset();
             gameObject.SetActive(true);
 		}
 
 		public void Deactivate() {
-            _damageable.OnDie -= Deactivate;
+            _damageable.OnDie -= HandleDie;
 			_damageable.OnDamage -= HandleDamage;
 			gameObject.SetActive(false);
+        }
+
+        private void HandleDie() {
+            Deactivate();
         }
 		
         private void HandleDamage() {

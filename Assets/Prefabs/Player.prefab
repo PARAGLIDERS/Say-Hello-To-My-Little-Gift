@@ -5056,7 +5056,7 @@ GameObject:
   - component: {fileID: 6832910219722444586}
   - component: {fileID: 1397096538553473808}
   - component: {fileID: 5422649874369557922}
-  - component: {fileID: 8743682838484858706}
+  - component: {fileID: 3417557689411625033}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -5122,7 +5122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2372753e2840348537565d3e92a0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageable: {fileID: 8743682838484858706}
+  _damageable: {fileID: 3417557689411625033}
   _dashConfig: {fileID: 11400000, guid: 416b8704e85a43843a0e2bab2ed6a789, type: 2}
   _dashParticles: {fileID: 4792370486059832120}
   _damageSounds: f4010000f5010000f6010000f7010000f8010000f9010000
@@ -5149,7 +5149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: 43985656f3f05c64e8843f0a6ee24d7f, type: 2}
   _body: {fileID: 6832910217776909500}
---- !u!114 &8743682838484858706
+--- !u!114 &3417557689411625033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5158,7 +5158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6832910217777074334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e0293dbbb7e4866a83913c0614adf84, type: 3}
+  m_Script: {fileID: 11500000, guid: 29090c3e3a52be1449ade7222fad3f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: fe7c59e7fac4aac4d8cccb3083eb1f0f, type: 2}

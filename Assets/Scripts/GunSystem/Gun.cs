@@ -9,11 +9,12 @@ namespace GunSystem {
         [SerializeField] protected GunConfig _config;
 		[SerializeField] private Transform _muzzle;
 
-        public event Action<Gun> NoAmmo;
+        public static bool Endless;
 
+        public event Action<Gun> NoAmmo;
         public Color Color => _config.Color;
 		public GunType Type { get; private set; }
-        public bool IsInfinite => _config.IsInfinite;
+        public bool IsInfinite => Endless || _config.IsInfinite;
         public string Name => _config.Name;
         public int Ammo { get; private set; }
         public InputType InputType => _config.InputType;
@@ -23,6 +24,7 @@ namespace GunSystem {
 
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape
+
 
         public void Activate() {
             gameObject.SetActive(true);
