@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Heal Spawner Grid Config lvl2
   m_EditorClassIdentifier: 
   _cellSize: 5
-  _gridSize: {x: 6.69, y: 6.16}
+  _gridSize: {x: 5.8, y: 7.84}
   _gridInnerSize: {x: 1, y: 1}
   _gridHeight: 1
   _obstaclesLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 3072
