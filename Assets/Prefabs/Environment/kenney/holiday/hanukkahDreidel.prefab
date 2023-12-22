@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2757505284230496530}
   - component: {fileID: 117189504963622360}
   - component: {fileID: 8252189830618916325}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hanukkahDreidel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

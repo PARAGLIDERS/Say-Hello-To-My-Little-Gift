@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2531913114109003958}
   - component: {fileID: 5860837076768191221}
   - component: {fileID: 1982583608503216241}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: log 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3705944775510856102}
   - component: {fileID: 1480239976667604332}
   - component: {fileID: 6574391857178865298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trainWagonFlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8695400261740539763}
   - component: {fileID: 280540709356787198}
   - component: {fileID: 2781066476862296665}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: log 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 8898208335263513178}
   - component: {fileID: 5911226767087844207}
   - component: {fileID: 5154039096161065447}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: log 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 3961453943100646727}
   - component: {fileID: 4040830775745557749}
   - component: {fileID: 6272761587033109159}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 6003114030841333410}
   - component: {fileID: 6262368839065855604}
   - component: {fileID: 5873544112869650334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: log 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

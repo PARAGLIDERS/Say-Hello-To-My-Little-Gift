@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1075978345761395304}
   - component: {fileID: 2957268271680595618}
   - component: {fileID: 2328544944259485068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: kwanzaaKikombe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

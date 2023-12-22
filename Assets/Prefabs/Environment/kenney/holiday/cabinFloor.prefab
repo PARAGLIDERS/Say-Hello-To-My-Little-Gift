@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7778419306330510896}
   - component: {fileID: 5482719595314684666}
   - component: {fileID: 9187109234265770282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

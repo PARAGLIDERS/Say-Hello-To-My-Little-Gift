@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6000016804465851169}
   - component: {fileID: 5880766404998456378}
   - component: {fileID: 5840011514861798380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2283032588742142908}
   - component: {fileID: 4056055801482927990}
   - component: {fileID: 7614244168995774319}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cabinWindowLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

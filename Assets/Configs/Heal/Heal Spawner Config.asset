@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0088b52eff277d4e9a05894d90a0178, type: 3}
   m_Name: Heal Spawner Config
   m_EditorClassIdentifier: 
-  _cooldown: 1
+  _cooldown: 3

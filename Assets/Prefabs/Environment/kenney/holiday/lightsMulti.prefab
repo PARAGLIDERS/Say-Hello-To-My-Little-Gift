@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 220605183025277620}
   - component: {fileID: 2660299681564991102}
   - component: {fileID: 8126785173916859677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lightsMulti
   m_TagString: Untagged
   m_Icon: {fileID: 0}

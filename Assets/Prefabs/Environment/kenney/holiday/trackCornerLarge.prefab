@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9134831108283453785}
   - component: {fileID: 6422563215887869331}
   - component: {fileID: 1887002110753055315}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trackCornerLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

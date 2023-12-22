@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2757251123565801784}
   - component: {fileID: 119149678041187826}
   - component: {fileID: 3023646820043379823}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: presentRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1836719100672388258}
   - component: {fileID: 393886967794672745}
   - component: {fileID: 8241475976766831059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

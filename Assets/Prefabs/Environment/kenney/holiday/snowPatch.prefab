@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5264140968709000543}
   - component: {fileID: 7991931228320954773}
   - component: {fileID: 3340507031901753299}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: snowPatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

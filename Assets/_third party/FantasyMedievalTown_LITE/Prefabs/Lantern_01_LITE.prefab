@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6716284788279985981}
   - component: {fileID: 2296217578838694020}
   - component: {fileID: 5844747788292333943}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lantern_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566614576695011573}
   - component: {fileID: 800103476941315972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lantern_01_LITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4617928641862866327}
   - component: {fileID: 3764607751031596692}
   - component: {fileID: 6266542813278119689}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lantern_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7341977247878380455}
   - component: {fileID: 7065492046498239885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 852183586908874868}
   - component: {fileID: 4413297699292003254}
   - component: {fileID: 8539555567938019664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lantern_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

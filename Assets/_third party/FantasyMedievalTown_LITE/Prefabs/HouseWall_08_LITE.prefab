@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2982439026345896971}
   - component: {fileID: 8014683128311667578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseWall_08_LITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 6639707563620256033}
   - component: {fileID: 8248182185157007866}
   - component: {fileID: 6548747757031704156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseWall_08_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 2539867426105102696}
   - component: {fileID: 2410234554681626754}
   - component: {fileID: 1779294787662493509}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseWall_08_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,12 +313,24 @@ PrefabInstance:
       value: HouseDoor_01
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2327757895606978036, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2327757895606978036, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432523212374957531, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2432523212374957531, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -328,6 +340,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ac1bd3773470b84dbf2520b9b1660e2, type: 2}
+    - target: {fileID: 3185837356387874511, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3185837356387874511, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

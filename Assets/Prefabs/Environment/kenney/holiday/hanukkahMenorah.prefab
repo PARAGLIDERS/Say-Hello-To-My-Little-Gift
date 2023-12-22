@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8462761524026810268}
   - component: {fileID: 5950719164672306006}
   - component: {fileID: 3037582592601909863}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hanukkahMenorah
   m_TagString: Untagged
   m_Icon: {fileID: 0}

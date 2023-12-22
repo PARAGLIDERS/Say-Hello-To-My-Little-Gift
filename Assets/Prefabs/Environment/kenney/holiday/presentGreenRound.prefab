@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8835648106441803023}
   - component: {fileID: 7391690625090784708}
   - component: {fileID: 1277979774732177534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5017124471601764501}
   - component: {fileID: 7080959791374199903}
   - component: {fileID: 471692103083331635}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: presentGreenRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}

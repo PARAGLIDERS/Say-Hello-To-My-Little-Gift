@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4212896578498038824}
   - component: {fileID: 2131258532576983266}
   - component: {fileID: 1895057277926225320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trackStraight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

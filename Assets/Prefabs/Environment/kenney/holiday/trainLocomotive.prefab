@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2096802689823847250}
   - component: {fileID: 4250731357796845464}
   - component: {fileID: 4983146289893455891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trainLocomotive
   m_TagString: Untagged
   m_Icon: {fileID: 0}

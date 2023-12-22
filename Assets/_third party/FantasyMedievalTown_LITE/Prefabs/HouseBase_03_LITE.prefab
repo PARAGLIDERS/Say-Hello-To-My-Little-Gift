@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2811288368015577041}
   - component: {fileID: 5736947671218344908}
   - component: {fileID: 6745173244787542169}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseBase_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7318005537772281512}
   - component: {fileID: 3343149130911652372}
   - component: {fileID: 1186108106693181711}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseBase_03_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 5506231246671863591}
   - component: {fileID: 1078628777275360736}
   - component: {fileID: 9000731914550590941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseBase_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9142956734652019987}
   - component: {fileID: 4087105843453772386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseBase_03_LITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}

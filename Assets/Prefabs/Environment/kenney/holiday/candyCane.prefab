@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7471479935070814517}
   - component: {fileID: 4635593952778139135}
   - component: {fileID: 6581114749931557310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: candyCane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

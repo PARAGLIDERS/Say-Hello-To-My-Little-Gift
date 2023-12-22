@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4179236274162707325}
   - component: {fileID: 6055973454718292745}
   - component: {fileID: 2374686928885406570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 9050408911929877433}
   - component: {fileID: 6520497292821976947}
   - component: {fileID: 270922683256696491}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wreath
   m_TagString: Untagged
   m_Icon: {fileID: 0}

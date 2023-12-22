@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dc4f067e077afe428ce102750f55063, type: 3}
-  m_Name: Enemy Spawner Grid Config
+  m_Name: Gun Spawner Grid Config lvl2
   m_EditorClassIdentifier: 
   _cellSize: 5
-  _gridSize: {x: 15, y: 15}
-  _gridInnerSize: {x: 0, y: 0}
+  _gridSize: {x: 12.3, y: 12.3}
+  _gridInnerSize: {x: 1, y: 1}
   _gridHeight: 1
   _obstaclesLayer:
     serializedVersion: 2

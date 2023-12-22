@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9219608415180351292}
   - component: {fileID: 3278298355846285248}
   - component: {fileID: 5181663771297748894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseWall_02_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6283187738200027264}
   - component: {fileID: 1254325459450988529}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseWall_02_LITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 8828107570170729452}
   - component: {fileID: 7294409918876652862}
   - component: {fileID: 1030046816886338118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseWall_02_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

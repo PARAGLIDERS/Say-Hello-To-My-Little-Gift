@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5501776069524704039}
   - component: {fileID: 7763866448389423085}
   - component: {fileID: 8631741461962466535}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: candyCaneMint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

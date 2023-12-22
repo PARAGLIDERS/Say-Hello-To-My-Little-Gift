@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8097840470889788594}
   - component: {fileID: 7812416419167272057}
   - component: {fileID: 1964558960231997891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5719465985191569704}
   - component: {fileID: 7546721581739089378}
   - component: {fileID: 7111057540635387061}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: presentGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}

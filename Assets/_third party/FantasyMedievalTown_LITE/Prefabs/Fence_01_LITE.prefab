@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7327973505561290472}
   - component: {fileID: 4967541246407981530}
   - component: {fileID: 3156251268950531272}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6406768002265078886}
   - component: {fileID: 1716525417931308336}
   - component: {fileID: 5266679610455218454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 2739455837353594854}
   - component: {fileID: 281378802332082332}
   - component: {fileID: 4520309940029676832}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3797600274067251302}
   - component: {fileID: 8280385774117639959}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence_01_LITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}

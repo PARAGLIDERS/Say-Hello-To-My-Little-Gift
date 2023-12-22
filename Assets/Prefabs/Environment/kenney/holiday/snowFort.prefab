@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5167376825120017975}
   - component: {fileID: 6940823907445095165}
   - component: {fileID: 8767713810180128840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: snowFort
   m_TagString: Untagged
   m_Icon: {fileID: 0}

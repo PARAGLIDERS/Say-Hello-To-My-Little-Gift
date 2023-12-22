@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8010069149654141472}
   - component: {fileID: 5246003322655325930}
   - component: {fileID: 2630296880124621392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 2577143132321831613}
   - component: {fileID: 2385536280081794470}
   - component: {fileID: 2417429142533939824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}

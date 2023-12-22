@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1596255569893706648}
   - component: {fileID: 2495571180362018168}
   - component: {fileID: 5048794333942409939}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlowerPot_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3531657643039958546}
   - component: {fileID: 8599878864711061859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlowerPot_03_LITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 1828114567435610651}
   - component: {fileID: 4680395937093970584}
   - component: {fileID: 5304793666951786223}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlowerPot_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

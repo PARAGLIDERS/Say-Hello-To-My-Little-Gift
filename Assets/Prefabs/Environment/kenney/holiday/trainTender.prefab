@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 411945394485916717}
   - component: {fileID: 2473445340622094567}
   - component: {fileID: 9117591194728848142}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trainTender
   m_TagString: Untagged
   m_Icon: {fileID: 0}

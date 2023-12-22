@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2807280799370138763}
   - component: {fileID: 76983726192173121}
   - component: {fileID: 4633818253435053444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cabinDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 3634172340814336457}
   - component: {fileID: 6680868209786681334}
   - component: {fileID: 7722354230222029487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4338496918539235941}
   - component: {fileID: 2004551259066500783}
   - component: {fileID: 4613394663648433037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: snowmanFancy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

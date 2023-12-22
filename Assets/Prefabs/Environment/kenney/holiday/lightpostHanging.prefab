@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2656101130843930413}
   - component: {fileID: 232123045335518183}
   - component: {fileID: 64347416705986339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lightpostHanging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 867416351748235181}
   - component: {fileID: 1109970746929835494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
