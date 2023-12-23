@@ -31,7 +31,6 @@ namespace Bullets {
         }
 
         private void OnTriggerEnter(Collider other) {
-            Debug.LogWarning("AAAAAAAAAAAAAAAA");
             if (other.TryGetComponent(out Damageable damageable)) {
                 damageable.ApplyDamage(_baseConfig.Damage, transform.rotation);
             }
