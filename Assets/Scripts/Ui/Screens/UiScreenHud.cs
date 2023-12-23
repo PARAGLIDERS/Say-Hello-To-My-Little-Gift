@@ -12,6 +12,7 @@ namespace Ui.Screens {
 		[SerializeField] private HudHitVignette _hudHitVignette;
 		[SerializeField] private HudHealVignette _hudHealVignette;
 		[SerializeField] private HudLowAmmoPanel _lowAmmoPanel;
+		[SerializeField] private HudDashPanel _dashPanel;
 
 		public static bool Active = true;
 
@@ -24,6 +25,7 @@ namespace Ui.Screens {
 			_hudHitVignette.Init();
 			_hudHealVignette.Init();
 			_lowAmmoPanel.Init();
+			_dashPanel.Init();
 		}
 	}
 }

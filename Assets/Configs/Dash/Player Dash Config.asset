@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abc84d217911dd4eb5e4e289b54b82f, type: 3}
   m_Name: Player Dash Config
   m_EditorClassIdentifier: 
+  _count: 3
   _magnitude: 300
-  _time: 1
+  _cooldown: 1
+  _restore: 2

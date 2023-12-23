@@ -26,6 +26,12 @@ namespace Player {
 		[SerializeField] private UnitAnimation _animation;
         [SerializeField] private Transform _gunsHolder;
 
+        public event Action DashChanged {
+			add => _dash.Changed += value;
+			remove => _dash.Changed -= value;            
+		}
+
+        public int DashCount => _dash.Count;
 
         public event Action OnDamage {
 			add => _damageable.OnDamage += value;
