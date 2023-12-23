@@ -2,6 +2,7 @@ using Root;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace SfxSystem {
     public class SfxController {
@@ -43,7 +44,7 @@ namespace SfxSystem {
 			Core.DataController.OnSave += ApplySettings;
 		}
 
-		public void Play(SfxType type, Vector3? position = null) {
+		public void Play(SfxType type, Vector3? position = null, float? customVolume = null) {
             if(!_soundsDictionary.TryGetValue(type, out SfxConfigItem item)) {
                 Debug.LogError($"sound is not found in dictionary: {type}");
                 return;
@@ -51,12 +52,14 @@ namespace SfxSystem {
 
             Sfx sfx = _sounds.Dequeue();
             if (position != null) sfx.transform.position = position.Value;
-            sfx.Play(item.Clip, item.Volume, item.PitchShift, is3d: position != null);
+
+            float volume = customVolume == null ? item.Volume : customVolume.Value * item.Volume;
+			sfx.Play(item.Clip, volume, item.PitchShift, is3d: position != null);
 
             _sounds.Enqueue(sfx);
         }
 
-        public void Dispose() {
+		public void Dispose() {
             Object.Destroy(_container.gameObject);
             _sounds.Clear();
             _soundsDictionary.Clear();

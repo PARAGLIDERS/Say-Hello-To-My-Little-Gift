@@ -12,6 +12,8 @@ namespace GunSystem {
         public static bool Endless;
 
         public event Action<Gun> NoAmmo;
+        public event Action<GunType, float> LowAmmo;
+
         public Color Color => _config.Color;
 		public GunType Type { get; private set; }
         public bool IsInfinite => Endless || _config.IsInfinite;
@@ -20,7 +22,7 @@ namespace GunSystem {
         public InputType InputType => _config.InputType;
         public int PickupAmmo => _config.PickupAmmo;
         public int InitialAmmo => _config.InitialAmmo;
-        public bool LowAmmo => Ammo <= _config.LowAmmo;
+        public bool IsLowAmmo => Ammo <= _config.LowAmmo;
 
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape
@@ -91,6 +93,10 @@ namespace GunSystem {
             }
 
 			Ammo--;
+
+            if (IsLowAmmo) {
+                LowAmmo?.Invoke(Type, 1.5f - (float)Ammo / _config.LowAmmo);
+            }
 
             if (Ammo <= 0) {
                 Ammo = 0;

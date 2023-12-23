@@ -19,6 +19,7 @@ namespace SfxSystem {
         EnemySpawn = 201,
         EnemySnowmanThrow = 202, 
         EnemyChickenExplode = 203, 
+        EnemySnowballHit = 204, 
 
         // vfx
         VfxExplosion = 300,
@@ -35,5 +36,10 @@ namespace SfxSystem {
         PlayerVoice_04 = 503,
         PlayerVoice_05 = 504,
         PlayerVoice_06 = 505,
+
+        // ammo
+        Ammo_Low_Bullets = 600,
+        Ammo_Low_Shells = 601,
+        NoAmmo = 603,
     }
 }

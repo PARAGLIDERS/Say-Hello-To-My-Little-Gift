@@ -16,5 +16,25 @@ MonoBehaviour:
   - Name: VfxHealPickup
     _type: 303
     _clip: {fileID: 8300000, guid: fe32422b5a3ce814a8e17a89a545832e, type: 3}
+    _volume: 0.9
+    _pitchShift: 0.149
+  - Name: EnemySnowballHit
+    _type: 204
+    _clip: {fileID: 8300000, guid: a4272a9fdacd1e048a0225fc15045c04, type: 3}
+    _volume: 0.6
+    _pitchShift: 0.149
+  - Name: Ammo_Low_Bullets
+    _type: 600
+    _clip: {fileID: 8300000, guid: 03012362f848bf24db35fb429026c966, type: 3}
+    _volume: 1
+    _pitchShift: 0.149
+  - Name: Ammo_Low_Shells
+    _type: 601
+    _clip: {fileID: 8300000, guid: cbaf300b227e2a04b9f9a4748e9666aa, type: 3}
+    _volume: 0.65
+    _pitchShift: 0.149
+  - Name: NoAmmo
+    _type: 603
+    _clip: {fileID: 8300000, guid: f93c1dae011ed6b4d87191cbd556c1db, type: 3}
     _volume: 1
     _pitchShift: 0.149

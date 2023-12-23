@@ -1,7 +1,6 @@
 using UnityEngine;
 
 namespace Bullets {
-	[RequireComponent(typeof(Rigidbody))]
 	public class Bullet : BulletBase {
         [SerializeField] private BulletConfig _config;
 		[SerializeField] private TrailRenderer _trail;

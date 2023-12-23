@@ -28,7 +28,7 @@ namespace GameStateMachine {
 				_current?.Exit();
 				_current = state;
 				_current?.Enter();
-				Debug.Log($"state changed to {stateType}");
+				//Debug.Log($"state changed to {stateType}");
 				return;
 			}
 			

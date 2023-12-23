@@ -25,7 +25,7 @@ namespace Ui.Components.Hud {
 		}
 
 		private void UpdateLabel(Gun gun) {
-			_label.color = _label.color.With(a: gun.LowAmmo ? 1 : 0);
+			_label.color = _label.color.With(a: gun.IsLowAmmo ? 1 : 0);
 		}
 	}
 }
