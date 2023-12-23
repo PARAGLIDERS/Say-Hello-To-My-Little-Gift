@@ -16,30 +16,30 @@ MonoBehaviour:
   - Name: PlayerVoice_01
     _type: 500
     _clip: {fileID: 8300000, guid: 52091a70b0c49d043a7918ade79373b8, type: 3}
-    _volume: 0.611
+    _volume: 0.838
     _pitchShift: 0.106
   - Name: PlayerVoice_02
     _type: 501
     _clip: {fileID: 8300000, guid: 50e4c83cd37053b46bfd3e861ef2f4a9, type: 3}
-    _volume: 0.611
+    _volume: 0.853
     _pitchShift: 0.106
   - Name: PlayerVoice_03
     _type: 502
     _clip: {fileID: 8300000, guid: 3514a81e25d68264492b0ad714579ac9, type: 3}
-    _volume: 0.611
+    _volume: 0.887
     _pitchShift: 0.106
   - Name: PlayerVoice_04
     _type: 503
     _clip: {fileID: 8300000, guid: 39bedbdf5ba7d7a4f8e12d4815ddd474, type: 3}
-    _volume: 0.611
+    _volume: 0.848
     _pitchShift: 0.106
   - Name: PlayerVoice_05
     _type: 504
     _clip: {fileID: 8300000, guid: bf89a6137cae62741b0a227e9aefde52, type: 3}
-    _volume: 0.611
+    _volume: 0.867
     _pitchShift: 0.106
   - Name: PlayerVoice_06
     _type: 505
     _clip: {fileID: 8300000, guid: 3751dbbdbf6b28e4faa8ee1572e833b1, type: 3}
-    _volume: 0.611
+    _volume: 0.853
     _pitchShift: 0.106

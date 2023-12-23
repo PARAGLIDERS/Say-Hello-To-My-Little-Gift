@@ -5,12 +5,21 @@ namespace Root {
 		[SerializeField] private Gradient _colorGradient;
 
 		private float deltaTime = 0.0f;
-
+		private bool _isActive => Core.DataController?.Data.Settings.Gameplay.FpsCounter ?? false;
+		
 		private void Update() {
+			if (!_isActive) {
+				return;
+			}
+
 			deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
 		}
 
 		private void OnGUI() {
+			if(!_isActive) {
+				return;
+			}
+
 			int w = Screen.width, h = Screen.height;
 			GUIStyle style = new GUIStyle();
 			Rect rect = new Rect(0, 0, w, h * 2 / 100);

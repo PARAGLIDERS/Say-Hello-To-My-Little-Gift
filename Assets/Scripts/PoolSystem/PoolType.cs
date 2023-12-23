@@ -18,6 +18,7 @@ namespace PoolSystem {
         VFX_GunPickupVfx = 106,
         VFX_ChickenExplosion = 107,
         VFX_PenguinExplosion = 108,
+        VFX_PropExplosion = 109,
 
         // bullets
         Bullet_Pistol = 200,
@@ -69,5 +70,7 @@ namespace PoolSystem {
         // heal
         Heal = 666, //:)
         HealVfx = 667,
+
+        Empty = 999999999,
 	}
 }

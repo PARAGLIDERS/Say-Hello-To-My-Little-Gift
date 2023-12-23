@@ -28,6 +28,8 @@ namespace PoolSystem {
         }
 
         public PoolObject Spawn(PoolType type, Vector3 position, Quaternion rotation, Action onActivate = null, Action onDeactivate = null) {
+            if(type == PoolType.Empty) return null;
+
             if(!_pools.TryGetValue(type, out Pool pool)) {
                 Debug.LogError($"no such pool in dictionary: {type}");
                 return null;

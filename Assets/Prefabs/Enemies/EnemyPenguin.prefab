@@ -9745,11 +9745,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_Size.x
-      value: 2.01
+      value: 3.0419888
+      objectReference: {fileID: 0}
+    - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Size.y
+      value: 7.8392606
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_Size.z
-      value: 2.86
+      value: 4.834066
+      objectReference: {fileID: 0}
+    - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Center.y
+      value: 3.965133
+      objectReference: {fileID: 0}
+    - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Center.z
+      value: -0.33651853
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714132, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: _config
