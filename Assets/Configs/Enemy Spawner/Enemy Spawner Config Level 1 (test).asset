@@ -24,14 +24,14 @@ MonoBehaviour:
     _waves:
     - _name: Wave 1
       _delay: 0
-      _enemyCount: 20
+      _enemyCount: 1
       _period: 1
       _units:
       - _name: 'Snowman : 100%'
         _type: 0
         _chance: 100
     - _name: Wave 2
-      _delay: 0
+      _delay: 100
       _enemyCount: 20
       _period: 1
       _units:

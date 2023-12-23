@@ -15,5 +15,5 @@ MonoBehaviour:
   _damage: 5
   _lifetime: 5
   _explosionType: 407
-  _force: 40
-  _gravity: 1
+  _force: 60
+  _gravity: 2.8
