@@ -17,7 +17,7 @@ MonoBehaviour:
   _name: Minigun
   _spread: 0.08
   _fireRate: 20
-  _bulletsPerShot: 3
+  _bulletsPerShot: 5
   _bulletType: 206
   _shotSound: 107
   _muzzleFlashType: 356
