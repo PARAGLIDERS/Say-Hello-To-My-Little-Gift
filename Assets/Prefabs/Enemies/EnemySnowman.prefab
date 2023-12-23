@@ -170,7 +170,7 @@ MonoBehaviour:
   _damageable: {fileID: 7536705900031883132}
   _animation: {fileID: 8125128598104495160}
   _agent: {fileID: 7536705900031883130}
-  _rotationSpeed: 5
+  _rotationSpeed: 7
   _attackDistance: 21
   _lookThreshold: 0.03
   _attackCooldown: 1

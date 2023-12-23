@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 4 DoubleShotgun
   m_EditorClassIdentifier: 
   _damage: 1
-  _lifetime: 0.5
+  _lifetime: 0.4
   _explosionType: 404
-  _speedMin: 80
+  _speedMin: 90
   _speedMax: 130

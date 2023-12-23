@@ -37,7 +37,7 @@ namespace Enemies {
 		}
 
 		private IEnumerator FinalCountdown() {
-            _agent.updatePosition = false;
+            //_agent.updatePosition = false;
             transform.DOScale(_maxScale, _boomTime).SetEase(_boomCurve);
             yield return new WaitForSeconds(_boomTime);
 

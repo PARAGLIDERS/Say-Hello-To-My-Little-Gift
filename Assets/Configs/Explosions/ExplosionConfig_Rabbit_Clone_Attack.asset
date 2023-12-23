@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a20d82d8968f854480078dd379b6af7, type: 3}
   m_Name: ExplosionConfig_Rabbit_Clone_Attack
   m_EditorClassIdentifier: 
-  _damage: 3
+  _damage: 5
   _radius: 2.73
   _layerMask:
     serializedVersion: 2

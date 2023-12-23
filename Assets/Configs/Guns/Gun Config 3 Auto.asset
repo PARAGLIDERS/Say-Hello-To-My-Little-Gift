@@ -16,7 +16,7 @@ MonoBehaviour:
   _isInfinite: 0
   _name: Tommy
   _spread: 0.042
-  _fireRate: 10
+  _fireRate: 12
   _bulletsPerShot: 1
   _bulletType: 203
   _shotSound: 104

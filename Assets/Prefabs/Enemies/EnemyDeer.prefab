@@ -5009,7 +5009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_Acceleration
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_AngularSpeed
@@ -5143,7 +5143,7 @@ MonoBehaviour:
   _damageable: {fileID: 7536705900031883132}
   _animation: {fileID: 8125128598104495160}
   _agent: {fileID: 7536705900031883130}
-  _rotationSpeed: 3
+  _rotationSpeed: 5
   _attackDistance: 3
   _lookThreshold: 0.5
   _attackCooldown: 1
