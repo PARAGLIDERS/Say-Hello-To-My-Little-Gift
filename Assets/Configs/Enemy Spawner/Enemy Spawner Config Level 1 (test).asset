@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
   m_Name: Enemy Spawner Config Level 1 (test)
   m_EditorClassIdentifier: 
-  _waveCooldown: 10
+  _waveCooldown: 5
   _gridConfig: {fileID: 11400000, guid: 12b42a84aaf49c844aeb5555b0b28a67, type: 2}
   _rounds:
   - _name: Round 1

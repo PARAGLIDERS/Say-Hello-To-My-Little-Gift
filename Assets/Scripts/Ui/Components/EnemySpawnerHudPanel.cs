@@ -54,7 +54,7 @@ namespace Ui.Components {
 
 		private void UpdateTitle() {
 			if (EnemySpawner.CurrentRound < EnemySpawner.MaxRounds - 1) {
-				_title.text = $"ROUND {EnemySpawner.CurrentRound}";
+				_title.text = $"ROUND {EnemySpawner.CurrentRound + 1}";
 			} else {
 				_title.text = $"LAST ROUND";
 			}
