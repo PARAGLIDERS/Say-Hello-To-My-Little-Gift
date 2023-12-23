@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fbc875e9eca5a48b42fefa6d112dda, type: 3}
   m_Name: Bullet Config 2 Shotgun
   m_EditorClassIdentifier: 
-  _damage: 2
-  _lifetime: 0.5
+  _damage: 1
+  _lifetime: 0.4
   _explosionType: 402
-  _speedMin: 80
+  _speedMin: 90
   _speedMax: 130

@@ -15,9 +15,9 @@ MonoBehaviour:
   _color: {r: 0.2783019, g: 0.47075453, b: 1, a: 1}
   _isInfinite: 0
   _name: Shotgun
-  _spread: 0.11
+  _spread: 0.135
   _fireRate: 1
-  _bulletsPerShot: 9
+  _bulletsPerShot: 21
   _bulletType: 202
   _shotSound: 103
   _muzzleFlashType: 352

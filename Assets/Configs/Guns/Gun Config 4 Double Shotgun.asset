@@ -15,9 +15,9 @@ MonoBehaviour:
   _color: {r: 1, g: 0.25943398, b: 0.25943398, a: 1}
   _isInfinite: 0
   _name: Boomstick
-  _spread: 0.21
+  _spread: 0.249
   _fireRate: 1
-  _bulletsPerShot: 18
+  _bulletsPerShot: 38
   _bulletType: 204
   _shotSound: 105
   _muzzleFlashType: 354

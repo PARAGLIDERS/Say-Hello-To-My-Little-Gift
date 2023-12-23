@@ -9,15 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
-      propertyPath: m_Acceleration
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
+      propertyPath: m_Acceleration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 849597675664714130, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_StoppingDistance
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714131, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_Size.z
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: f29a83a960bdea84a8802b32342c5bf8, type: 2}
+  _self: {fileID: 0}
 --- !u!114 &8825687128029400017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   _animation: {fileID: 8125128598104495160}
   _agent: {fileID: 7536705900031883130}
   _rotationSpeed: 5
-  _attackDistance: 5
+  _attackDistance: 3
   _lookThreshold: 0.03
   _attackCooldown: 0
   _boomTime: 1

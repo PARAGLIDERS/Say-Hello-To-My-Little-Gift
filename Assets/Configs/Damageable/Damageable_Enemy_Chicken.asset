@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5079dfbeb97b07e48ae053f75b79649d, type: 3}
   m_Name: Damageable_Enemy_Chicken
   m_EditorClassIdentifier: 
-  _maxHealth: 2
+  _maxHealth: 3
   _dieParticles: 107
   _dieFloorDecals: 103
   _dieSfx: 300
-  _deathDelay: 0.05
+  _deathDelay: 0.03
