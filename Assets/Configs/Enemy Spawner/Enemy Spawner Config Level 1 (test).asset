@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
   m_Name: Enemy Spawner Config Level 1 (test)
   m_EditorClassIdentifier: 
-  _waveCooldown: 5
+  _waveCooldown: 2.5
   _gridConfig: {fileID: 11400000, guid: 12b42a84aaf49c844aeb5555b0b28a67, type: 2}
   _rounds:
   - _name: Round 1
@@ -42,21 +42,31 @@ MonoBehaviour:
       _enemyCount: 20
       _period: 1
       _units:
-      - _name: 'Snowman : 16%'
+      - _name: 'Snowman : 100%'
         _type: 0
         _chance: 100
-      - _name: 'Penguin : 16%'
-        _type: 4
+    - _name: Wave 2
+      _delay: 0
+      _enemyCount: 50
+      _period: 1
+      _units:
+      - _name: 'Snowman : 50%'
+        _type: 0
         _chance: 100
-      - _name: 'Rabbit : 16%'
-        _type: 5
-        _chance: 100
-      - _name: 'Chicken : 16%'
+      - _name: 'Chicken : 50%'
         _type: 1
         _chance: 100
-      - _name: 'Deer : 16%'
-        _type: 2
+    - _name: Wave 3
+      _delay: 0
+      _enemyCount: 75
+      _period: 1
+      _units:
+      - _name: 'Snowman : 33%'
+        _type: 0
         _chance: 100
-      - _name: 'Owl : 16%'
-        _type: 3
+      - _name: 'Chicken : 33%'
+        _type: 1
+        _chance: 100
+      - _name: 'Deer : 33%'
+        _type: 2
         _chance: 100

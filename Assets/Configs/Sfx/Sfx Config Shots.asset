@@ -16,45 +16,45 @@ MonoBehaviour:
   - Name: ShotDry
     _type: 100
     _clip: {fileID: 8300000, guid: f93c1dae011ed6b4d87191cbd556c1db, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.116
   - Name: ShotPistol
     _type: 101
     _clip: {fileID: 8300000, guid: e683b11c2d10ce34fb20970a68cf1537, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.116
   - Name: ShotUzi
     _type: 102
     _clip: {fileID: 8300000, guid: 0b01107d69f78ec43952cda0023fe96b, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.135
   - Name: ShotShotgun
     _type: 103
     _clip: {fileID: 8300000, guid: 3fc4998d3e21b9b4e8eb4cf3df1fc847, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.131
   - Name: ShotAuto
     _type: 104
     _clip: {fileID: 8300000, guid: e7ec1c6e70b695c48af6446151602748, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.119
   - Name: ShotDoubleShotgun
     _type: 105
     _clip: {fileID: 8300000, guid: 7e0c4faca00457e4094a1f51213f053b, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.15
   - Name: ShotRocketLauncher
     _type: 106
     _clip: {fileID: 8300000, guid: a2919ec3b7614d14bab7fbf819306659, type: 3}
-    _volume: 1
+    _volume: 0.7
     _pitchShift: 0.108
   - Name: ShotMinigun
     _type: 107
     _clip: {fileID: 8300000, guid: d6567dfd76974ff42a70b6f0ca93155d, type: 3}
-    _volume: 0.554
+    _volume: 0.2
     _pitchShift: 0.146
   - Name: EnemySnowmanThrow
     _type: 202
     _clip: {fileID: 8300000, guid: 95c7015ba0b930f47ab952bc0150523c, type: 3}
-    _volume: 0.554
+    _volume: 0.7
     _pitchShift: 0.146

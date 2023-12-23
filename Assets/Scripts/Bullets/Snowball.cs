@@ -1,3 +1,4 @@
+using Root;
 using UnityEngine;
 
 namespace Bullets {
@@ -10,11 +11,17 @@ namespace Bullets {
 
 		public override void Activate(Vector3 position, Quaternion rotation) {
             base.Activate(position, rotation);
-            _rigidbody.AddForce(transform.forward * (_config as ProjectileConfig).Force, ForceMode.Impulse);
+            _rigidbody.AddForce(transform.forward * _config.Force, ForceMode.Impulse);
         }
 
-        private void FixedUpdate() {
-            _rigidbody.velocity -= Vector3.up * (_config as ProjectileConfig).Gravity;
+		protected override void Despawn() {
+			base.Despawn();
+			Core.SfxController.Play(SfxSystem.SfxType.EnemySnowballHit);
+		}
+
+
+		private void FixedUpdate() {
+            _rigidbody.velocity -= Vector3.up * _config.Gravity;
         }
-    }
+	}
 }

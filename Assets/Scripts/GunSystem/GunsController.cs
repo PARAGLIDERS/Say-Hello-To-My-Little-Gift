@@ -1,5 +1,6 @@
 using Player;
 using Root;
+using SfxSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace GunSystem {
 
         private readonly Dictionary<GunType, Gun> _gunsDictionary;
         private int _currentIndex;
+        private bool _afterSwitch;
 
         public GunsController(GunsControllerConfig config, PlayerController player) {
             AvailableGuns = new List<Gun>();
@@ -30,6 +32,7 @@ namespace GunSystem {
                 Gun gun = GameObject.Instantiate(item.Prefab, player.GunsHolder);
                 gun.Init(item.Type);
                 gun.NoAmmo += HandleNoAmmo;
+                gun.LowAmmo += HandleLowAmmo;
                 gun.Deactivate();
 
                 _gunsDictionary.Add(item.Type, gun);
@@ -85,6 +88,15 @@ namespace GunSystem {
             }
 
             if (Current == null) return;
+            
+            // fixing scroll-shooting :)
+            if (_afterSwitch) {
+                if (Input.GetMouseButton(0)) {
+                    return;
+                }
+                _afterSwitch = false;
+            }
+
             if (!GetInput(Current.InputType)) return;
 
             Current.Shoot();
@@ -127,6 +139,7 @@ namespace GunSystem {
             _currentIndex = AvailableGuns.IndexOf(Current);
 
             OnSwitch?.Invoke(Current);
+            _afterSwitch = true;
         }
 
         private void Sort() {
@@ -134,6 +147,7 @@ namespace GunSystem {
         }
 
 		private void HandleNoAmmo(Gun gun) {
+            Core.SfxController.Play(SfxType.NoAmmo);
             OnAmmoChange?.Invoke(gun);
 
             if(_currentIndex == AvailableGuns.Count - 1) {
@@ -141,6 +155,19 @@ namespace GunSystem {
             } else {
                 Scroll(1);
             }
+		}
+
+        private void HandleLowAmmo(GunType type, float value) {
+            SfxType sound = SfxType.Ammo_Low_Bullets;
+
+			switch (type) {
+				case GunType.Shotgun:
+				case GunType.DoubleShotgun:
+					sound = SfxType.Ammo_Low_Shells;
+					break;
+			}
+
+            Core.SfxController.Play(sound, customVolume: value);
 		}
 	}
 }
