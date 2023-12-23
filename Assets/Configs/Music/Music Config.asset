@@ -17,7 +17,7 @@ MonoBehaviour:
   - name: Menu
     _type: 0
     _clip: {fileID: 8300000, guid: 34fb635dc036d884db629964a85f2fff, type: 3}
-    _volume: 0.066
+    _volume: 0.41
   - name: Level1
     _type: 1
     _clip: {fileID: 8300000, guid: d78687152fd3cf0409a2752eb73e9d66, type: 3}
@@ -29,8 +29,4 @@ MonoBehaviour:
   - name: Level3
     _type: 3
     _clip: {fileID: 8300000, guid: 87d78ef706fb80043b4353ba14c5984b, type: 3}
-    _volume: 0.332
-  - name: PlayerDeath
-    _type: 4
-    _clip: {fileID: 8300000, guid: 6b77488b47d66e249a830a0fc42933b7, type: 3}
     _volume: 0.332
