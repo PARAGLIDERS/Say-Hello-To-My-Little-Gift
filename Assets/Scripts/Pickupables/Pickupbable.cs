@@ -9,7 +9,7 @@ namespace Pickupables {
 		[SerializeField] private PoolType _pickupEffect;
 
 		private const float _distanceToPlayer = 50f;
-		private const float _lifetime = 25f;
+		private const float _lifetime = 5f;
 		
 		private float _currentLifetime;
 
