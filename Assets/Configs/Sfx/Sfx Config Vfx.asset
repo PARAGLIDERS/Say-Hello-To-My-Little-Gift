@@ -26,7 +26,7 @@ MonoBehaviour:
   - Name: VfxExplosion
     _type: 300
     _clip: {fileID: 8300000, guid: e5e2108d877787d4c8a80e9e52d2f86c, type: 3}
-    _volume: 1
+    _volume: 0.9
     _pitchShift: 0.184
   - Name: VfxGunPickup
     _type: 302

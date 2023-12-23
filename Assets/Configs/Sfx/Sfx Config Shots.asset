@@ -51,7 +51,7 @@ MonoBehaviour:
   - Name: ShotMinigun
     _type: 107
     _clip: {fileID: 8300000, guid: d6567dfd76974ff42a70b6f0ca93155d, type: 3}
-    _volume: 0.2
+    _volume: 0.3
     _pitchShift: 0.146
   - Name: EnemySnowmanThrow
     _type: 202
