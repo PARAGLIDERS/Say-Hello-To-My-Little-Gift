@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2508883951782272289}
   - component: {fileID: 1548819616097505924}
   - component: {fileID: 3646354898275460686}
-  - component: {fileID: 7708418200300218052}
   m_Layer: 10
   m_Name: trackCornerSmall
   m_TagString: Untagged
@@ -85,17 +84,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7708418200300218052
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997858060281137051}
-  m_Material: {fileID: 13400000, guid: 50ac2379ddf82a84597ab21f98261730, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3234293197452527163, guid: 4789e5ac774872c46815dd5560735593, type: 3}
