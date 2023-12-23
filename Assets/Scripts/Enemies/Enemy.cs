@@ -64,6 +64,7 @@ namespace Enemies {
 		}
 
 		protected virtual void Move() {
+			if (!_agent.enabled) return;
 			Vector3 playerPosition = Core.LevelController.Player.Position;
 			_agent?.SetDestination(playerPosition);
 		}
