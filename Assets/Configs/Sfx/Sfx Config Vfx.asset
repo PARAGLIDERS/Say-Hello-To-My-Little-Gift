@@ -38,3 +38,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 15c4e303075a79745800d7a86b08a266, type: 3}
     _volume: 1
     _pitchShift: 0.199
+  - Name: EnemyPenguinExplode
+    _type: 205
+    _clip: {fileID: 8300000, guid: 1fa4202111c4439409d50df70a91a24b, type: 3}
+    _volume: 1
+    _pitchShift: 0.199

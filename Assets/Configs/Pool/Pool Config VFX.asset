@@ -37,3 +37,7 @@ MonoBehaviour:
     _size: 50
     _type: 107
     _prefab: {fileID: 5175640084872236731, guid: 7932cedf615e0a642a678b446a38c953, type: 3}
+  - Name: VFX_Firework
+    _size: 50
+    _type: 110
+    _prefab: {fileID: 5411087127070163635, guid: 78cce8acc64416842afaa1e9870a1b4f, type: 3}

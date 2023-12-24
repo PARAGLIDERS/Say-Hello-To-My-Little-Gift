@@ -19,6 +19,7 @@ namespace PoolSystem {
         VFX_ChickenExplosion = 107,
         VFX_PenguinExplosion = 108,
         VFX_PropExplosion = 109,
+        VFX_Firework = 110,
 
         // bullets
         Bullet_Pistol = 200,

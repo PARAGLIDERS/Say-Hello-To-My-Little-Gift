@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 5.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.78
+      scalar: 0.35
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4991,7 +4991,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 5.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5107,7 +5107,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.78
+      scalar: 0.35
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9592,7 +9592,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d58738651188348488972f67f4eb429b, type: 2}
+  - {fileID: 2100000, guid: 3873d797491658b44b28b246c5234b4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9777,7 +9777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 26.4
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9785,7 +9785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -42.9
       objectReference: {fileID: 0}
     - target: {fileID: 849597675664714133, guid: 60020d7df60522d46ba77b26d1dfbb29, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9927,9 +9927,9 @@ MonoBehaviour:
   _agent: {fileID: 7536705900031883130}
   _rotationSpeed: 10
   _attackDistance: 5
-  _lookThreshold: 0
-  _attackCooldown: 0.5
-  _explosion: {fileID: 2116674456294791400}
+  _lookThreshold: 0.5
+  _attackCooldown: 2
+  trigger: {fileID: 1372835850318278252}
 --- !u!114 &7827350989980974784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9961,6 +9961,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 538809544711150027}
     m_Modifications:
+    - target: {fileID: 5554582867492224965, guid: 794822c99789c45f0ade9216ad07be9a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3873d797491658b44b28b246c5234b4d, type: 2}
+    - target: {fileID: 5554582867492224965, guid: 794822c99789c45f0ade9216ad07be9a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7d56008f0adfc64491c1ade39a14a2f, type: 2}
+    - target: {fileID: 5554582867492224965, guid: 794822c99789c45f0ade9216ad07be9a, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8155e4ed8bf8b8f40b4510b5665c9927, type: 2}
+    - target: {fileID: 5554582867492224965, guid: 794822c99789c45f0ade9216ad07be9a, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35c9ea28394e6fd4dbc20b358305682b, type: 2}
     - target: {fileID: 5554582867494478085, guid: 794822c99789c45f0ade9216ad07be9a, type: 3}
       propertyPath: m_Name
       value: 030 Xmas_Crackers

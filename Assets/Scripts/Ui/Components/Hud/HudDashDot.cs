@@ -8,6 +8,10 @@ namespace Ui.Components.Hud {
 
 		private bool _isActive = true;
 
+		public void Hide() {
+			_canvasGroup.alpha = 0f;
+		}
+
 		public void SetActive(bool isActive) {
 			if(_isActive == isActive) return; 
 
