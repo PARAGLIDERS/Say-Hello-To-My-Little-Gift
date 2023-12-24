@@ -14,7 +14,7 @@ namespace Enemies {
 		[SerializeField] private float _rotationSpeed;
 		[SerializeField] protected float _attackDistance;
 		[SerializeField] private float _lookThreshold = 0.03f;
-		[SerializeField] private float _attackCooldown;
+		[SerializeField] protected float _attackCooldown;
 
 		private UnitRotation _rotation;
 		private EnemyAttack _attack;

@@ -16,8 +16,7 @@ namespace Ui.Screens {
 		}
 
 		private void HandleContinueButton() {
-			//Core.StateController.SetState(GameStateMachine.StateType.NextLevel);
-			Core.UiController.Show(UiScreenType.Ending);
+			Core.StateController.SetState(GameStateMachine.StateType.NextLevel);
 		}
 
 		private void HandleQuitButton() {

@@ -20,6 +20,7 @@ namespace SfxSystem {
         EnemySnowmanThrow = 202, 
         EnemyChickenExplode = 203, 
         EnemySnowballHit = 204, 
+        EnemyPenguinExplode = 205, 
 
         // vfx
         VfxExplosion = 300,

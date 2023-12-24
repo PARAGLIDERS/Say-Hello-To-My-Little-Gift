@@ -15,6 +15,7 @@ namespace Ui.Components.Hud {
 		public void Init() {
 			for (int i = 0; i < _config.Count; i++) {
 				var dot = Instantiate(_dotPrefab, _container);
+				if(i >= _count) dot.Hide();
 				_dots.Add(dot);
 			}
 
