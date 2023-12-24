@@ -9,7 +9,10 @@ namespace PoolSystem {
 		public event Action OnDeactivate;
 
 		public virtual void Hide() {
+			IsActive = false;
 			gameObject.SetActive(false);
+            OnActivate = null;
+			OnDeactivate = null;
 		}
 
 		public virtual void Activate(Vector3 position, Quaternion rotation) {
