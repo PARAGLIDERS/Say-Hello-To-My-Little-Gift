@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
+  m_Name: Enemy Spawner Config Level 2 Release
+  m_EditorClassIdentifier: 
+  _waveCooldown: 0
+  _gridConfig: {fileID: 11400000, guid: e1f634cb96eaf9b4f8cf19100c01c8b6, type: 2}
+  _rounds:
+  - _name: Round 1
+    _delay: 0
+    _guns: []
+    _waves: []
+  - _name: Round 2
+    _delay: 0
+    _guns: []
+    _waves: []
+  - _name: Round 3
+    _delay: 0
+    _guns: []
+    _waves: []

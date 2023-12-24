@@ -35,7 +35,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: a0719c68f44d42e4ab4168a34e62634b, type: 3}
     _sceneIndex: 4
     _musicType: 3
-    _enemySpawnerConfig: {fileID: 11400000, guid: 6000234c0e1181d4185858cb891e139a, type: 2}
+    _enemySpawnerConfig: {fileID: 11400000, guid: 157aaa0f7f9c5f54f9bb2aba721de156, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: c06c9b2f03fe3f04dbcee67d09269998, type: 2}
     _healSpawnerGridConfig: {fileID: 11400000, guid: 33c04589cfacbff4e99fbf4da7d7fdd9, type: 2}
     _description: All aboard!
