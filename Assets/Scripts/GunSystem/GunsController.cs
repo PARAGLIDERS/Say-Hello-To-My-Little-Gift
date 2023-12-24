@@ -43,6 +43,7 @@ namespace GunSystem {
                     continue;
                 }
 
+                gun.Available = false;
                 gun.ResetAmmo();
             }
 
@@ -56,10 +57,10 @@ namespace GunSystem {
 			if (!gun.Available) {
                 gun.Available = true;
                 SwitchTo(gun);
-                gun.ResetAmmo();
+                gun.Pickup(true);
 	    		ammo = gun.InitialAmmo;
             } else {
-                gun.Pickup();
+                gun.Pickup(false);
 	    		ammo = gun.PickupAmmo;
 			}
 

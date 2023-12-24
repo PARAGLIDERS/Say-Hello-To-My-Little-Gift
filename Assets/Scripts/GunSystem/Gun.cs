@@ -38,11 +38,11 @@ namespace GunSystem {
 		}
 
         public void ResetAmmo() {
-            Ammo = _config.InitialAmmo;
+            Ammo = 0;
         }
 
-        public void Pickup() {
-            Ammo += _config.PickupAmmo;
+        public void Pickup(bool firstTime) {
+            Ammo += firstTime ? _config.InitialAmmo : _config.PickupAmmo;
             _dryShotPlayed = false;
         }
 
