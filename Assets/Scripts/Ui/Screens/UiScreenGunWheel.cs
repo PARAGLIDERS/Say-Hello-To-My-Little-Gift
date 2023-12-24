@@ -50,8 +50,6 @@ namespace Ui.Screens {
 
 			for (int i = 0; i < _items.Count; i++) {
 				GunWheelItem item = _items[i];
-				item.Deactivate();
-
 				float angle = Mathf.Abs(Vector2.Angle(direction, item.Direction));
 
 				if (angle < minAngle) {
@@ -60,6 +58,8 @@ namespace Ui.Screens {
 				}
 			}
 
+			if (_selected == index) return;
+			_items[_selected].Deactivate();
 			_items[index].Activate();
 			_selected = index;
 		}

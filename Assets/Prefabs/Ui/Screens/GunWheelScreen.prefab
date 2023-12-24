@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiScreenBack
       objectReference: {fileID: 0}
+    - target: {fileID: 5545267332568647427, guid: 5a57d809e32e7aa43b7dcd60f405e13e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a57d809e32e7aa43b7dcd60f405e13e, type: 3}
 --- !u!224 &3866717462510185795 stripped
