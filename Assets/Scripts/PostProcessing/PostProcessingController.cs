@@ -16,6 +16,7 @@ namespace PostProcessing {
 			Core.DataController.OnSave -= ApplySettings;
 			SetActiveDepthOfField(false);
 			SetActiveGreyScale(false);
+			SetActiveExposure(false);
 		}
 
 		public void SetActiveDepthOfField(bool active) {
@@ -24,6 +25,10 @@ namespace PostProcessing {
 
 		public void SetActiveGreyScale(bool active) {
 			_profile.GetSetting<ColorGrading>().saturation.overrideState = active;
+		}
+
+		public void SetActiveExposure(bool active) {
+			_profile.GetSetting<ColorGrading>().postExposure.overrideState = active;
 		}
 
 		public void ApplySettings() {
