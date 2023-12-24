@@ -26,7 +26,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: 4ae8951513c9fe34ea8794cfebd6e11b, type: 3}
     _sceneIndex: 3
     _musicType: 2
-    _enemySpawnerConfig: {fileID: 11400000, guid: 1f2cd94796e005742bd576bba2930496, type: 2}
+    _enemySpawnerConfig: {fileID: 11400000, guid: b3433adc04142d94c93fa431b2541711, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 8f34f7fee2e19fc49a5eba4151618d90, type: 2}
     _healSpawnerGridConfig: {fileID: 11400000, guid: ddd3c9ba4997e344fb8f110df7dfdbbf, type: 2}
     _description: Rocks and Stones

@@ -12,18 +12,156 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197d8017634193bac157e7b3f32d6b, type: 3}
   m_Name: Enemy Spawner Config Level 2 Release
   m_EditorClassIdentifier: 
-  _waveCooldown: 0
+  _waveCooldown: 2
   _gridConfig: {fileID: 11400000, guid: e1f634cb96eaf9b4f8cf19100c01c8b6, type: 2}
   _rounds:
   - _name: Round 1
-    _delay: 0
-    _guns: []
-    _waves: []
+    _delay: 2
+    _guns:
+    - _name: 'Auto : 30%'
+      _type: 3
+      _chance: 28
+    - _name: 'DoubleShotgun : 30%'
+      _type: 4
+      _chance: 28
+    - _name: 'RocketLauncher : 20%'
+      _type: 5
+      _chance: 19
+    - _name: 'Shotgun : 17%'
+      _type: 2
+      _chance: 16
+    _waves:
+    - _name: Wave 1
+      _delay: 2
+      _enemyCount: 50
+      _period: 0.8
+      _units:
+      - _name: 'Owl : 30%'
+        _type: 3
+        _chance: 24
+      - _name: 'Snowman : 49%'
+        _type: 0
+        _chance: 39
+      - _name: 'Rabbit : 20%'
+        _type: 5
+        _chance: 16
+    - _name: Wave 2
+      _delay: 2
+      _enemyCount: 50
+      _period: 0.7
+      _units:
+      - _name: 'Owl : 25%'
+        _type: 3
+        _chance: 21
+      - _name: 'Deer : 16%'
+        _type: 2
+        _chance: 13
+      - _name: 'Rabbit : 22%'
+        _type: 5
+        _chance: 18
+      - _name: 'Snowman : 28%'
+        _type: 0
+        _chance: 23
+      - _name: 'Chicken : 7%'
+        _type: 1
+        _chance: 6
   - _name: Round 2
-    _delay: 0
-    _guns: []
-    _waves: []
+    _delay: 5
+    _guns:
+    - _name: 'Minigun : 25%'
+      _type: 6
+      _chance: 23
+    - _name: 'RocketLauncher : 30%'
+      _type: 5
+      _chance: 28
+    - _name: 'DoubleShotgun : 22%'
+      _type: 4
+      _chance: 21
+    - _name: 'Auto : 16%'
+      _type: 3
+      _chance: 15
+    - _name: 'Shotgun : 5%'
+      _type: 2
+      _chance: 5
+    _waves:
+    - _name: Wave 1
+      _delay: 0
+      _enemyCount: 60
+      _period: 0.6
+      _units:
+      - _name: 'Penguin : 30%'
+        _type: 4
+        _chance: 22
+      - _name: 'Rabbit : 15%'
+        _type: 5
+        _chance: 11
+      - _name: 'Deer : 15%'
+        _type: 2
+        _chance: 11
+      - _name: 'Chicken : 39%'
+        _type: 1
+        _chance: 29
+    - _name: Wave 2
+      _delay: 0
+      _enemyCount: 60
+      _period: 0.5
+      _units:
+      - _name: 'Owl : 32%'
+        _type: 3
+        _chance: 24
+      - _name: 'Rabbit : 12%'
+        _type: 5
+        _chance: 9
+      - _name: 'Penguin : 25%'
+        _type: 4
+        _chance: 19
+      - _name: 'Snowman : 29%'
+        _type: 0
+        _chance: 22
   - _name: Round 3
-    _delay: 0
-    _guns: []
-    _waves: []
+    _delay: 3
+    _guns:
+    - _name: 'Minigun : 38%'
+      _type: 6
+      _chance: 43
+    - _name: 'RocketLauncher : 38%'
+      _type: 5
+      _chance: 44
+    - _name: 'DoubleShotgun : 20%'
+      _type: 4
+      _chance: 23
+    - _name: 'Auto : 2%'
+      _type: 3
+      _chance: 3
+    _waves:
+    - _name: Wave 1
+      _delay: 1
+      _enemyCount: 40
+      _period: 0.2
+      _units:
+      - _name: 'Snowman : 54%'
+        _type: 0
+        _chance: 88
+      - _name: 'Rabbit : 35%'
+        _type: 5
+        _chance: 58
+      - _name: 'Chicken : 9%'
+        _type: 1
+        _chance: 16
+    - _name: Wave 2
+      _delay: 2
+      _enemyCount: 50
+      _period: 0.5
+      _units:
+      - _name: 'Deer : 11%'
+        _type: 2
+        _chance: 13
+      - _name: 'Rabbit : 24%'
+        _type: 5
+        _chance: 28
+      - _name: 'Snowman : 44%'
+        _type: 0
+        _chance: 50
+      - _name: 'Penguin : 19%'
+        _type: 4
+        _chance: 22
