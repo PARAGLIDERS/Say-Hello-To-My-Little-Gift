@@ -6,6 +6,7 @@ namespace GameStateMachine {
 	public class StateController {
 		private readonly Dictionary<StateType, IState> _states;
 		private IState _current;
+		private bool _locked;
 
 		public StateController() {
 			_states = new Dictionary<StateType, IState>() {
@@ -25,6 +26,7 @@ namespace GameStateMachine {
 		}
 
 		public void SetState(StateType stateType) {
+			if(_locked) return;
 			if (_states.TryGetValue(stateType, out IState state)) {
 				_current?.Exit();
 				_current = state;
@@ -38,6 +40,14 @@ namespace GameStateMachine {
 
 		public void Update() {
 			_current?.Update();
+		}
+
+		public void Lock() {
+			_locked = true;
+		}
+
+		public void Unlock() {
+			_locked = false;
 		}
 	}
 

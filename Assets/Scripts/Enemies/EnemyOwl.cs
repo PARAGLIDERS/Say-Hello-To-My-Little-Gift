@@ -1,5 +1,6 @@
 ﻿using DamageSystem;
 using DG.Tweening;
+using Root;
 using System.Collections;
 using UnityEngine;
 
@@ -38,6 +39,7 @@ namespace Enemies {
 			_rigidbody.isKinematic = false;
 			_rigidbody.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
 			_dashParticles.Play();
+			Core.SfxController.Play(SfxSystem.SfxType.Dash);
 			StartCoroutine(DashCooldown());
 		}
 

@@ -38,3 +38,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: f93c1dae011ed6b4d87191cbd556c1db, type: 3}
     _volume: 1
     _pitchShift: 0.149
+  - Name: Dash
+    _type: 700
+    _clip: {fileID: 8300000, guid: 317f8166b9f3dab4b9d93861b22e710d, type: 3}
+    _volume: 1
+    _pitchShift: 0.149

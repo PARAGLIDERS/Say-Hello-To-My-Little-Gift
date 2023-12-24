@@ -42,5 +42,6 @@ namespace Music {
 		Level2 = 2,
 		Level3 = 3,
 		PlayerDeath = 4,
+		Win = 5,
 	}
 }

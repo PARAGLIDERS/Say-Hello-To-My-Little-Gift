@@ -3,22 +3,18 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 namespace GameStateMachine.States {
-	public class StateFail : IState {
-		public async void Enter() {
-			Time.timeScale = 0.3f;
-			Core.LevelController.Pause();
+	public class StateFail : StateFinishLevel {
+		protected override void HandleBeforeEnterDelay() {
 			Core.MusicController.Play(Music.MusicClipType.PlayerDeath, false);
-			Core.UiController.Show(Ui.UiScreenType.Prefail);
 			Core.PostProcessingController.SetActiveGreyScale(true);
-			await Task.Delay(2000);
+		}
+
+		protected override void HandleAfterEnterDelay() {
 			Core.UiController.Show(Ui.UiScreenType.Fail);
 		}
 
-		public void Exit() {
-			Time.timeScale = 1f;
+		protected override void HandleExit() {
 			Core.PostProcessingController.SetActiveGreyScale(false);
 		}
-
-		public void Update() {}
 	}
 }

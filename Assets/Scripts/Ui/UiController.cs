@@ -60,7 +60,7 @@ namespace Ui {
 		Fail = 7,
 		ChooseLevel = 8,
 		Ending = 9,
-		Prefail = 10,
+		PreFinish = 10,
 		GunWheel = 11,
 	}
 }

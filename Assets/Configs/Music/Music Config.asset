@@ -34,3 +34,7 @@ MonoBehaviour:
     _type: 4
     _clip: {fileID: 8300000, guid: 7ed03a2ffaef5dd4fa071efe03c371a1, type: 3}
     _volume: 0.465
+  - name: Win
+    _type: 5
+    _clip: {fileID: 8300000, guid: c7c39be826942cb408f7f60ee5d96b7e, type: 3}
+    _volume: 0.465

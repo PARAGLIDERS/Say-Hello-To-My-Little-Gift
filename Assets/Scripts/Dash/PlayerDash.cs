@@ -49,6 +49,7 @@ namespace Dash {
 			_particles.Play();
 			Count--;
 			Changed?.Invoke();
+			Core.SfxController.Play(SfxSystem.SfxType.Dash);
 		}
 	}
 }

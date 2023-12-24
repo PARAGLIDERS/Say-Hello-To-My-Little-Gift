@@ -1,19 +1,19 @@
 ﻿using Root;
-using UnityEngine;
 
 namespace GameStateMachine.States {
-	public class StateWin : IState {
-		public void Enter() {
+	public class StateWin : StateFinishLevel {
+		protected override void HandleBeforeEnterDelay() {
 			Core.LevelController.Win();
-			Core.MusicController.Stop(); // play some win sound
-			Time.timeScale = 0f;
+			Core.MusicController.Play(Music.MusicClipType.Win, false);
+			Core.PostProcessingController.SetActiveExposure(true);
+		}
+
+		protected override void HandleAfterEnterDelay() {
 			Core.UiController.Show(Ui.UiScreenType.Win);
 		}
 
-		public void Exit() {
-			Time.timeScale = 1f;
+		protected override void HandleExit() {
+			Core.PostProcessingController.SetActiveExposure(false);
 		}
-
-		public void Update() {}
 	}
 }
