@@ -145,6 +145,7 @@ namespace GunSystem {
 		private void HandleNoAmmo(Gun gun) {
             Core.SfxController.Play(SfxType.NoAmmo);
             OnAmmoChange?.Invoke(gun);
+            gun.Available = false;
 
             if(_currentIndex == Guns.Count - 1) {
                 Scroll(-1);
