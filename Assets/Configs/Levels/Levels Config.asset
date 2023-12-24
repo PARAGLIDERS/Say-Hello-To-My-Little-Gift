@@ -17,7 +17,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: 3fdedb0eab911d34aa985aace4d213b8, type: 3}
     _sceneIndex: 2
     _musicType: 1
-    _enemySpawnerConfig: {fileID: 11400000, guid: 776a51b7964d9c74f8b630e7253dd596, type: 2}
+    _enemySpawnerConfig: {fileID: 11400000, guid: ec025cf28679e0a4190aeec627e01754, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
     _healSpawnerGridConfig: {fileID: 11400000, guid: e88fb0b68725cec4cbe3dc269e7db3d2, type: 2}
     _description: Such a pretty view
@@ -26,7 +26,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: 4ae8951513c9fe34ea8794cfebd6e11b, type: 3}
     _sceneIndex: 3
     _musicType: 2
-    _enemySpawnerConfig: {fileID: 11400000, guid: 1f2cd94796e005742bd576bba2930496, type: 2}
+    _enemySpawnerConfig: {fileID: 11400000, guid: b3433adc04142d94c93fa431b2541711, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 8f34f7fee2e19fc49a5eba4151618d90, type: 2}
     _healSpawnerGridConfig: {fileID: 11400000, guid: ddd3c9ba4997e344fb8f110df7dfdbbf, type: 2}
     _description: Rocks and Stones
@@ -35,7 +35,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: a0719c68f44d42e4ab4168a34e62634b, type: 3}
     _sceneIndex: 4
     _musicType: 3
-    _enemySpawnerConfig: {fileID: 11400000, guid: 6000234c0e1181d4185858cb891e139a, type: 2}
+    _enemySpawnerConfig: {fileID: 11400000, guid: 157aaa0f7f9c5f54f9bb2aba721de156, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: c06c9b2f03fe3f04dbcee67d09269998, type: 2}
     _healSpawnerGridConfig: {fileID: 11400000, guid: 33c04589cfacbff4e99fbf4da7d7fdd9, type: 2}
     _description: All aboard!
