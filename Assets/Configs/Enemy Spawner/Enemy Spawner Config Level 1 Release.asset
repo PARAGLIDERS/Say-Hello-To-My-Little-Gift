@@ -13,5 +13,75 @@ MonoBehaviour:
   m_Name: Enemy Spawner Config Level 1 Release
   m_EditorClassIdentifier: 
   _waveCooldown: 0
-  _gridConfig: {fileID: 0}
-  _rounds: []
+  _gridConfig: {fileID: 11400000, guid: 12b42a84aaf49c844aeb5555b0b28a67, type: 2}
+  _rounds:
+  - _name: Round 1
+    _delay: 0
+    _guns:
+    - _name: 'Uzi : 60%'
+      _type: 1
+      _chance: 60
+    - _name: 'Shotgun : 40%'
+      _type: 2
+      _chance: 40
+    _waves:
+    - _name: Wave 1
+      _delay: 0
+      _enemyCount: 50
+      _period: 0.3
+      _units:
+      - _name: 'Snowman : 88%'
+        _type: 0
+        _chance: 88
+      - _name: 'Chicken : 12%'
+        _type: 1
+        _chance: 12
+    - _name: Wave 2
+      _delay: 0
+      _enemyCount: 20
+      _period: 0.25
+      _units:
+      - _name: 'Rabbit : 88%'
+        _type: 5
+        _chance: 88
+      - _name: 'Snowman : 12%'
+        _type: 0
+        _chance: 12
+  - _name: Round 2
+    _delay: 1
+    _guns:
+    - _name: 'Uzi : 20%'
+      _type: 1
+      _chance: 15
+    - _name: 'Shotgun : 20%'
+      _type: 2
+      _chance: 15
+    - _name: 'Auto : 60%'
+      _type: 3
+      _chance: 45
+    _waves:
+    - _name: Wave 1
+      _delay: 0
+      _enemyCount: 50
+      _period: 0.2
+      _units:
+      - _name: 'Snowman : 88%'
+        _type: 0
+        _chance: 88
+      - _name: 'Chicken : 12%'
+        _type: 1
+        _chance: 12
+    - _name: Wave 2
+      _delay: 0
+      _enemyCount: 50
+      _period: 0.2
+      _units:
+      - _name: 'Snowman : 45%'
+        _type: 0
+        _chance: 59
+      - _name: 'Chicken : 34%'
+        _type: 1
+        _chance: 44
+      - _name: 'Rabbit : 20%'
+        _type: 5
+        _chance: 26

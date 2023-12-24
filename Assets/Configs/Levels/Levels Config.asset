@@ -17,7 +17,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: 3fdedb0eab911d34aa985aace4d213b8, type: 3}
     _sceneIndex: 2
     _musicType: 1
-    _enemySpawnerConfig: {fileID: 11400000, guid: 776a51b7964d9c74f8b630e7253dd596, type: 2}
+    _enemySpawnerConfig: {fileID: 11400000, guid: ec025cf28679e0a4190aeec627e01754, type: 2}
     _gunSpawnerGridConfig: {fileID: 11400000, guid: 98c6f10d8f03ffa4988d689879cd8f40, type: 2}
     _healSpawnerGridConfig: {fileID: 11400000, guid: e88fb0b68725cec4cbe3dc269e7db3d2, type: 2}
     _description: Such a pretty view
