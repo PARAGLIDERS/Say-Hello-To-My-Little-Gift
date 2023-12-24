@@ -14479,10 +14479,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Borders
       objectReference: {fileID: 0}
-    - target: {fileID: 4374587468892559536, guid: 121a17d930e23df4a811e324cd134634, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4374587468892559537, guid: 121a17d930e23df4a811e324cd134634, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14526,10 +14522,6 @@ PrefabInstance:
     - target: {fileID: 4374587468892559537, guid: 121a17d930e23df4a811e324cd134634, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374587469957449021, guid: 121a17d930e23df4a811e324cd134634, type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 121a17d930e23df4a811e324cd134634, type: 3}
