@@ -46,3 +46,6 @@ MonoBehaviour:
   - Name: Prefail
     _type: 10
     _prefab: {fileID: -4669748973868495695, guid: 32ebac1a3f4c7b64f8885b83b529a70e, type: 3}
+  - Name: GunWheel
+    _type: 11
+    _prefab: {fileID: 6671021490934948932, guid: c0493a1b5ca647d4cbe76e6a0feb3db9, type: 3}

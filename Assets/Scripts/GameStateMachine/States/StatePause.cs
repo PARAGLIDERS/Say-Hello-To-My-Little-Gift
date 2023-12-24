@@ -10,7 +10,7 @@ namespace GameStateMachine.States {
 		}
 
 		public void Update() {
-			if (Input.GetKeyDown(KeyCode.Escape)) {
+			if (Core.InputController.GetEscapeInput()) {
 				Core.StateController.SetState(StateType.Play);
 			}
 		}

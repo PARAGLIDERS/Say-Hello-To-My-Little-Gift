@@ -4,13 +4,13 @@ using UnityEngine;
 namespace Ui {
 	public class UiController {
 		private readonly Dictionary<UiScreenType, UiScreen> _screens = new();
-		private readonly Transform _canvas;
+		public readonly Canvas Canvas;
 		
 		private (UiScreenType type, UiScreen screen) _current;
 		private UiScreenType _previous;
 		
 		public UiController(Transform parent, Canvas canvasPrefab, UiScreenConfig config) {
-			_canvas = Object.Instantiate(canvasPrefab, parent).transform;
+			Canvas = Object.Instantiate(canvasPrefab, parent);
 
 			foreach (UiScreenConfigItem item in config.Items) {
                 if (_screens.ContainsKey(item.Type)) {
@@ -32,7 +32,7 @@ namespace Ui {
 			if (_current.screen != null) Hide(_current.screen);
 
 			_current.type = screenType;
-			_current.screen = Object.Instantiate(screen, _canvas);
+			_current.screen = Object.Instantiate(screen, Canvas.transform);
 
 			_current.screen.Init();
 			_current.screen.Enter();
@@ -61,5 +61,6 @@ namespace Ui {
 		ChooseLevel = 8,
 		Ending = 9,
 		Prefail = 10,
+		GunWheel = 11,
 	}
 }

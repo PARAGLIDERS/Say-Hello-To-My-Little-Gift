@@ -21,7 +21,9 @@ namespace Root {
 
             return pointerPosition;
         }
-		
+
+        public bool GetEscapeInput() => Input.GetKeyDown(KeyCode.Escape);
+        public bool GetGunWheelInput() => Input.GetKey(KeyCode.Q);
         public bool GetPlayerDashInput() => Input.GetKeyDown(KeyCode.Space);
 
 		public Vector3 GetPlayerInput() {

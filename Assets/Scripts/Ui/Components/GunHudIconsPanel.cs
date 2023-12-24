@@ -39,7 +39,7 @@ namespace Ui.Components {
 		}
 
         private void InitIcons() {
-			List<Gun> guns = Core.LevelController.GunsController.AvailableGuns;
+			List<Gun> guns = Core.LevelController.GunsController.Guns;
 			_icons = new Dictionary<GunType, GunHudIcon>();
 
 			foreach (Gun gun in guns) {
@@ -104,7 +104,7 @@ namespace Ui.Components {
         }
 
         private void Sort() {
-            var list = Core.LevelController.GunsController.AvailableGuns;
+            var list = Core.LevelController.GunsController.Guns;
 
             for (int i = 0; i < list.Count; i++) {
                 _icons[list[i].Type].transform.SetSiblingIndex(i);

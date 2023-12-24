@@ -14,8 +14,10 @@ namespace GunSystem {
         public event Action<Gun> NoAmmo;
         public event Action<GunType, float> LowAmmo;
 
+		public GunType Type { get; set; }
+        public bool Available { get; set; }
+
         public Color Color => _config.Color;
-		public GunType Type { get; private set; }
         public bool IsInfinite => Endless || _config.IsInfinite;
         public string Name => _config.Name;
         public int Ammo { get; private set; }
@@ -27,7 +29,6 @@ namespace GunSystem {
         private float _cooldown;
         private bool _dryShotPlayed; // ducktape
 
-
         public void Activate() {
             gameObject.SetActive(true);
         }
@@ -35,10 +36,6 @@ namespace GunSystem {
         public void Deactivate() {
 			gameObject.SetActive(false);
 		}
-
-		public void Init(GunType type) {
-            Type = type;
-        }
 
         public void ResetAmmo() {
             Ammo = _config.InitialAmmo;

@@ -20,6 +20,7 @@ namespace GameStateMachine {
 				{ StateType.Win,		new StateWin()},
 				{ StateType.NextLevel,	new StateNextLevel()},
 				{ StateType.Ending,		new StateEnding()},
+				{ StateType.GunWheel,	new StateGunWheel()},
 			};
 		}
 
@@ -52,5 +53,6 @@ namespace GameStateMachine {
 		Restart,
 		NextLevel,
 		Ending,
+		GunWheel,
 	}
 }

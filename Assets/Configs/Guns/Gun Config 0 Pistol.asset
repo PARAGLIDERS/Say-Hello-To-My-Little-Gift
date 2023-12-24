@@ -22,6 +22,6 @@ MonoBehaviour:
   _shotSound: 101
   _muzzleFlashType: 350
   _inputType: 0
-  _initialAmmo: 0
-  _pickupAmmo: 0
+  _initialAmmo: 1
+  _pickupAmmo: 1
   _lowAmmo: -1

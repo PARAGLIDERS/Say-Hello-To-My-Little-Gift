@@ -12,6 +12,7 @@ namespace CameraControl {
 
         private Vector3 _velocity;
 
+        public Camera CameraComponent => _camera;
         public Vector3 Forward => Vector3.ProjectOnPlane(_head.forward, Vector3.up).normalized;
         public Vector3 Right => Vector3.ProjectOnPlane(_head.right, Vector3.up).normalized;
 

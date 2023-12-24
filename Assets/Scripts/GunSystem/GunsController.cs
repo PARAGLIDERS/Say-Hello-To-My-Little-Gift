@@ -7,35 +7,28 @@ using System.Linq;
 using UnityEngine;
 
 namespace GunSystem {
+    // i dont like this class to be honest :(
     public class GunsController {
         public event Action<Gun> OnSwitch;
         public event Action<Gun> OnAmmoChange;
         public event Action<Gun, int> OnPickup;
 
-        public List<Gun> AvailableGuns { get; private set; }
         public Gun Current { get; private set; }
-
-        private readonly Dictionary<GunType, Gun> _gunsDictionary;
+        public readonly List<Gun> Guns;
         private int _currentIndex;
         private bool _afterSwitch;
 
         public GunsController(GunsControllerConfig config, PlayerController player) {
-            AvailableGuns = new List<Gun>();
+            Guns = new List<Gun>();
 
-            _gunsDictionary = new Dictionary<GunType, Gun>();
             foreach (GunsConfigItem item in config.Items) {
-                if(_gunsDictionary.ContainsKey(item.Type)) {
-                    Debug.LogError($"gun already exists in dictionary: {item.Type}");
-                    continue;
-                }
-
                 Gun gun = GameObject.Instantiate(item.Prefab, player.GunsHolder);
-                gun.Init(item.Type);
+                gun.Type = item.Type;
                 gun.NoAmmo += HandleNoAmmo;
                 gun.LowAmmo += HandleLowAmmo;
                 gun.Deactivate();
 
-                _gunsDictionary.Add(item.Type, gun);
+                Guns.Add(gun);
             }
         }
 
@@ -44,31 +37,24 @@ namespace GunSystem {
         }
 
         public void Reset() {
-            AvailableGuns.Clear();
-
-            foreach (KeyValuePair<GunType, Gun> item in _gunsDictionary) {
-                if (item.Value == null) {
-                    Debug.LogError("gun in dictionary is null!");
+            foreach (Gun gun in Guns) {
+                if (gun == null) {
+                    Debug.LogError("gun is null!");
                     continue;
                 }
 
-                item.Value.ResetAmmo();
+                gun.ResetAmmo();
             }
 
             _currentIndex = 0;
         }
 
-        public void Pickup(GunType type) {            
-            if(!_gunsDictionary.TryGetValue(type, out Gun gun)){
-                Debug.LogError($"weapon does not exist in dictionary: {type}");
-                return;
-            }
+        public void Pickup(GunType type) {
+            Gun gun = Get(type);
+            int ammo = 0;
 
-            int ammo;
-
-			if (!AvailableGuns.Contains(gun)) {
-                AvailableGuns.Add(gun);
-                Sort();
+			if (!gun.Available) {
+                gun.Available = true;
                 SwitchTo(gun);
                 gun.ResetAmmo();
 	    		ammo = gun.InitialAmmo;
@@ -113,12 +99,12 @@ namespace GunSystem {
             _currentIndex += value;
 
             if(_currentIndex < 0) {
-                _currentIndex = AvailableGuns.Count - 1;
-            }else if(_currentIndex >= AvailableGuns.Count) {
+                _currentIndex = Guns.Count - 1;
+            }else if(_currentIndex >= Guns.Count) {
                 _currentIndex = 0;
             }
 
-            Gun nextGun = AvailableGuns[_currentIndex];
+            Gun nextGun = Guns[_currentIndex];
 
 			if (!nextGun.HasAmmo()) {
                 Scroll(value);
@@ -126,6 +112,15 @@ namespace GunSystem {
             }
 
             SwitchTo(nextGun);
+        }
+
+        public void SwitchTo(GunType type) {
+            Gun gun = Get(type);
+
+            if(!gun.Available) return;
+            if(!gun.HasAmmo()) return;
+
+			SwitchTo(gun);
         }
 
         private void SwitchTo(Gun gun) {
@@ -136,21 +131,21 @@ namespace GunSystem {
             Current = gun;
             Current.Activate();
 
-            _currentIndex = AvailableGuns.IndexOf(Current);
+            _currentIndex = Guns.IndexOf(Current);
 
             OnSwitch?.Invoke(Current);
             _afterSwitch = true;
         }
 
-        private void Sort() {
-            AvailableGuns = AvailableGuns.OrderBy(x => (int)(x.Type)).ToList();
+        private Gun Get(GunType type) {
+            return Guns.FirstOrDefault(g => g.Type == type);
         }
 
 		private void HandleNoAmmo(Gun gun) {
             Core.SfxController.Play(SfxType.NoAmmo);
             OnAmmoChange?.Invoke(gun);
 
-            if(_currentIndex == AvailableGuns.Count - 1) {
+            if(_currentIndex == Guns.Count - 1) {
                 Scroll(-1);
             } else {
                 Scroll(1);

@@ -1,19 +1,19 @@
 using Root;
 using Ui;
-using UnityEngine;
 
 namespace GameStateMachine.States {
 	public class StatePlay : IState {
 		public void Enter() {
 			Core.UiController.Show(UiScreenType.Hud);
-			//Core.PointerController.Set(Pointer.PointerType.Pistol);
 		}
 
 		public void Update() {
             Core.LevelController.Update();
 
-			if (Input.GetKeyDown(KeyCode.Escape)) {
+			if (Core.InputController.GetEscapeInput()) {
 				Core.StateController.SetState(StateType.Pause);
+			}else if(Core.InputController.GetGunWheelInput()) {
+				Core.StateController.SetState(StateType.GunWheel);
 			}
 		}
 
