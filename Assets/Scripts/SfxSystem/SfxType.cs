@@ -41,5 +41,7 @@ namespace SfxSystem {
         Ammo_Low_Bullets = 600,
         Ammo_Low_Shells = 601,
         NoAmmo = 603,
+
+        Dash = 700,
     }
 }
