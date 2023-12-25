@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc4f067e077afe428ce102750f55063, type: 3}
   m_Name: Heal Spawner Grid Config lvl2
   m_EditorClassIdentifier: 
-  _cellSize: 5
-  _gridSize: {x: 5.8, y: 7.84}
-  _gridInnerSize: {x: 1, y: 1}
+  _cellSize: 4.39
+  _gridSize: {x: 7, y: 7.84}
+  _gridInnerSize: {x: 0.57, y: 0.85}
   _gridHeight: 1
   _obstaclesLayer:
     serializedVersion: 2
