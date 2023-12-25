@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 4939573413383613639}
   - component: {fileID: 8296536839506797410}
   - component: {fileID: 6109079042528270248}
-  - component: {fileID: 783941079357858757}
   m_Layer: 10
   m_Name: presentGreenLow
   m_TagString: Untagged
@@ -170,17 +169,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &783941079357858757
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5748620029851727485}
-  m_Material: {fileID: 13400000, guid: 50ac2379ddf82a84597ab21f98261730, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4644454072734626761, guid: 82f586886eebea74f902a23215079560, type: 3}

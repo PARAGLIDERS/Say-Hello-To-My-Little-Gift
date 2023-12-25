@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 8218985436114130736}
   - component: {fileID: 5017124471601764501}
   - component: {fileID: 7080959791374199903}
-  - component: {fileID: 471692103083331635}
   m_Layer: 10
   m_Name: presentGreenRound
   m_TagString: Untagged
@@ -170,17 +169,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &471692103083331635
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8738218139772341642}
-  m_Material: {fileID: 13400000, guid: 50ac2379ddf82a84597ab21f98261730, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 187352872714261286, guid: e534a908655de1b49a2ce8c3171f8253, type: 3}
