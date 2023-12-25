@@ -1,25 +1,28 @@
 ﻿using Root;
-using Ui.Components;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ui.Screens {
 	public class UiScreenCredits : UiScreenBlurredBack {
-		[SerializeField] private Button _back;
-		//[SerializeField] private CreditsConfig _config;
-		//[SerializeField] private CreditCard _cardPrefab;
-		//[SerializeField] private RectTransform _cardsContainer;
+		[SerializeField] private Button _close;
+		[SerializeField] private Button _next;
+		[SerializeField] private GameObject _team;
+		[SerializeField] private GameObject _assets;
 
 		public override void Init() {
-			_back.onClick.AddListener(HandleBack);
+			_assets.SetActive(false);
+			_team.SetActive(true);
 
-			//foreach (CreditsConfigItem item in _config.Items) {
-			//	CreditCard card = Instantiate(_cardPrefab, _cardsContainer);
-			//	card.Init(item);
-			//}
+			_close.onClick.AddListener(HandleClose);
+			_next.onClick.AddListener(HandleNext);
 		}
 
-		private void HandleBack() {
+		private void HandleNext() {
+			_assets.SetActive(true);
+			_team.SetActive(false);
+		}
+
+		private void HandleClose() {
 			Core.UiController.Show(UiScreenType.Main);
 		}
 	}
