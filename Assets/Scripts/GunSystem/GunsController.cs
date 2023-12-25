@@ -69,6 +69,8 @@ namespace GunSystem {
         }
 
         public void Update() {
+            if(HandleHotKeys()) return;
+
             float scroll = Input.mouseScrollDelta.y;
             if (!Mathf.Approximately(scroll, 0f)) {
                 Scroll(scroll > 0 ? -1 : 1);
@@ -88,7 +90,8 @@ namespace GunSystem {
 
             Current.Shoot();
             OnAmmoChange?.Invoke(Current);
-        }
+
+		}
 
         private bool GetInput(InputType inputType) => inputType switch {
             InputType.Click => Input.GetMouseButtonDown(0),
@@ -166,5 +169,26 @@ namespace GunSystem {
 
             Core.SfxController.Play(sound, customVolume: value);
 		}
+
+        private Dictionary<KeyCode, GunType> _hotKeys = new Dictionary<KeyCode, GunType>() {
+            {KeyCode.Alpha0, GunType.Pistol },
+            {KeyCode.Alpha1, GunType.Uzi },
+            {KeyCode.Alpha2, GunType.Shotgun },
+            {KeyCode.Alpha3, GunType.Auto },
+            {KeyCode.Alpha4, GunType.DoubleShotgun },
+            {KeyCode.Alpha5, GunType.RocketLauncher },
+            {KeyCode.Alpha6, GunType.Minigun },
+        };
+
+        private bool HandleHotKeys() {
+            foreach (var key in _hotKeys.Keys) {
+                if(Input.GetKeyDown(key)) {
+                    SwitchTo(_hotKeys[key]);
+                    return true;
+                }
+            }
+
+            return false;
+        }
 	}
 }
