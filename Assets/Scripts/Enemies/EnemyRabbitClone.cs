@@ -1,5 +1,4 @@
-﻿using Root;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemies {
 	public class EnemyRabbitClone : EnemyRabbitBase {
@@ -14,7 +13,7 @@ namespace Enemies {
 		}
 
 		public void Despawn() {
-			Core.PoolController.Spawn(PoolSystem.PoolType.VFX_EnemySpawnEffect, transform.position, transform.rotation);
+			//Core.PoolController.Spawn(PoolSystem.PoolType.VFX_EnemySpawnEffect, transform.position, transform.rotation);
 		}
 	}
 }

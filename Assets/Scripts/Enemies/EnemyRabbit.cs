@@ -29,7 +29,7 @@ namespace Enemies {
 
 		private void HandleDie() {
 			foreach (PoolObject clone in _clones) {
-				clone.Deactivate();
+				//clone.Deactivate();
 			}
 		}
 
@@ -45,19 +45,8 @@ namespace Enemies {
 			foreach (Transform point in _clonePoints) {
 				PoolObject clone = Core.PoolController.Spawn(PoolType.Enemy_Rabbit_Clone, point.position, transform.rotation);
 				Core.PoolController.Spawn(PoolType.VFX_EnemySpawnEffect, point.position, transform.rotation);
-				_clones.Add(clone);
+				//_clones.Add(clone);
 			}
-		}
-
-		protected override void Move() {
-			base.Move();
-			return;
-			if (Time.time < _strafeTimer) return;
-
-			_agent.Move(transform.right * _strafeLength);
-
-			_strafeLength = -_strafeLength;
-			_strafeTimer = Time.time + _strafeCooldown;
 		}
 	}
 }
