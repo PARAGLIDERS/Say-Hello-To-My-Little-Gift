@@ -9,6 +9,7 @@ using UnityEngine.UI;
 namespace Assets.Scripts.Ui.Screens {
 	public class SettingsScreen : UiScreenBlurredBack {
 		[SerializeField] private Button _backButton;
+		[SerializeField] private Button _dropButton;
 
 		[Header("Gameplay")]
 		[SerializeField] private UiToggle _fpsCounter;
@@ -32,6 +33,8 @@ namespace Assets.Scripts.Ui.Screens {
 		// totally needs refactor
 		public override void Init() {
 			_backButton.onClick.AddListener(HandleBackButton);
+			_dropButton.onClick.AddListener(HandleDropButton);
+
 			_data = Core.DataController.Data.Settings;
 
 			_fpsCounter.Init(_data.Gameplay.FpsCounter, value => {
@@ -99,6 +102,12 @@ namespace Assets.Scripts.Ui.Screens {
 		private void HandleBackButton() {
 			Core.DataController.Save();
 			Core.UiController.HideCurrent();
+		}
+
+		private void HandleDropButton() {
+			Core.DataController.Data.DropSettingsData();
+			Core.DataController.Save();
+			Core.UiController.Show(UiScreenType.Settings);
 		}
 	}
 }
