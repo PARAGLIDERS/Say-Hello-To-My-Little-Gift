@@ -38,6 +38,7 @@ namespace Ui.Components {
 		}
 
 		public void OnPointerDown(PointerEventData eventData) {
+			if(!_isAvailable) return;
 			transform.DOScale(_initScale, 0.03f).SetUpdate(true)
 				.OnComplete(() => transform.DOScale(_initScale * 1.05f, 0.1f).SetUpdate(true));
 		}
