@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _count: 3
   _magnitude: 300
-  _cooldown: 1
+  _cooldown: 0.01
   _restore: 2
