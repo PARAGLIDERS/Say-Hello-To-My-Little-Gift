@@ -6,7 +6,7 @@ namespace Data {
 		public int CurrentLevel { get; set; }
 
 		public LevelData() {
-			CurrentLevel = 2;
+			CurrentLevel = 0;
 		}
 	}
 }
