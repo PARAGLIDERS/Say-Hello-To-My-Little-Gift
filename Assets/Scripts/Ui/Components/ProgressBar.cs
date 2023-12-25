@@ -31,6 +31,10 @@ namespace Ui.Components {
 		}
 
 		public void SetValue(int value) {
+			_sliderBack.DOComplete();
+			_sliderMain.DOComplete();
+			_sequence?.Complete();
+
 			_sliderMain.value = value;
 			_sliderBack.value = value;
 		}
