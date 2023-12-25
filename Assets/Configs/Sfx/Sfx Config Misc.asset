@@ -31,7 +31,7 @@ MonoBehaviour:
   - Name: Ammo_Low_Shells
     _type: 601
     _clip: {fileID: 8300000, guid: cbaf300b227e2a04b9f9a4748e9666aa, type: 3}
-    _volume: 0.65
+    _volume: 0.55
     _pitchShift: 0.149
   - Name: NoAmmo
     _type: 603
@@ -41,5 +41,5 @@ MonoBehaviour:
   - Name: Dash
     _type: 700
     _clip: {fileID: 8300000, guid: 317f8166b9f3dab4b9d93861b22e710d, type: 3}
-    _volume: 1
+    _volume: 0.85
     _pitchShift: 0.149
