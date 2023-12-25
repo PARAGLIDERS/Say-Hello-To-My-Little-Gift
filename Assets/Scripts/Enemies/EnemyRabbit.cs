@@ -1,6 +1,7 @@
 ﻿using PoolSystem;
 using Root;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 namespace Enemies {
@@ -11,8 +12,6 @@ namespace Enemies {
 		[SerializeField] private Transform[] _clonePoints;
 
 		private List<PoolObject> _clones = new List<PoolObject>();
-		private float _strafeTimer;
-		private float _strafeLength = 100;
 
 		public override void Activate(Vector3 position, Quaternion rotation) {
 			base.Activate(position, rotation);
@@ -28,16 +27,22 @@ namespace Enemies {
 		}
 
 		private void HandleDie() {
-			foreach (PoolObject clone in _clones) {
+			//foreach (PoolObject clone in _clones) {
 				//clone.Deactivate();
-			}
+			//}
+			StopAllCoroutines();
 		}
 
 		private void HandleDamage() {
 			float percentage = (float)_damageable.CurrentHealth / _damageable.MaxHealth;
 			if (_stage.IsChanged(percentage)) {
-				Clone();
+				StartCoroutine(WaitClone());
 			}
+		}
+
+		private IEnumerator WaitClone() {
+			yield return new WaitForSeconds(0.1f);
+			Clone();
 		}
 
 		private void Clone() {
