@@ -1166,7 +1166,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.762206, b: 0.46293163, a: 1}
   m_Intensity: 1.73
-  m_Range: 1.5189698
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -21599,11 +21599,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 18.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Intensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -27273,11 +27281,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -32447,6 +32459,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Intensity
       value: 5.19
       objectReference: {fileID: 0}
@@ -32620,11 +32636,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -32681,7 +32701,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6777429, b: 0, a: 1}
   m_Intensity: 3
-  m_Range: 25
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -33045,8 +33065,12 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Intensity
-      value: 4.34
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -33357,6 +33381,10 @@ PrefabInstance:
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 12.35
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -44121,7 +44149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Range
-      value: 166.55
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -44133,15 +44161,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341977247878380455, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.89
+      value: -11.37
       objectReference: {fileID: 0}
     - target: {fileID: 7341977247878380455, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 2.58
       objectReference: {fileID: 0}
     - target: {fileID: 7341977247878380455, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.92
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
@@ -44311,7 +44339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1728545858
 Transform:
   m_ObjectHideFlags: 0
@@ -44340,7 +44368,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6777429, b: 0, a: 1}
   m_Intensity: 3
-  m_Range: 25
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -44434,7 +44462,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6777429, b: 0, a: 1}
   m_Intensity: 3
-  m_Range: 25
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -54809,11 +54837,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
@@ -54941,11 +54973,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542893552854740879, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
+      propertyPath: m_Range
+      value: 13.16
       objectReference: {fileID: 0}
     - target: {fileID: 7065492046498239885, guid: 3e833f3c41837e2499848cbd3a40b527, type: 3}
       propertyPath: m_Lightmapping
