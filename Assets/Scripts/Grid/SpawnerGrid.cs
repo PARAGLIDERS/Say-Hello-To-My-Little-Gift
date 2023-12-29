@@ -1,10 +1,14 @@
+using Root;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 namespace Grid {
     public class SpawnerGrid {
         public List<Vector3> Points { get; private set; }
         private readonly SpawnerGridConfig _config;
+
+        private const float _distanceToPlayer = 20f;
 
         public SpawnerGrid(SpawnerGridConfig config) { 
             _config = config;
@@ -21,7 +25,13 @@ namespace Grid {
                 return Vector3.zero;
             }
 
-            return Points[Random.Range(0, Points.Count)];
+            List<Vector3> filteredPoints = GetFilteredPoints();
+
+            if(filteredPoints.Count > 0) {
+                return filteredPoints.Random();
+            }
+
+            return Points.Random();
         }
 
         public void CalculatePoints() {
@@ -55,5 +65,19 @@ namespace Grid {
 
             return x && y;
         }
+
+        private List<Vector3> GetFilteredPoints() {
+			Vector3 playerPosition = Core.LevelController.Player.Position;
+
+			List<Vector3> filteredPoints = new List<Vector3> ();
+
+            for (int i = 0; i < Points.Count; i++) {
+                if (Vector3.Distance(Points[i], playerPosition) > _distanceToPlayer) {
+                    filteredPoints.Add(Points[i]);
+                }
+            }
+
+            return filteredPoints;
+		}
     }
 }

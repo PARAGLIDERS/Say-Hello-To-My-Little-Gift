@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Utils {
@@ -22,5 +23,9 @@ namespace Utils {
 
             return result;
         }
-    }
+
+		public static T Random<T>(this List<T> list) {
+            return list[UnityEngine.Random.Range(0, list.Count)];
+		}
+	}
 }
