@@ -3,12 +3,8 @@
 namespace GameStateMachine.States {
 	public class StateNextLevel : IState {
 		public void Enter() {
-			if (Core.LevelController.HasNextLevel()) {
-				Core.LevelController.Stop();
-				Core.StateController.SetState(StateType.LoadLevel);
-			} else {
-				Core.StateController.SetState(StateType.Ending);
-			}
+			Core.LevelController.Stop();
+			Core.StateController.SetState(StateType.LoadLevel);
 		}
 
 		public void Exit() {

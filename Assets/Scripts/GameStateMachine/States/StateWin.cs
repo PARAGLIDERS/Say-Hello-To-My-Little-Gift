@@ -9,7 +9,11 @@ namespace GameStateMachine.States {
 		}
 
 		protected override void HandleAfterEnterDelay() {
-			Core.UiController.Show(Ui.UiScreenType.Win);
+			if (Core.LevelController.HasNextLevel()) {
+				Core.UiController.Show(Ui.UiScreenType.Win);
+			} else {
+				Core.StateController.SetState(StateType.Ending);
+			}
 		}
 
 		protected override void HandleExit() {
