@@ -16,6 +16,8 @@ namespace Ui.Components {
 		[SerializeField] private Image _block;
 		[SerializeField] private Image _select;
 
+		[SerializeField] private RectTransform _body;
+
 		private Action _onClick;
 		private bool _isAvailable;
 		private Vector3 _initScale;
@@ -54,6 +56,11 @@ namespace Ui.Components {
 			if(!_isAvailable) return;
 			_select.DOFade(0f, 0.1f).SetUpdate(true);
 			transform.DOScale(_initScale, 0.1f).SetUpdate(true);
+		}
+
+		public Tweener GetAnim() {
+			_body.localScale = Vector3.zero;
+			return _body.DOScale(1f, Constants.UiAnimDuration).SetEase(Ease.OutBack);
 		}
 	}
 }

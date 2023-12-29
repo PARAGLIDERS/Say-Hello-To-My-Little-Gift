@@ -286,6 +286,7 @@ MonoBehaviour:
   _restartButton: {fileID: 4900357530903550146}
   _quitButton: {fileID: 8413206719465130526}
   _subtitle: {fileID: 1991559316046613157}
+  _title: {fileID: 2689123245376238559}
 --- !u!1001 &2891602551335835588
 PrefabInstance:
   m_ObjectHideFlags: 0

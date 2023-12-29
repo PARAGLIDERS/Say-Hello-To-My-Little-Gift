@@ -1,5 +1,7 @@
 ﻿using Data;
+using DG.Tweening;
 using Root;
+using System;
 using Ui;
 using Ui.Screens;
 using Ui.UiKit;
@@ -27,6 +29,13 @@ namespace Assets.Scripts.Ui.Screens {
 		[Header("Audio")]
 		[SerializeField] private UiSlider _sfxVolume;
 		[SerializeField] private UiSlider _musicVolume;
+
+		[SerializeField] private AnimGroup[] _animGroups;
+
+		[Serializable]
+		private struct AnimGroup {
+			public RectTransform[] Elements;
+		}
 
 		private SettingsData _data;
 
@@ -108,6 +117,30 @@ namespace Assets.Scripts.Ui.Screens {
 			Core.DataController.Data.DropSettingsData();
 			Core.DataController.Save();
 			Core.UiController.Show(UiScreenType.Settings);
+		}
+
+		protected override void PlayEnterAnim() {
+			base.PlayEnterAnim();
+
+			Sequence seq = DOTween.Sequence();
+
+			for (int i = 0; i < _animGroups.Length; i++) {
+				for (int j = 0; j < _animGroups[i].Elements.Length; j++) {
+					RectTransform element = _animGroups[i].Elements[j];
+					element.localScale = Vector3.zero;
+					seq.Insert(Constants.UiAnimDelay + Constants.UiAnimInterval * j, element
+						.DOScale(1f, Constants.UiAnimDuration)
+						.SetEase(Ease.OutBack));
+				}
+			}
+
+			_backButton.transform.localScale = Vector3.zero;
+			_dropButton.transform.localScale = Vector3.zero;
+
+			seq.Append(_backButton.transform.DOScale(1f, Constants.UiAnimDuration).SetEase(Ease.OutBack));
+			seq.Append(_dropButton.transform.DOScale(1f, Constants.UiAnimDuration).SetEase(Ease.OutBack));
+
+			seq.SetUpdate(true);
 		}
 	}
 }
