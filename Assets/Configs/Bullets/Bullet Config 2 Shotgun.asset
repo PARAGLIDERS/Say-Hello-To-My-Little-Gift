@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Config 2 Shotgun
   m_EditorClassIdentifier: 
   _damage: 1
-  _lifetime: 0.4
+  _lifetime: 0.25
   _explosionType: 402
   _speedMin: 90
   _speedMax: 130
