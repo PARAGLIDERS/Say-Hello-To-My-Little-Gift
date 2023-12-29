@@ -109,8 +109,8 @@ MonoBehaviour:
     _waves:
     - _name: Wave 1
       _delay: 0
-      _enemyCount: 40
-      _period: 0.65
+      _enemyCount: 30
+      _period: 0.8
       _units:
       - _name: 'Deer : 100%'
         _type: 2
