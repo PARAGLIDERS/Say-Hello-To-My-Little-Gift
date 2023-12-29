@@ -18,6 +18,7 @@ namespace GunSystem {
 		[SerializeField] private int _initialAmmo;
 		[SerializeField] private int _pickupAmmo;
 		[SerializeField] private int _lowAmmo;
+		[SerializeField] private int _maxAmmo;
 
 		public Color Color => _color;
 		public bool IsInfinite => _isInfinite;
@@ -32,6 +33,7 @@ namespace GunSystem {
 		public int InitialAmmo => _initialAmmo;
 		public int PickupAmmo => _pickupAmmo;
 		public int LowAmmo => _lowAmmo;
+		public int MaxAmmo => _maxAmmo;
 	}
 
 	public enum BulletType {

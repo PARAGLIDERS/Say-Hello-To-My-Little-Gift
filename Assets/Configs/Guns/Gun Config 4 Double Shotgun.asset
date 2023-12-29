@@ -25,3 +25,4 @@ MonoBehaviour:
   _initialAmmo: 18
   _pickupAmmo: 9
   _lowAmmo: 3
+  _maxAmmo: 40

@@ -43,6 +43,7 @@ namespace GunSystem {
 
         public void Pickup(bool firstTime) {
             Ammo += firstTime ? _config.InitialAmmo : _config.PickupAmmo;
+            if(Ammo > _config.MaxAmmo) Ammo = _config.MaxAmmo;
             _dryShotPlayed = false;
         }
 
