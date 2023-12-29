@@ -30,12 +30,10 @@ namespace Bullets {
             _timer = Time.time + _baseConfig.Lifetime;
         }
 
-        private void OnTriggerEnter(Collider other) {
+        protected virtual void OnTriggerEnter(Collider other) {
             if (other.TryGetComponent(out Damageable damageable)) {
                 damageable.ApplyDamage(_baseConfig.Damage, transform.rotation);
             }
-
-            Despawn();
         }
 
         private void Update() {

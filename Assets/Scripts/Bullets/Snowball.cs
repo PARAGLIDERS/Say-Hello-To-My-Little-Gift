@@ -19,6 +19,10 @@ namespace Bullets {
 			Core.SfxController.Play(SfxSystem.SfxType.EnemySnowballHit);
 		}
 
+		protected override void OnTriggerEnter(Collider other) {
+			base.OnTriggerEnter(other);
+			Despawn();
+		}
 
 		private void FixedUpdate() {
             _rigidbody.velocity -= Vector3.up * _config.Gravity;
