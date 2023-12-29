@@ -137,7 +137,7 @@ namespace GunSystem {
 
             _currentIndex = Guns.IndexOf(Current);
 
-            OnSwitch?.Invoke(Current);
+			OnSwitch?.Invoke(Current);
             _afterSwitch = true;
         }
 
@@ -150,11 +150,23 @@ namespace GunSystem {
             OnAmmoChange?.Invoke(gun);
             gun.Available = false;
 
-            if(_currentIndex == Guns.Count - 1) {
-                Scroll(-1);
-            } else {
-                Scroll(1);
+            int nextGunIndex = 0;
+
+            for (int i = Guns.Count - 1; i > 0; i--) {
+                if (!Guns[i].Available) continue;
+                
+                if(nextGunIndex > _currentIndex && i < _currentIndex) {
+                    break;
+                }
+
+                nextGunIndex = i;
+
+                if (nextGunIndex < _currentIndex) {
+                    break;
+                }
             }
+
+            SwitchTo(Guns[nextGunIndex]);
 		}
 
         private void HandleLowAmmo(GunType type, float value) {
