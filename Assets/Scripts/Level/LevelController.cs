@@ -61,35 +61,34 @@ namespace Level {
 		}
 
 		public void Start() {
-			LevelsConfigItem levelConfig = GetCurrentLevelConfig();
-
+			LevelsConfigItem levelConfig = GetCurrentLevelConfig();	
 			EnemySpawner.Start(levelConfig.EnemySpawnerConfig);
+		
+			GunsController.Init();
+			GunSpawner.Start(levelConfig.GunSpawnerGridConfig);
+			
+			   
+			Player.Activate();
+			Camera.Activate();
+			
+			HealSpawner.Start(levelConfig.HealSpawnerGridConfig);
+			
+			Player.OnDie += HandlePlayerDeath;
+			EnemySpawner.AllEnemiesKilled += HandleWin;
+	    }
 
-            GunsController.Init();
-            GunSpawner.Start(levelConfig.GunSpawnerGridConfig);
-
-           
-            Player.Activate();
-            Camera.Activate();
-
-            HealSpawner.Start(levelConfig.HealSpawnerGridConfig);
-
-            Player.OnDie += HandlePlayerDeath;
-            EnemySpawner.AllEnemiesKilled += HandleWin;
-        }
-
-        public void Stop() {
-            GunsController.Reset();
-            GunSpawner.Stop();
-
-            EnemySpawner.Stop();
-            EnemySpawner.Reset();
-
-            Player.Deactivate();
-            Camera.Deactivate();
-
-            HealSpawner.Stop();
-
+		public void Stop() {
+			GunsController.Reset();
+			GunSpawner.Stop();
+	
+			EnemySpawner.Stop();
+			EnemySpawner.Reset();
+	
+			Player.Deactivate();
+			Camera.Deactivate();
+	
+			HealSpawner.Stop();
+	
 			Player.OnDie -= HandlePlayerDeath;
 			EnemySpawner.AllEnemiesKilled -= HandleWin;
 		}
