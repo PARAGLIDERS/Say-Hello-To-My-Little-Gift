@@ -1,5 +1,4 @@
 using CameraControl;
-using DayNightCycle;
 using GunSystem;
 using Heals;
 using Level;
@@ -28,7 +27,6 @@ namespace Root {
         [SerializeField] private CameraController _cameraPrefab;
 
         [SerializeField] private PostProcessVolume _volumePrefab;
-        [SerializeField] private DayNightConfig _dayNightConfig;
 
         [SerializeField] private LevelsConfig _levelsConfig;
 
@@ -49,7 +47,6 @@ namespace Root {
         public CameraController CameraPrefab => _cameraPrefab;
 
         public PostProcessVolume VolumePrefab => _volumePrefab;
-        public DayNightConfig DayNightConfig => _dayNightConfig;
 
         public MusicConfig MusicConfig => _musicConfig;
 
