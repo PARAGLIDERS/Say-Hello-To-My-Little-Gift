@@ -1,20 +1,23 @@
-﻿using DG.Tweening;
-using Root;
+﻿using Data;
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Music {
-	public class MusicController {
+	public class MusicPlayer {
+		private readonly DataService _dataService;
 		private readonly MusicConfig _config;
 		private readonly AudioSource _source;
 		private readonly Dictionary<MusicClipType, MusicConfigItem> _clips;
 
-		public MusicController(Transform parent, MusicConfig config) {
+
+		public MusicPlayer(DataService dataService, Transform parent, MusicConfig config) {
+			_dataService = dataService;
 			_config = config;
 
 			GameObject sourceObject = new GameObject("MusicPlayer");
 			sourceObject.transform.SetParent(parent);
-			
+
 			_source = sourceObject.AddComponent<AudioSource>();
 			_source.outputAudioMixerGroup = config.MixerGroup;
 			_source.playOnAwake = false;
@@ -30,11 +33,11 @@ namespace Music {
 				_clips.Add(item.Type, item);
 			}
 
-			Core.DataController.OnSave += ApplySettings;
+			_dataService.OnSave += ApplySettings;
 		}
 
 		public void Play(MusicClipType type, bool loop = true) {
-			if(!_clips.TryGetValue(type, out MusicConfigItem item)) {
+			if (!_clips.TryGetValue(type, out MusicConfigItem item)) {
 				Debug.LogError($"music is not found: {type}");
 				return;
 			}
@@ -50,18 +53,17 @@ namespace Music {
 
 		public void Stop() {
 			_source.Stop();
-			//_source.DOKill();
-			//_source.DOFade(0f, 0.3f).OnComplete();
 		}
 
 		public void Dispose() {
-			Core.DataController.OnSave -= ApplySettings;
+			_dataService.OnSave -= ApplySettings;
 		}
 
 		private void ApplySettings() {
-			Data.SliderSetting setting = Core.DataController.Data.Settings.Audio.MusicVolume;
+			SliderSetting setting = _dataService.Data.Settings.Audio.MusicVolume;
 			float volume = setting.Current;
-			if (volume == setting.Min) volume = -80f;
+			if (volume == setting.Min)
+				volume = -80f;
 			_config.MixerGroup.audioMixer.SetFloat("MusicVolume", volume);
 		}
 	}

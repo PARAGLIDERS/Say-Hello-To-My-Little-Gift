@@ -112,8 +112,8 @@ namespace EnemySpawning {
             Vector3 position = _grid.GetPosition();
             Quaternion rotation = Quaternion.identity; // look at player? or away?)
 
-            Core.PoolController.Spawn((PoolType) type, position, rotation, onDeactivate: HandleEnemyKill);
-            Core.PoolController.Spawn(PoolType.VFX_EnemySpawnEffect, position, rotation);
+            Core.PoolController.Spawn((Pooling.ObjectType) type, position, rotation, onDeactivate: HandleEnemyKill);
+            Core.PoolController.Spawn(Pooling.ObjectType.VFX_EnemySpawnEffect, position, rotation);
 
 			float distance = Vector3.Distance(position, Core.LevelController.Player.Position);
 			if (distance > 50f) return;

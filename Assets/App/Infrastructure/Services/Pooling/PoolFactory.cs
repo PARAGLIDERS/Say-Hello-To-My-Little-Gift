@@ -1,7 +1,5 @@
 ﻿using Pooling;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
-using UnityEditor;
 using UnityEngine;
 using Zenject;
 
@@ -10,13 +8,13 @@ public class PoolFactory {
 	private readonly Transform _parent;
 	private readonly PoolsConfig _config;
 
-	private readonly Dictionary<PoolType, PoolObject> _data;
+	private readonly Dictionary<ObjectType, PoolObject> _data;
 
 	public PoolFactory(DiContainer container, Transform parent, PoolsConfig config) {
 		_container = container;
 		_parent = parent;
 		_config = config;
-		_data = new Dictionary<PoolType, PoolObject>();
+		_data = new Dictionary<ObjectType, PoolObject>();
 	}
 
 	public void Initialize() {
@@ -28,20 +26,20 @@ public class PoolFactory {
 		}
 	}
 
-	public PoolObject Create(PoolType poolType) {
-		if(!_data.TryGetValue(poolType, out PoolObject prefab)) {
+	public PoolObject Create(ObjectType poolType) {
+		if (!_data.TryGetValue(poolType, out PoolObject prefab)) {
 			Debug.LogError($"No such object in pool config: {poolType}");
 			return null;
 		}
 
-		PoolObject poolObject = _container.InstantiatePrefabForComponent<PoolObject>(prefab);
+		PoolObject poolObject = _container.InstantiatePrefabForComponent<PoolObject>(prefab, _parent);
 		poolObject.Hide();
 
 		return poolObject;
 	}
 
-	public Dictionary<PoolType, Queue<PoolObject>> CreatePools() {
-		Dictionary<PoolType, Queue<PoolObject>> pools = new Dictionary<PoolType, Queue<PoolObject>>();
+	public Dictionary<ObjectType, Queue<PoolObject>> CreatePools() {
+		Dictionary<ObjectType, Queue<PoolObject>> pools = new Dictionary<ObjectType, Queue<PoolObject>>();
 		List<PoolsConfigItem> items = _config.Items;
 
 		for (int i = 0; i < items.Count; i++) {

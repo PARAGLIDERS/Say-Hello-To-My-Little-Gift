@@ -48,8 +48,8 @@ namespace Enemies {
 		private void Clone() {
 			_cloneEffect.Play();
 			foreach (Transform point in _clonePoints) {
-				PoolObject clone = Core.PoolController.Spawn(PoolType.Enemy_Rabbit_Clone, point.position, transform.rotation);
-				Core.PoolController.Spawn(PoolType.VFX_EnemySpawnEffect, point.position, transform.rotation);
+				PoolObject clone = Core.PoolController.Spawn(ObjectType.Enemy_Rabbit_Clone, point.position, transform.rotation);
+				Core.PoolController.Spawn(ObjectType.VFX_EnemySpawnEffect, point.position, transform.rotation);
 				//_clones.Add(clone);
 			}
 		}

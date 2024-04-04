@@ -15,7 +15,7 @@ namespace Root {
 	[CreateAssetMenu(menuName = "Santa/Resources", fileName = "Resources")]
 	public class Resources : ScriptableObject {
 		public PoolsConfig PoolControllerConfig;
-        public SfxControllerConfig SfxConfig;
+        public SoundsConfig SfxConfig;
         public MusicConfig MusicConfig;
 
 		public Canvas CanvasPrefab;

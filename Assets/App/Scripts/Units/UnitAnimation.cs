@@ -27,7 +27,7 @@ namespace Units {
 
 			if (_playTimer <= 0f) {
 				_isPlayin = false;
-				Core.PoolController.Spawn(PoolType.VFX_Steps, _body.position, _body.rotation);
+				Core.PoolController.Spawn(ObjectType.VFX_Steps, _body.position, _body.rotation);
 			}
 		}
 	}

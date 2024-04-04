@@ -16,7 +16,7 @@ namespace GameStateMachine.States {
 
         private readonly UiService _uiController;
 		private readonly PoolService _poolController;
-		private readonly MusicController _musicController;
+		private readonly MusicPlayer _musicController;
 		private readonly StateController _stateController;
 
 

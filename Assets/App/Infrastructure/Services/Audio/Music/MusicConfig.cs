@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using Utils;
 
 namespace Music {
-	[CreateAssetMenu(menuName = "Santa/Audio/MusicConfig", fileName = "MusicConfig")]
+	[CreateAssetMenu(menuName = Constants.MenuFolder + nameof(MusicConfig))]
 	public class MusicConfig : ScriptableObject {
 		[SerializeField] private AudioMixerGroup _mixerGroup;
 		[SerializeField] private List<MusicConfigItem> _clips;
@@ -25,7 +26,7 @@ namespace Music {
 
 		[SerializeField] private MusicClipType _type;
 		[SerializeField] private AudioClip _clip;
-		[SerializeField] [Range(0f, 1f)] private float _volume;
+		[SerializeField][Range(0f, 1f)] private float _volume;
 
 		public MusicClipType Type => _type;
 		public AudioClip Clip => _clip;

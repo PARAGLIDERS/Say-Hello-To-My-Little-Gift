@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Pooling {
     public class PoolService : IPoolService {
         private readonly PoolFactory _factory;
-        private Dictionary<PoolType, Queue<PoolObject>> _pools;
+        private Dictionary<ObjectType, Queue<PoolObject>> _pools;
 
         public PoolService(PoolFactory factory) {
             _factory = factory;
@@ -15,7 +15,7 @@ namespace Pooling {
             _pools = _factory.CreatePools();
 		}
 
-		public PoolObject Spawn(PoolType type, Vector3 position, Quaternion rotation, Action onActivate = null, Action onDeactivate = null) {
+		public PoolObject Spawn(ObjectType type, Vector3 position, Quaternion rotation, Action onActivate = null, Action onDeactivate = null) {
             if(!TryGetObject(type, out PoolObject poolObject)) {
                 Debug.LogError($"pool object is null: {type}");
                 return null;
@@ -28,7 +28,7 @@ namespace Pooling {
             return poolObject;
         }
 
-        private bool TryGetObject(PoolType type, out PoolObject poolObject) {
+        private bool TryGetObject(ObjectType type, out PoolObject poolObject) {
 			poolObject = null;
 
 			if (!_pools.TryGetValue(type, out Queue<PoolObject> pool)) {

@@ -24,12 +24,12 @@ namespace GunSystem {
         [HideInInspector] public string Name;
 
         [SerializeField] private GunType _type;
-        [SerializeField] private PoolType _pickupable;
-        [SerializeField] private PoolType _spawnEffect;
+        [SerializeField] private Pooling.ObjectType _pickupable;
+        [SerializeField] private Pooling.ObjectType _spawnEffect;
 
         public GunType Type => _type;
-        public PoolType Pickupable => _pickupable;
-        public PoolType SpawnEffect => _spawnEffect;
+        public Pooling.ObjectType Pickupable => _pickupable;
+        public Pooling.ObjectType SpawnEffect => _spawnEffect;
 
         public void Validate() {
             Name = _type.ToString();

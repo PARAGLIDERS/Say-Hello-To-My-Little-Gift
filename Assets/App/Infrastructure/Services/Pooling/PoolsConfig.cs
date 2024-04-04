@@ -1,33 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using Utils;
 
 namespace Pooling {
 	[CreateAssetMenu(menuName = Constants.MenuFolder + nameof(PoolsConfig))]
-	public class PoolsConfig : ScriptableObject {
-		public List<PoolsConfigItem> Items;
+	public class PoolsConfig : ItemsConfig<PoolsConfigItem> { }
 
-		private void OnValidate() {
-			HashSet<string> names = new HashSet<string>();	
-			foreach (var item in Items) {
-				item.Validate();
-				if (!names.Add(item.Name)) {
-					Debug.LogError($"{item.Name} is already added!");
-				}
-			}
-		}
-	}
-
-	[System.Serializable]
-	public class PoolsConfigItem {
-		[HideInInspector] public string Name;
+	[Serializable]
+	public class PoolsConfigItem : ItemsConfigItem {
+		public override string Name => Type == null ? string.Empty : Type.name;
 
 		public int Size;
-		public PoolType Type;
+		public ObjectType Type;
 		public PoolObject Prefab;
-
-		public void Validate() {
-			Name = Type.ToString();
-		}
 	}
 }

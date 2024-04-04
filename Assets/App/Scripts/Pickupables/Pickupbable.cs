@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Pickupables {
 	public abstract class Pickupbable : PoolObject {
 		[SerializeField] private SfxType _pickupSfx;
-		[SerializeField] private PoolType _pickupEffect;
+		[SerializeField] private ObjectType _pickupEffect;
 
 		private const float _distanceToPlayer = 50f;
 		private const float _lifetime = 5f;

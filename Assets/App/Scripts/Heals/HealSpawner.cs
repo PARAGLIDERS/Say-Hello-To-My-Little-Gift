@@ -17,8 +17,8 @@ namespace Heals {
 			while (true) {
 				yield return new WaitForSeconds(_config.Cooldown);
 				Vector3 position = _grid.GetPosition();
-				Core.PoolController.Spawn(PoolType.HealVfx, position, Quaternion.identity);
-				Core.PoolController.Spawn(PoolType.Heal, position, Quaternion.identity);
+				Core.PoolController.Spawn(ObjectType.HealVfx, position, Quaternion.identity);
+				Core.PoolController.Spawn(ObjectType.Heal, position, Quaternion.identity);
 			}
 		}
 	}

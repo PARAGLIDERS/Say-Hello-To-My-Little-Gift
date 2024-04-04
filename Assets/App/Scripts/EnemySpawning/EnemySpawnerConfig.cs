@@ -123,11 +123,11 @@ namespace EnemySpawning {
     }
 
     public enum EnemySpawnerUnitType {
-        Snowman = PoolType.Enemy_Snowman,
-        Chicken = PoolType.Enemy_Chicken,
-        Deer = PoolType.Enemy_Deer,
-        Owl = PoolType.Enemy_Owl,
-        Penguin = PoolType.Enemy_Penguin,
-        Rabbit = PoolType.Enemy_Rabbit,
+        Snowman = Pooling.ObjectType.Enemy_Snowman,
+        Chicken = Pooling.ObjectType.Enemy_Chicken,
+        Deer = Pooling.ObjectType.Enemy_Deer,
+        Owl = Pooling.ObjectType.Enemy_Owl,
+        Penguin = Pooling.ObjectType.Enemy_Penguin,
+        Rabbit = Pooling.ObjectType.Enemy_Rabbit,
     }
 }

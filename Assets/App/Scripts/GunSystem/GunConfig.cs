@@ -37,13 +37,13 @@ namespace GunSystem {
 	}
 
 	public enum BulletType {
-		Pistol = PoolType.Bullet_Pistol,
-		Uzi = PoolType.Bullet_Uzi,
-		Shotgun = PoolType.Bullet_Shotgun,
-		Auto = PoolType.Bullet_Auto,
-		DoubleShotgun = PoolType.Bullet_DoubleShotgun,
-		RocketLauncher = PoolType.Bullet_RocketLauncher,
-		Minigun = PoolType.Bullet_Minigun,
+		Pistol = ObjectType.Bullet_Pistol,
+		Uzi = ObjectType.Bullet_Uzi,
+		Shotgun = ObjectType.Bullet_Shotgun,
+		Auto = ObjectType.Bullet_Auto,
+		DoubleShotgun = ObjectType.Bullet_DoubleShotgun,
+		RocketLauncher = ObjectType.Bullet_RocketLauncher,
+		Minigun = ObjectType.Bullet_Minigun,
 	}
 
 	public enum SfxShotType {
@@ -57,13 +57,13 @@ namespace GunSystem {
 	}
 
 	public enum MuzzleFlashType {
-		Pistol = PoolType.MuzzleFlash_Pistol,
-		Uzi = PoolType.MuzzleFlash_Uzi, 
-		Shotgun = PoolType.MuzzleFlash_Shotgun,
-		Auto = PoolType.MuzzleFlash_Auto,
-		DoubleShotgun = PoolType.MuzzleFlash_DoubleShotgun, 
-		RocketLauncher = PoolType.MuzzleFlash_RocketLauncher, 
-		Minigun = PoolType.MuzzleFlash_Minigun,
+		Pistol = ObjectType.MuzzleFlash_Pistol,
+		Uzi = ObjectType.MuzzleFlash_Uzi, 
+		Shotgun = ObjectType.MuzzleFlash_Shotgun,
+		Auto = ObjectType.MuzzleFlash_Auto,
+		DoubleShotgun = ObjectType.MuzzleFlash_DoubleShotgun, 
+		RocketLauncher = ObjectType.MuzzleFlash_RocketLauncher, 
+		Minigun = ObjectType.MuzzleFlash_Minigun,
 	}
 
 	public enum InputType {

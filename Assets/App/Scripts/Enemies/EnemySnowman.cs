@@ -6,7 +6,7 @@ namespace Enemies {
         [SerializeField] private Transform _muzzle;
 
         protected override void Attack() {
-            Core.PoolController.Spawn(Pooling.PoolType.EnemyProjectile_Snowball, _muzzle.position, _muzzle.rotation);
+            Core.PoolController.Spawn(Pooling.ObjectType.EnemyProjectile_Snowball, _muzzle.position, _muzzle.rotation);
             Core.SfxController.Play(SfxSystem.SfxType.EnemySnowmanThrow, _muzzle.position);
         }
     }

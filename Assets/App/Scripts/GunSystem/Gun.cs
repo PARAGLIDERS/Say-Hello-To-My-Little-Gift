@@ -69,7 +69,7 @@ namespace GunSystem {
             SpendAmmo();
             OnShoot();
 
-            Core.PoolController.Spawn((PoolType) _config.MuzzleFlashType, _muzzle.position, _muzzle.rotation);
+            Core.PoolController.Spawn((Pooling.ObjectType)_config.MuzzleFlashType, _muzzle.position, _muzzle.rotation);
             Core.SfxController.Play((SfxType)_config.ShotSound);
 		}       
 
@@ -104,7 +104,7 @@ namespace GunSystem {
 
 		private void SpawnBullet() {
 			Quaternion bulletRotation = GetBulletRotation();
-			Core.PoolController.Spawn((PoolType) _config.BulletType, _muzzle.position, bulletRotation);
+			Core.PoolController.Spawn((Pooling.ObjectType)_config.BulletType, _muzzle.position, bulletRotation);
 		}
 
 		private Quaternion GetBulletRotation() {

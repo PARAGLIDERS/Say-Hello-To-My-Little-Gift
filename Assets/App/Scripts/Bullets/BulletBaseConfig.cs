@@ -13,14 +13,14 @@ namespace Bullets {
 	}
 
 	public enum BulletExplosionType {
-		Pistol = PoolType.BulletExplosion_Pistol,
-		Uzi = PoolType.BulletExplosion_Uzi,
-		Shotgun = PoolType.BulletExplosion_Shotgun,
-		Auto = PoolType.BulletExplosion_Auto,
-		DoubleShotgun = PoolType.BulletExplosion_DoubleShotgun,
-		RocketLauncher = PoolType.BulletExplosion_RocketLauncher,
-		Minigun = PoolType.BulletExplosion_Minigun,
+		Pistol = ObjectType.BulletExplosion_Pistol,
+		Uzi = ObjectType.BulletExplosion_Uzi,
+		Shotgun = ObjectType.BulletExplosion_Shotgun,
+		Auto = ObjectType.BulletExplosion_Auto,
+		DoubleShotgun = ObjectType.BulletExplosion_DoubleShotgun,
+		RocketLauncher = ObjectType.BulletExplosion_RocketLauncher,
+		Minigun = ObjectType.BulletExplosion_Minigun,
 
-		Snowball = PoolType.ProjectileExplosion_Snowball,
+		Snowball = ObjectType.ProjectileExplosion_Snowball,
 	}
 }
